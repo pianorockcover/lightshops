@@ -1,0 +1,40 @@
+@import "./common.less";
+
+.fade {
+  .show-animation.hidden();
+  animation-duration: 0.5s;
+
+  &.show {
+    .show-animation.shown();
+    animation-name: fadeInUp;
+  }
+
+  &.hide {
+    animation-name: fadeOutDown;
+  }
+}
+
+.fade-hidden() {
+  .show-animation.hidden();
+  transform: translate3d(0, 100%, 0);
+}
+
+@keyframes fadeInUp {
+  from {
+    .fade-hidden();
+  }
+
+  to {
+    .show-animation.shown();
+  }
+}
+
+@keyframes fadeOutDown {
+  from {
+    .show-animation.shown();
+  }
+
+  to {
+    .fade-hidden();
+  }
+}

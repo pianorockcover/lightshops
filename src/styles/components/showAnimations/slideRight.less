@@ -1,0 +1,40 @@
+@import "./common.less";
+
+.slide-right {
+  .show-animation.hidden();
+  animation-duration: 0.7s;
+
+  &.show {
+    .show-animation.shown();
+    animation-name: slideInRight;
+  }
+
+  &.hide {
+    animation-name: slideOutRight;
+  }
+}
+
+.slide-right-hidden() {
+  transform: translate3d(100%, 0, 0);
+  .show-animation.hidden();
+}
+
+@keyframes slideInRight {
+  from {
+    .slide-right-hidden();
+  }
+
+  to {
+    .show-animation.shown();
+  }
+}
+
+@keyframes slideOutRight {
+  from {
+    .show-animation.shown();
+  }
+
+  to {
+    .slide-right-hidden();
+  }
+}

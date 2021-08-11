@@ -2,20 +2,18 @@ include partials/header.pug
 
 h1 Hello PUG!
 
-div(data-toggle="popover", data-trigger="click", data-target="#test1") Open Menu
-    #test1.popover Test Popover
-
-div(data-toggle="popover", data-trigger="hover", data-target="#test2") Open Menu
-    #test2.popover Test Popover
-
-
-img(src="images/logo.svg", alt="Alt")
-
-
-
 .row
-    .col-sm Col 1
-    .col-sm Col 2
-    .col-sm Col 3
+    .col-sm
+        div(data-show="#test1", data-trigger="click") Open Menu
+            #test1.fade Test Popover 1
+    .col-sm
+        div(data-show="#test2", data-trigger="hover") Open Menu
+            #test2.fade Test Popover 2 
+    .col-sm
+        div(data-show="#test3", data-trigger="hover") Open Menu
+            #test3.slide-right Test Popover 3 
+    .col-sm
+        div(data-show="#test4", data-trigger="click") Open Menu
+            #test4.slide-right Test Popover 3 
 
 include partials/footer.pug

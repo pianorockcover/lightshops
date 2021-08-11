@@ -1,4 +1,4 @@
-import $, { event } from "jquery";
+import $ from "jquery";
 
 // TMP !!!
 const isMobile = false;
@@ -6,21 +6,21 @@ const isMobile = false;
 const showClass = "show";
 const hideClass = "hide";
 
-$("[data-toggle]").each((_, el) => {
-  const popover = $(el);
-  const trigger = popover.data("trigger");
-  const targetSelector = popover.data("target");
+$("[data-show]").each((_, el) => {
+  const element = $(el);
+  const trigger = element.data("trigger");
+  const targetSelector = element.data("show");
   const target = $(targetSelector);
 
   let shown = false;
 
   if (!target) {
-    console.error(`No popover target element with selector ${target}`);
+    console.error(`No element target element with selector ${target}`);
     return;
   }
 
   if (!trigger || trigger === "click" || isMobile) {
-    popover.on("click", () => {
+    element.on("click", () => {
       target.addClass(showClass);
       target.removeClass(hideClass);
       shown = true;
@@ -37,12 +37,12 @@ $("[data-toggle]").each((_, el) => {
     return;
   }
 
-  popover.on("mouseover", () => {
+  element.on("mouseover", () => {
     target.addClass(showClass);
     target.removeClass(hideClass);
   });
 
-  popover.on("mouseout", () => {
+  element.on("mouseout", () => {
     target.addClass(hideClass);
     target.removeClass(showClass);
   });
