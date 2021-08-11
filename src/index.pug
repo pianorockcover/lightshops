@@ -2,7 +2,16 @@ include partials/header.pug
 
 h1 Hello PUG!
 
+div(data-toggle="popover", data-trigger="click", data-target="#test1") Open Menu
+    #test1.popover Test Popover
+
+div(data-toggle="popover", data-trigger="hover", data-target="#test2") Open Menu
+    #test2.popover Test Popover
+
+
 img(src="images/logo.svg", alt="Alt")
+
+
 
 .row
     .col-sm Col 1
