@@ -23,8 +23,25 @@ module.exports = {
   module: {
     rules: [
       {
+        test: /\.(woff|woff2|eot|ttf|png|svg|jpg)$/,
+        use: {
+          loader: "url-loader",
+        },
+      },
+      {
         test: /\.(less)$/,
-        use: [MiniCssExtractPlugin.loader, "css-loader", "less-loader"],
+        use: [
+          MiniCssExtractPlugin.loader,
+          { loader: "css-loader", options: { url: false } },
+          {
+            loader: "less-loader",
+            options: {
+              lessOptions: {
+                relativeUrls: false,
+              },
+            },
+          },
+        ],
       },
       {
         test: /\.pug$/,
