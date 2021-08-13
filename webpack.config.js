@@ -67,7 +67,12 @@ module.exports = {
     new MiniCssExtractPlugin({
       filename: "./css/style.css",
     }),
-    new CopyWebpackPlugin({ patterns: [{ from: "static" }] }),
+    new CopyWebpackPlugin({
+      patterns: [
+        { from: "static" },
+        { from: "node_modules/bootstrap-icons/font/fonts", to: "css/fonts" },
+      ],
+    }),
   ],
   optimization: {
     minimizer: [
