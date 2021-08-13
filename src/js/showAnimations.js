@@ -6,7 +6,7 @@ const isMobile = false;
 const showClass = "show";
 const hideClass = "hide";
 
-$("[data-show]").each((_, el) => {
+$("[data-toggle]").each((_, el) => {
   const element = $(el);
   const trigger = element.data("trigger");
   const targetSelector = element.data("show");
