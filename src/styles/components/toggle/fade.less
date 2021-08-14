@@ -6,7 +6,7 @@
 
   &.show {
     .show-animation.shown();
-    animation-name: fadeInUp;
+    animation-name: fadeIn;
   }
 
   &.shown {
@@ -14,18 +14,13 @@
   }
 
   &.hide {
-    animation-name: fadeOutDown;
+    animation-name: fadeOut;
   }
 }
 
-.fade-hidden() {
-  .show-animation.hidden();
-  transform: translate3d(0, 100%, 0);
-}
-
-@keyframes fadeInUp {
+@keyframes fadeIn {
   from {
-    .fade-hidden();
+    .show-animation.hidden();
   }
 
   to {
@@ -33,12 +28,12 @@
   }
 }
 
-@keyframes fadeOutDown {
+@keyframes fadeOut {
   from {
     .show-animation.shown();
   }
 
   to {
-    .fade-hidden();
+    .show-animation.hidden();
   }
 }

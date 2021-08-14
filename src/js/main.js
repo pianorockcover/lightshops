@@ -1,3 +1,3 @@
 import "../styles/index.less";
-import "./showAnimations";
+import "./toggle";
 import "./close";

@@ -1,5 +1,5 @@
 import $ from "jquery";
-import { hideClass, showClass, shownClass } from "./showAnimations";
+import { hideClass, showClass, shownClass } from "./toggle";
 
 $("[data-close]").each((_, el) => {
   const element = $(el);

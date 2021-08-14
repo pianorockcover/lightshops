@@ -1,0 +1,44 @@
+@import "./common.less";
+
+.fade-jump {
+  .show-animation.hidden();
+  animation-duration: 0.5s;
+
+  &.show {
+    .show-animation.shown();
+    animation-name: fadeJumpInUp;
+  }
+
+  &.shown {
+    .show-animation.shown();
+  }
+
+  &.hide {
+    animation-name: fadeJumpOutDown;
+  }
+}
+
+.fade-jump-hidden() {
+  .show-animation.hidden();
+  transform: translate3d(0, 100%, 0);
+}
+
+@keyframes fadeJumpInUp {
+  from {
+    .fade-jump-hidden();
+  }
+
+  to {
+    .show-animation.shown();
+  }
+}
+
+@keyframes fadeJumpOutDown {
+  from {
+    .show-animation.shown();
+  }
+
+  to {
+    .fade-jump-hidden();
+  }
+}
