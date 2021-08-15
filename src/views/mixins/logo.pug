@@ -1,0 +1,6 @@
+mixin logo(type)
+    a.logo(href="/", class=type)
+        if type
+            img.logo-img(src="images/logo-" + type + ".svg", alt="Logo")
+        else
+            img.logo-img(src="images/logo.svg", alt="Logo")

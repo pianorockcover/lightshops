@@ -5,6 +5,7 @@ const BeautifyHtmlWebpackPlugin = require("beautify-html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const CopyWebpackPlugin = require("copy-webpack-plugin");
 const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
+const UglifyJsPlugin = require("uglifyjs-webpack-plugin");
 
 const path = require("path");
 const fs = require("fs");
@@ -57,6 +58,7 @@ module.exports = {
             template: `${pagesPath}/${cur}`,
             filename: `./${cur.replace(/\.pug/, ".html")}`,
             minify: false,
+            inject: false,
           }),
         ]
       );
@@ -86,6 +88,7 @@ module.exports = {
           ],
         },
       }),
+      new UglifyJsPlugin(),
     ],
   },
   devServer: {
