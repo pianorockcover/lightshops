@@ -88,7 +88,13 @@ module.exports = {
           ],
         },
       }),
-      new UglifyJsPlugin(),
+      new UglifyJsPlugin({
+        uglifyOptions: {
+          output: {
+            comments: false,
+          },
+        },
+      }),
     ],
   },
   devServer: {
