@@ -1,0 +1,29 @@
+.top-panel
+    .container
+        .top-panel-nav
+            a.link(href="#") Blog
+            a.link(href="#") Contant Us 
+            a.link(href="#") About
+            div.dropdown(data-toggle="#languageSelect", data-trigger="hover")
+                span.flag.flag-fr
+                | En
+                #languageSelect.language-dropdown.fade-jump
+                    .dropdown-content
+                        .item 
+                            span.flag.flag-fr
+                            | En
+                        .item 
+                            span.flag.flag-fr
+                            | Fr
+            div.dropdown
+                span.flag.flag-fr
+                | USD
+        .top-panel-auth
+            a.link(href="#")
+                span.bi.bi-person
+                | Sign In
+            span.divider
+            a.link(href="#")
+                span.bi.bi-person-plus-fill
+                | Sign Up
+

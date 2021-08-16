@@ -1,0 +1,23 @@
+.anchor(@color, @hoverColor) {
+  cursor: pointer;
+  transition: color 0.2s ease-in-out;
+  text-decoration: none !important;
+  display: inline-flex;
+  align-items: center;
+
+  &:link,
+  &:visited,
+  &:active,
+  &:focus {
+    color: @color;
+  }
+
+  &:hover {
+    color: @hoverColor;
+  }
+
+  .bi,
+  .flag {
+    margin-right: 5px;
+  }
+}
