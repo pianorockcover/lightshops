@@ -4,10 +4,10 @@
             a.link(href="#") Blog
             a.link(href="#") Contant Us 
             a.link(href="#") About
-            div.dropdown(data-toggle="#languageSelect", data-trigger="hover")
+            .dropdown(data-toggle="#languageDropdown", data-trigger="hover")
                 span.flag.flag-fr
                 | En
-                #languageSelect.language-dropdown.fade-jump
+                #languageDropdown.top-panel-dropdown.fade-jump
                     .dropdown-content
                         .item 
                             span.flag.flag-fr
@@ -15,9 +15,11 @@
                         .item 
                             span.flag.flag-fr
                             | Fr
-            div.dropdown
-                span.flag.flag-fr
-                | USD
+            .dropdown(data-toggle="#currencyDropdown", data-trigger="hover") USD
+                #currencyDropdown.top-panel-dropdown.fade-jump
+                    .dropdown-content
+                        .item USD
+                        .item RUB
         .top-panel-auth
             a.link(href="#")
                 span.bi.bi-person
