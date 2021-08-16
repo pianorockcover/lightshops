@@ -2,11 +2,11 @@
   &:after {
     content: " ";
     width: 100%;
-    height: ~"@{width}px";
+    height: calc(~"@{width}px" + 10px);
     position: absolute;
     display: block;
     left: 0px;
-    top: ~"-@{width}px";
+    bottom: 100%;
     z-index: 1;
   }
 

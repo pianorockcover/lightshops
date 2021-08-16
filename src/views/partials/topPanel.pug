@@ -5,21 +5,21 @@
             a.link(href="#") Contant Us 
             a.link(href="#") About
             .dropdown(data-toggle="#languageDropdown", data-trigger="hover")
-                span.flag.flag-fr
+                img.image(src="images/uk.svg", alt="UK Flag")
                 | En
                 #languageDropdown.top-panel-dropdown.fade-jump
                     .dropdown-content
-                        .item 
-                            span.flag.flag-fr
+                        a.item(href="#")
+                            img.image(src="images/uk.svg", alt="UK Flag")
                             | En
-                        .item 
-                            span.flag.flag-fr
+                        a.item(href="#")
+                            img.image(src="images/fr.svg", alt="France Flag")
                             | Fr
             .dropdown(data-toggle="#currencyDropdown", data-trigger="hover") USD
                 #currencyDropdown.top-panel-dropdown.fade-jump
                     .dropdown-content
-                        .item USD
-                        .item RUB
+                        a.item(href="#") USD
+                        a.item(href="#") RUB
         .top-panel-auth
             a.link(href="#")
                 span.bi.bi-person

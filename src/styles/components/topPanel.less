@@ -17,7 +17,7 @@
 
     .link {
       margin-right: 20px;
-      .anchor(@textColor, @secondary);
+      .anchor(@textColor, @primary);
     }
 
     .dropdown {
@@ -28,8 +28,10 @@
       align-items: center;
       position: relative;
 
-      .flag {
+      .image {
+        width: 16px;
         margin-right: 5px;
+        display: inline-flex;
       }
 
       .top-panel-dropdown {
@@ -47,10 +49,17 @@
           border-radius: 3px;
 
           .item {
+            .anchor(@textColor, @textColor);
             padding: 7px 10px 7px 10px;
             display: flex;
             align-items: center;
             transition: background-color 0.2s ease-in-out;
+
+            .image {
+              width: 16px;
+              margin-right: 7px;
+              display: inline-flex;
+            }
 
             &:hover {
               background-color: @greyColor;
@@ -71,7 +80,7 @@
 
     .link {
       margin-left: 10px;
-      .anchor(@textColor, @secondary);
+      .anchor(@textColor, @primary);
     }
   }
 
