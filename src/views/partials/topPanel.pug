@@ -1,9 +1,13 @@
 .top-panel
     .container
+        .top-panel-location
+                span.link
+                    span.bi.bi-geo-alt-fill
+                    | London
+                a.link(href="tel:880000000000")
+                    span.bi.bi-telephone
+                    | 8 (800) 000-00-00
         .top-panel-nav
-            a.link(href="#") Blog
-            a.link(href="#") Contant Us 
-            a.link(href="#") About
             .dropdown(data-toggle="#languageDropdown", data-trigger="hover")
                 img.image(src="images/uk.svg", alt="UK Flag")
                 | En
@@ -20,12 +24,6 @@
                     .dropdown-content
                         a.item(href="#") USD
                         a.item(href="#") RUB
-        .top-panel-auth
-            a.link(href="#")
-                span.bi.bi-person
-                | Sign In
-            span.divider
-            a.link(href="#")
-                span.bi.bi-person-plus-fill
-                | Sign Up
-
+            a.link(href="#") Blog
+            a.link(href="#") Contant Us 
+            a.link(href="#") About

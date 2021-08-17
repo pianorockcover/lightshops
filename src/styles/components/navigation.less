@@ -1,0 +1,39 @@
+@import "../components/anchor.less";
+@import "../variables.less";
+
+@itemsMargin: 25px;
+
+.navigation {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  .link {
+    .anchor(@textColor, @primary);
+    font-weight: 500;
+
+    .arrow {
+      transform: rotate(180deg);
+      margin-right: 0px;
+      margin-left: 5px;
+      font-size: 11px;
+      margin-top: -3px;
+    }
+  }
+
+  .left {
+    .link {
+      margin-right: @itemsMargin;
+    }
+  }
+
+  .right {
+    .link {
+      margin-left: @itemsMargin;
+
+      &.daily-sales {
+        .anchor(@contrast, lighten(@contrast, 5%));
+      }
+    }
+  }
+}

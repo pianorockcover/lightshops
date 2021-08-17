@@ -1,0 +1,53 @@
+@import "../variables.less";
+
+.btn(@bg, @color) {
+  display: inline-flex;
+  font-weight: 500;
+  background: @bg;
+  color: @color;
+  padding: 9px;
+  padding-left: 15px;
+  padding-right: 15px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+  border: 0px;
+
+  &:hover {
+    background-color: lighten(@bg, 10%);
+  }
+
+  .bi {
+    margin-right: 10px;
+  }
+}
+
+.btn-open-catalog {
+  .btn(@primary, #ffffff);
+}
+
+.btn-search {
+  .btn(@primary, #ffffff);
+}
+
+.btn-transparent {
+  .btn(transparent, @textColor);
+
+  border: 1px solid @greyColor;
+
+  &:hover {
+    background-color: @greyColor;
+  }
+
+  .bi {
+    color: @primary;
+  }
+}
+
+.btn-only-icon {
+  .bi {
+    margin-right: 0px;
+  }
+}

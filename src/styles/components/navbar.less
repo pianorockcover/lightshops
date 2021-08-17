@@ -1,0 +1,58 @@
+@import "../variables.less";
+@import "../components/button.less";
+
+.navbar {
+  box-shadow: 0 6px 11px -6px rgba(0, 0, 0, 0.1);
+  padding: 15px 0px 15px 0px;
+
+  .navbar-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+
+  .btn-open-catalog,
+  .auth-btns .btn-transparent {
+    font-size: 17px;
+    font-weight: normal;
+    margin-left: 15px;
+  }
+
+  .search-field {
+    margin-left: 15px;
+    border: 2px solid @primary;
+    border-radius: 5px;
+    padding: 2px;
+    display: flex;
+    align-items: center;
+    flex: 1;
+
+    .btn-dropdown {
+      .btn(@greyColor, @textColor);
+
+      &:hover {
+        background-color: darken(@greyColor, 5%);
+      }
+
+      .bi {
+        transform: rotate(180deg);
+        font-size: 11px;
+        margin-left: 10px;
+        margin-right: 0px;
+      }
+    }
+
+    .search-field-input {
+      border: 0px;
+      outline: none;
+      font-size: 16px;
+      height: 32px;
+      padding-left: 10px;
+      padding-right: 10px;
+      width: auto;
+      flex: 1;
+      min-width: unset;
+    }
+  }
+}

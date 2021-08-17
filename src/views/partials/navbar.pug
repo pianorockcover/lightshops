@@ -1,0 +1,25 @@
+include ../mixins/logo.pug
+.navbar
+    .container
+        .navbar-top
+            +logo()
+            button.btn-open-catalog
+                span.bi.bi-list-ul
+                | Catalog
+            .search-field
+                .btn-dropdown
+                    | All categories
+                    span.bi.bi-triangle-fill
+                input.search-field-input(placeholder="Search in...")
+                button.btn-search.btn-only-icon
+                    span.bi.bi-search
+            .auth-btns
+                button.btn-transparent
+                    span.bi.bi-person-circle
+                    | Sign In
+                button.btn-transparent.btn-only-icon
+                    span.bi.bi-heart
+                button.btn-transparent
+                    span.bi.bi-cart
+                    | Cart
+        include navigation.pug
