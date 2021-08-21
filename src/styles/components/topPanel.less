@@ -3,7 +3,7 @@
 @import "./arrows.less";
 
 .top-panel {
-  background: @greyColor;
+  background: rgba(255, 255, 255, 0.05);
   padding: 10px 0px 10px 0px;
   font-weight: 300;
 
@@ -17,17 +17,17 @@
 
     .link {
       margin-left: 25px;
-      .anchor(@textColor, @primary);
+      .anchor(#ffffff, @primary);
     }
 
     .dropdown {
       margin-left: 25px;
-      color: @textColor;
+      color: #ffffff;
       cursor: pointer;
       display: inline-flex;
       align-items: center;
       position: relative;
-      .anchor(@textColor, @primary);
+      .anchor(#ffffff, @primary);
 
       .image {
         width: 16px;
@@ -50,7 +50,7 @@
           border-radius: 3px;
 
           .item {
-            .anchor(@textColor, @textColor);
+            .anchor(#ffffff, #ffffff);
             padding: 7px 10px 7px 10px;
             display: flex;
             align-items: center;
@@ -81,7 +81,7 @@
 
     .link {
       margin-right: 20px;
-      .anchor(@textColor, @primary);
+      .anchor(#ffffff, @primary);
     }
   }
 
