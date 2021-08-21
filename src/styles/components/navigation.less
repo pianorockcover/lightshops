@@ -9,7 +9,8 @@
   justify-content: space-between;
 
   .link {
-    .anchor(@textColor, @primary);
+    .anchor(#ffffff, #ffffff);
+    .anchor-underline-hover(#ffffff, 2px);
     font-weight: 500;
 
     .arrow {
@@ -32,7 +33,13 @@
       margin-left: @itemsMargin;
 
       &.daily-sales {
-        .anchor(@contrast, lighten(@contrast, 5%));
+        .anchor(#ffffff, #ffffff);
+        .anchor-underline-hover(transparent, 0px);
+
+        .image {
+          width: 20px;
+          margin-top: -3px;
+        }
       }
     }
   }

@@ -1,5 +1,5 @@
 @import "../variables.less";
-@import "../components/button.less";
+@import "../components/buttons/button.less";
 
 .navbar {
   padding: 25px 0px 25px 0px;
@@ -26,25 +26,25 @@
 
   .search-field {
     margin-left: 15px;
-    border: 2px solid @primary;
-    border-radius: 5px;
-    padding: 2px;
     display: flex;
     align-items: center;
     flex: 1;
+    background: rgba(255, 255, 255, 0.3);
+    border: 0px;
+    padding: 10px 15px 10px 15px;
+    border-radius: 50px;
 
     .btn-dropdown {
-      .btn(@greyColor, @textColor);
-
-      &:hover {
-        background-color: darken(@greyColor, 5%);
-      }
+      .btn(transparent, #ffffff);
+      border-right: 1px solid rgba(255, 255, 255, 0.55);
+      border-radius: 0px;
 
       .bi {
         transform: rotate(180deg);
         font-size: 11px;
         margin-left: 10px;
         margin-right: 0px;
+        margin-top: -4px;
       }
     }
 
@@ -58,6 +58,12 @@
       width: auto;
       flex: 1;
       min-width: unset;
+      background: transparent;
+      color: #ffffff;
+
+      &::placeholder {
+        color: rgba(255, 255, 255, 0.8);
+      }
     }
   }
 }

@@ -22,3 +22,23 @@
     margin-right: 5px;
   }
 }
+
+.anchor-underline(@color, @height) {
+  border-bottom: @height solid fade(@color, 85%);
+  transition: border-bottom-color .2s ease-in-out;
+
+  &:hover,
+  &.active {
+    border-bottom-color: transparent;
+  }
+}
+
+.anchor-underline-hover(@color, @height) {
+  border-bottom: @height solid transparent;
+  transition: border-bottom-color .2s ease-in-out;
+
+  &:hover,
+  &.active {
+    border-bottom-color: fade(@color, 85%);
+  }
+}

@@ -1,13 +1,14 @@
 @import "../variables.less";
 
-@sliderHeight: 400px;
+@sliderHeight: 300px;
 
 .main-slider-wrapper {
   background-color: @greyColor;
   position: relative;
   height: @sliderHeight;
   overflow: hidden;
-  border-radius: 10px;
+  border-radius: 20px;
+  overflow: hidden;
 
   .container {
     position: relative;
@@ -19,37 +20,43 @@
     align-items: center;
     justify-content: flex-start;
     height: @sliderHeight;
-    padding-left: 20px;
-    padding-right: 20px;
+
 
     .main-slider-content {
       display: flex;
+      padding-left: 80px;
+      padding-right: 80px;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      width: 100%;
+      height: 100%;
+      align-items: center;
+      text-decoration: none !important;
+      position: relative;
 
-      .left {
-        .image {
-          width: 300px;
-        }
+      .anchor(@textColor, @textColor);
+
+      .image {
+        width: 250px;
+        position: absolute;
       }
 
-      .right {
+      .summary {
         display: flex;
         flex-direction: column;
         justify-content: center;
 
         .title {
-          font-weight: 500;
-          font-size: 25px;
+          font-weight: 800;
+          font-size: 45px;
           margin-bottom: 10px;
         }
 
         .subtitle {
-          font-weight: 300;
-          font-size: 20px;
+          font-weight: 400;
+          font-size: 30px;
           margin-bottom: 10px;
-        }
-
-        .buttons {
-          margin-top: 20px;
         }
       }
     }
@@ -57,10 +64,30 @@
 
   .swiper-button-prev,
   .swiper-button-next {
-    color: @primary;
+    color: @textColor;
+    background: rgba(255, 255, 255, 0.3);
+    width: 44px;
+    border-radius: 100%;
+    transition: background-color .2s ease-in-out;
+
+    &:hover {
+      background: rgba(255, 255, 255, 0.7);
+    }
+
+    &:after {
+      font-size: 20px;
+    }
+  }
+
+  .swiper-pagination-bullet {
+    background: #ffffff;
+    opacity: .3;
+    width: 15px;
+    height: 15px;
   }
 
   .swiper-pagination-bullet-active {
-    background: @primary;
+    background: #ffffff;
+    opacity: 1;
   }
 }

@@ -1,4 +1,4 @@
-@import "../variables.less";
+@import "../../variables.less";
 
 .btn(@bg, @color) {
   display: inline-flex;
@@ -33,16 +33,12 @@
 }
 
 .btn-transparent {
-  .btn(transparent, @textColor);
+  .btn(transparent, #ffffff);
 
-  border: 1px solid @greyColor;
+  border: 1px solid rgba(255, 255, 255, 0.3);
 
   &:hover {
-    background-color: @greyColor;
-  }
-
-  .bi {
-    color: @primary;
+    background-color: rgba(255, 255, 255, 0.3);
   }
 }
 
