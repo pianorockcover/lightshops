@@ -1,5 +1,5 @@
-@import "../components/anchor.less";
-@import "../variables.less";
+@import "../../components/anchor.less";
+@import "../../variables.less";
 
 @itemsMargin: 25px;
 
@@ -9,8 +9,8 @@
   justify-content: space-between;
 
   .link {
-    .anchor(#ffffff, #ffffff);
-    .anchor-underline-hover(#ffffff, 2px);
+    .anchor(@headerTextColor, @headerTextColor);
+    .anchor-underline-hover(@headerTextColor, 2px);
     font-weight: 500;
 
     .arrow {
@@ -33,7 +33,7 @@
       margin-left: @itemsMargin;
 
       &.daily-sales {
-        .anchor(#ffffff, #ffffff);
+        .anchor(@headerTextColor, @headerTextColor);
         .anchor-underline-hover(transparent, 0px);
 
         .image {

@@ -1,5 +1,5 @@
-@import "../variables.less";
-@import "../components/buttons/button.less";
+@import "../../variables.less";
+@import "../../components/buttons/button.less";
 
 .navbar {
   padding: 25px 0px 25px 0px;
@@ -29,14 +29,14 @@
     display: flex;
     align-items: center;
     flex: 1;
-    background: rgba(255, 255, 255, 0.3);
+    background: fade(@headerTextColor, 30%);
     border: 0px;
     padding: 10px 15px 10px 15px;
     border-radius: 50px;
 
     .btn-dropdown {
-      .btn(transparent, #ffffff);
-      border-right: 1px solid rgba(255, 255, 255, 0.55);
+      .btn(transparent, @headerTextColor);
+      border-right: 1px solid fade(@headerTextColor, 55%);
       border-radius: 0px;
 
       .bi {
@@ -59,10 +59,10 @@
       flex: 1;
       min-width: unset;
       background: transparent;
-      color: #ffffff;
+      color: @headerTextColor;
 
       &::placeholder {
-        color: rgba(255, 255, 255, 0.8);
+        color: fade(@headerTextColor, 80%);
       }
     }
   }

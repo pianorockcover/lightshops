@@ -1,0 +1,19 @@
+@import "../../variables.less";
+@import "../buttons/button.less";
+
+.header {
+    background: @primary;
+    color: @headerTextColor;
+    box-shadow: inset 0 -10px 10px -10px #083b699e;
+
+
+    .btn-transparent {
+        .btn(transparent, @headerTextColor);
+
+        border: 1px solid fade(@headerTextColor, 30%);
+
+        &:hover {
+            background-color: fade(@headerTextColor, 30%);
+        }
+    }
+}
