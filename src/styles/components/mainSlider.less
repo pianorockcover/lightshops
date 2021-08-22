@@ -1,6 +1,7 @@
 @import "../variables.less";
 
-@sliderHeight: 300px;
+@sliderHeight: 305px;
+@sliderPadding: 80px;
 
 .main-slider-wrapper {
   background-color: @greyColor;
@@ -9,6 +10,7 @@
   overflow: hidden;
   border-radius: 20px;
   overflow: hidden;
+  background-image: url(../images/main-slider/pattern.png);
 
   .container {
     position: relative;
@@ -21,11 +23,10 @@
     justify-content: flex-start;
     height: @sliderHeight;
 
-
     .main-slider-content {
       display: flex;
-      padding-left: 80px;
-      padding-right: 80px;
+      padding-left: @sliderPadding;
+      padding-right: @sliderPadding;
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
@@ -34,12 +35,20 @@
       align-items: center;
       text-decoration: none !important;
       position: relative;
+      justify-content: space-between;
 
       .anchor(@textColor, @textColor);
 
       .image {
-        width: 250px;
-        position: absolute;
+        height: 100%;
+        width: auto;
+        transition: transform .2s ease-in-out;
+      }
+
+      &:hover {
+        .image {
+          transform: scale(1.1);
+        }
       }
 
       .summary {

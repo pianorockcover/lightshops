@@ -1,0 +1,45 @@
+@import "../variables.less";
+@import "../components/buttons/button.less";
+@import "./buttons/shadowHover.less";
+
+.sale-block {
+    display: flex;
+    margin-bottom: 20px;
+    padding: 16px 15px 16px 15px;
+    border-radius: 10px;
+    align-items: center;
+    justify-content: space-between;
+    color: #ffffff;
+    text-decoration: none !important;
+
+    .shadow-hover();
+
+    .title {
+        font-weight: 500;
+        font-size: 16px;
+        margin-bottom: 10px;
+    }
+
+    .text {
+        margin-bottom: 15px;
+    }
+
+    .icon {
+        width: 70px;
+        height: 70px;
+        background: #ffffff;
+        border-radius: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 15px;
+
+        .image {
+            width: 100%;
+        }
+    }
+
+    .link {
+        .btn(#ffffff, @textColor);
+    }
+}
