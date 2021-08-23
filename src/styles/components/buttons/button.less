@@ -41,3 +41,17 @@
 .btn-primary {
   .btn(@primary, #ffffff);
 }
+
+.btn-secondary {
+  .btn(@secondary, #ffffff);
+}
+
+.btn-outlined {
+  .btn(transparent, @primary);
+
+  border: 1px solid fade(@primary, 30%);
+
+  &:hover {
+    background-color: fade(@primary, 10%);
+  }
+}

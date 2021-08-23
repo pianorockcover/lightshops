@@ -1,0 +1,26 @@
+mixin product(options)
+    .product(class = options.inFavourite ? "product-in-favourite" : null)
+        .product-content
+            .product-favourite-icon
+            .product-image-wrapper
+                .bi.bi-zoom-in.product-zoom-icon
+                img.product-image(src=options.image, alt=options.name)
+            .product-category(title= options.category)= options.category
+            .product-title(title= options.name)= options.name
+            .product-rate
+                - for (var i = 0; i < 5; ++i) {
+                    - if (i < options.rate) {
+                        .bi.bi-star-fill.product-rate-star
+                    - } else {
+                        .bi.bi-star.product-rate-star
+                    - }
+                - }
+            .product-price= options.price
+            .product-buttons
+                .btn.btn-secondary
+                    .bi.bi-bag 
+                    | Buy now
+                .btn.btn-outlined
+                    .bi.bi-cart 
+                    | Add to cart
+

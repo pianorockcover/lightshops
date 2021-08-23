@@ -1,0 +1,29 @@
+include ../mixins/product/product.pug
+
+.section
+    .container
+        .section-title Top Sales 
+        .top-sales
+            +product({
+                name: "Product Short Name",
+                category: "Category",
+                rate: 3,
+                price: "$9.00",
+                image: "images/backpack-1.png",
+                inFavourite: true
+            })
+            +product({
+                name: "Product Short Name",
+                category: "Category",
+                rate: 3,
+                price: "$9.00",
+                image: "images/backpack-1.png"
+            })
+            +product({
+                name: "Product Short Name",
+                category: "Category",
+                rate: 3,
+                price: "$9.00",
+                image: "images/backpack-1.png"
+            })
+
