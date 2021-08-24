@@ -28,3 +28,13 @@ const swiper = new Swiper("#mainSlider", {
     el: ".swiper-scrollbar",
   },
 });
+
+const topSalesSlider = new Swiper(".products-slider > .swiper-container", {
+  slidesPerView: 5,
+  spaceBetween: 5,
+
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
+  },
+});

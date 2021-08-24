@@ -3,7 +3,7 @@ include ../../mixins/logo.pug
     .container
         .navbar-top
             +logo("white")
-            button.btn-transparent.btn-open-catalog
+            button.btn-secondary.btn-open-catalog
                 span.bi.bi-list-ul
                 | Catalog
             .search-field
@@ -17,8 +17,9 @@ include ../../mixins/logo.pug
                 button.btn-transparent
                     span.bi.bi-person-circle
                     | Sign In
-                button.btn-transparent.btn-only-icon
+                button.btn-transparent.btn-only-icon.btn-favourites
                     span.bi.bi-heart
+                    div.amount-label(data-in-favourite-amount)
                 button.btn-transparent
                     span.bi.bi-cart
                     | Cart

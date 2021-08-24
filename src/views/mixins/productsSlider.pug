@@ -1,0 +1,140 @@
+include ../mixins/product/product.pug
+
+- const getRandomRate = () => Math.random() * 5;
+
+mixin productsSlider(title)
+    .section.products-slider-section
+        .container
+            .section-title= title
+            .products-slider
+                .swiper-container
+                    .swiper-wrapper
+                        .swiper-slide
+                            +product({
+                                id: 1,
+                                name: "Product Short Name",
+                                category: "Category",
+                                rate: getRandomRate(),
+                                price: "$9.00",
+                                image: "images/backpack-1.png",
+                                labels: [
+                                    {
+                                        class: "bg-contrast",
+                                        text: "Some label"
+                                    }
+                                ]
+                            })
+                        .swiper-slide
+                            +product({
+                                id: 2,
+                                name: "Product Short Name",
+                                category: "Category",
+                                rate: getRandomRate(),
+                                price: "$9.00",
+                                image: "images/watch-1.png",
+                                labels: [
+                                    {
+                                        class: "bg-warning",
+                                        text: "10% Sale"
+                                    }
+                                ]
+                            })
+                        .swiper-slide
+                            +product({
+                                id: 3,
+                                name: "Product Short Name",
+                                category: "Category",
+                                rate: getRandomRate(),
+                                price: "$9.00",
+                                image: "images/headset-1.png"
+                            })
+                        .swiper-slide
+                            +product({
+                                id: 4,
+                                name: "Product Short Name",
+                                category: "Category",
+                                rate: getRandomRate(),
+                                price: "$9.00",
+                                image: "images/headset-1.png"
+                            })
+                        .swiper-slide
+                            +product({
+                                id: 5,
+                                name: "Product Short Name",
+                                category: "Category",
+                                rate: getRandomRate(),
+                                price: "$9.00",
+                                image: "images/backpack-1.png",
+                                labels: [
+                                    {
+                                        class: "bg-contrast",
+                                        text: "Some label"
+                                    }
+                                ]
+                            })
+                        .swiper-slide
+                            +product({
+                                id: 6,
+                                name: "Product Short Name",
+                                category: "Category",
+                                rate: getRandomRate(),
+                                price: "$9.00",
+                                image: "images/watch-1.png",
+                                labels: [
+                                    {
+                                        class: "bg-warning",
+                                        text: "10% Sale"
+                                    }
+                                ]
+                            })
+                        .swiper-slide
+                            +product({
+                                id: 7,
+                                name: "Product Short Name",
+                                category: "Category",
+                                rate: getRandomRate(),
+                                price: "$9.00",
+                                image: "images/watch-1.png",
+                                labels: [
+                                    {
+                                        class: "bg-warning",
+                                        text: "10% Sale"
+                                    }
+                                ]
+                            })
+                        .swiper-slide
+                            +product({
+                                id: 8,
+                                name: "Product Short Name",
+                                category: "Category",
+                                rate: getRandomRate(),
+                                price: "$9.00",
+                                image: "images/headset-1.png"
+                            })
+                        .swiper-slide
+                            +product({
+                                id: 9,
+                                name: "Product Short Name",
+                                category: "Category",
+                                rate: getRandomRate(),
+                                price: "$9.00",
+                                image: "images/headset-1.png"
+                            })
+                        .swiper-slide
+                            +product({
+                                id: 10,
+                                name: "Product Short Name",
+                                category: "Category",
+                                rate: getRandomRate(),
+                                price: "$9.00",
+                                image: "images/backpack-1.png",
+                                labels: [
+                                    {
+                                        class: "bg-contrast",
+                                        text: "Some label"
+                                    }
+                                ]
+                            })
+                .navigation-btns
+                    .swiper-button-prev
+                    .swiper-button-next

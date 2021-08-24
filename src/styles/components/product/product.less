@@ -2,8 +2,6 @@
 @import "../buttons/shadowHover.less";
 
 @productClass: product;
-@width: 285px;
-@contentWidth: 250px;
 @height: 340px;
 @imageHeight: 200px;
 
@@ -17,10 +15,8 @@
 }
 
 .@{productClass} {
-    width: @width;
+    width: 100%;
     height: @height;
-    margin-right: 10px;
-    margin-bottom: 10px;
     position: relative;
 
     &-favourite-icon {
@@ -59,18 +55,21 @@
         top: 0px;
         left: 0px;
         width: 100%;
-        width: @contentWidth;
-        .shadow-hover();
+        transition: border-color .2s ease-in-out;
+
+        &:hover {
+            border-color: @secondary;
+        }
     }
 
     &-image-wrapper {
         display: flex;
-        align-items: center;
         justify-content: center;
         overflow: hidden;
         margin-bottom: 10px;
         height: @imageHeight;
         position: relative;
+        transition: transform .5s ease-in-out;
 
         .@{productClass}-image {
             max-width: 100%;
@@ -85,8 +84,9 @@
             font-size: 23px;
             padding: 10px;
             border-radius: 100%;
-            width: 28px;
-            height: 28px;
+            width: 45px;
+            height: 45px;
+            top: calc(50% - 14px);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -144,14 +144,43 @@
         justify-content: space-between;
     }
 
+    &-labels {
+        position: absolute;
+        top: 10px;
+        left: -1px;
+        z-index: 3;
+
+        .@{productClass}-label {
+            padding: 10px;
+            font-weight: 500;
+            border-top-right-radius: 5px;
+            border-bottom-right-radius: 5px;
+            margin-bottom: 7px;
+            width: fit-content;
+        }
+    }
+
     &:hover {
         .@{productClass}-buttons {
             display: flex;
+            flex-direction: column;
             margin-top: 15px;
+
+            .btn {
+                width: 100%;
+
+                &:not(:nth-last-child(1)) {
+                    margin-bottom: 10px;
+                }
+            }
         }
 
         .@{productClass}-zoom-icon {
             opacity: 1;
+        }
+
+        .@{productClass}-image-wrapper {
+            transform: scale(1.05);
         }
     }
 }
