@@ -1,9 +1,9 @@
-include ../mixins/product/product.pug
+include product.pug
 
 mixin productsSlider(title, id)
     .section.simple-slider-section
         .container
-            .section-title= title
+            h2.section-title= title
             .simple-slider(id= id data-slides-per-view=5 data-space-between=5)
                 .swiper-container
                     .swiper-wrapper

@@ -4,7 +4,7 @@ include views/partials/header/header.pug
     .container
         .row
             .col-xl-9
-                include views/partials/mainSlider.pug
+                +mainSlider()
             .col-xl-3
                 +sale-block(
                     "bg-green-rgadient",
@@ -25,9 +25,7 @@ include views/partials/header/header.pug
 
 +productsSlider("Top Sales", "topSales")
 
-include views/partials/categories.pug
-
-//- ...
++categories()
 
 .container
     .row
@@ -50,4 +48,4 @@ include views/partials/categories.pug
 +productsSlider("Best Sellers", "bestSellers")
 
 
-include views/partials/footer.pug
+include views/partials/footer/footer.pug

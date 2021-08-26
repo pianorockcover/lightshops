@@ -39,7 +39,7 @@ $("[data-toggle]").each((_, el) => {
     return;
   }
 
-  element.on("mouseenter", () => {
+  element.on("mouseover", () => {
     target.addClass(showClass);
     target.removeClass(hideClass);
   });
