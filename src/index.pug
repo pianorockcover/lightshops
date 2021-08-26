@@ -1,13 +1,22 @@
 include views/partials/header/header.pug
 
 include views/partials/populars.pug
-
 include views/mixins/productsSlider.pug
 
 +productsSlider("Top Sales", "topSales")
 
 include views/partials/categories.pug
 
+//- ...
+
+.container
+    .row
+        .col-xl-2
+        .col-xl-10
+            .catalog-layout-4
+                - for (let i = 0; i < 10; i++) {
+                    +product()
+                - }
 
 +productsSlider("Best Sellers", "bestSellers")
 

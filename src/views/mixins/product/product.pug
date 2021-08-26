@@ -1,4 +1,19 @@
-mixin product(options)
+mixin product()
+    -
+        const randomInt = (min, max) =>  Math.trunc(Math.random() * (max - min) + min);
+        const randomElem = (items) =>  items[Math.floor(Math.random() * items.length)];
+
+        const images = ["images/backpack-1.png", "images/watch-1.png", "images/headset-1.png"];
+
+        let options = {};
+        options.id = +new Date();
+        options.name = "Product Short Name";
+        options.category = "Category";
+        options.rate = randomInt(0, 5);
+        options.price = `$${randomInt(9, 20)}.00`;
+        options.image = randomElem(images);
+        options.labels = options.id % 2 === 0 ? [] : options.id % 5 === 0 ? [{ class: "bg-warning", text: "10% Sale" }] : [{ class: "bg-contrast", text: "Some label" }];
+
     .product(data-product-id=options.id)
         .product-content
             .product-labels
