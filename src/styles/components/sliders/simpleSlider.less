@@ -1,0 +1,50 @@
+@import "../../variables.less";
+@import "./sliderNavButons.less";
+
+@simpleSliderClass: simple-slider;
+
+.@{simpleSliderClass}-section {
+    padding-bottom: 0px;
+    padding-top: 0px;
+}
+
+.@{simpleSliderClass} {
+    position: relative;
+
+    .swiper-container {
+        padding-bottom: 60px;
+    }
+
+    .swiper-button-next,
+    .swiper-button-prev {
+        .sliderNavButons();
+        background: lighten(@secondary, 20%);
+        box-shadow: 0 0 10px 1px #e2e2e2;
+        color: #ffffff;
+        position: absolute;
+        top: calc(50% - 35px);
+        z-index: 100;
+        visibility: hidden;
+
+        &:hover {
+            background: lighten(@secondary, 20%);
+        }
+    }
+
+    .swiper-button-prev {
+        left: 1px;
+    }
+
+    .swiper-button-next {
+        right: 1px;
+    }
+
+    &:hover {
+
+        .swiper-button-next,
+        .swiper-button-prev {
+            visibility: visible;
+        }
+    }
+
+}

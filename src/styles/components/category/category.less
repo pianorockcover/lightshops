@@ -1,0 +1,47 @@
+@import "../../variables.less";
+
+@categoryClassName: category;
+
+.@{categoryClassName} {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-decoration: none !important;
+    width: 150px;
+    color: @textColor  !important;
+
+    &-image-wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #ffffff;
+        border-radius: 100%;
+        padding: 20px;
+        height: 150px;
+        margin-bottom: 15px;
+        transition: box-shadow .2s ease-in-out;
+
+        .@{categoryClassName}-image {
+            width: 100%;
+            height: auto;
+        }
+    }
+
+    &-name {
+        font-weight: 500;
+        font-size: 18px;
+        text-transform: uppercase;
+        transition: color .2s ease-in-out;
+    }
+
+    &:hover {
+        .@{categoryClassName}-image-wrapper {
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1), 0 1px 20px rgba(0, 0, 0, 0.25);
+        }
+
+        .@{categoryClassName}-name {
+            color: @secondary;
+        }
+    }
+}
