@@ -2,11 +2,11 @@ include ../mixins/product/product.pug
 
 - const getRandomRate = () => Math.random() * 5;
 
-mixin productsSlider(title)
-    .section.products-slider-section
+mixin productsSlider(title, id)
+    .section.simple-slider-section
         .container
             .section-title= title
-            .products-slider
+            .simple-slider(id= id data-slides-per-view=5 data-space-between=5)
                 .swiper-container
                     .swiper-wrapper
                         .swiper-slide

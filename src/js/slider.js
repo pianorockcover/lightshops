@@ -3,6 +3,7 @@ import SwiperCore, {
   Pagination
 } from "swiper/core";
 import Swiper from "swiper/bundle";
+import $ from "jquery";
 
 SwiperCore.use([Navigation, Pagination]);
 
@@ -29,12 +30,19 @@ const swiper = new Swiper("#mainSlider", {
   },
 });
 
-const topSalesSlider = new Swiper(".products-slider > .swiper-container", {
-  slidesPerView: 5,
-  spaceBetween: 5,
+// Simple Slider
+$(".simple-slider").each((_, element) => {
+  const sliderId = `#${$(element).attr("id")}`;
+  const slidesPerView = $(element).data("slides-per-view");
+  const spaceBetween = $(element).data("space-between");
 
-  navigation: {
-    nextEl: ".swiper-button-next",
-    prevEl: ".swiper-button-prev",
-  },
+  new Swiper(`${sliderId} > .swiper-container`, {
+    slidesPerView,
+    spaceBetween,
+
+    navigation: {
+      nextEl: `${sliderId} .swiper-button-next`,
+      prevEl: `${sliderId} .swiper-button-prev`,
+    },
+  });
 });
