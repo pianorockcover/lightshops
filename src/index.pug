@@ -1,7 +1,27 @@
 include views/partials/header/header.pug
 
-include views/partials/populars.pug
-include views/mixins/productsSlider.pug
+.popular
+    .container
+        .row
+            .col-xl-9
+                include views/partials/mainSlider.pug
+            .col-xl-3
+                +sale-block(
+                    "bg-green-rgadient",
+                    "Free sertificates",
+                    "For you and your loved ones!",
+                    "#",
+                    "Order now",
+                    "images/gift.png",
+                    "Sertificate Icon")
+                +sale-block(
+                    "bg-orange-rgadient",
+                    "Choose a healthy lifestyle",
+                    "For the whole family",
+                    "#",
+                    "Buy",
+                    "images/garden.png",
+                    "Sertificate Icon")
 
 +productsSlider("Top Sales", "topSales")
 
@@ -17,6 +37,15 @@ include views/partials/categories.pug
                 - for (let i = 0; i < 10; i++) {
                     +product()
                 - }
+
+.container
+    .row
+        .col-xl-10
+            .catalog-layout-4
+                - for (let i = 0; i < 10; i++) {
+                    +product()
+                - }
+        .col-xl-2
 
 +productsSlider("Best Sellers", "bestSellers")
 

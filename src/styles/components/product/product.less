@@ -18,6 +18,7 @@
     width: 100%;
     height: @height;
     position: relative;
+    z-index: 1;
 
     &-favourite-icon {
         color: @contrast;
@@ -161,6 +162,8 @@
     }
 
     &:hover {
+        z-index: 2;
+
         .@{productClass}-buttons {
             display: flex;
             flex-direction: column;
