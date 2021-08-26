@@ -32,17 +32,13 @@ include views/partials/header/header.pug
         .col-xl-2
         .col-xl-10
             .catalog-layout-4
-                - for (let i = 0; i < 10; i++) {
-                    +product()
-                - }
+                +loop("product", 12)
 
 .container
     .row
         .col-xl-10
             .catalog-layout-4
-                - for (let i = 0; i < 10; i++) {
-                    +product()
-                - }
+                +loop("product", 10)
         .col-xl-2
 
 +productsSlider("Best Sellers", "bestSellers")
