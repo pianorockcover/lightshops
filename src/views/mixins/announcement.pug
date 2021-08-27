@@ -1,5 +1,7 @@
 mixin announcement(options)
-    - const className = options.isBright ? "announcement-bright" : "";
+    -
+        let className = options.isBright ? "announcement-bright" : "";
+        className += options.fullHeight ? " announcement-full-height" : "";
     a.announcement(href="#" class= className)
         .announcement-image-wrapper
             img.announcement-image(src= options.image alt= options.fisrtTitle)
