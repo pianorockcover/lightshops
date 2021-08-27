@@ -1,18 +1,14 @@
 @import "../../variables.less";
 @import "./sliderNavButons.less";
+@import "../section.less";
 
 @simpleSliderClass: simple-slider;
-
-.@{simpleSliderClass}-section {
-    padding-bottom: 0px;
-    padding-top: 0px;
-}
 
 .@{simpleSliderClass} {
     position: relative;
 
     .swiper-container {
-        padding-bottom: 60px;
+        padding-bottom: @sectionMarginBottom;
     }
 
     .swiper-button-next,

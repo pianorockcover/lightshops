@@ -1,6 +1,6 @@
 include views/partials/header/header.pug
 
-.popular
+.section
     .container
         .row
             .col-xl-9
@@ -25,26 +25,41 @@ include views/partials/header/header.pug
 
 +productsSlider("Top Sales", "topSales")
 
-+categories()
+.section
+    +categories()
 
-.container
-    .row
-        .col-xl-2
-            +announcement("New Collection",
-                "TRENDING House Utensil",
-                "Shop Now",
-                "images/blender.jpeg")
+.section
+    .container
+        +titleLink("Best Sellers", "More Products")
+        .row
+            .col-xl-3
+                +announcement({
+                    fisrtTitle: "New Collection", 
+                    secondTitle: "Almost FREE Blender",
+                    btnText : "Shop Now",
+                    image: "images/blender.jpeg",
+                    isBright: true,
+                    btnClass: "btn-contrast"})
+            .col-xl-9
+                .catalog-layout-4
+                    +loop("product", 8)
 
-        .col-xl-10
-            .catalog-layout-4
-                +loop("product", 8)
+.section
+    .container
+        +titleLink("More Best Sellers", "More Products")
+        .row
+            .col-xl-9
+                .catalog-layout-4
+                    +loop("product", 8)
+            .col-xl-3
+                +announcement({
+                    fisrtTitle: "New Collection", 
+                    secondTitle: "Summer trends are waiting",
+                    btnText : "Shop Now",
+                    image: "images/purchases.jpeg",
+                    isBright: false,
+                    btnClass: "btn-primary"})
 
-.container
-    .row
-        .col-xl-10
-            .catalog-layout-4
-                +loop("product", 10)
-        .col-xl-2
 
 +productsSlider("Best Sellers", "bestSellers")
 

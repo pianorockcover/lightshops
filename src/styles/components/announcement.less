@@ -1,8 +1,15 @@
+@import "../variables.less";
+
 @announcementClassName: announcement;
 
-.@{announcementClassName} {
+.announcement(@color) {
     position: relative;
     height: 100%;
+    color: @color  !important;
+    border-radius: 10px;
+    overflow: hidden;
+    display: block;
+    text-decoration: none !important;
 
     &-image-wrapper {
         position: absolute;
@@ -14,10 +21,99 @@
         display: flex;
         align-items: flex-start;
         justify-content: center;
+
+        &:before {
+            content: " ";
+            display: block;
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            width: 100%;
+            height: 100%;
+            z-index: 2;
+            transition: opacity .2s ease-in-out;
+        }
+
+        .@{announcementClassName}-image {
+            position: relative;
+            z-index: 1;
+            transition: transform .4s ease-in-out;
+        }
+
+    }
+
+    &:hover {
+        .@{announcementClassName}-image {
+            transform: scale(1.1);
+        }
     }
 
     &-content {
+        padding: 55px 25px 35px 25px;
         position: relative;
         z-index: 2;
+    }
+
+    &-first-title {
+        font-size: 20px;
+        text-transform: uppercase;
+        font-weight: 300;
+        margin-bottom: 35px;
+        position: relative;
+
+        &:after {
+            content: " ";
+            display: block;
+            width: 90px;
+            height: 4px;
+            background-color: @color;
+            margin-top: 10px;
+        }
+    }
+
+    &-second-title {
+        font-size: 35px;
+        margin-bottom: 25px;
+        font-weight: 500;
+    }
+}
+
+.@{announcementClassName} {
+    .announcement(@textColor);
+
+    & .@{announcementClassName}-image-wrapper {
+        &:before {
+            opacity: 0.2;
+            background: radial-gradient(circle at center, rgba(255, 255, 255, 0.15) 0, rgba(255, 255, 255, 0.55), rgba(255, 255, 255, 0.7) 100%);
+        }
+    }
+
+    &:hover .@{announcementClassName}-image-wrapper {
+        &:before {
+            opacity: 0.4;
+        }
+    }
+}
+
+.@{announcementClassName}-bright {
+    .announcement(#ffffff);
+
+    & .@{announcementClassName}-first-title {
+        &:after {
+            background-color: #ffffff;
+        }
+    }
+
+    & .@{announcementClassName}-image-wrapper {
+        &:before {
+            opacity: 0.3;
+            background: radial-gradient(circle at center, rgba(255, 255, 255, 0.05) 0, rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.7) 100%);
+        }
+    }
+
+    &:hover .@{announcementClassName}-image-wrapper {
+        &:before {
+            opacity: 0.55;
+        }
     }
 }
