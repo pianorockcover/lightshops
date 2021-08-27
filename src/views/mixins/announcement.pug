@@ -1,0 +1,8 @@
+mixin announcement(fisrtTitle, secondTitle, btnText, image)
+    .announcement
+        .announcement-image-wrapper
+            img.announcement-image(src= image alt= fisrtTitle)
+        .announcement-content
+            .announcement-first-title= fisrtTitle
+            .announcement-second-title= fisrtTitle
+            .btn.btn-outlined= btnText

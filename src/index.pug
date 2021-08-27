@@ -30,9 +30,14 @@ include views/partials/header/header.pug
 .container
     .row
         .col-xl-2
+            +announcement("New Collection",
+                "TRENDING House Utensil",
+                "Shop Now",
+                "images/blender.jpeg")
+
         .col-xl-10
             .catalog-layout-4
-                +loop("product", 12)
+                +loop("product", 8)
 
 .container
     .row
