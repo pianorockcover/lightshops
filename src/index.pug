@@ -30,20 +30,30 @@ include views/partials/header/header.pug
         .row
             .col-xl-6
                 +announcement({
-                    fisrtTitle: "New Collection",   
-                    secondTitle: "Almost FREE Blender",
-                    btnText : "Shop Now",
                     image: "images/watch.jpeg",
-                    btnClass: "btn-contrast"
+                    fullHeight: true,
+                    mainTitle: `
+                        <div class="announcement-main-title-smaller">Be ready to <b class="text-contrast">20% OFF</b></div>
+                        for all <b>TECHNICAL BRENDS</b>
+                    `,
+                    description: `
+                        Just From <b>$90.00</b>
+                    `,
                 })
             .col-xl-6
                 +announcement({
-                    fisrtTitle: "New Collection", 
-                    secondTitle: "Almost FREE Blender",
-                    btnText : "Shop Now",
-                    image: "images/shampoo.jpeg",
+                    image: "images/scrub.jpeg",
+                    fullHeight: true,
                     isBright: true,
-                    btnClass: "btn-contrast"
+                    mainTitle: `
+                        <div class="announcement-main-title-smaller">It's time to</div>
+                        <b>SAVE THE PLANET</b>
+                    `,
+                    description: `
+                        <div class="text-thin">CHOOSE ORGANIC COSMETIC</div>
+                    `,
+                    btnText : "Shop Now",
+                    btnClass: "btn-secondary"
                 })
 
 
@@ -56,8 +66,8 @@ include views/partials/header/header.pug
         .row
             .col-xl-3
                 +announcement({
-                    fisrtTitle: "New Collection", 
-                    secondTitle: "Almost FREE Blender",
+                    subTitle: "New Collection", 
+                    mainTitle: "<b>Almost FREE Blender</b>",
                     btnText : "Shop Now",
                     image: "images/blender.jpeg",
                     isBright: true,
@@ -77,8 +87,8 @@ include views/partials/header/header.pug
                     +loop("product", 8)
             .col-xl-3
                 +announcement({
-                    fisrtTitle: "New Collection", 
-                    secondTitle: "Summer trends are waiting",
+                    subTitle: "New Collection", 
+                    mainTitle: "<b>Summer trends are waiting</b>",
                     btnText : "Shop Now",
                     image: "images/purchases.jpeg",
                     isBright: false,

@@ -4,8 +4,13 @@ mixin announcement(options)
         className += options.fullHeight ? " announcement-full-height" : "";
     a.announcement(href="#" class= className)
         .announcement-image-wrapper
-            img.announcement-image(src= options.image alt= options.fisrtTitle)
-        .announcement-content
-            .announcement-first-title= options.fisrtTitle
-            .announcement-second-title= options.secondTitle
-            .btn(class= options.btnClass)= options.btnText
+            img.announcement-image(src= options.image alt= options.mainTitle)
+        .announcement-area
+            if (options.subTitle)
+                .announcement-sub-title !{options.subTitle}
+            if (options.mainTitle)
+                .announcement-main-title !{options.mainTitle}
+            if (options.description)
+                .announcement-description !{options.description}
+            if (options.btnText)
+                .btn(class= options.btnClass)= options.btnText

@@ -1,11 +1,11 @@
 @import "../variables.less";
 
-.text-contrast {
-  color: @contrast;
+.text-thin {
+  font-weight: 300;
+}
 
-  &:hover {
-    color: lighten(@contrast, 10%);
-  }
+.text-uppercace {
+  text-transform: uppercase;
 }
 
 .text-white {
@@ -17,9 +17,17 @@
   background: @primary;
 }
 
+.text-primary {
+  color: @primary;
+}
+
 .bg-secondary {
   color: #ffffff;
   background: @secondary;
+}
+
+.text-secondary {
+  color: @secondary;
 }
 
 .bg-contrast {
@@ -27,9 +35,17 @@
   background: @contrast;
 }
 
+.text-contrast {
+  color: @contrast;
+}
+
 .bg-warning {
   color: #ffffff;
   background: @warning;
+}
+
+.text-warning {
+  color: @warning;
 }
 
 // aquamarine

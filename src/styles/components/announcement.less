@@ -49,13 +49,13 @@
         }
     }
 
-    &-content {
+    &-area {
         padding: 55px 25px 55px 25px;
         position: relative;
         z-index: 2;
     }
 
-    &-first-title {
+    &-sub-title {
         font-size: 20px;
         text-transform: uppercase;
         font-weight: 300;
@@ -72,10 +72,18 @@
         }
     }
 
-    &-second-title {
+    &-main-title {
         font-size: 35px;
         margin-bottom: 25px;
-        font-weight: 500;
+    }
+
+    &-main-title-smaller {
+        font-size: 30px;
+    }
+
+    &-description {
+        font-size: 23px;
+        margin-bottom: 25px;
     }
 
     &.@{announcementClassName}-full-height {
@@ -103,7 +111,7 @@
 .@{announcementClassName}-bright {
     .announcement(#ffffff);
 
-    & .@{announcementClassName}-first-title {
+    & .@{announcementClassName}-sub-title {
         &:after {
             background-color: #ffffff;
         }
