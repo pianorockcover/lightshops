@@ -36,7 +36,6 @@
         .@{announcementClassName}-image {
             position: relative;
             z-index: 1;
-            min-width: 100%;
             min-height: 100%;
             transition: transform .4s ease-in-out;
         }
@@ -86,6 +85,26 @@
         margin-bottom: 25px;
     }
 
+    &-tags {
+        margin-bottom: 25px;
+    }
+
+    &-tag {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 5px 10px 5px 10px;
+        font-size: 12px;
+        border-radius: 20px;
+        text-transform: uppercase;
+        margin: 0 5px 10px 0;
+        border: 1px solid;
+    }
+
+    &-tag-icon {
+        margin-right: 5px;
+    }
+
     &.@{announcementClassName}-full-height {
         height: 100%;
     }
@@ -128,5 +147,10 @@
         &:before {
             opacity: 0.55;
         }
+    }
+
+    & .@{announcementClassName}-tag {
+        border: none;
+        background: rgba(255, 255, 255, 0.3);
     }
 }

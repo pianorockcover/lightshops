@@ -39,6 +39,11 @@ include views/partials/header/header.pug
                     description: `
                         Just From <b>$90.00</b>
                     `,
+                    tags: [
+                        "study",
+                        "technical",
+                        "work",
+                    ]
                 })
             .col-xl-6
                 +announcement({
@@ -72,7 +77,13 @@ include views/partials/header/header.pug
                     image: "images/blender.jpeg",
                     isBright: true,
                     fullHeight: true,
-                    btnClass: "btn-contrast"
+                    btnClass: "btn-contrast",
+                    tags: [
+                        "home",
+                        "technical",
+                        "kitchen",
+                        "natural"
+                    ]
                 })
             .col-xl-9
                 .catalog-layout-4
@@ -80,7 +91,7 @@ include views/partials/header/header.pug
 
 .section
     .container
-        +titleLink("More Best Sellers", "More Products")
+        +titleLink("Technological innovations", "More Products")
         .row
             .col-xl-9
                 .catalog-layout-4
@@ -93,11 +104,22 @@ include views/partials/header/header.pug
                     image: "images/purchases.jpeg",
                     isBright: false,
                     fullHeight: true,
-                    btnClass: "btn-primary"
+                    btnClass: "btn-primary",
+                    tags: [
+                        "study",
+                        "computers",
+                        "summer"
+                    ]
                 })
 
 
-+productsSlider("Best Sellers", "bestSellers")
++productsSlider("Your Recent Views", "recentViews")
 
+.section
+    .container
+        .section-title Popular Brands
+        +brands(12)
+
++articlesSlider("Our blog", "More articles", "ourBlog")
 
 include views/partials/footer/footer.pug

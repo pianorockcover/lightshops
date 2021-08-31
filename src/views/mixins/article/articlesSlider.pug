@@ -1,0 +1,16 @@
+include thumbnail.pug
+include ../titleLink.pug
+
+mixin articlesSlider(title, linkTitle, id)
+    .section.section-slider
+        .container
+            +titleLink(title, linkTitle)
+            .simple-slider(id=id data-slides-per-view=4 data-space-between=10)
+                .swiper-container
+                    .swiper-wrapper
+                        - for (let i = 0; i < 20; i++) {
+                            .swiper-slide
+                                +articleThumbnail()
+                        - }
+                .swiper-button-prev
+                .swiper-button-next

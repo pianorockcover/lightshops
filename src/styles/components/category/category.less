@@ -41,7 +41,8 @@
         font-weight: 500;
         font-size: 18px;
         text-transform: uppercase;
-        transition: color .2s ease-in-out;
+        transition: border-bottom-color .2s ease-in-out;
+        border-bottom: 2px solid transparent;
     }
 
     &:hover {
@@ -50,7 +51,7 @@
         }
 
         .@{categoryClassName}-name {
-            color: @secondary;
+            border-bottom-color: @textColor;
         }
     }
 }

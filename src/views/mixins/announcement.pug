@@ -12,5 +12,12 @@ mixin announcement(options)
                 .announcement-main-title !{options.mainTitle}
             if (options.description)
                 .announcement-description !{options.description}
+            if (options.tags)
+                .announcement-tags
+                    - for (tag of options.tags) {
+                        .announcement-tag
+                            span.bi.bi-tag-fill.announcement-tag-icon
+                            | #{tag}
+                    - }
             if (options.btnText)
                 .btn(class= options.btnClass)= options.btnText
