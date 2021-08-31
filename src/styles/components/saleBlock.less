@@ -11,6 +11,11 @@
     justify-content: space-between;
     color: #ffffff;
     text-decoration: none !important;
+    flex: 1;
+
+    &:nth-last-child(1) {
+        margin-bottom: 0px;
+    }
 
     .shadow-hover();
 
@@ -51,4 +56,10 @@
     .link {
         .btn(#ffffff, @textColor);
     }
+}
+
+.sales-layout {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
 }

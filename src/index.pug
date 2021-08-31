@@ -6,22 +6,23 @@ include views/partials/header/header.pug
             .col-xl-9
                 +mainSlider()
             .col-xl-3
-                +sale-block(
-                    "bg-green-rgadient",
-                    "Free sertificates",
-                    "For you and your loved ones!",
-                    "#",
-                    "Order now",
-                    "images/gift.png",
-                    "Sertificate Icon")
-                +sale-block(
-                    "bg-orange-rgadient",
-                    "Choose a healthy lifestyle",
-                    "For the whole family",
-                    "#",
-                    "Buy",
-                    "images/garden.png",
-                    "Sertificate Icon")
+                .sales-layout 
+                    +sale-block(
+                        "bg-green-rgadient",
+                        "Free sertificates",
+                        "For you and your loved ones!",
+                        "#",
+                        "Order now",
+                        "images/gift.png",
+                        "Sertificate Icon")
+                    +sale-block(
+                        "bg-orange-rgadient",
+                        "Choose a healthy lifestyle",
+                        "For the whole family",
+                        "#",
+                        "Buy",
+                        "images/garden.png",
+                        "Sertificate Icon")
 
 +productsSlider("Top Sales", "topSales")
 

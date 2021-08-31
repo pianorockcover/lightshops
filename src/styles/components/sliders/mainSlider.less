@@ -2,7 +2,7 @@
 @import "./sliderNavButons.less";
 
 @sliderHeight: 305px;
-@sliderPadding: 80px;
+@sliderPadding: 100px;
 
 .main-slider-wrapper {
   background-color: @greyColor;
@@ -11,7 +11,6 @@
   overflow: hidden;
   border-radius: 20px;
   overflow: hidden;
-  background-image: url(../images/main-slider/pattern.png);
 
   .container {
     position: relative;
@@ -23,6 +22,13 @@
     align-items: center;
     justify-content: flex-start;
     height: @sliderHeight;
+    position: relative;
+
+    .main-slider-bg-image {
+      position: absolute;
+      z-index: 1;
+      width: 100%;
+    }
 
     .main-slider-content {
       display: flex;
@@ -36,7 +42,9 @@
       align-items: center;
       text-decoration: none !important;
       position: relative;
+      z-index: 2;
       justify-content: space-between;
+      box-shadow: inset 0px 0px 10px rgb(0 0 0 / 40%);
 
       .anchor(@textColor, @textColor);
 
