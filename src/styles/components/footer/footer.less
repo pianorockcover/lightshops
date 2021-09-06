@@ -1,0 +1,116 @@
+@import "../../variables.less";
+@import "../anchor.less";
+
+@footerClassName: footer;
+
+.@{footerClassName} {
+    background: @primary;
+    color: #ffffff;
+    padding: 50px 0 50px 0;
+    margin-top: 30px;
+
+    &-subscribe {
+        border-radius: 7px;
+        background: linear-gradient(to right, @secondary, lighten(@secondary, 50%));
+        padding: 30px 40px 30px 40px;
+        margin-top: -80px;
+        margin-bottom: 50px;
+        box-shadow: rgb(0 0 0 / 25%) 0px 54px 55px, rgb(0 0 0 / 12%) 0px -12px 30px, rgb(0 0 0 / 12%) 0px 4px 6px, rgb(0 0 0 / 17%) 0px 12px 13px, rgb(0 0 0 / 9%) 0px -3px 5px;
+
+        &-title {
+            display: flex;
+            align-items: flex-start;
+            justify-content: flex-start;
+            width: fit-content;
+
+            &-icon {
+                margin-right: 20px;
+                font-size: 30px;
+            }
+
+            &-main {
+                font-size: 20px;
+                text-transform: uppercase;
+                font-weight: 500;
+                margin-bottom: 5px;
+            }
+
+            &-sub {
+                font-size: 16px;
+                font-weight: 300;
+            }
+        }
+    }
+
+    &-nav {
+        margin-bottom: 20px;
+
+        &-title {
+            font-weight: 500;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+            font-size: 16px;
+        }
+
+        &-link {
+            width: fit-content;
+            .anchor(#cccccc, #ffffff);
+            .anchor-underline-hover(#ffffff, 2px);
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 300;
+
+            &:nth-last-child(1) {
+                margin-bottom: 0px;
+            }
+        }
+    }
+
+    &-contacts {
+        height: 100%;
+        border-left: 1px solid lighten(@primary, 20%);
+    }
+
+    &-phone {
+        .anchor(#ffffff, #ffffff);
+        padding: 15px 20px 15px 20px;
+        font-weight: 500;
+        font-size: 22px;
+        display: flex;
+        align-items: center;
+        margin-bottom: 20px;
+        background: @contrast;
+        transition: background-color .2s ease-in-out;
+
+        &:hover {
+            background: lighten(@contrast, 5%);
+        }
+
+        .bi {
+            margin-right: 10px;
+        }
+    }
+
+    &-contacts-item {
+        display: flex;
+        padding: 15px 20px 15px 20px;
+        align-items: flex-start;
+
+        .bi {
+            font-size: 35px;
+            margin-right: 20px;
+            color: #b0b0b0;
+        }
+
+        &-title {
+            font-size: 16px;
+            margin-bottom: 5px;
+            font-weight: 500;
+        }
+
+        &-link {
+            .anchor(#dbdbdb, #ffffff);
+            .anchor-underline-hover(#ffffff, 2px);
+        }
+    }
+}
