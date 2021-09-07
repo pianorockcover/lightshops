@@ -1,0 +1,28 @@
+include ../../mixins/logo.pug
+
+.header-middle
+    .header-middle-logo-and-slogan
+        +logo() 
+        .header-middle-slogan
+            | Lightweight bootstrap html template
+    .header-middle-search-field
+        .btn-dropdown
+            | All categories
+            span.bi.bi-triangle-fill
+        input.search-field-input(placeholder="Search in...")
+        button.btn-search.btn-only-icon
+            span.bi.bi-search
+    .header-middle-call
+        .header-middle-call-phone
+            span.bi.bi-telephone-fill
+            | +1 (000) 000-00-00
+        .header-middle-call-link
+            | Call me
+    .header-middle-cart
+        .header-middle-cart-icon
+            span.bi.bi-cart
+            span.header-middle-cart-amount 0
+        .header-middle-cart-data
+            | Cart
+            .header-middle-cart-price
+                | $ 100.0

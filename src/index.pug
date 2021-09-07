@@ -1,125 +1,127 @@
 include views/partials/header/header.pug
 
-.section
-    .container
-        .row
-            .col-xl-9
-                +mainSlider()
-            .col-xl-3
-                .sales-layout 
-                    +sale-block(
-                        "bg-green-rgadient",
-                        "Free sertificates",
-                        "For you and your loved ones!",
-                        "#",
-                        "Order now",
-                        "images/gift.png",
-                        "Sertificate Icon")
-                    +sale-block(
-                        "bg-orange-rgadient",
-                        "Choose a healthy lifestyle",
-                        "For the whole family",
-                        "#",
-                        "Buy",
-                        "images/garden.png",
-                        "Sertificate Icon")
+.area
 
-+productsSlider("Top Sales", "topSales")
+    .section
+        .container
+            .row
+                .col-xl-9
+                    +mainSlider()
+                .col-xl-3
+                    .sales-layout 
+                        +sale-block(
+                            "bg-green-rgadient",
+                            "Free sertificates",
+                            "For you and your loved ones!",
+                            "#",
+                            "Order now",
+                            "images/gift.png",
+                            "Sertificate Icon")
+                        +sale-block(
+                            "bg-orange-rgadient",
+                            "Choose a healthy lifestyle",
+                            "For the whole family",
+                            "#",
+                            "Buy",
+                            "images/garden.png",
+                            "Sertificate Icon")
 
-.section
-    .container
-        .row
-            .col-xl-6
-                +announcement({
-                    image: "images/watch.jpeg",
-                    fullHeight: true,
-                    mainTitle: `
-                        <div class="announcement-main-title-smaller">Be ready to <b class="text-contrast">20% OFF</b></div>
-                        for all <b>TECHNICAL BRENDS</b>
-                    `,
-                    description: `
-                        Just From <b>$90.00</b>
-                    `,
-                    tags: [
-                        "study",
-                        "technical",
-                        "work",
-                    ]
-                })
-            .col-xl-6
-                +announcement({
-                    image: "images/scrub.jpeg",
-                    fullHeight: true,
-                    isBright: true,
-                    mainTitle: `
-                        <div class="announcement-main-title-smaller">It's time to</div>
-                        <b>SAVE THE PLANET</b>
-                    `,
-                    description: `
-                        <div class="text-thin">CHOOSE ORGANIC COSMETIC</div>
-                    `,
-                    btnText : "Shop Now",
-                    btnClass: "btn-secondary"
-                })
+    +productsSlider("Top Sales", "topSales")
 
-
-.section
-    +categories()
-
-.section
-    .container
-        +titleLink("Best Sellers", "More Products")
-        .row
-            .col-xl-3
-                +announcement({
-                    subTitle: "New Collection", 
-                    mainTitle: "<b>Almost FREE Blender</b>",
-                    btnText : "Shop Now",
-                    image: "images/blender.jpeg",
-                    isBright: true,
-                    fullHeight: true,
-                    btnClass: "btn-contrast",
-                    tags: [
-                        "home",
-                        "technical",
-                        "kitchen",
-                        "natural"
-                    ]
-                })
-            .col-xl-9
-                .catalog-layout-4
-                    +loop("product", 8)
-
-.section
-    .container
-        +titleLink("Technological innovations", "More Products")
-        .row
-            .col-xl-9
-                .catalog-layout-4
-                    +loop("product", 8)
-            .col-xl-3
-                +announcement({
-                    subTitle: "New Collection", 
-                    mainTitle: "<b>Summer trends are waiting</b>",
-                    btnText : "Shop Now",
-                    image: "images/purchases.jpeg",
-                    isBright: false,
-                    fullHeight: true,
-                    btnClass: "btn-primary",
-                    tags: [
-                        "study",
-                        "computers",
-                        "summer"
-                    ]
-                })
+    .section
+        .container
+            .row
+                .col-xl-6
+                    +announcement({
+                        image: "images/watch.jpeg",
+                        fullHeight: true,
+                        mainTitle: `
+                            <div class="announcement-main-title-smaller">Be ready to <b class="text-contrast">20% OFF</b></div>
+                            for all <b>TECHNICAL BRENDS</b>
+                        `,
+                        description: `
+                            Just From <b>$90.00</b>
+                        `,
+                        tags: [
+                            "study",
+                            "technical",
+                            "work",
+                        ]
+                    })
+                .col-xl-6
+                    +announcement({
+                        image: "images/scrub.jpeg",
+                        fullHeight: true,
+                        isBright: true,
+                        mainTitle: `
+                            <div class="announcement-main-title-smaller">It's time to</div>
+                            <b>SAVE THE PLANET</b>
+                        `,
+                        description: `
+                            <div class="text-thin">CHOOSE ORGANIC COSMETIC</div>
+                        `,
+                        btnText : "Shop Now",
+                        btnClass: "btn-secondary"
+                    })
 
 
-+productsSlider("Your Recent Views", "recentViews")
+    .section
+        +categories()
 
-.section
-    .container
-        +brands(12)
+    .section
+        .container
+            +titleLink("Best Sellers", "More Products")
+            .row
+                .col-xl-3
+                    +announcement({
+                        subTitle: "New Collection", 
+                        mainTitle: "<b>Almost FREE Blender</b>",
+                        btnText : "Shop Now",
+                        image: "images/blender.jpeg",
+                        isBright: true,
+                        fullHeight: true,
+                        btnClass: "btn-contrast",
+                        tags: [
+                            "home",
+                            "technical",
+                            "kitchen",
+                            "natural"
+                        ]
+                    })
+                .col-xl-9
+                    .catalog-layout-4
+                        +loop("product", 8)
 
-+articlesSlider("Our blog", "More articles", "ourBlog")
+    .section
+        .container
+            +titleLink("Technological innovations", "More Products")
+            .row
+                .col-xl-9
+                    .catalog-layout-4
+                        +loop("product", 8)
+                .col-xl-3
+                    +announcement({
+                        subTitle: "New Collection", 
+                        mainTitle: "<b>Summer trends are waiting</b>",
+                        btnText : "Shop Now",
+                        image: "images/purchases.jpeg",
+                        isBright: false,
+                        fullHeight: true,
+                        btnClass: "btn-primary",
+                        tags: [
+                            "study",
+                            "computers",
+                            "summer"
+                        ]
+                    })
 
-include views/partials/footer/footer.pug
+
+    +productsSlider("Your Recent Views", "recentViews")
+
+    .section
+        .container
+            +brands(12)
+
+    +articlesSlider("Our blog", "More articles", "ourBlog")
+
+    include views/partials/footer/footer.pug

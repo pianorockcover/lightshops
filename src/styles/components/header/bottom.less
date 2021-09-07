@@ -1,17 +1,19 @@
 @import "../../components/anchor.less";
 @import "../../variables.less";
 
+@headerBottomClass: header-bottom;
+
 @itemsMargin: 25px;
 
-.navigation {
+.@{headerBottomClass} {
+  padding: 15px 15px;
   display: flex;
   align-items: center;
   justify-content: space-between;
 
-  .link {
+  &-link {
     .anchor(@headerTextColor, @headerTextColor);
     .anchor-underline-hover(@headerTextColor, 2px);
-    font-weight: 500;
 
     .arrow {
       transform: rotate(180deg);
@@ -22,24 +24,22 @@
     }
   }
 
-  .left {
-    .link {
+  &-left {
+    .@{headerBottomClass}-link {
       margin-right: @itemsMargin;
     }
   }
 
-  .right {
-    .link {
+  &-right {
+    .@{headerBottomClass}-link {
       margin-left: @itemsMargin;
 
-      &.daily-sales {
-        .anchor(@headerTextColor, @headerTextColor);
-        .anchor-underline-hover(transparent, 0px);
+      .anchor(@headerTextColor, @contrast);
+      .anchor-underline-hover(transparent, 0px);
 
-        .image {
-          width: 20px;
-          margin-top: -3px;
-        }
+      .image {
+        width: 20px;
+        margin-top: -3px;
       }
     }
   }

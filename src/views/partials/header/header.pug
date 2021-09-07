@@ -10,7 +10,9 @@ head
   link(rel="stylesheet" href="css/style.css")
 
 <body>
-  //- include welcomePanel.pug
-  .header
-    include topPanel.pug
-    include navbar.pug
+  include ../sidebar/sidebar.pug
+  .area
+    .header
+      include top.pug
+      include middle.pug
+      include bottom.pug
