@@ -1,5 +1,11 @@
-mixin category(name, image)
-    a.category(href="#")
-        .category-image-wrapper
-            img.category-image(src=image, alt=name)
-        .category-name= name
+mixin category(name, image, links, slogan)
+    .category
+        .category-content
+            .category-left
+                .category-image-wrapper
+                    img.category-image(src=image, alt=name)
+            .category-right
+                .category-name= name
+                - for (let link of links) {
+                    a.category-link(href="#")= link
+                - }

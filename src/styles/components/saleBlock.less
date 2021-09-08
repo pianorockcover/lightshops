@@ -1,60 +1,47 @@
 @import "../variables.less";
 @import "../components/buttons/button.less";
-@import "./buttons/shadowHover.less";
 
 .sale-block {
-    display: flex;
     margin-bottom: 20px;
-    padding: 16px 15px 16px 15px;
-    border-radius: 10px;
-    align-items: center;
-    justify-content: space-between;
+    border-radius: 5px;
     color: #ffffff;
     text-decoration: none !important;
     flex: 1;
+    background-size: cover;
+    background-position: center 0;
+    overflow: hidden;
+
+    &-content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        height: 100%;
+        padding: 16px 15px 16px 15px;
+        background: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.8));
+    }
 
     &:nth-last-child(1) {
         margin-bottom: 0px;
     }
 
-    .shadow-hover();
-
-    &:hover {
-        .icon {
-
-            animation-duration: .5s;
-            animation-name: swingAnimation;
-            animation-timing-function: ease-in-out;
-        }
-    }
-
-    .title {
+    &-title {
         font-weight: 500;
-        font-size: 16px;
+        font-size: 25px;
         margin-bottom: 10px;
+        font-weight: 700;
     }
 
-    .text {
-        margin-bottom: 15px;
-    }
-
-    .icon {
-        width: 70px;
-        height: 70px;
-        background: #ffffff;
-        border-radius: 100%;
+    &-amount {
+        width: fit-content;
+        padding: 5px 10px;
+        border-radius: 50px;
+        text-transform: uppercase;
+        font-weight: 400;
         display: flex;
         align-items: center;
         justify-content: center;
-        padding: 15px;
-
-        .image {
-            width: 100%;
-        }
-    }
-
-    .link {
-        .btn(#ffffff, @textColor);
+        margin-bottom: 10px;
+        background-color: @secondary;
     }
 }
 

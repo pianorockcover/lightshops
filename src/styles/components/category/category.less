@@ -1,34 +1,21 @@
 @import "../../variables.less";
+@import "../anchor.less";
+@import "../buttons/shadowHover.less";
 
 @categoryClassName: category;
 
 .@{categoryClassName} {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    background: #fff;
     flex-direction: column;
     text-decoration: none !important;
-    width: 150px;
     color: @textColor  !important;
-
-    &-image-wrapper {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        background: #ffffff;
-        border-radius: 100%;
-        padding: 20px;
-        height: 150px;
-        margin-bottom: 15px;
-        transition: box-shadow .2s ease-in-out;
-
-        .@{categoryClassName}-image {
-            width: 100%;
-            height: auto;
-        }
-    }
+    position: relative;
+    z-index: 1;
+    .shadow-hover();
 
     &:hover {
+        z-index: 2;
+
         .@{categoryClassName}-image-wrapper {
 
             animation-duration: .5s;
@@ -37,21 +24,62 @@
         }
     }
 
+    &-content {
+        display: flex;
+        align-items: center;
+        padding: 15px;
+    }
+
+    &-image-wrapper {
+        display: flex;
+        width: 100px;
+        border-radius: 100%;
+        height: 100px;
+        overflow: hidden;
+        padding: 20px;
+        background-color: @greyColor;
+        align-items: center;
+        justify-content: center;
+    }
+
+    &-image {
+        max-width: 100%;
+    }
+
+    &-right {
+        padding-left: 15px;
+    }
+
     &-name {
         font-weight: 500;
         font-size: 18px;
         text-transform: uppercase;
         transition: border-bottom-color .2s ease-in-out;
         border-bottom: 2px solid transparent;
+        margin-bottom: 10px;
+    }
+
+    &-link {
+        .anchor(@textColor, @primary);
+        .anchor-underline-hover(@primary, 1px);
+        margin-right: 10px;
+        margin-bottom: 10px;
+    }
+
+    &-slogan {
+        padding: 15px;
+        border-top: 1px solid @greyColor;
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0px;
+        width: 100%;
+        background-color: #ffffff;
     }
 
     &:hover {
-        .@{categoryClassName}-image-wrapper {
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05), 0 1px 20px rgba(0, 0, 0, 0.15);
-        }
-
-        .@{categoryClassName}-name {
-            border-bottom-color: @textColor;
+        .@{categoryClassName}-slogan {
+            display: block;
         }
     }
 }

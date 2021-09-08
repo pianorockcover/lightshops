@@ -3,7 +3,9 @@ mixin product()
         const randomInt = (min, max) =>  Math.trunc(Math.random() * (max - min) + min);
         const randomElem = (items) =>  items[Math.floor(Math.random() * items.length)];
 
-        const images = ["images/backpack-1.png", "images/watch-1.png", "images/headset-1.png"];
+        const images = ["images/backpack-1.png", "images/watch-1.png",
+        "images/headset-1.png", "images/sneackers.png", "images/jacket.jpg",
+        "images/t-shirt.jpg"];
 
         let options = {};
         options.id = randomInt(100, 999);

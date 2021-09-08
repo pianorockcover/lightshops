@@ -1,11 +1,8 @@
-mixin sale-block(bgClass, title, text, linkHref, linkText, icon, iconAlt)
-    a.sale-block(href=linkHref class=bgClass)
-        .left
-            .title= title
-            .text= text
-            .link
-                .bi.bi-cart
-                = linkText
-        .right
-            .icon
-                img.image(src=icon alt=iconAlt)
+mixin sale-block(title, linkHref, image, imageAlt, amount)
+    -
+        let bgImageStyle = `background-image:url(${image})`;
+        let amountText = `Up to ${amount}% off`;
+    a.sale-block(href=linkHref style=bgImageStyle)
+        .sale-block-content
+            .sale-block-amount= amountText
+            .sale-block-title= title

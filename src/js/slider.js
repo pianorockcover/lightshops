@@ -33,13 +33,24 @@ const swiper = new Swiper("#mainSlider", {
 // Simple Slider
 $(".simple-slider").each((_, element) => {
   const sliderId = `#${$(element).attr("id")}`;
-  const slidesPerView = $(element).data("slides-per-view");
-  const spaceBetween = $(element).data("space-between");
+
+  let breakpoints = {};
+  try {
+    breakpoints = $(element).data("breakpoints");
+    breakpoints = Object.keys(breakpoints)
+      .reduce((prev, cur) => ({
+        ...prev,
+        [Number(cur)]: {
+          slidesPerView: breakpoints[cur].slides,
+          spaceBetween: breakpoints[cur].space,
+        }
+      }), {});
+  } catch (e) {
+    console.error("Can't parse breakpoints", breakpoints);
+  }
 
   new Swiper(`${sliderId} > .swiper-container`, {
-    slidesPerView,
-    spaceBetween,
-
+    breakpoints,
     navigation: {
       nextEl: `${sliderId} .swiper-button-next`,
       prevEl: `${sliderId} .swiper-button-prev`,

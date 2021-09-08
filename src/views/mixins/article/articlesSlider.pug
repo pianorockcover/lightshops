@@ -2,10 +2,23 @@ include thumbnail.pug
 include ../titleLink.pug
 
 mixin articlesSlider(title, linkTitle, id)
+    -
+        let breakpoints = {};
+        let j = 0;
+
+        for (let i = 300; i < 2400; i += 250) {
+            breakpoints[i] = {
+                slides: j,
+                space: 10,
+            }
+
+            j++;
+        }
+        breakpoints = JSON.stringify(breakpoints);
     .section.section-slider
-        .container
+        .container-full
             +titleLink(title, linkTitle)
-            .simple-slider(id=id data-slides-per-view=4 data-space-between=10)
+            .simple-slider(id=id data-breakpoints=breakpoints)
                 .swiper-container
                     .swiper-wrapper
                         - for (let i = 0; i < 20; i++) {

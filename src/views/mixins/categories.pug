@@ -1,14 +1,27 @@
 include ../mixins/category.pug
 
 mixin categories
-    .categories
-        .categories-title Top Categories Of The Month
-        .container
-            +category("Fashion", "images/fashion.png")
-            +category("Sneackers", "images/sneackers.png")
-            +category("Computers", "images/computers.png")
-            +category("Furniture", "images/furniture.png")
-            +category("Sneackers", "images/sneackers.png")
-            +category("Computers", "images/computers.png")
-            +category("Furniture", "images/furniture.png")
-
+    .section
+        .container-full
+            .section-title Top Categories Of The Month
+            .row
+                .col-xl-6.col-xxl-3.pb-3
+                    +category("House and Garden",
+                    "images/gardening.svg",
+                    ["Barbecue and picnic", "Leisure furniture", "Garden equipment", "Leisure furniture",]
+                    )
+                .col-xl-6.col-xxl-3.pb-3
+                    +category("House and Garden",
+                    "images/gardening.svg",
+                    ["Barbecue and picnic", "Leisure furniture", "Garden equipment", "Leisure furniture",]
+                    )
+                .col-xl-6.col-xxl-3.pb-3
+                    +category("House and Garden",
+                    "images/gardening.svg",
+                    ["Barbecue and picnic", "Leisure furniture", "Garden equipment", "Leisure furniture",]
+                    )
+                .col-xl-6.col-xxl-3.pb-3
+                    +category("House and Garden",
+                    "images/gardening.svg",
+                    ["Barbecue and picnic", "Leisure furniture", "Garden equipment", "Leisure furniture",]
+                    )

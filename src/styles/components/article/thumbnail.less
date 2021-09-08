@@ -1,4 +1,5 @@
 @import "../../variables.less";
+@import "../buttons/shadowHover.less";
 
 @articleThumbnailClass: article-thumbnail;
 
@@ -6,10 +7,11 @@
 
 .@{articleThumbnailClass} {
     overflow: hidden;
-    border-radius: 10px;
+    border-radius: 5px;
     max-width: 300px;
-    border: 1px solid #e6e6e6;
     transition: background-color .1s ease-in-out;
+    background-color: #ffffff;
+    .shadow-hover();
 
     &-image-wrapper {
         position: relative;

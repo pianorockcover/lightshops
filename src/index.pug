@@ -1,37 +1,47 @@
 include views/partials/header/header.pug
 
 .area
-
     .section
-        .container
+        .container-full
             .row
-                .col-xl-9
+                .col-xxl-6.col-xl-12.pb-3
                     +mainSlider()
-                .col-xl-3
+                .col-xxl-3.col-xl-6.pb-3
+                    +announcement({
+                        image: "images/scrub.jpeg",
+                        fullHeight: true,
+                        isBright: true,
+                        mainTitle: `
+                            <div class="announcement-main-title-smaller">It's time to</div>
+                            <b>SAVE THE PLANET</b>
+                        `,
+                        description: `
+                            <div class="text-thin">CHOOSE ORGANIC COSMETIC</div>
+                        `,
+                        btnText : "Shop Now",
+                        btnClass: "btn-contrast"
+                    })
+                .col-xxl-3.col-xl-6.pb-3
                     .sales-layout 
                         +sale-block(
-                            "bg-green-rgadient",
-                            "Free sertificates",
-                            "For you and your loved ones!",
+                            "Good discounts on bedroom furniture",
                             "#",
-                            "Order now",
-                            "images/gift.png",
-                            "Sertificate Icon")
+                            "images/couch.jpeg",
+                            "Sertificate Icon",
+                            40)
                         +sale-block(
-                            "bg-orange-rgadient",
-                            "Choose a healthy lifestyle",
-                            "For the whole family",
+                            "Free shipping when ordering more than 3 items online on our website",
                             "#",
-                            "Buy",
-                            "images/garden.png",
-                            "Sertificate Icon")
+                            "images/delivery.jpeg",
+                            "Sertificate Icon",
+                            75)
 
     +productsSlider("Top Sales", "topSales")
 
     .section
-        .container
+        .container-full
             .row
-                .col-xl-6
+                .col-xxl-3.col-xl-6.pb-3
                     +announcement({
                         image: "images/watch.jpeg",
                         fullHeight: true,
@@ -48,7 +58,7 @@ include views/partials/header/header.pug
                             "work",
                         ]
                     })
-                .col-xl-6
+                .col-xxl-3.col-xl-6.pb-3
                     +announcement({
                         image: "images/scrub.jpeg",
                         fullHeight: true,
@@ -63,13 +73,44 @@ include views/partials/header/header.pug
                         btnText : "Shop Now",
                         btnClass: "btn-secondary"
                     })
+                .col-xxl-3.col-xl-6.pb-3
+                    +announcement({
+                        image: "images/organic.jpeg",
+                        fullHeight: true,
+                        mainTitle: `
+                            <div class="announcement-main-title-smaller">It's time to</div>
+                            <b>SAVE THE PLANET</b>
+                        `,
+                        description: `
+                            <div class="text-thin">CHOOSE ORGANIC COSMETIC</div>
+                        `,
+                        btnText : "Shop Now",
+                        btnClass: "btn-dark"
+                    })
+                .col-xxl-3.col-xl-6.pb-3
+                    +announcement({
+                        image: "images/workspace.jpeg",
+                        fullHeight: true,
+                        isBright: true,
+                        mainTitle: `
+                            <div class="announcement-main-title-smaller">Be ready to <b class="text-contrast">20% OFF</b></div>
+                            for all <b>TECHNICAL BRENDS</b>
+                        `,
+                        description: `
+                            Just From <b>$90.00</b>
+                        `,
+                        tags: [
+                            "study",
+                            "technical",
+                            "work",
+                        ]
+                    })
 
+
+    +categories()
 
     .section
-        +categories()
-
-    .section
-        .container
+        .container-full
             +titleLink("Best Sellers", "More Products")
             .row
                 .col-xl-3
@@ -93,7 +134,7 @@ include views/partials/header/header.pug
                         +loop("product", 8)
 
     .section
-        .container
+        .container-full
             +titleLink("Technological innovations", "More Products")
             .row
                 .col-xl-9
@@ -119,7 +160,7 @@ include views/partials/header/header.pug
     +productsSlider("Your Recent Views", "recentViews")
 
     .section
-        .container
+        .container-full
             +brands(12)
 
     +articlesSlider("Our blog", "More articles", "ourBlog")
