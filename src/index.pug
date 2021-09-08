@@ -130,16 +130,22 @@ include views/partials/header/header.pug
                         ]
                     })
                 .col-xl-9
-                    .catalog-layout-4
-                        +loop("product", 8)
+                    .row
+                        - for (let i = 0; i < 12; i++) {
+                            .col-xl-3.col-xxl-2.pb-3
+                                +product()
+                        - }
 
     .section
         .container-full
             +titleLink("Technological innovations", "More Products")
             .row
                 .col-xl-9
-                    .catalog-layout-4
-                        +loop("product", 8)
+                    .row
+                        - for (let i = 0; i < 12; i++) {
+                            .col-xl-3.col-xxl-2.pb-3
+                                +product()
+                        - }
                 .col-xl-3
                     +announcement({
                         subTitle: "New Collection", 
