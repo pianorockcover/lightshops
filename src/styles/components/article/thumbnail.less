@@ -7,7 +7,6 @@
 
 .@{articleThumbnailClass} {
     overflow: hidden;
-    border-radius: 5px;
     max-width: 300px;
     transition: background-color .1s ease-in-out;
     background-color: #ffffff;
@@ -89,28 +88,5 @@
 
     &-more {
         text-decoration: none !important;
-    }
-
-    &:hover {
-        background-color: @primary;
-        color: #ffffff;
-
-        .@{articleThumbnailClass}-wave-path {
-            fill: @primary;
-        }
-
-        .@{articleThumbnailClass}-date {
-            color: #d4d4d4;
-        }
-
-        .@{articleThumbnailClass}-image {
-            transform: scale(1.1);
-        }
-
-        .@{articleThumbnailClass}-author-image {
-            animation-duration: .9s;
-            animation-name: swingAnimation;
-            animation-timing-function: ease-in-out;
-        }
     }
 }

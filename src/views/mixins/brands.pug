@@ -1,8 +1,9 @@
 mixin brands(amount)
     - const randomLogo = () => Math.trunc(Math.random() * (6 - 1) + 1);
-    .brands
+    .row
         - for(let i = 1; i <= amount; i++) {
-            a.brand(href="#")
-                - let src = `images/brands/${randomLogo()}.jpg`;
-                img(src=src, alt="Brand logo").brand-image
+            .col-xl-2.pb-3
+                a.brand(href="#")
+                    - let src = `images/brands/${randomLogo()}.jpg`;
+                    img(src=src, alt="Brand logo").brand-image
         - }

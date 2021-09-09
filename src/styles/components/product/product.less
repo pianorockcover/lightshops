@@ -19,7 +19,6 @@
     height: @height;
     position: relative;
     z-index: 1;
-    .shadow-hover();
 
     &-favourite-icon {
         color: @contrast;
@@ -56,10 +55,7 @@
         left: 0px;
         width: 100%;
         transition: border-color .2s ease-in-out;
-
-        &:hover {
-            border-color: @secondary;
-        }
+        .shadow-hover();
     }
 
     &-image-wrapper {

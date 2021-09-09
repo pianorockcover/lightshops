@@ -1,15 +1,18 @@
 @import "../variables.less";
 @import "../components/buttons/button.less";
+@import "../components/buttons/shadowHover.less";
 
-.sale-block {
+@saleBlockClass: sale-block;
+
+.@{saleBlockClass} {
     margin-bottom: 20px;
-    border-radius: 5px;
     color: #ffffff;
     text-decoration: none !important;
     flex: 1;
     background-size: cover;
     background-position: center 0;
     overflow: hidden;
+    .shadow-hover();
 
     &-content {
         display: flex;
@@ -17,7 +20,7 @@
         justify-content: center;
         height: 100%;
         padding: 16px 15px 16px 15px;
-        background: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.8));
+        background: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.6));
     }
 
     &:nth-last-child(1) {
@@ -42,6 +45,16 @@
         justify-content: center;
         margin-bottom: 10px;
         background-color: @secondary;
+    }
+
+    &:hover {
+        z-index: 2;
+
+        .@{saleBlockClass}-amount {
+            animation-duration: .5s;
+            animation-name: swingAnimation;
+            animation-timing-function: ease-in-out;
+        }
     }
 }
 

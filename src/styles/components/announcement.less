@@ -1,16 +1,17 @@
 @import "../variables.less";
+@import "../components/buttons/shadowHover.less";
 
 @announcementClassName: announcement;
 
 .announcement(@color) {
     position: relative;
     color: @color  !important;
-    border-radius: 5px;
     overflow: hidden;
     display: block;
     text-decoration: none !important;
     background-size: cover;
     margin-bottom: 10px;
+    .shadow-hover();
 
     &-image {
         position: absolute;
