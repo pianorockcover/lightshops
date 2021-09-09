@@ -1,0 +1,34 @@
+@import "../components/anchor.less";
+@import "../variables.less";
+@import "../components/buttons/shadowHover.less";
+
+@paginationClassName: pagination;
+
+.@{paginationClassName} {
+    display: flex;
+    justify-content: center;
+    margin-top: 45px;
+    margin-bottom: 30px;
+
+    .btn-@{paginationClassName} {
+        .anchor(@textColor, @primary);
+        .shadow-hover();
+        background-color: #ffffff;
+        padding: 10px;
+        font-size: 16px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        vertical-align: middle;
+        margin: 5px;
+        min-width: 40px;
+        height: 40px;
+    }
+
+    .@{paginationClassName}-pages {
+        display: inline-flex;
+        vertical-align: middle;
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+}

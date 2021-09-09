@@ -1,0 +1,14 @@
+mixin sortPanel()
+    .sort-panel
+        .left
+            a.sort-panel-link(href="#") 
+                | Sort By Price
+                span.bi.bi-triangle-fill.arrow
+            a.sort-panel-link(href="#") 
+                | Sort By Popularity
+                span.bi.bi-triangle-fill.arrow.desc
+        .right
+            a.sort-panel-link.active(href="#")
+                span.bi.bi-grid
+            a.sort-panel-link(href="#")
+                span.bi.bi-list-ul

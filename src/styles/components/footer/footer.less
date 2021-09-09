@@ -4,18 +4,17 @@
 @footerClassName: footer;
 
 .@{footerClassName} {
-    background: @primary;
+    background: @footerBg;
     color: #ffffff;
     padding: 50px 0 50px 0;
     margin-top: 30px;
 
     &-subscribe {
-        border-radius: 7px;
-        background: linear-gradient(to right, darken(@secondary, 15%), @secondary);
+        background: linear-gradient(to right, lighten(@primary, 15%), @primary);
         padding: 30px 40px 30px 40px;
         margin-top: -80px;
         margin-bottom: 50px;
-        box-shadow: rgb(0 0 0 / 25%) 0px 54px 55px, rgb(0 0 0 / 12%) 0px -12px 30px, rgb(0 0 0 / 12%) 0px 4px 6px, rgb(0 0 0 / 17%) 0px 12px 13px, rgb(0 0 0 / 9%) 0px -3px 5px;
+        box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
 
         &-title {
             display: flex;

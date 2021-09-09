@@ -1,0 +1,37 @@
+@import "../components/anchor.less";
+@import "../variables.less";
+
+@sortPanelClassName: sort-panel;
+
+.@{sortPanelClassName} {
+    background: #ffffff;
+    padding: 20px 25px 10px 25px;
+    margin-bottom: 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &-link {
+        .anchor(@textColor, @primary);
+        margin-right: 25px;
+        margin-bottom: 10px;
+
+        .arrow {
+            font-size: 10px;
+            margin-left: 8px;
+            margin-top: -3px;
+
+            &.desc {
+                transform: rotate(180deg);
+            }
+        }
+    }
+
+    .right {
+        .@{sortPanelClassName}-link {
+            margin-right: 0px;
+            margin-left: 10px;
+            font-size: 20px;
+        }
+    }
+}

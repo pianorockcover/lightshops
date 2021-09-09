@@ -114,22 +114,39 @@ include views/partials/header/header.pug
             +titleLink("Best Sellers", "More Products")
             .row
                 .col-xl-3.pb-3
-                    +announcement({
-                        subTitle: "New Collection", 
-                        mainTitle: "<b>Almost FREE Blender</b>",
-                        btnText : "Shop Now",
-                        image: "images/blender.jpeg",
-                        isBright: true,
-                        fullHeight: true,
-                        btnClass: "btn-contrast",
-                        tags: [
-                            "home",
-                            "technical",
-                            "kitchen",
-                            "natural"
-                        ]
-                    })
-                .col-xl-9
+                    .row.full-height
+                        .col-xl-12.col-xxl-6.pb-3
+                            +announcement({
+                                subTitle: "New Collection", 
+                                mainTitle: "<b>Almost FREE Blender</b>",
+                                btnText : "Shop Now",
+                                image: "images/blender.jpeg",
+                                isBright: true,
+                                fullHeight: true,
+                                btnClass: "btn-contrast",
+                                tags: [
+                                    "home",
+                                    "technical",
+                                    "kitchen",
+                                    "natural"
+                                ]
+                            })
+                        .col-xl-12.col-xxl-6.pb-3
+                            +announcement({
+                                subTitle: "New Collection", 
+                                mainTitle: "<b>Summer trends are waiting</b>",
+                                btnText : "Shop Now",
+                                image: "images/purchases.jpeg",
+                                isBright: false,
+                                fullHeight: true,
+                                btnClass: "btn-primary",
+                                tags: [
+                                    "study",
+                                    "computers",
+                                    "summer"
+                                ]
+                            })
+                .col-xl-9.pb-3
                     .row
                         - for (let i = 0; i < 12; i++) {
                             .col-xl-3.col-xxl-2.pb-3
@@ -140,28 +157,45 @@ include views/partials/header/header.pug
         .container-full
             +titleLink("Technological innovations", "More Products")
             .row
-                .col-xl-9
+                .col-xl-9.pb-3
                     .row
                         - for (let i = 0; i < 12; i++) {
                             .col-xl-3.col-xxl-2.pb-3
                                 +product()
                         - }
                 .col-xl-3.pb-3
-                    +announcement({
-                        subTitle: "New Collection", 
-                        mainTitle: "<b>Summer trends are waiting</b>",
-                        btnText : "Shop Now",
-                        image: "images/purchases.jpeg",
-                        isBright: false,
-                        fullHeight: true,
-                        btnClass: "btn-primary",
-                        tags: [
-                            "study",
-                            "computers",
-                            "summer"
-                        ]
-                    })
-
+                    .row.full-height
+                        .col-xl-12.col-xxl-6.pb-3
+                            +announcement({
+                                subTitle: "New Collection", 
+                                mainTitle: "<b>Summer trends are waiting</b>",
+                                btnText : "Shop Now",
+                                image: "images/purchases.jpeg",
+                                isBright: false,
+                                fullHeight: true,
+                                btnClass: "btn-primary",
+                                tags: [
+                                    "study",
+                                    "computers",
+                                    "summer"
+                                ]
+                            })
+                        .col-xl-12.col-xxl-6.pb-3
+                            +announcement({
+                                subTitle: "New Collection", 
+                                mainTitle: "<b>Almost FREE Blender</b>",
+                                btnText : "Shop Now",
+                                image: "images/blender.jpeg",
+                                isBright: true,
+                                fullHeight: true,
+                                btnClass: "btn-contrast",
+                                tags: [
+                                    "home",
+                                    "technical",
+                                    "kitchen",
+                                    "natural"
+                                ]
+                            })
 
     +productsSlider("Your Recent Views", "recentViews")
 

@@ -1,0 +1,9 @@
+mixin breadcrumbs(items)
+    .breadcrumbs
+        - for (let i in items) {
+            if (i == items.length - 1)
+                .breadcrumbs-current= items[i]
+            else
+                a.breadcrumbs-link(href="#")= items[i]
+                span.breadcrumbs-divider /
+        - }

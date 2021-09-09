@@ -1,0 +1,30 @@
+@import "../components/anchor.less";
+
+@breadcrumbsClassName: breadcrumbs;
+
+.@{breadcrumbsClassName} {
+    margin-bottom: 15px;
+
+    &-link {
+        display: inline-flex;
+        .anchor(@primary, @primary);
+        .anchor-underline-hover(@primary, 1px);
+        margin-right: 10px;
+        margin-bottom: 5px;
+        vertical-align: middle;
+    }
+
+    &-current {
+        display: inline-flex;
+        margin-right: 10px;
+        margin-bottom: 5px;
+        vertical-align: middle;
+    }
+
+    &-divider {
+        display: inline-flex;
+        vertical-align: middle;
+        margin-right: 10px;
+        margin-bottom: 5px;
+    }
+}
