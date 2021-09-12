@@ -1,0 +1,10 @@
+mixin filters()
+    .filters
+        form
+            .filters-header
+                .filters-title Filter:
+                a.filters-clean-all(href="#") Clean All
+            include brands.pug
+            include vendors.pug
+            include price.pug
+            include colors.pug

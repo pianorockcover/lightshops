@@ -1,0 +1,9 @@
+mixin checkbox(label, id, checked)
+    - const className = checked ? "checkbox-checked" : "";
+
+    .checkbox(class= className)
+        input.checkbox-input(type="checkbox" value="" id= id checked= checked)
+        .checkbox-fake
+            .bi.bi-check
+        label.checkbox-label(for= id)= label
+        .checkbox-area

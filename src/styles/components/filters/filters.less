@@ -1,0 +1,112 @@
+@import "../anchor.less";
+@import "../../variables.less";
+
+@filtersClassName: filters;
+
+@filterPaddingVertical: 20px;
+@filterPaddingHorizontal: 15px;
+@filterPadding: @filterPaddingVertical @filterPaddingHorizontal;
+
+.@{filtersClassName} {
+    background-color: #ffffff;
+    user-select: none;
+
+    &-header {
+        padding: @filterPadding;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 10px;
+    }
+
+    &-title {
+        font-size: 16px;
+        font-weight: 600;
+    }
+
+    &-clean-all {
+        .anchor(@textColor, @primary);
+        .anchor-underline-hover(@primary, 1px);
+    }
+
+    &-expander {
+        &-header {
+            font-size: 15px;
+            font-weight: 500;
+            padding: @filterPadding;
+            border-bottom: 1px solid @greyColor;
+            position: relative;
+            padding-right: 50px;
+            transition: color .2s ease-in-out;
+
+            &:before {
+                content: " ";
+                display: block;
+                width: 14px;
+                height: 2px;
+                background: @textColor;
+                right: @filterPaddingHorizontal;
+                top: calc(50% - 1.5px);
+                position: absolute;
+                transition: background-color .2s ease-in-out;
+            }
+
+            &:after {
+                content: " ";
+                display: block;
+                position: absolute;
+                height: 14px;
+                width: 2px;
+                background: @textColor;
+                top: calc(50% - 7.5px);
+                right: calc(@filterPaddingHorizontal + 6px);
+                transition: background-color .2s ease-in-out;
+                transition: transform .4s ease-in-out,
+                    opacity .6s ease-in-out;
+            }
+
+            &:hover {
+                color: @primary;
+                cursor: pointer;
+
+                &:before,
+                &:after {
+                    background: @primary;
+                }
+            }
+
+            &.toggled {
+                &:after {
+                    transform: rotate(90deg);
+                    opacity: 0;
+                }
+            }
+        }
+
+        &-body {
+            padding: @filterPadding;
+            border-bottom: 1px solid @greyColor;
+        }
+    }
+
+    &-view-all {
+        .anchor(@primary, @primary);
+        .anchor-underline(@primary, 1px);
+
+        &.toggled {
+            display: none;
+            margin-bottom: 10px;
+        }
+    }
+
+    &-price-inputs {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        &-divider {
+            margin-left: 10px;
+            margin-right: 10px;
+        }
+    }
+}

@@ -32,6 +32,16 @@
             margin-right: 0px;
             margin-left: 10px;
             font-size: 20px;
+            opacity: .7;
+            transition: color .2s ease-in-out,
+                transform .2s ease-in-out,
+                opacity .2s ease-in-out;
+
+            &:hover,
+            &.active {
+                transform: scale(1.1);
+                opacity: 1;
+            }
         }
     }
 }

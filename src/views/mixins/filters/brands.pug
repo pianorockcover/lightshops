@@ -1,0 +1,24 @@
+.filters-expander
+    .filters-expander-header.toggled(
+        data-toggle="#brandsFilter"
+        data-trigger="click"
+        data-effect="slide")
+        | All Brands
+    #brandsFilter.filters-expander-body
+        +checkbox("Nike (20)", "nikeCheckbox", true)
+        +checkbox("Hermes (199)", "hermesCheckbox")
+        +checkbox("Gucci (30)", "gucciCheckbox")
+        +checkbox("Zalando (10)", "zalandoCheckbox")
+        +checkbox("Adidas (100)", "adidasCheckbox")
+        .filters-view-all(
+            data-toggle="#moreBrandFilters"
+            data-trigger="click"
+            data-effect="slide"
+        ) 
+            | View All
+        #moreBrandFilters.hidden
+            +checkbox("Lululemon (2)", "lululemonCheckbox")
+            +checkbox("Moncler (90)", "lonclerCheckbox")
+            +checkbox("Chanel (44)", "lhanelCheckbox")
+            +checkbox("Rolex (100)", "lolexCheckbox")
+            +checkbox("Prada (2)", "lradaCheckbox")

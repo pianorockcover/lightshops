@@ -1,0 +1,21 @@
+@import "../../variables.less";
+
+@inputClassName: input;
+
+.@{inputClassName} {
+    background: @controlColor;
+    border: 1px solid darken(@controlColor, 5%);
+    outline: none;
+    padding: 9px 10px;
+    transition: background-color .1s ease-in-out;
+    width: 100%;
+    margin-bottom: @controlsMarginBottom;
+
+    &:nth-last-child(1) {
+        margin-bottom: 0px;
+    }
+
+    &:focus {
+        background: #ffffff;
+    }
+}

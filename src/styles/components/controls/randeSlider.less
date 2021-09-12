@@ -1,0 +1,41 @@
+@import "../../variables.less";
+
+@rangeSliderClassName: range-slider;
+
+.@{rangeSliderClassName} {
+    margin-bottom: @controlsMarginBottom;
+
+    &:nth-last-child(1) {
+        margin-bottom: 0px;
+    }
+
+    .irs--round .irs-handle {
+        border-color: @primary;
+        box-shadow: none;
+    }
+
+    .irs--round .irs-min,
+    .irs--round .irs-max {
+        background-color: transparent;
+    }
+
+    .irs--round .irs-line {
+        background-color: @controlColor;
+    }
+
+    .irs--round .irs-from,
+    .irs--round .irs-to,
+    .irs--round .irs-single {
+        background-color: @primary;
+    }
+
+    .irs--round .irs-from:before,
+    .irs--round .irs-to:before,
+    .irs--round .irs-single:before {
+        border-top-color: @primary;
+    }
+
+    .irs--round .irs-bar {
+        background-color: @primary;
+    }
+}

@@ -1,0 +1,10 @@
+.filters-expander
+    .filters-expander-header(
+        data-toggle="#vendorsFilter"
+        data-trigger="click"
+        data-effect="slide")
+        | Vendors
+    #vendorsFilter.filters-expander-body.hidden
+        +checkbox("Russia (300)", "nikeCheckbox", true)
+        +checkbox("USA (400)", "hermesCheckbox")
+        +checkbox("China (299)", "gucciCheckbox")

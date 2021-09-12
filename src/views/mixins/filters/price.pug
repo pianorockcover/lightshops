@@ -1,0 +1,32 @@
+.filters-expander
+    .filters-expander-header.toggled(
+        data-toggle="#priceFilter"
+        data-trigger="click"
+        data-effect="slide")
+        | Price
+    #priceFilter.filters-expander-body
+        .range-slider
+            input(
+                data-price-range-slider
+                data-min=200
+                data-max=1500
+                data-from-input="#filterPriceMin"
+                data-to-input="#filterPriceMax"
+            )
+        .filters-price-inputs
+            .filters-price-inputs-col
+                +input({
+                    type: "number",
+                    placeholder: "min",
+                    value: 500,
+                    id: "filterPriceMin"
+                })
+            .filters-price-inputs-col
+                .filters-price-inputs-divider - 
+            .filters-price-inputs-col
+                +input({
+                    type: "number",
+                    placeholder: "min",
+                    value: 1100,
+                    id: "filterPriceMax"
+                })
