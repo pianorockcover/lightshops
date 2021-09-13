@@ -88,10 +88,11 @@ module.exports = {
         ]),
         new BeautifyHtmlWebpackPlugin(),
         new MiniCssExtractPlugin({
-            filename: `./landing/css/${versionedStyleName}`,
+            filename: `./css/${versionedStyleName}`,
         }),
         new CopyWebpackPlugin({
             patterns: [
+                { from: "static/css/fonts", to: "css/fonts" },
                 { from: "landing/static" },
                 { from: "node_modules/bootstrap-icons/font/fonts", to: "css/fonts" },
             ],

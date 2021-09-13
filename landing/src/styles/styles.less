@@ -1,0 +1,51 @@
+// Plugins
+@import "normalize.css/normalize.css";
+@import "bootstrap/dist/css/bootstrap-grid.css";
+@import "bootstrap-icons/font/bootstrap-icons.css";
+
+// Fonts
+@import "../../../src/styles/components/fonts/fonts.less";
+
+// Body
+@import "../../../src/styles/components/body.less";
+
+@primary: #3c40c6;
+
+body {
+    background-color: @primary;
+    color: #ffffff;
+}
+
+.header {
+    text-align: center;
+    min-height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 50px;
+}
+
+.demos {
+    max-width: 1300px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 2vw;
+
+    .demo-link {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none !important;
+        color: #ffffff !important;
+        font-weight: 500;
+        font-size: 20px;
+
+        .demo-image {
+            max-width: 100%;
+            margin-bottom: 20px;
+        }
+    }
+}

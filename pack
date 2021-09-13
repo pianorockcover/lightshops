@@ -1,0 +1,14 @@
+npm version patch --no-git-tag-version
+npm run build
+
+cd landing
+node screenshot.js
+cd ../
+
+npm run landing:build
+
+mkdir -p landing/dist/demos
+
+mv dist/* landing/dist/demos
+
+rm -rf dist
