@@ -5,11 +5,16 @@
         data-effect="slide")
         | All Brands
     #brandsFilter.filters-expander-body
-        +checkbox("Nike (20)", "nikeCheckbox", true)
-        +checkbox("Hermes (199)", "hermesCheckbox")
-        +checkbox("Gucci (30)", "gucciCheckbox")
-        +checkbox("Zalando (10)", "zalandoCheckbox")
-        +checkbox("Adidas (100)", "adidasCheckbox")
+        .form-control
+            +checkbox("Nike (20)", "nikeCheckbox", true)
+        .form-control
+            +checkbox("Hermes (199)", "hermesCheckbox")
+        .form-control
+            +checkbox("Gucci (30)", "gucciCheckbox")
+        .form-control
+            +checkbox("Zalando (10)", "zalandoCheckbox")
+        .form-control
+            +checkbox("Adidas (100)", "adidasCheckbox")
         .filters-view-all(
             data-toggle="#moreBrandFilters"
             data-trigger="click"
@@ -17,8 +22,13 @@
         ) 
             | View All
         #moreBrandFilters.hidden
-            +checkbox("Lululemon (2)", "lululemonCheckbox")
-            +checkbox("Moncler (90)", "lonclerCheckbox")
-            +checkbox("Chanel (44)", "lhanelCheckbox")
-            +checkbox("Rolex (100)", "lolexCheckbox")
-            +checkbox("Prada (2)", "lradaCheckbox")
+            .form-control
+                +checkbox("Lululemon (2)", "lululemonCheckbox")
+            .form-control
+                +checkbox("Moncler (90)", "lonclerCheckbox")
+            .form-control
+                +checkbox("Chanel (44)", "lhanelCheckbox")
+            .form-control
+                +checkbox("Rolex (100)", "lolexCheckbox")
+            .form-control
+                +checkbox("Prada (2)", "lradaCheckbox")

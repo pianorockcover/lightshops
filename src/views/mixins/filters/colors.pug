@@ -5,7 +5,11 @@
         data-effect="slide")
         | Colors
     #colorsFilter.filters-expander-body.hidden
-        +checkbox("Blue (20)", "blueCheckbox")
-        +checkbox("Greed (199)", "greenCheckbox")
-        +checkbox("Yellow (30)", "yellowCheckbox")
-        +checkbox("Orange (10)", "orangeCheckbox")
+        .form-control
+            +checkbox("Blue (20)", "blueCheckbox")
+        .form-control
+            +checkbox("Greed (199)", "greenCheckbox")
+        .form-control
+            +checkbox("Yellow (30)", "yellowCheckbox")
+        .form-control
+            +checkbox("Orange (10)", "orangeCheckbox")

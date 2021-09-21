@@ -124,6 +124,7 @@
         max-height: 37px;
         overflow: hidden;
         text-overflow: ellipsis;
+        white-space: nowrap;
     }
 
     &-price {
@@ -161,16 +162,18 @@
 
         .@{productClass}-buttons {
             display: flex;
-            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
             margin-top: 15px;
 
             .btn {
                 width: 100%;
-
-                &:not(:nth-last-child(1)) {
-                    margin-bottom: 10px;
-                }
+                margin-left: 15px;
             }
+        }
+
+        .@{productClass}-title {
+            white-space: normal;
         }
 
         .@{productClass}-zoom-icon {

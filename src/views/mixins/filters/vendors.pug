@@ -5,6 +5,9 @@
         data-effect="slide")
         | Vendors
     #vendorsFilter.filters-expander-body.hidden
-        +checkbox("Russia (300)", "nikeCheckbox", true)
-        +checkbox("USA (400)", "hermesCheckbox")
-        +checkbox("China (299)", "gucciCheckbox")
+        .form-control
+            +checkbox("Russia (300)", "nikeCheckbox", true)
+        .form-control
+            +checkbox("USA (400)", "hermesCheckbox")
+        .form-control
+            +checkbox("China (299)", "gucciCheckbox")

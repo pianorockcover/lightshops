@@ -37,7 +37,8 @@ mixin product()
                 - }
             .product-price= options.price
             .product-buttons
+                +quantity()
                 .btn.btn-primary
                     .bi.bi-bag 
-                    | Add to cart
+                    | Buy
 
