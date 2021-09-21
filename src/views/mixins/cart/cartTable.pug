@@ -1,0 +1,29 @@
+include cartTableRow.pug
+
+mixin cartTable()
+    .cart-table
+        .row
+            .col-xl-9
+                .cart-table-products
+                    .cart-table-summary
+                        h1.cart-table-title Shopping Cart
+                        .cart-table-amount 3 Items
+                    .cart-table-header
+                        .row.cart-table-row
+                            .col-md-5.cart-table-col Product
+                            .col-md-3.cart-table-col Quantity
+                            .col-md-2.cart-table-col Price
+                            .col-md-2.cart-table-col Total
+                    .cart-table-body
+                        +cartTableRow()
+                        +cartTableRow()
+                        +cartTableRow()
+                        +cartTableRow()
+                    .cart-table-footer
+                        a(href="category.html").cart-table-back 
+                            span.bi.bi-arrow-90deg-left
+                            | Continue Shopping
+            .col-xl-3
+                .cart-table-order
+                    .cart-table-summary
+                        .cart-table-title Order Summary

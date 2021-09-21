@@ -1,0 +1,29 @@
+mixin cartTableRow()
+    -
+        const { randomElem, randomInt, faker } = htmlWebpackPlugin.options.utils;
+
+        const images = ["images/backpack-1.png", "images/watch-1.png",
+        "images/headset-1.png", "images/sneackers.png", "images/jacket.jpg",
+        "images/t-shirt.jpg"];
+
+        const productImage = randomElem(images);
+        const price = randomInt(10, 99);
+        const name = faker.commerce.productName();
+        const amount = randomInt(1, 9);
+        const totalPrice = amount * price;
+
+    .row.cart-table-row
+        .col-md-5.cart-table-col
+            .cart-table-col-product
+                .cart-table-remove
+                    .bi.bi-x
+                .cart-table-col-product-image-wrapper
+                    img(src=productImage alt="Product Image").cart-table-col-product-image
+                .cart-table-col-product-name
+                    | #{name}
+        .col-md-3.cart-table-col
+            +quantity(amount)
+        .col-md-2.cart-table-col 
+            b $#{price}.00
+        .col-md-2.cart-table-col 
+            b $#{totalPrice}.00

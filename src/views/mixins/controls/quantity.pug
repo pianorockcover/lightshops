@@ -1,0 +1,9 @@
+mixin quantity(defaultValue = 1, min = 1, max = 12)
+    .quantity(data-min=min data-max=max)
+        .quantity-button.quantity-remove
+            .bi.bi-dash
+        input.quantity-amount(value=defaultValue)
+        .quantity-button.quantity-add
+            .bi.bi-plus
+        .quantity-arrow
+            .bi.bi-chevron-up

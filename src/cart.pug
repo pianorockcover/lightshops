@@ -1,0 +1,11 @@
+include views/partials/header/header.pug
+
+.area
+    .section
+        .container-full
+            +breadcrumbs([
+                "Main", "Checkout", "Shopping Cart"
+            ])
+            +cartTable()
+
+include views/partials/footer/footer.pug

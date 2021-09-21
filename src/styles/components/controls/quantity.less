@@ -1,0 +1,106 @@
+@import "../../variables.less";
+
+@quantityClassName: quantity;
+
+.@{quantityClassName} {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &-arrow {
+        position: absolute;
+        opacity: 0;
+        left: calc(50% - 10px);
+        top: -15px;
+        font-size: 20px;
+    }
+
+    &-adding {
+        .@{quantityClassName}-arrow {
+            animation-name: addingAnimation;
+            animation-duration: .5s;
+            animation-timing-function: ease-in-out;
+        }
+    }
+
+    &-removing {
+        .@{quantityClassName}-arrow {
+            animation-name: removingAnimation;
+            animation-duration: .5s;
+            animation-timing-function: ease-in-out;
+        }
+    }
+
+    &-amount {
+        background: transparent;
+        border: none;
+        font-size: 15px;
+        outline: none;
+        text-align: center;
+        width: 60px;
+        padding: 5px 5px 5px 5px;
+        cursor: text;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        font-weight: 500;
+    }
+
+    &-button {
+        height: 36px;
+        width: 36px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #f5f6f8;
+        border-radius: 100%;
+        font-size: 30px;
+        text-align: center;
+        transition: background-color .2s ease-in-out,
+            color .2s ease-in-out;
+        cursor: pointer;
+
+        &:hover {
+            background: @primary;
+            color: #ffffff;
+        }
+    }
+}
+
+@keyframes addingAnimation {
+
+    from,
+    to {
+        opacity: 0;
+        color: @success;
+    }
+
+    5% {
+        opacity: 1;
+    }
+
+    95% {
+        top: -20px;
+    }
+}
+
+@keyframes removingAnimation {
+
+    from,
+    to {
+        opacity: 0;
+        top: auto;
+        bottom: -10px;
+        color: @contrast;
+        transform: rotate(180deg);
+    }
+
+    5% {
+        opacity: 1;
+    }
+
+    95% {
+        bottom: -20px;
+    }
+}

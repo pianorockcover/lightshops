@@ -83,6 +83,7 @@ module.exports = {
             filename: `./${cur.replace(/\.pug/, ".html")}`,
             minify: false,
             inject: false,
+            utils: require("./src/views/utils"),
           }),
         ]
       );

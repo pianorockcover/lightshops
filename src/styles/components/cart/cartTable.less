@@ -1,0 +1,113 @@
+@import "../../variables.less";
+@import "../anchor.less";
+
+@cartTableClassName: cart-table;
+
+.@{cartTableClassName} {
+    &-products {
+        background: #fff;
+        padding: 0 30px 60px 30px;
+    }
+
+    &-summary {
+        padding: 50px 0 20px 0;
+        border-bottom: 1px solid #cecece;
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-between;
+        margin-bottom: 25px;
+    }
+
+    &-title {
+        margin: 0;
+        font-size: @pageTitleFontSize;
+        font-weight: 600;
+    }
+
+    &-amount {
+        font-weight: 600;
+        font-size: 20px
+    }
+
+    &-header {
+        text-transform: uppercase;
+        font-weight: 500;
+        color: #757575;
+        margin-bottom: 15px;
+    }
+
+    &-body {
+        border-bottom: 1px solid #cecece;
+        margin-bottom: 35px;
+        padding-bottom: 30px;
+    }
+
+    &-row {
+        position: relative;
+    }
+
+    &-col {
+        display: flex;
+        align-items: center;
+        padding-top: 5px;
+        padding-bottom: 5px;
+
+        &:not(:nth-child(1)) {
+            justify-content: center;
+        }
+
+        &-product {
+            display: flex;
+            align-items: center;
+            padding-left: 15px;
+
+            &-image-wrapper {
+                width: 100px;
+                min-width: 100px;
+                height: 100px;
+                margin-right: 10px;
+                overflow: hidden;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                padding: 5px;
+            }
+
+            &-image {
+                max-width: 100%;
+            }
+
+            &-name {
+                font-size: 15px;
+                font-weight: 500;
+            }
+        }
+    }
+
+    &-remove {
+        .anchor(@textColor, @contrast);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0;
+        position: absolute;
+        top: 0px;
+        left: 10px;
+        z-index: 2;
+        background: #fff;
+        border-radius: 100%;
+        width: 30px;
+        height: 30px;
+        font-size: 24px;
+        box-shadow: rgb(50 50 93 / 25%) 0px 6px 12px -2px, rgb(0 0 0 / 30%) 0px 0px 7px -3px;
+
+        .bi {
+            margin-right: 0px;
+        }
+    }
+
+    &-back {
+        .anchor(@primary, @primary);
+        .anchor-underline(@primary, 1px);
+    }
+}

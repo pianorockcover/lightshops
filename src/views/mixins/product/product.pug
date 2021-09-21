@@ -1,7 +1,6 @@
 mixin product()
     -
-        const randomInt = (min, max) =>  Math.trunc(Math.random() * (max - min) + min);
-        const randomElem = (items) =>  items[Math.floor(Math.random() * items.length)];
+        const { randomElem, randomInt, faker } = htmlWebpackPlugin.options.utils;
 
         const images = ["images/backpack-1.png", "images/watch-1.png",
         "images/headset-1.png", "images/sneackers.png", "images/jacket.jpg",
@@ -9,7 +8,7 @@ mixin product()
 
         let options = {};
         options.id = randomInt(100, 999);
-        options.name = "Product Short Name";
+        options.name = faker.commerce.productName();
         options.category = "Category";
         options.rate = randomInt(0, 5);
         options.price = `$${randomInt(9, 20)}.00`;

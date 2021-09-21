@@ -1,5 +1,5 @@
 import $ from "jquery";
-
+import { validateMinMax } from "./utils";
 
 $("[data-price-range-slider]").each((_, el) => {
     const element = $(el);
@@ -10,8 +10,6 @@ $("[data-price-range-slider]").each((_, el) => {
 
     const from = fromInput.val();
     const to = toInput.val();
-
-    const validateValue = (val) => val ? (val < min ? min : val > max ? max : val) : 0;
 
     element.ionRangeSlider({
         type: "double",
@@ -31,13 +29,13 @@ $("[data-price-range-slider]").each((_, el) => {
 
     fromInput.on("change", (e) => {
         rangeSlider.update({
-            from: validateValue(fromInput.val()),
+            from: validateMinMax(fromInput.val()),
         });
     });
 
     toInput.on("change", (e) => {
         rangeSlider.update({
-            to: validateValue(toInput.val()),
+            to: validateMinMax(toInput.val()),
         });
     });
 });
