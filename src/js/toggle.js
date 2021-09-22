@@ -6,8 +6,8 @@ const isMobile = false;
 export const toggledClass = "toggled";
 export const activeClass = "active";
 
-const toggleAnimation = (el, effect, options = {}, onComplete) => {
-  el[`${effect}Toggle`]({
+const toggleAnimation = (el, effect, options = {}, onComplete = () => { }, type = "Toggle") => {
+  el[`${effect}${type}`]({
     duration: 300,
     ...options
   });
@@ -50,15 +50,13 @@ $("[data-toggle]").each((_, el) => {
     return;
   }
 
-  // Hover
-  // element.on("mouseover", () => {
-  //   target.addClass(showClass);
-  //   target.removeClass(hideClass);
-  // });
+  if (trigger === 'hover') {
+    element.hover(() => {
+      toggleAnimation(target, effect, {}, onComplete);
+    });
 
-  // element.on("mouseout", () => {
-  //   target.addClass(hideClass);
-  //   target.removeClass(showClass);
-  //   target.removeClass(shownClass);
-  // });
+    // element.on("mouseout", () => {
+    //   toggleAnimation(target, effect, {}, onComplete, "Out");
+    // });
+  }
 });

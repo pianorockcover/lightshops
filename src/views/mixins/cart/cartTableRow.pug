@@ -11,16 +11,19 @@ mixin cartTableRow()
         const name = faker.commerce.productName();
         const amount = randomInt(1, 9);
         const totalPrice = amount * price;
+        const id = `productDetails${+ new Date() * randomInt(100, 999)}`;
 
     .row.cart-table-row
         .col-md-5.cart-table-col
-            .cart-table-col-product
+            .cart-table-col-product(data-toggle=`#${id}` data-trigger="hover")
                 .cart-table-remove
                     .bi.bi-x
                 .cart-table-col-product-image-wrapper
                     img(src=productImage alt="Product Image").cart-table-col-product-image
                 .cart-table-col-product-name
                     | #{name}
+                .cart-table-col-product-details(id=id)
+                    +product({ hideButtons: true })
         .col-md-3.cart-table-col
             +quantity(amount)
         .col-md-2.cart-table-col 
