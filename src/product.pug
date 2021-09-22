@@ -1,7 +1,14 @@
 include views/partials/header/header.pug
 
+-
+    const { faker } = htmlWebpackPlugin.options.utils;
+    const title = faker.commerce.productName();
+
 .area
-    .container-full
+    .section
+        .container-full
+            h1.section-title=title     
+
         +productsSlider("You may like", "topSales")
 
 include views/partials/footer/footer.pug

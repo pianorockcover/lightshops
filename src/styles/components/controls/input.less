@@ -7,7 +7,8 @@
     border: 1px solid darken(@controlColor, 5%);
     outline: none;
     padding: 9px 10px;
-    transition: background-color .1s ease-in-out;
+    transition: background-color .1s ease-in-out,
+        border-color .1s ease-in-out;
     width: 100%;
 
     &:nth-last-child(1) {
@@ -16,5 +17,13 @@
 
     &:focus {
         background: #ffffff;
+    }
+
+    &-white {
+        background: #ffffff;
+
+        &:focus {
+            border-color: @primary;
+        }
     }
 }

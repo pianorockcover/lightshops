@@ -1,5 +1,6 @@
 @import "../../variables.less";
 @import "../anchor.less";
+@import "./shipping.less";
 
 @cartTableClassName: cart-table;
 
@@ -44,6 +45,7 @@
 
     &-row {
         position: relative;
+        margin-bottom: 5px;
     }
 
     &-col {
@@ -56,11 +58,15 @@
             justify-content: center;
         }
 
+        &-product-wrapper {
+            position: relative;
+        }
+
         &-product {
             display: flex;
             align-items: center;
             padding-left: 15px;
-            position: relative;
+            .anchor(@textColor, @primary);
 
             &-details {
                 display: none;
@@ -89,6 +95,15 @@
 
             &-image {
                 max-width: 100%;
+            }
+
+            &:hover {
+                .@{cartTableClassName}-col-product-image {
+
+                    animation-duration: .5s;
+                    animation-name: swingAnimation;
+                    animation-timing-function: ease-in-out;
+                }
             }
 
             &-name {
@@ -123,5 +138,33 @@
     &-back {
         .anchor(@primary, @primary);
         .anchor-underline(@primary, 1px);
+    }
+
+    &-labels-group {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    &-label {
+        text-transform: uppercase;
+        margin-bottom: 20px;
+        margin-top: 20px;
+        font-size: 15px;
+    }
+
+    &-divider {
+        height: 1px;
+        background: #cecece;
+        margin-bottom: 15px;
+        margin-top: 40px;
+    }
+
+    .form-control {
+        margin-bottom: 20px;
+    }
+
+    &-order {
+        margin-bottom: 10px;
     }
 }

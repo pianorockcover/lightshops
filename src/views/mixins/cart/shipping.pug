@@ -1,0 +1,7 @@
+mixin shipping(image, name, price, isActive)
+    - const className = isActive ? "active" : "";
+
+    .shipping(class=className)
+        img.shipping-image(src=image, alt="Shipping Icon")
+        .shipping-name=name
+        .shipping-price=price

@@ -1,5 +1,8 @@
 mixin input(options)
+    - const className = options.isWhite ? "input-white" : "";
+
     input.input(placeholder=options.placeholder
         type=options.type
         value=options.value
-        id=options.id)
+        id=options.id
+        class=className)

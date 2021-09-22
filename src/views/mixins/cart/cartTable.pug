@@ -27,3 +27,29 @@ mixin cartTable()
                 .cart-table-order
                     .cart-table-summary
                         .cart-table-title Order Summary
+                    .cart-table-labels-group
+                        .cart-table-label Items
+                        .cart-table-label 
+                            b $457.00
+                    .cart-table-label Shipping
+                    .shipping-group
+                        +shipping("images/shipping/standart.svg", "Standart", "$10")
+                        +shipping("images/shipping/priority.svg", "Priority", "$12", true)
+                        +shipping("images/shipping/overweight.svg", "Overweight", "$15")
+                    .cart-table-label Promo code
+                    .form-control
+                        +input({
+                            placeholder: "Enter your code",
+                            isWhite: true,
+                        })
+                    .btn.btn-success
+                        .bi.bi-lightning-charge
+                        | APPLY
+                    .cart-table-divider
+                    .cart-table-labels-group
+                        .cart-table-label Total Cost
+                        .cart-table-label
+                            b $557.00
+                .btn.btn-primary.btn-large
+                    .bi.bi-cart2
+                    | CHECKOUT

@@ -19,21 +19,27 @@ $(`.${quantityClass}`).each((_, el) => {
 
     add.on("click", () => {
         const value = Number(amount.val()) + 1;
-        amount.val(validateMinMax(value, min, max));
+        const validValue = validateMinMax(value, min, max);
+        amount.val(validValue);
 
-        element.removeClass(`${quantityClass}-removing`);
-        element.addClass(`${quantityClass}-adding`)
+        if (value == validValue) {
+            element.removeClass(`${quantityClass}-removing`);
+            element.addClass(`${quantityClass}-adding`)
 
-        setTimeout(() => element.removeClass(`${quantityClass}-adding`), 500);
+            setTimeout(() => element.removeClass(`${quantityClass}-adding`), 500);
+        }
     });
 
     remove.on("click", () => {
         const value = Number(amount.val()) - 1;
-        amount.val(validateMinMax(value, min, max));
+        const validValue = validateMinMax(value, min, max);
+        amount.val(validValue);
 
-        element.removeClass(`${quantityClass}-adding`);
-        element.addClass(`${quantityClass}-removing`)
+        if (value == validValue) {
+            element.removeClass(`${quantityClass}-adding`);
+            element.addClass(`${quantityClass}-removing`)
 
-        setTimeout(() => element.removeClass(`${quantityClass}-removing`), 500);
+            setTimeout(() => element.removeClass(`${quantityClass}-removing`), 500);
+        }
     });
 });

@@ -15,15 +15,21 @@ mixin cartTableRow()
 
     .row.cart-table-row
         .col-md-5.cart-table-col
-            .cart-table-col-product(data-toggle=`#${id}` data-trigger="hover")
-                .cart-table-remove
-                    .bi.bi-x
-                .cart-table-col-product-image-wrapper
-                    img(src=productImage alt="Product Image").cart-table-col-product-image
-                .cart-table-col-product-name
-                    | #{name}
+            .cart-table-col-product-wrapper(data-toggle=`#${id}` data-trigger="hover")
+                a.cart-table-col-product(href="product.html")
+                    .cart-table-remove
+                        .bi.bi-x
+                    .cart-table-col-product-image-wrapper
+                        img(src=productImage alt="Product Image").cart-table-col-product-image
+                    .cart-table-col-product-name
+                        | #{name}
                 .cart-table-col-product-details(id=id)
-                    +product({ hideButtons: true })
+                    +product({
+                        hideButtons: true,
+                        image: productImage,
+                        name: name,
+                        price: `$${price}.00`,
+                    })
         .col-md-3.cart-table-col
             +quantity(amount)
         .col-md-2.cart-table-col 

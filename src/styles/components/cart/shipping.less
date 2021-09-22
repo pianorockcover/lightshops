@@ -1,0 +1,42 @@
+@import "../../variables.less";
+
+@shippingClassName: shipping;
+
+.@{shippingClassName}-group {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 15px;
+    margin-bottom: 20px;
+}
+
+.@{shippingClassName} {
+    background: #ffffff;
+    min-width: 110px;
+    height: 110px;
+    border: 3px solid transparent;
+    transition: border .2s ease-in-out;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 10px;
+    position: relative;
+    cursor: pointer;
+
+    &:hover,
+    &.active {
+        border: 3px solid @primary;
+    }
+
+    &-image {
+        max-width: 40px;
+        margin-bottom: 10px;
+    }
+
+    &-price {
+        font-weight: 500;
+        position: absolute;
+        top: 5px;
+        right: 5px;
+    }
+}
