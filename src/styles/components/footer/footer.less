@@ -107,7 +107,7 @@
 
     &-instagram-widget {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(70px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
         grid-gap: 5px;
         max-width: 415px;
         margin-bottom: 20px;
@@ -118,7 +118,14 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        .shadow-hover();
+        height: 100px;
+        overflow: hidden;
+
+        &:hover {
+            animation-duration: .5s;
+            animation-name: swingAnimation;
+            animation-timing-function: ease-in-out;
+        }
     }
 
     &-instagram-image {
