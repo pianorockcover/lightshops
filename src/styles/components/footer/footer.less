@@ -46,6 +46,34 @@
         padding-top: 20px;
         padding-bottom: 20px;
         margin-top: 30px;
+
+        &-left,
+        &-right {
+            display: flex;
+            align-items: center;
+        }
+
+        &-right {
+            justify-content: flex-end;
+        }
+
+        &-divider {
+            background: rgba(255, 255, 255, 0.6);
+            width: 1px;
+            height: 20px;
+            margin-left: 10px;
+            margin-right: 10px;
+        }
+
+        &-link {
+            .anchor(@footerLinkHoverColor, @footerLinkHoverColor);
+            .anchor-underline-hover(@footerLinkHoverColor, 1px);
+            margin-left: 10px;
+        }
+
+        &-bright-link {
+            .anchor(#ffffff, @footerLinkHoverColor);
+        }
     }
 
     &-link {
@@ -76,11 +104,13 @@
             max-width: 100%;
         }
     }
-    
+
     &-instagram-widget {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(70px, 1fr));
         grid-gap: 5px;
+        max-width: 415px;
+        margin-bottom: 20px;
     }
 
     &-instagram-post {
@@ -90,10 +120,15 @@
         justify-content: center;
         .shadow-hover();
     }
-    
+
     &-instagram-image {
         width: 100%;
         min-height: 100%;
+    }
+
+    &-more-link {
+        .anchor(#ffffff, #ffffff);
+        .anchor-underline(rgba(255, 255, 255, 0.7), 1px);
     }
 
     &-subscribe-form {
@@ -101,6 +136,7 @@
         display: flex;
         border-radius: 50px;
         background: rgb(255 255 255);
+        max-width: 415px;
 
         &-input {
             border-radius: 50px;
