@@ -1,73 +1,107 @@
+-
+  const { faker: fakerUtil } = htmlWebpackPlugin.options.utils;
+  const slogan = `${fakerUtil.company.catchPhrase()}. ${fakerUtil.company.catchPhrase()}`;
+  const email = fakerUtil.internet.email();
+  const exampleEmail = fakerUtil.internet.exampleEmail();
+  const phone = fakerUtil.phone.phoneNumberFormat();
+  const locationName = `${fakerUtil.address.zipCode()} ${fakerUtil.address.streetName()}, ${fakerUtil.address.cityName()}`;
+  const locationLink = "https://www.google.com/maps/d/embed?mid=1WmGxRQhah7KcYlLqKECg_mg3tE8&msa=0&ie=UTF8&t=h&ll=35.1496%2C-106.684628&spn=0.012281%2C0.008583&z=15&output=embed";
+
 .area
   footer.footer
     .container-full
-      .footer-subscribe
-        .footer-subscribe-title 
-          span.bi.bi-envelope-fill.footer-subscribe-title-icon 
-          .footer-subscribe-block
-            .footer-subscribe-title-main Don't forget to subscribe to our newsletter
-            .footer-subscribe-title-sub Don't forget to subscribe to our newsletter
       .row
-        .col-xl-2
-          .footer-nav
-            .footer-nav-title Company
-            a(href="#").footer-nav-link About Us
-            a(href="#").footer-nav-link Team Member
-            a(href="#").footer-nav-link Career
-            a(href="#").footer-nav-link Contact Us
-            a(href="#").footer-nav-link Affilate
-            a(href="#").footer-nav-link Order History
-        .col-xl-2
-          .footer-nav
-            .footer-nav-title My account
-            a(href="#").footer-nav-link Track My Order
-            a(href="#").footer-nav-link View Cart
-            a(href="#").footer-nav-link Sign In
-            a(href="#").footer-nav-link Help
-            a(href="#").footer-nav-link My Wishlist
-            a(href="#").footer-nav-link Privacy Policy
-        .col-xl-2
-          .footer-nav
-            .footer-nav-title My account
-            a(href="#").footer-nav-link Track My Order
-            a(href="#").footer-nav-link View Cart
-            a(href="#").footer-nav-link Sign In
-            a(href="#").footer-nav-link Help
-            a(href="#").footer-nav-link My Wishlist
-            a(href="#").footer-nav-link Privacy Policy
-        .col-xl-2
-          .footer-nav
-            .footer-nav-title My account
-            a(href="#").footer-nav-link Track My Order
-            a(href="#").footer-nav-link View Cart
-            a(href="#").footer-nav-link Sign In
-            a(href="#").footer-nav-link Help
-            a(href="#").footer-nav-link My Wishlist
-            a(href="#").footer-nav-link Privacy Policy
-        .col-xl-2
-          .footer-nav
-            .footer-nav-title Company
-            a(href="#").footer-nav-link About Us
-            a(href="#").footer-nav-link Team Member
-            a(href="#").footer-nav-link Career
-            a(href="#").footer-nav-link Contact Us
-            a(href="#").footer-nav-link Affilate
-            a(href="#").footer-nav-link Order History
-        .col-xl-2
-          .footer-contacts
-            a(href="#").footer-phone
-              span.bi.bi-telephone-outbound-fill
-              span Let's Talk
-            .footer-contacts-item
-              span.bi.bi-envelope-open
-              .footer-contacts-item-data
-                .footer-contacts-item-title Business Applications
-                a(href="#").footer-contacts-item-link expressi@mail.com
-            .footer-contacts-item
-              span.bi.bi-telegram
-              .footer-contacts-item-data
-                .footer-contacts-item-title Get to know our bot
-                a(href="#").footer-contacts-item-link @telegram_bot
+        .col-xl-3
+          .footer-logo
+            +logo("white")
+          .footer-slogan
+            | #{slogan}
+          .footer-divider
+          a.footer-contact-link(href=`mailto:${email}`)
+            .bi.bi-envelope
+            | #{email}
+          .footer-divider
+          a.footer-contact-link(href=`tel:${phone}`)
+            .bi.bi-telephone-outbound-fill
+            | #{phone}
+          .footer-divider
+          a.footer-contact-link(href=locationLink target="_blank")
+            .bi.bi-pin-map-fill
+            | #{locationName}
+          .footer-divider
+        .col-xl-3
+          .footer-title Some Links 
+          .row
+            .col-xl-6
+                a.footer-link(href="#")
+                  .bi.bi-link-45deg
+                  | Home
+                a.footer-link(href="#")
+                  .bi.bi-link-45deg
+                  | Services
+                a.footer-link(href="#")
+                  .bi.bi-link-45deg
+                  | Shipping
+                a.footer-link(href="#")
+                  .bi.bi-link-45deg
+                  | FAQs 
+                a.footer-link(href="#")
+                  .bi.bi-link-45deg
+                  | ContactUs
+            .col-xl-6
+                a.footer-link(href="#")
+                  .bi.bi-link-45deg
+                  | ContactUs
+                a.footer-link(href="#")
+                  .bi.bi-link-45deg
+                  | Vacancies
+                a.footer-link(href="#")
+                  .bi.bi-link-45deg
+                  | Features 
+                a.footer-link(href="#")
+                  .bi.bi-link-45deg
+                  | Company 
+                a.footer-link(href="#")
+                  .bi.bi-link-45deg
+                  | Anout US
+        .col-xl-3
+          .footer-title Subscibe US
+          | Don't forget to subscribe to our newsletter
+          form.footer-subscribe-form
+            input.footer-subscribe-form-input(type="text" placeholder=exampleEmail)
+            .btn.btn-primary SEND
+          .footer-divider
+          a.footer-socical-link(href="#" target="blank")
+            img.footer-socical-link-image(src="images/socials/facebook.svg", alt="Social Icon")
+          a.footer-socical-link(href="#" target="blank")
+            img.footer-socical-link-image(src="images/socials/twitter.svg", alt="Social Icon")
+          a.footer-socical-link(href="#" target="blank")
+            img.footer-socical-link-image(src="images/socials/pinterest.svg", alt="Social Icon")
+          a.footer-socical-link(href="#" target="blank")
+            img.footer-socical-link-image(src="images/socials/instagram.svg", alt="Social Icon")
+          a.footer-socical-link(href="#" target="blank")
+            img.footer-socical-link-image(src="images/socials/tik-tok.svg", alt="Social Icon")
+        .col-xl-3
+          .footer-title Instagram Post
+          .footer-instagram-widget
+            a.footer-instagram-post(href="#")
+              img.footer-instagram-image(src="images/articles/thumbnail-1.jpeg" alt="Insta Post")
+            a.footer-instagram-post(href="#")
+              img.footer-instagram-image(src="images/articles/thumbnail-2.jpeg" alt="Insta Post")
+            a.footer-instagram-post(href="#")
+              img.footer-instagram-image(src="images/articles/thumbnail-3.jpeg" alt="Insta Post")
+            a.footer-instagram-post(href="#")
+              img.footer-instagram-image(src="images/articles/thumbnail-4.jpeg" alt="Insta Post")
+          a.footer-more-link(href="#")
+            | View more
+    .container-full.footer-bottom 
+      .footer-bottom-left
+        | Copyrights © All Rights Resered By 
+        a.footer-bottom-link(href="#") Expressi 
+      .footer-bottom-right
+        a.footer-bottom-bright-link(href="#") Terms And Rights
+        .footer-bottom-divider
+        a.footer-bottom-bright-link(href="#") Cookie Policy
 script(src="js/main.js")
 
 include ../html/end.html
