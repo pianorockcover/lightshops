@@ -1,5 +1,6 @@
 @import "../../variables.less";
 @import "../buttons/shadowHover.less";
+@import "../anchor.less";
 
 @productClass: product;
 @height: 340px;
@@ -118,6 +119,7 @@
     }
 
     &-title {
+        .anchor(@textColor, @primary);
         font-size: 16px;
         font-weight: 500;
         margin-bottom: 10px;

@@ -10,18 +10,18 @@ mixin product(customOptions = {})
         options.labels = utils.randomInt(100, 999) % 2 === 0 ? [] : utils.randomInt(100, 999) % 5 === 0 ? [{ class: "bg-warning", text: "10% Sale" }] : [{ class: "bg-contrast", text: "Some label" }];
         options = Object.assign(options, customOptions);
 
-    .product(data-product-id=options.id)
+    .product
         .product-content
             .product-labels
                 - for (let label of (options.labels || [])) {
                     .product-label(class= label.class)= label.text
                 - }
-            .product-favourite-icon(data-add-to-favourite)
+            .product-favourite-icon
             .product-image-wrapper
                 .bi.bi-zoom-in.product-zoom-icon
                 img.product-image(src=options.image, alt=options.name)
             .product-category(title= options.category)= options.category
-            .product-title(title= options.name)= options.name
+            a(href="product-card.html").product-title(title= options.name)= options.name
             .product-rate
                 - for (let i = 0; i < 5; ++i) {
                     - if (i < options.rate) {
