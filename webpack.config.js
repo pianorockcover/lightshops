@@ -28,6 +28,10 @@ const pages = fs
   .readdirSync(pagesPath)
   .filter((fileName) => fileName.endsWith(".pug"));
 
+// TMP, use cli
+const theme = "clothing-store";
+const getUtils = require("./src/views/utils");
+
 module.exports = {
   entry: `./src/js/${scriptName}`,
   output: {
@@ -83,7 +87,7 @@ module.exports = {
             filename: `./${cur.replace(/\.pug/, ".html")}`,
             minify: false,
             inject: false,
-            utils: require("./src/views/utils"),
+            utils: getUtils(),
           }),
         ]
       );

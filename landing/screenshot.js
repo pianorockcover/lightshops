@@ -27,8 +27,8 @@ const views = fs
 (async () => {
     const browser = await puppeteer.launch({
         args: ["--no-sandbox", "--disable-setuid-sandbox"], defaultViewport: {
-            width: 1366,
-            height: 768
+            width: 1666,
+            height: 898
         }
     });
 

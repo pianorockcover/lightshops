@@ -1,17 +1,11 @@
 mixin cartTableRow()
     -
-        const { randomElem, randomInt, faker } = htmlWebpackPlugin.options.utils;
-
-        const images = ["images/backpack-1.png", "images/watch-1.png",
-        "images/headset-1.png", "images/sneackers.png", "images/jacket.jpg",
-        "images/t-shirt.jpg"];
-
-        const productImage = randomElem(images);
-        const price = randomInt(10, 99);
-        const name = faker.commerce.productName();
-        const amount = randomInt(1, 9);
+        const productImage = utils.getUpload(`products/${utils.randomInt(1, 11)}.jpg`);
+        const price = utils.randomInt(10, 99);
+        const name = utils.faker.commerce.productName();
+        const amount = utils.randomInt(1, 9);
         const totalPrice = amount * price;
-        const id = `productDetails${+ new Date() * randomInt(100, 999)}`;
+        const id = `productDetails${+ new Date() * utils.randomInt(100, 999)}`;
 
     .row.cart-table-row
         .col-md-5.cart-table-col

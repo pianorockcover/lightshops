@@ -1,8 +1,7 @@
 include views/partials/header/header.pug
 
 -
-    const { faker } = htmlWebpackPlugin.options.utils;
-    const title = faker.commerce.productName();
+    const title = utils.faker.commerce.productName();
 
 .area
     .section

@@ -1,27 +1,36 @@
 include ../mixins/category.pug
 
 mixin categories
+    -
+        const getLinks = () => new Array(utils.randomInt(3, 8))
+            .fill(null).map(() => 
+            `${utils.faker.commerce.productAdjective()} ${utils.faker.commerce.product()}`);
+
     .section
         .container-full
             .section-title Top Categories Of The Month
             .row
                 .col-xl-6.col-xxl-3.pb-3
-                    +category("House and Garden",
-                    "images/gardening.svg",
-                    ["Barbecue and picnic", "Leisure furniture", "Garden equipment", "Leisure furniture",]
+                    +category(
+                        utils.faker.commerce.department(),
+                        utils.getUpload("categories/1.svg"),
+                        getLinks()
                     )
                 .col-xl-6.col-xxl-3.pb-3
-                    +category("House and Garden",
-                    "images/gardening.svg",
-                    ["Barbecue and picnic", "Leisure furniture", "Garden equipment", "Leisure furniture",]
+                    +category(
+                        utils.faker.commerce.department(),
+                        utils.getUpload("categories/2.svg"),
+                        getLinks()
                     )
                 .col-xl-6.col-xxl-3.pb-3
-                    +category("House and Garden",
-                    "images/gardening.svg",
-                    ["Barbecue and picnic", "Leisure furniture", "Garden equipment", "Leisure furniture",]
+                    +category(
+                        utils.faker.commerce.department(),
+                        utils.getUpload("categories/3.svg"),
+                        getLinks()
                     )
                 .col-xl-6.col-xxl-3.pb-3
-                    +category("House and Garden",
-                    "images/gardening.svg",
-                    ["Barbecue and picnic", "Leisure furniture", "Garden equipment", "Leisure furniture",]
+                    +category(
+                        utils.faker.commerce.department(),
+                        utils.getUpload("categories/1.svg"),
+                        getLinks()
                     )

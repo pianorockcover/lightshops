@@ -2,19 +2,19 @@ mixin mainSlider
     #mainSlider.main-slider-wrapper.swiper-container
         .swiper-wrapper
             .swiper-slide
-                img.main-slider-bg-image(src="images/main-slider/bg-1.jpeg" alt="Product 1")
+                img.main-slider-bg-image(src=utils.getUpload("main-slider/bg-1.jpeg") alt="Product 1")
                 a.main-slider-content(href="#")
                     .summary
-                        .title Choose your taste of this summer
-                        .subtitle Add to cart fave items
-                    img.image(src="images/main-slider/blender.png" alt="Product 1")
+                        .title=utils.faker.commerce.productName()
+                        .subtitle=utils.faker.commerce.productName()
+                    img.image(src=utils.getUpload("main-slider/good-1.png") alt="Product 1")
             .swiper-slide 
-                img.main-slider-bg-image(src="images/main-slider/bg-2.jpeg" alt="Product 3")
+                img.main-slider-bg-image(src=utils.getUpload("main-slider/bg-2.jpeg") alt="Product 3")
                 a.main-slider-content.inverse-text(href="#")
                     .summary 
-                        .title Make Your Trip Unforgettable
-                        .subtitle Check out fresh gadgets, designed for you
-                    img.image(src="images/main-slider/backpack.png" alt="Product 2")
+                        .title=utils.faker.commerce.productName()
+                        .subtitle=utils.faker.commerce.productName()
+                    img.image(src=utils.getUpload("main-slider/good-2.png") alt="Product 2")
         .swiper-pagination
         .swiper-button-prev
         .swiper-button-next

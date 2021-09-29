@@ -1,13 +1,10 @@
 mixin articleThumbnail()
     -
-        const getRandom = (min, max) => Math.trunc(Math.random() * (max - min) + min);
-        const randomElem = (items) =>  items[Math.floor(Math.random() * items.length)];
-
-        const thumbnail = `images/articles/thumbnail-${getRandom(1, 7)}.jpeg`;
-        const ava = `images/articles/author-${getRandom(1, 4)}.jpeg`;
-        const author = randomElem(["John Doe", "Bob Jones", "Matt Smith"]);
-        const title = randomElem(["Goodby Summer, Hello Autumm!", "The Best Camera For Yout Trip"]);
-        const text = `Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical...`
+        const thumbnail = utils.getUpload(`articles/thumbnail-${utils.randomInt(1, 7)}.jpeg`);
+        const ava = utils.getUpload(`articles/author-${utils.randomInt(1, 4)}.jpeg`);
+        const author = utils.faker.name.findName();
+        const title = utils.faker.name.title();
+        const text = `${utils.faker.commerce.productDescription()}...`;
 
     .article-thumbnail
         .article-thumbnail-image-wrapper

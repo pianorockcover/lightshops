@@ -1,16 +1,18 @@
+- const utils = htmlWebpackPlugin.options.utils;
+
 .sidebar
     .sidebar-toggle
         .bi.bi-list
     .sidebar-links
         .sidebar-link
-            img.image(src="images/fashion.svg" alt="Fashion icon")
+            img.image(src=utils.getUpload("navigation-icons/1.svg") alt="Fashion icon")
         .sidebar-link
-            img.image(src="images/football.svg" alt="Football icon")
+            img.image(src=utils.getUpload("navigation-icons/2.svg") alt="Football icon")
         .sidebar-link
-            img.image(src="images/technics.svg" alt="Technics icon")
+            img.image(src=utils.getUpload("navigation-icons/3.svg") alt="Technics icon")
         .sidebar-link
-            img.image(src="images/fashion.svg" alt="Fashion icon")
+            img.image(src=utils.getUpload("navigation-icons/2.svg") alt="Fashion icon")
         .sidebar-link
-            img.image(src="images/football.svg" alt="Football icon")
+            img.image(src=utils.getUpload("navigation-icons/1.svg") alt="Football icon")
         .sidebar-link
-            img.image(src="images/technics.svg" alt="Technics icon")
+            img.image(src=utils.getUpload("navigation-icons/3.svg") alt="Technics icon")

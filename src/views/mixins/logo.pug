@@ -1,6 +1,10 @@
 mixin logo(type)
+    -
+        const logoName = type ? `logo-${type}.svg` : "logo.svg";
+        const src = utils.getUpload(logoName);
+
     a.logo(href="/", class=type)
         if type
-            img.logo-img(src="images/logo-" + type + ".svg", alt="Logo")
+            img.logo-img(src=src, alt="Logo")
         else
-            img.logo-img(src="images/logo.svg", alt="Logo")
+            img.logo-img(src=src, alt="Logo")

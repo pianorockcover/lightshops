@@ -1,10 +1,9 @@
 -
-  const { faker: fakerUtil } = htmlWebpackPlugin.options.utils;
-  const slogan = `${fakerUtil.company.catchPhrase()}. ${fakerUtil.company.catchPhrase()}`;
-  const email = fakerUtil.internet.email();
-  const exampleEmail = fakerUtil.internet.exampleEmail();
-  const phone = fakerUtil.phone.phoneNumberFormat();
-  const locationName = `${fakerUtil.address.zipCode()} ${fakerUtil.address.streetName()}, ${fakerUtil.address.cityName()}`;
+  const slogan = `${utils.faker.company.catchPhrase()}. ${utils.faker.company.catchPhrase()}`;
+  const email = utils.faker.internet.email();
+  const exampleEmail = utils.faker.internet.exampleEmail();
+  const phone = utils.faker.phone.phoneNumberFormat();
+  const locationName = `${utils.faker.address.zipCode()} ${utils.faker.address.streetName()}, ${utils.faker.address.cityName()}`;
   const locationLink = "https://www.google.com/maps/d/embed?mid=1WmGxRQhah7KcYlLqKECg_mg3tE8&msa=0&ie=UTF8&t=h&ll=35.1496%2C-106.684628&spn=0.012281%2C0.008583&z=15&output=embed";
 
 .area
@@ -85,17 +84,23 @@
           .footer-title Instagram Post
           .footer-instagram-widget
             a.footer-instagram-post(href="#")
-              img.footer-instagram-image(src="images/articles/thumbnail-1.jpeg" alt="Insta Post")
+              img.footer-instagram-image(src=utils.getUpload(`articles/thumbnail-${utils.randomInt(1, 7)}.jpeg`) alt="Insta Post")
             a.footer-instagram-post(href="#")
-              img.footer-instagram-image(src="images/articles/thumbnail-2.jpeg" alt="Insta Post")
+              img.footer-instagram-image(src=utils.getUpload(`articles/thumbnail-${utils.randomInt(1, 7)}.jpeg`) alt="Insta Post")
             a.footer-instagram-post(href="#")
-              img.footer-instagram-image(src="images/articles/thumbnail-3.jpeg" alt="Insta Post")
+              img.footer-instagram-image(src=utils.getUpload(`articles/thumbnail-${utils.randomInt(1, 7)}.jpeg`) alt="Insta Post")
             a.footer-instagram-post(href="#")
-              img.footer-instagram-image(src="images/articles/thumbnail-4.jpeg" alt="Insta Post")
+              img.footer-instagram-image(src=utils.getUpload(`articles/thumbnail-${utils.randomInt(1, 7)}.jpeg`) alt="Insta Post")
             a.footer-instagram-post(href="#")
-              img.footer-instagram-image(src="images/articles/thumbnail-5.jpeg" alt="Insta Post")
+              img.footer-instagram-image(src=utils.getUpload(`articles/thumbnail-${utils.randomInt(1, 7)}.jpeg`) alt="Insta Post")
             a.footer-instagram-post(href="#")
-              img.footer-instagram-image(src="images/articles/thumbnail-6.jpeg" alt="Insta Post")
+              img.footer-instagram-image(src=utils.getUpload(`articles/thumbnail-${utils.randomInt(1, 7)}.jpeg`) alt="Insta Post")
+            a.footer-instagram-post(href="#")
+              img.footer-instagram-image(src=utils.getUpload(`articles/thumbnail-${utils.randomInt(1, 7)}.jpeg`) alt="Insta Post")
+            a.footer-instagram-post(href="#")
+              img.footer-instagram-image(src=utils.getUpload(`articles/thumbnail-${utils.randomInt(1, 7)}.jpeg`) alt="Insta Post")
+            a.footer-instagram-post(href="#")
+              img.footer-instagram-image(src=utils.getUpload(`articles/thumbnail-${utils.randomInt(1, 7)}.jpeg`) alt="Insta Post")
           a.footer-more-link(href="#")
             | View more
     .container-full.footer-bottom 

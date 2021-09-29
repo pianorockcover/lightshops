@@ -8,15 +8,19 @@ include views/partials/header/header.pug
                     +mainSlider()
                 .col-xxl-3.col-xl-6.pb-3
                     +announcement({
-                        image: "images/scrub.jpeg",
+                        image: utils.getUpload("announcement/4.jpeg"),
                         fullHeight: true,
-                        isBright: true,
+                        isBright: false,
                         mainTitle: `
-                            <div class="announcement-main-title-smaller">It's time to</div>
-                            <b>SAVE THE PLANET</b>
+                            <div class="announcement-main-title-smaller">
+                                ${utils.faker.commerce.department()}
+                            </div>
+                            <b>${utils.faker.commerce.productName()}</b>
                         `,
                         description: `
-                            <div class="text-thin">CHOOSE ORGANIC COSMETIC</div>
+                            <div class="text-thin text-uppercase">
+                                ${utils.faker.commerce.productMaterial()}
+                            </div>
                         `,
                         btnText : "Shop Now",
                         btnClass: "btn-contrast"
@@ -24,16 +28,16 @@ include views/partials/header/header.pug
                 .col-xxl-3.col-xl-6.pb-3
                     .sales-layout 
                         +sale-block(
-                            "Good discounts on bedroom furniture",
+                            utils.faker.company.catchPhrase(),
                             "#",
-                            "images/couch.jpeg",
-                            "Sertificate Icon",
+                            utils.getUpload("announcement/2.jpeg"),
+                            utils.faker.company.catchPhrase(),
                             40)
                         +sale-block(
-                            "Free shipping when ordering more than 3 items online on our website",
+                            utils.faker.company.catchPhrase(),
                             "#",
-                            "images/delivery.jpeg",
-                            "Sertificate Icon",
+                            utils.getUpload("announcement/3.jpeg"),
+                            utils.faker.company.catchPhrase(),
                             75)
 
     +productsSlider("Top Sales", "topSales")
@@ -43,11 +47,11 @@ include views/partials/header/header.pug
             .row
                 .col-xxl-3.col-xl-6.pb-3
                     +announcement({
-                        image: "images/watch.jpeg",
+                        image: utils.getUpload("announcement/7.jpeg"),
                         fullHeight: true,
                         mainTitle: `
                             <div class="announcement-main-title-smaller">Be ready to <b class="text-contrast">20% OFF</b></div>
-                            for all <b>TECHNICAL BRENDS</b>
+                            for all <b class="text-uppercase">Technical brands</b>
                         `,
                         description: `
                             Just From <b>$90.00</b>
@@ -60,7 +64,7 @@ include views/partials/header/header.pug
                     })
                 .col-xxl-3.col-xl-6.pb-3
                     +announcement({
-                        image: "images/scrub.jpeg",
+                        image: utils.getUpload("announcement/6.jpeg"),
                         fullHeight: true,
                         isBright: true,
                         mainTitle: `
@@ -75,7 +79,7 @@ include views/partials/header/header.pug
                     })
                 .col-xxl-3.col-xl-6.pb-3
                     +announcement({
-                        image: "images/organic.jpeg",
+                        image: utils.getUpload("announcement/4.jpeg"),
                         fullHeight: true,
                         mainTitle: `
                             <div class="announcement-main-title-smaller">It's time to</div>
@@ -89,7 +93,7 @@ include views/partials/header/header.pug
                     })
                 .col-xxl-3.col-xl-6.pb-3
                     +announcement({
-                        image: "images/workspace.jpeg",
+                        image: utils.getUpload("announcement/8.jpeg"),
                         fullHeight: true,
                         isBright: true,
                         mainTitle: `
@@ -117,10 +121,10 @@ include views/partials/header/header.pug
                     .row.full-height
                         .col-xl-12.col-xxl-6.pb-3
                             +announcement({
-                                subTitle: "New Collection", 
-                                mainTitle: "<b>Almost FREE Blender</b>",
+                                subTitle: utils.faker.commerce.department(), 
+                                mainTitle: `<b>${utils.faker.company.catchPhrase()}</b>`,
                                 btnText : "Shop Now",
-                                image: "images/blender.jpeg",
+                                image: utils.getUpload("announcement/1.jpeg"),
                                 isBright: true,
                                 fullHeight: true,
                                 btnClass: "btn-contrast",
@@ -133,10 +137,10 @@ include views/partials/header/header.pug
                             })
                         .col-xl-12.col-xxl-6.pb-3
                             +announcement({
-                                subTitle: "New Collection", 
-                                mainTitle: "<b>Summer trends are waiting</b>",
+                                subTitle: utils.faker.commerce.department(), 
+                                mainTitle: `<b>${utils.faker.company.catchPhrase()}</b>`,
                                 btnText : "Shop Now",
-                                image: "images/purchases.jpeg",
+                                image: utils.getUpload("announcement/7.jpeg"),
                                 isBright: false,
                                 fullHeight: true,
                                 btnClass: "btn-primary",
@@ -167,10 +171,10 @@ include views/partials/header/header.pug
                     .row.full-height
                         .col-xl-12.col-xxl-6.pb-3
                             +announcement({
-                                subTitle: "New Collection", 
-                                mainTitle: "<b>Summer trends are waiting</b>",
+                                subTitle: utils.faker.commerce.department(), 
+                                mainTitle: `<b>${utils.faker.company.catchPhrase()}</b>`,
                                 btnText : "Shop Now",
-                                image: "images/purchases.jpeg",
+                                image: utils.getUpload("announcement/5.jpeg"),
                                 isBright: false,
                                 fullHeight: true,
                                 btnClass: "btn-primary",
@@ -182,10 +186,10 @@ include views/partials/header/header.pug
                             })
                         .col-xl-12.col-xxl-6.pb-3
                             +announcement({
-                                subTitle: "New Collection", 
-                                mainTitle: "<b>Almost FREE Blender</b>",
+                                subTitle: utils.faker.commerce.department(), 
+                                mainTitle: `<b>${utils.faker.company.catchPhrase()}</b>`,
                                 btnText : "Shop Now",
-                                image: "images/blender.jpeg",
+                                image: utils.getUpload("announcement/8.jpeg"),
                                 isBright: true,
                                 fullHeight: true,
                                 btnClass: "btn-contrast",
