@@ -7,7 +7,10 @@ mixin product(customOptions = {})
         options.rate = utils.randomInt(0, 5);
         options.price = `$${utils.randomInt(9, 20)}.00`;
         options.image = utils.getUpload(`products/${utils.randomInt(1, 11)}.jpg`);
-        options.labels = utils.randomInt(100, 999) % 2 === 0 ? [] : utils.randomInt(100, 999) % 5 === 0 ? [{ class: "bg-warning", text: "10% Sale" }] : [{ class: "bg-contrast", text: "Some label" }];
+        options.labels = new Array(utils.randomInt(0, 3)).fill(null).map(() => ({
+            class: utils.randomElem(["bg-warning", "bg-success", "bg-contrast", "bg-primary"]),
+            text: utils.faker.commerce.productAdjective(),
+        }));
         options = Object.assign(options, customOptions);
 
     .product
