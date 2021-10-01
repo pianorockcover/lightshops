@@ -5,12 +5,13 @@ mixin product(customOptions = {})
         options.name = utils.faker.commerce.productName();
         options.category = utils.faker.commerce.department();
         options.rate = utils.randomInt(0, 5);
-        options.price = `$${utils.randomInt(9, 20)}.00`;
+        options.price = `$${utils.randomInt(9, 80)}.00`;
         options.image = utils.getUpload(`products/${utils.randomInt(1, 11)}.jpg`);
         options.labels = new Array(utils.randomInt(0, 3)).fill(null).map(() => ({
             class: utils.randomElem(["bg-warning", "bg-success", "bg-contrast", "bg-primary"]),
             text: utils.faker.commerce.productAdjective(),
         }));
+        options.oldPrice = utils.randomInt(100, 999) % 3 === 0 ? `$${utils.randomInt(80, 120)}.00` : undefined;
         options = Object.assign(options, customOptions);
 
     .product
@@ -33,7 +34,11 @@ mixin product(customOptions = {})
                         .bi.bi-star.product-rate-star
                     - }
                 - }
-            .product-price= options.price
+            .product-price
+                | #{options.price}
+                - if (options.oldPrice) {
+                    .product-price-old-value=options.oldPrice
+                - }
             - if (!customOptions.hideButtons) {
                 .product-buttons
                     +quantity()

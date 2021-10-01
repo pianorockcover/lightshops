@@ -7,7 +7,7 @@ mixin productFull(customOptions = {})
         options.name = utils.faker.commerce.productName();
         options.category = utils.faker.commerce.department();
         options.rate = utils.randomInt(0, 5);
-        options.price = `$${utils.randomInt(9, 20)}.00`;
+        options.price = `$${utils.randomInt(9, 80)}.00`;
 
         //- const imageId = utils.randomInt(1, 11);
         //- TMP
@@ -19,11 +19,12 @@ mixin productFull(customOptions = {})
             text: utils.faker.commerce.productAdjective(),
         }));
         options.reviewsAmount = utils.randomInt(100, 999);
+        options.oldPrice = utils.randomInt(100, 999) % 1 === 0 ? `$${utils.randomInt(80, 120)}.00` : undefined;
         options = Object.assign(options, customOptions);
 
     .product.product-full
         .row
-            .col-xl-6.col-xxl-4.pb-2
+            .col-xl-6.col-xxl-3.pb-2
                 .product-full-gallery
                     .product-full-thumbnails
                         .product-full-thumbnail.active
@@ -57,12 +58,16 @@ mixin productFull(customOptions = {})
                 +productOption("Style")
                 +productOption("Color", true)
                 .product-full-buy-block
-                    .product-price= options.price
+                    .product-price
+                        | #{options.price}
+                        - if (options.oldPrice) {
+                            .product-price-old-value=options.oldPrice
+                        - }
                     +quantity()
                     .btn.btn-primary.btn-large
                         .bi.bi-bag 
                         | Add to cart
-            .col-xl-12.col-xxl-4.pb-2
+            .col-xl-12.col-xxl-5.pb-2
                 .product-full-detailed-info
 
 
