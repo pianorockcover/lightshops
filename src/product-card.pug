@@ -1,13 +1,17 @@
 include views/partials/header/header.pug
 
 -
-    const title = utils.faker.commerce.productName();
+    const department = utils.faker.commerce.department();
 
 .area
     .section
         .container-full
-            h1.section-title=title     
+            +breadcrumbs([
+                "Main", "Catalog", department, title
+            ])
 
-        +productsSlider("You may like", "topSales")
+            +productFull()   
+
+    +productsSlider("You may also like", "topSales")
 
 include views/partials/footer/footer.pug

@@ -106,19 +106,19 @@
     }
 
     &-instagram-widget {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-        grid-gap: 5px;
-        max-width: 415px;
         margin-bottom: 20px;
     }
 
     &-instagram-post {
         .anchor(#ffffff, #ffffff);
-        display: flex;
         align-items: center;
         justify-content: center;
         overflow: hidden;
+        width: 70px;
+        height: 70px;
+        vertical-align: middle;
+        margin-right: 5px;
+        margin-bottom: 5px;
 
         &:hover {
             animation-duration: .5s;

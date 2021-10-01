@@ -1,0 +1,16 @@
+mixin productOption(title, isColor = false)
+    .product-option
+        .product-option-title=title
+        - for (let i = 0; i < utils.randomInt(2, 10); i++) {
+            - const value = !isColor ? utils.faker.commerce.productMaterial() : "";
+            a.product-option-value(href="product-card.html" class=`
+                ${isColor ? "product-option-value-color" : ""}
+                ${i === 0 ? "active" : ""}
+            `)
+                - if (isColor) {
+                    .product-option-color(style=`background-color:${utils.randomColor()};`)
+                - } else {
+                    | #{value}
+                - }
+        - }
+

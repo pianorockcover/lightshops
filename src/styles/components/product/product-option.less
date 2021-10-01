@@ -1,0 +1,46 @@
+@import "../../variables.less";
+@import "../anchor.less";
+
+@productOptionClass: product-option;
+@valueColor: #8a8a8a;
+
+.@{productOptionClass} {
+    margin-bottom: 25px;
+
+    &-title {
+        font-size: 16px;
+        font-weight: 500;
+        margin-bottom: 10px;
+    }
+
+    &-value {
+        .anchor(@valueColor, @primary);
+        border: 2px solid lighten(@valueColor, 40%);
+        transition: border-color .2s ease-in-out,
+            color .2s ease-in-out;
+        text-transform: uppercase;
+        padding: 10px 15px;
+        margin-right: 10px;
+        margin-bottom: 10px;
+        border-radius: 5px;
+        vertical-align: middle;
+
+        &:hover,
+        &.active {
+            border-color: lighten(@primary, 10%);
+        }
+    }
+
+    &-value-color {
+        padding: 1px;
+        width: 40px;
+        height: 40px;
+        border-radius: 100%;
+    }
+
+    &-color {
+        width: 100%;
+        height: 100%;
+        border-radius: 100%;
+    }
+}
