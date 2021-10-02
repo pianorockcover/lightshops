@@ -1,4 +1,5 @@
 include productOption.pug
+include specification.pug
 
 mixin productFull(customOptions = {})
     -
@@ -24,7 +25,7 @@ mixin productFull(customOptions = {})
 
     .product.product-full
         .row
-            .col-xl-6.col-xxl-3.pb-2
+            .col-xl-6.col-xxl-3.pb-4
                 .product-full-gallery
                     .product-full-thumbnails
                         .product-full-thumbnail.active
@@ -40,7 +41,7 @@ mixin productFull(customOptions = {})
                                 .product-label(class= label.class)= label.text
                             - }
                         .product-favourite-icon
-            .col-xl-6.col-xxl-4.pb-2
+            .col-xl-6.col-xxl-4.pb-4
                 a.product-category(href="category.html" title= options.category)= options.category
                 .product-title= options.name
                 .product-rate-wrapper
@@ -68,6 +69,25 @@ mixin productFull(customOptions = {})
                         .bi.bi-bag 
                         | Add to cart
             .col-xl-12.col-xxl-5.pb-2
-                .product-full-detailed-info
+                +tabs([
+                    {
+                        name: "Description",
+                        contentId: "#productDescription",
+                        active: true,
+                    },
+                    {
+                        name: "Specification",
+                        contentId: "#productSpecification",
+                    },
+                    {
+                        name: "Customer Reviews (3)",
+                        contentId: "#productReviews",
+                    }
+                ])
+                .tab-content#productDescription
+                    include product-description.pug
+                .tab-content#productSpecification
+                    +specification()
+                .tab-content#productReviews Reviews (Coming soon)
 
 

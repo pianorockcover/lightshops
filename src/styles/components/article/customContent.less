@@ -1,0 +1,55 @@
+@import "../../variables.less";
+@import "../anchor.less";
+
+@customContentClassName: custom-content;
+
+.@{customContentClassName} {
+
+    a {
+        .anchor(@primary, @primary);
+    }
+
+    p {
+        margin-top: 0;
+        line-height: 20px;
+    }
+
+    h2 {
+        margin-top: 0;
+    }
+
+    h3 {
+        margin-top: 0;
+    }
+
+    h4 {
+        margin-top: 0;
+    }
+
+    h5 {
+        margin-top: 0;
+    }
+
+    h6 {
+        margin-top: 0;
+    }
+
+    img,
+    iframe {
+        float: right;
+        max-width: 500px;
+        box-shadow: rgb(0 0 0 / 20%) 0px 1px 30px -10px;
+    }
+
+    .read-all {
+        .anchor(@primary, @primary);
+        .anchor-underline(@primary, 1px);
+        display: flex;
+        width: fit-content;
+        margin-top: 10px;
+
+        &.toggled {
+            display: none;
+        }
+    }
+}

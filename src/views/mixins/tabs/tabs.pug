@@ -1,0 +1,6 @@
+mixin tabs(tabsData)
+    .tabs
+        - for (tab of tabsData) {
+            .tabs-tab(data-tab=tab.contentId class=tab.active ? "active" : "")
+                | #{tab.name}
+        - }

@@ -1,0 +1,27 @@
+-
+    const utils = htmlWebpackPlugin.options.utils;
+    const restId = `${restProductDscription}${+ new Date()}`;
+    const getParagraph = () => `${utils.faker.lorem.paragraph()}
+    <a href="#">Link to another page</a> ${utils.faker.lorem.paragraph()}`;
+
+.custom-content
+    h2=utils.faker.name.title()
+    h3=utils.faker.name.title()
+    h4=utils.faker.name.title()
+    h5=utils.faker.name.title()
+    h6=utils.faker.name.title()
+
+    p
+        | !{getParagraph()}
+
+    p=utils.faker.lorem.paragraphs()
+
+    p=utils.faker.lorem.paragraphs()
+
+    .read-all(data-toggle=`#${restId}` data-trigger="click" data-effect="slide") 
+        | Read more...
+    .hidden(id=restId)
+        p
+        | !{getParagraph()}
+
+        p=utils.faker.lorem.paragraphs()
