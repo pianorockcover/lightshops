@@ -23,19 +23,22 @@ mixin productFull(customOptions = {})
         options.oldPrice = utils.randomInt(100, 999) % 1 === 0 ? `$${utils.randomInt(80, 120)}.00` : undefined;
         options = Object.assign(options, customOptions);
 
+        const zoomViewId = `productZoomView${options.id}`;
+
     .product.product-full
         .row
             .col-xl-6.col-xxl-3.pb-4
                 .product-full-gallery
                     .product-full-thumbnails
-                        .product-full-thumbnail.active
+                        .product-full-thumbnail.active(data-image=options.image data-zoom-view=`#${zoomViewId}`)
                             img.product-full-thumbnail-image(src=options.image, alt="Product thumbnail")
                         - for (let i = 1; i < 3; ++i) {
-                            .product-full-thumbnail
-                                img.product-full-thumbnail-image(src=utils.getUpload(`products/${imageId}-v-${i}.jpg`), alt="Product thumbnail")
+                            - const thumbImage = utils.getUpload(`products/${imageId}-v-${i}.jpg`);
+                            .product-full-thumbnail(data-image=thumbImage data-zoom-view=`#${zoomViewId}`)
+                                img.product-full-thumbnail-image(src=thumbImage, alt="Product thumbnail")
                         - }
                     .product-full-zoom-view
-                        img.product-full-zoom-view-image(src=options.image, alt="Product full view")
+                        img.product-full-zoom-view-image(src=options.image, alt="Product full view" id=zoomViewId)
                         .product-labels
                             - for (let label of (options.labels || [])) {
                                 .product-label(class= label.class)= label.text
