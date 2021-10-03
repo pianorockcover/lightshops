@@ -12,6 +12,7 @@ mixin product(customOptions = {})
             text: utils.faker.commerce.productAdjective(),
         }));
         options.oldPrice = utils.randomInt(100, 999) % 3 === 0 ? `$${utils.randomInt(80, 120)}.00` : undefined;
+        options.link = utils.randomElem(["product-card.html", "product-card-1.html"]);
         options = Object.assign(options, customOptions);
 
     .product
@@ -25,7 +26,7 @@ mixin product(customOptions = {})
                 .bi.bi-zoom-in.product-zoom-icon
                 img.product-image(src=options.image, alt=options.name)
             .product-category(title= options.category)= options.category
-            a(href="product-card.html" title= options.name).product-title= options.name
+            a(href=options.link title= options.name).product-title= options.name
             .product-rate
                 - for (let i = 0; i < 5; ++i) {
                     - if (i < options.rate) {

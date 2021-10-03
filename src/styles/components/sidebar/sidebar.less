@@ -1,4 +1,6 @@
 @import "../../variables.less";
+@import "../scroll.less";
+@import "./sidebarCatalog.less";
 
 @sidebarClass: sidebar;
 
@@ -7,35 +9,107 @@
     position: fixed;
     top: 0px;
     left: 0px;
-    width: 100px;
+    width: 80px;
     height: 100%;
-    padding: 15px;
-    text-align: center;
+    padding: 15px 0 15px 0;
+    z-index: @sidebarZindex;
+    transition: width .3s ease-in-out;
+    overflow: hidden;
+
+    .scroll(transparent, rgba(255, 255, 255, 0.4), 7px);
+
+    &:hover {
+        width: @sidebarWidth;
+        overflow-y: auto;
+
+        .@{sidebarClass}-toggle {
+            .bi {
+                animation-name: sidebarToggleAnimation;
+                animation-duration: .5s;
+                animation-timing-function: ease-in-out;
+
+                &:before {
+                    content: "\f62a";
+                }
+            }
+        }
+    }
 
     &-toggle {
         color: #fff;
-        font-size: 40px;
-        margin-bottom: 40px;
+        margin-bottom: 20px;
+        display: flex;
+        align-items: center;
+        padding: 0 15px 0 15px;
+
+        &-text {
+            font-size: 16px;
+            font-weight: 500;
+        }
+
+        .bi {
+            font-size: 40px;
+            padding-left: 5px;
+            width: fit-content;
+            padding-right: 5px;
+            margin-right: 15px;
+        }
     }
 
     &-links {
         display: flex;
         flex-direction: column;
         justify-content: center;
-        align-items: center;
+        align-items: flex-start;
     }
 
     &-link {
-        width: 50px;
-        height: 50px;
-        background: rgba(255, 255, 255, 0.4);
-        border-radius: 10px;
-        margin-bottom: 25px;
-        padding: 10px;
+        display: flex;
+        align-items: center;
+        margin-bottom: 5px;
         cursor: pointer;
+        padding: 10px 15px 10px 15px;
+        width: 100%;
+        transition: background-color .3s ease-in-out;
+
+        &:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+
+        &:nth-last-child(1) {
+            margin-bottom: 0px;
+        }
 
         .image {
-            width: 100%;
+            width: 50px;
+            height: 50px;
+            background: rgba(255, 255, 255, 0.4);
+            border-radius: 10px;
+            padding: 10px;
+            cursor: pointer;
+            margin-right: 15px;
         }
+
+        &-text {
+            color: #fff;
+            font-weight: 300;
+            font-size: 17px;
+        }
+    }
+}
+
+@keyframes sidebarToggleAnimation {
+    0% {
+        transform: scale(0.9);
+        opacity: .8;
+    }
+
+    80% {
+        transform: scale(1.03);
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
     }
 }

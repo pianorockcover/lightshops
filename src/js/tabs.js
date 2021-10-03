@@ -2,18 +2,31 @@ import $ from "jquery";
 
 const openTab = (selector) => $(selector).fadeIn();
 
-$("[data-tab]").each((_, el) => {
-    const element = $(el);
+$(() => {
+    $(".tab-content").hide();
 
-    if (element.hasClass("active")) {
-        openTab(element.data("tab"));
-    }
+    $(".tabs").each((_, tabsGroupEl) => {
+        const groupIds = $(tabsGroupEl).children("[data-tab]")
+            .map((_, el) => $(el).data("tab")).toArray();
 
-    element.on("click", () => {
-        $(".tab-content").hide();
-        $("[data-tab]").removeClass("active");
+        $(tabsGroupEl).children("[data-tab]").each((_, el) => {
+            const element = $(el);
 
-        openTab(element.data("tab"));
-        element.addClass("active");
+            if (element.hasClass("active")) {
+                openTab(element.data("tab"));
+            }
+
+            element.on("click", () => {
+                groupIds.forEach((tabId) => {
+                    $(tabId).hide();
+                    $(`[data-tab="${tabId}"]`).removeClass("active");
+                });
+
+                openTab(element.data("tab"));
+                element.addClass("active");
+            });
+        });
     });
+
+
 });

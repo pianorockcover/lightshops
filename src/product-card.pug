@@ -2,6 +2,7 @@ include views/partials/header/header.pug
 
 -
     const department = utils.faker.commerce.department();
+    const title = utils.faker.commerce.department();
 
 .area
     .section
@@ -11,6 +12,8 @@ include views/partials/header/header.pug
             ])
 
             +productFull()   
+
+    +categories()
 
     +productsSlider("You may also like", "topSales")
 

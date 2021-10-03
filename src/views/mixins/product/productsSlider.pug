@@ -16,7 +16,8 @@ mixin productsSlider(title, id)
         breakpoints = JSON.stringify(breakpoints);
     .section.section-slider
         .container-full
-            h2.section-title= title
+            if (title)
+                h2.section-title= title
             .simple-slider(id= id data-breakpoints=breakpoints)
                 .swiper-container
                     .swiper-wrapper

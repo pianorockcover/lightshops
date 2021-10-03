@@ -1,18 +1,16 @@
-- const utils = htmlWebpackPlugin.options.utils;
+- const sidebarUtils = htmlWebpackPlugin.options.utils;
 
 .sidebar
     .sidebar-toggle
         .bi.bi-list
+        .sidebar-toggle-text Catalog
     .sidebar-links
-        .sidebar-link
-            img.image(src=utils.getUpload("navigation-icons/1.svg") alt="Fashion icon")
-        .sidebar-link
-            img.image(src=utils.getUpload("navigation-icons/2.svg") alt="Football icon")
-        .sidebar-link
-            img.image(src=utils.getUpload("navigation-icons/3.svg") alt="Technics icon")
-        .sidebar-link
-            img.image(src=utils.getUpload("navigation-icons/2.svg") alt="Fashion icon")
-        .sidebar-link
-            img.image(src=utils.getUpload("navigation-icons/1.svg") alt="Football icon")
-        .sidebar-link
-            img.image(src=utils.getUpload("navigation-icons/3.svg") alt="Technics icon")
+        - for(let i = 0; i < 10; i++) {
+            - const detailsId = `catalogDetails${+ new Date()}`;
+            .sidebar-link(data-toggle=`#${detailsId}` data-trigger="hover")
+                img.image(src=sidebarUtils.getUpload(`navigation-icons/${sidebarUtils.randomInt(1, 4)}.svg`) alt="Navigation icon")
+                .sidebar-link-text=sidebarUtils.faker.commerce.department()
+
+                .sidebar-catalog(id=detailsId)
+                    | Бла бла бла
+        - }

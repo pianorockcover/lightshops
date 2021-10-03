@@ -10,10 +10,8 @@ mixin productFull(customOptions = {})
         options.rate = utils.randomInt(0, 5);
         options.price = `$${utils.randomInt(9, 80)}.00`;
 
-        //- const imageId = utils.randomInt(1, 11);
-        //- TMP
-        const imageId = 2;
-        options.image = utils.getUpload(`products/${imageId}.jpg`);
+        options.imageId = 1;
+        options.image = utils.getUpload(`products/${options.imageId}.jpg`);
 
         options.labels = new Array(utils.randomInt(0, 3)).fill(null).map(() => ({
             class: utils.randomElem(["bg-warning", "bg-success", "bg-contrast", "bg-primary"]),
@@ -21,6 +19,7 @@ mixin productFull(customOptions = {})
         }));
         options.reviewsAmount = utils.randomInt(100, 999);
         options.oldPrice = utils.randomInt(100, 999) % 1 === 0 ? `$${utils.randomInt(80, 120)}.00` : undefined;
+        options.link = utils.randomElem(["product-card.html", "product-card-1.html"]);
         options = Object.assign(options, customOptions);
 
         const zoomViewId = `productZoomView${options.id}`;
@@ -33,7 +32,7 @@ mixin productFull(customOptions = {})
                         .product-full-thumbnail.active(data-image=options.image data-zoom-view=`#${zoomViewId}`)
                             img.product-full-thumbnail-image(src=options.image, alt="Product thumbnail")
                         - for (let i = 1; i < 3; ++i) {
-                            - const thumbImage = utils.getUpload(`products/${imageId}-v-${i}.jpg`);
+                            - const thumbImage = utils.getUpload(`products/${options.imageId}-v${i}.jpg`);
                             .product-full-thumbnail(data-image=thumbImage data-zoom-view=`#${zoomViewId}`)
                                 img.product-full-thumbnail-image(src=thumbImage, alt="Product thumbnail")
                         - }
@@ -59,8 +58,8 @@ mixin productFull(customOptions = {})
                     .product-rate-label
                         | (#{options.reviewsAmount} reviews)
 
-                +productOption("Style")
-                +productOption("Color", true)
+                +productOption("Style", options.link)
+                +productOption("Color", options.link, true)
                 .product-full-buy-block
                     .product-price
                         | #{options.price}

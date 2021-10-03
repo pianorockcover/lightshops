@@ -1,9 +1,9 @@
-mixin productOption(title, isColor = false)
+mixin productOption(title, link, isColor = false)
     .product-option
         .product-option-title=title
         - for (let i = 0; i < utils.randomInt(2, 10); i++) {
             - const value = !isColor ? utils.faker.commerce.productMaterial() : "";
-            a.product-option-value(href="product-card.html" class=`
+            a.product-option-value(href=link class=`
                 ${isColor ? "product-option-value-color" : ""}
                 ${i === 0 ? "active" : ""}
             `)
