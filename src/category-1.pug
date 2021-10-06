@@ -1,0 +1,24 @@
+include views/partials/header/header.pug
+
+.area
+    .section
+        .container-full
+            +breadcrumbs([
+                "Main", "Catalog", "Wear", "Women's clothing"
+            ])
+            .section-title Product Category Name
+            +sortPanel()
+            .row
+                .col-xl-9.col-xxl-10
+                    .row
+                        - for (let i = 0; i < 22; i++) {
+                            .col-xl-3.col-xxl-2.pb-3
+                                +product()
+                        - }
+                .col-xl-3.col-xxl-2
+                    +filters()
+        +pagination()
+
+    +productsSlider("You Recent Views", "recentViews")
+
+include views/partials/footer/footer.pug

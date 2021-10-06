@@ -9,139 +9,162 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const CopyWebpackPlugin = require("copy-webpack-plugin");
 const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 const UglifyJsPlugin = require("uglifyjs-webpack-plugin");
-const ZipPlugin = require("zip-webpack-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
-var HtmlReplaceWebpackPlugin = require("html-replace-webpack-plugin");
+const HtmlReplaceWebpackPlugin = require("html-replace-webpack-plugin");
 
-const packageJson = require("./package.json");
-const version = packageJson.version;
-const themeName = "expreessi";
+const templateName = "expreessi";
 
-const scriptName = "main.js";
-const versionedScriptName = `main-${version}.js`;
+module.exports = (_env, argv) => {
+  const theme = argv.env.theme || "default";
+  const isDefaultTheme = theme === "default";
 
-const styleName = "style.css";
-const versionedStyleName = `style-${version}.css`;
+  const packageJson = require("./package.json");
+  const version = packageJson.version;
 
-const pagesPath = path.resolve(__dirname, "src");
-const pages = fs
-  .readdirSync(pagesPath)
-  .filter((fileName) => fileName.endsWith(".pug"));
+  const scriptName = "main.js";
+  const versionedScriptName = `main-${version}.js`;
 
-// TMP, use cli
-const theme = "clothing-store";
-const getUtils = require("./src/views/utils");
+  const styleName = "style.css";
+  const versionedStyleName = isDefaultTheme ? `style-${version}.css` : `style-${theme}-${version}.css`;
 
-module.exports = {
-  entry: `./src/js/${scriptName}`,
-  output: {
-    filename: `./js/${versionedScriptName}`,
-    path: path.resolve(__dirname, "dist"),
-  },
-  module: {
-    rules: [
-      {
-        test: /\.(woff|woff2|eot|ttf|png|svg|jpg)$/,
-        use: {
-          loader: "url-loader",
-        },
-      },
-      {
-        test: /\.(less)$/,
-        use: [
-          MiniCssExtractPlugin.loader,
-          { loader: "css-loader", options: { url: false } },
-          {
-            loader: "less-loader",
-            options: {
-              lessOptions: {
-                relativeUrls: false,
-              },
-            },
-          },
-        ],
-      },
-      {
-        test: /\.pug$/,
-        loader: "pug-loader",
-      },
-      {
-        test: /\.js$/,
-        exclude: /node_modules/,
-        use: {
-          loader: "babel-loader",
-          options: {
-            presets: ["@babel/preset-env"],
+  const distPath = isDefaultTheme ? "dist" : `dist-${theme}`;
+
+  const pagesPath = path.resolve(__dirname, "src");
+  const pages = fs
+    .readdirSync(pagesPath)
+    .filter((fileName) => fileName.endsWith(".pug"));
+
+  const themesPath = path.resolve(__dirname, "src/styles/themes");
+  const themes = fs
+    .readdirSync(themesPath)
+    .filter((fileName) => fileName.endsWith(".less"))
+    .map((themeName) => {
+      const themeData = fs.readFileSync(path.resolve(themesPath, themeName), "utf-8");
+      const primaryColor = /@primary: (.*?);/g.exec(themeData)[0]
+        .replace("@primary: ", "")
+        .replace(";", "");
+
+      return ({
+        name: themeName.replace(".less", ""),
+        primaryColor,
+      });
+    });
+
+  const getUtils = require("./src/views/utils");
+
+  return ({
+    entry: `./src/js/${scriptName}`,
+    output: {
+      filename: `./js/${versionedScriptName}`,
+      path: path.resolve(__dirname, distPath),
+    },
+    module: {
+      rules: [
+        {
+          test: /\.(woff|woff2|eot|ttf|png|svg|jpg)$/,
+          use: {
+            loader: "url-loader",
           },
         },
-      },
-    ],
-  },
-  plugins: [
-    new CleanWebpackPlugin(),
-    ...pages.reduce((allPages, cur) => {
-      allPages.push(
-        ...[
-          new HtmlWebpackPlugin({
-            template: `${pagesPath}/${cur}`,
-            filename: `./${cur.replace(/\.pug/, ".html")}`,
-            minify: false,
-            inject: false,
-            utils: getUtils(),
-          }),
-        ]
-      );
-
-      return allPages;
-    }, []),
-    new HtmlReplaceWebpackPlugin([
-      {
-        pattern: scriptName,
-        replacement: versionedScriptName,
-      },
-      {
-        pattern: styleName,
-        replacement: versionedStyleName,
-      },
-    ]),
-    new BeautifyHtmlWebpackPlugin(),
-    new MiniCssExtractPlugin({
-      filename: `./css/${versionedStyleName}`,
-    }),
-    new CopyWebpackPlugin({
-      patterns: [
-        { from: "static" },
-        { from: "node_modules/bootstrap-icons/font/fonts", to: "css/fonts" },
-      ],
-    }),
-    new ZipPlugin({
-      path: path.join(__dirname, "builds"),
-      filename: `${themeName}-${version}.zip`,
-    }),
-  ],
-  optimization: {
-    minimizer: [
-      new CssMinimizerPlugin({
-        minimizerOptions: {
-          preset: [
-            "default",
+        {
+          test: /\.(less)$/,
+          use: [
+            MiniCssExtractPlugin.loader,
+            { loader: "css-loader", options: { url: false } },
             {
-              discardComments: { removeAll: true },
+              loader: "less-loader",
+              options: {
+                lessOptions: {
+                  relativeUrls: false,
+                  modifyVars: {
+                    theme,
+                  }
+                },
+              },
             },
           ],
         },
-      }),
-      new UglifyJsPlugin({
-        uglifyOptions: {
-          output: {
-            comments: false,
+        {
+          test: /\.pug$/,
+          loader: "pug-loader",
+        },
+        {
+          test: /\.js$/,
+          exclude: /node_modules/,
+          use: {
+            loader: "babel-loader",
+            options: {
+              presets: ["@babel/preset-env"],
+            },
           },
         },
+      ],
+    },
+    plugins: [
+      new CleanWebpackPlugin(),
+      ...(isDefaultTheme ? pages : []).reduce((allPages, cur) => {
+        allPages.push(
+          ...[
+            new HtmlWebpackPlugin({
+              template: `${pagesPath}/${cur}`,
+              filename: `./${cur.replace(/\.pug/, ".html")}`,
+              minify: false,
+              inject: false,
+              utils: getUtils(),
+              templateName,
+              themes,
+              theme,
+            }),
+          ]
+        );
+
+        return allPages;
+      }, []),
+      new HtmlReplaceWebpackPlugin([
+        {
+          pattern: scriptName,
+          replacement: versionedScriptName,
+        },
+        {
+          pattern: styleName,
+          replacement: versionedStyleName,
+        },
+      ]),
+      new BeautifyHtmlWebpackPlugin(),
+      new MiniCssExtractPlugin({
+        filename: `./css/${versionedStyleName}`,
+      }),
+      new CopyWebpackPlugin({
+        patterns: [
+          { from: "static" },
+          { from: "node_modules/bootstrap-icons/font/fonts", to: "css/fonts" },
+        ],
       }),
     ],
-  },
-  devServer: {
-    contentBase: path.join(__dirname, "dist"),
-    port: 3034,
-  },
-};
+    optimization: {
+      minimizer: [
+        new CssMinimizerPlugin({
+          minimizerOptions: {
+            preset: [
+              "default",
+              {
+                discardComments: { removeAll: true },
+              },
+            ],
+          },
+        }),
+        new UglifyJsPlugin({
+          uglifyOptions: {
+            output: {
+              comments: false,
+            },
+          },
+        }),
+      ],
+    },
+    devServer: {
+      contentBase: path.join(__dirname, distPath),
+      port: 3034,
+    },
+  });
+}
