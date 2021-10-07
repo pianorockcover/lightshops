@@ -67,9 +67,9 @@
         height: @imageHeight;
         position: relative;
         transition: transform .5s ease-in-out;
+        flex-direction: column;
 
         .@{productClass}-image {
-            max-width: 100%;
             position: relative;
             z-index: 1;
         }
@@ -84,6 +84,7 @@
             width: 45px;
             height: 45px;
             top: calc(50% - 14px);
+            left: calc(50% - 14px);
             display: flex;
             align-items: center;
             justify-content: center;
