@@ -1,3 +1,5 @@
+include sidebarCatalog.pug
+
 - const sidebarUtils = htmlWebpackPlugin.options.utils;
 
 .sidebar
@@ -6,11 +8,19 @@
         .sidebar-toggle-text Catalog
     .sidebar-links
         - for(let i = 0; i < 10; i++) {
-            - const detailsId = `catalogDetails${+ new Date()}`;
-            .sidebar-link(data-toggle=`#${detailsId}` data-trigger="hover")
+            - if (i > 4) {
+                a.sidebar-link(href="category.html")
+                    img.image(src=sidebarUtils.getUpload(`navigation-icons/${sidebarUtils.randomInt(1, 4)}.svg`) alt="Navigation icon")
+                    .sidebar-link-text=sidebarUtils.faker.commerce.department()
+                - continue;
+            - }
+
+            - const detailsId = `catalogDetails${i}`;
+            .sidebar-link(data-toggle=`#${detailsId}` data-trigger="hover" data-align-top="true")
                 img.image(src=sidebarUtils.getUpload(`navigation-icons/${sidebarUtils.randomInt(1, 4)}.svg`) alt="Navigation icon")
                 .sidebar-link-text=sidebarUtils.faker.commerce.department()
+                    .bi.bi-chevron-right
 
-                //- .sidebar-catalog(id=detailsId)
-                //-     | Бла бла бла
+                .sidebar-catalog(id=detailsId)
+                    +sidebarCatalog()
         - }

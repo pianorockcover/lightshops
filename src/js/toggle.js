@@ -26,6 +26,7 @@ $("[data-toggle]").each((_, el) => {
   }
 
   const effect = element.data("effect") || "fade";
+  const animationDuration = element.data("animation-duration");
 
   const hideOnClickAside = element.data("hide-aside") || false;
 
@@ -36,7 +37,9 @@ $("[data-toggle]").each((_, el) => {
 
   if (!trigger || trigger === "click" || isMobile) {
     element.on("click", () =>
-      toggleAnimation(target, effect, {}, onComplete));
+      toggleAnimation(target, effect, {
+        duration: animationDuration,
+      }, onComplete));
 
     if (hideOnClickAside) {
       $(document).on("mouseup", (event) => {
@@ -52,11 +55,13 @@ $("[data-toggle]").each((_, el) => {
 
   if (trigger === 'hover') {
     element.hover(() => {
-      toggleAnimation(target, effect, {}, onComplete);
-    });
+      if (element.data("align-top")) {
+        target.css("top", element[0].getBoundingClientRect().top);
+      }
 
-    // element.on("mouseout", () => {
-    //   toggleAnimation(target, effect, {}, onComplete, "Out");
-    // });
+      toggleAnimation(target, effect, {
+        duration: animationDuration,
+      }, onComplete);
+    });
   }
 });

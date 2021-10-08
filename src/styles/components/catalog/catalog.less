@@ -1,0 +1,31 @@
+@import "../../variables.less";
+@import "../anchor.less";
+
+@catalogClassName: catalog;
+
+.@{catalogClassName} {
+    margin-bottom: 35px;
+
+    &-department {
+        text-transform: uppercase;
+        font-weight: 500;
+        font-size: 16px;
+        border-bottom: 1px solid #ebebeb;
+        padding-bottom: 15px;
+        margin-bottom: 20px;
+    }
+
+    &-link {
+        .anchor(#646464, @primary);
+        .anchor-underline-hover(@primary, 1px);
+        display: flex;
+        width: fit-content;
+        margin-bottom: 10px;
+        font-size: 15px;
+        margin-bottom: 10px;
+
+        &:nth-last-child(1) {
+            margin-bottom: 0px;
+        }
+    }
+}
