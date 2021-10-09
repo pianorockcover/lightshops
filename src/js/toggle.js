@@ -54,14 +54,26 @@ $("[data-toggle]").each((_, el) => {
   }
 
   if (trigger === 'hover') {
-    element.hover(() => {
+    element.on("mouseover", () => {
       if (element.data("align-top")) {
         target.css("top", element[0].getBoundingClientRect().top);
       }
 
-      toggleAnimation(target, effect, {
-        duration: animationDuration,
-      }, onComplete);
+      setTimeout(() => {
+        if (element.is(":hover")) {
+          toggleAnimation(target, effect, {
+            duration: animationDuration,
+          }, onComplete, "In");
+        }
+      }, [400])
+    });
+
+    element.on("mouseout", () => {
+      if (!element.is(":hover")) {
+        toggleAnimation(target, effect, {
+          duration: animationDuration,
+        }, onComplete, "Out");
+      }
     });
   }
 });
