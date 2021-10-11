@@ -55,10 +55,6 @@ $("[data-toggle]").each((_, el) => {
 
   if (trigger === 'hover') {
     element.on("mouseover", () => {
-      if (element.data("align-top")) {
-        target.css("top", element[0].getBoundingClientRect().top);
-      }
-
       setTimeout(() => {
         if (element.is(":hover")) {
           toggleAnimation(target, effect, {

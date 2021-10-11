@@ -2,16 +2,16 @@ mixin pagination()
     .pagination 
         a.btn-pagination(href="#") First
         .pagination-pages
-            a.btn-pagination(href="#")
+            a.btn-pagination.btn-pagination-arrow(href="#")
                 .bi.bi-arrow-left-short
             a.btn-pagination(href="#") 1
-            a.btn-pagination(href="#") 2
+            a.btn-pagination.active(href="#") 2
             a.btn-pagination(href="#") 3
             a.btn-pagination(href="#") ...
             a.btn-pagination(href="#") 10
             a.btn-pagination(href="#") 11
             a.btn-pagination(href="#") 12
             a.btn-pagination(href="#") 13
-            a.btn-pagination(href="#")
+            a.btn-pagination.btn-pagination-arrow(href="#")
                 .bi.bi-arrow-right-short
         a.btn-pagination(href="#") Last

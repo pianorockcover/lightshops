@@ -15,7 +15,7 @@ mixin product(customOptions = {})
         options.link = utils.randomElem(["product-card.html", "product-card-1.html"]);
         options = Object.assign(options, customOptions);
 
-    .product
+    .product(class=`${options.inline ? "product-inline" : ""}`)
         .product-content
             .product-labels
                 - for (let label of (options.labels || [])) {
@@ -25,25 +25,26 @@ mixin product(customOptions = {})
             .product-image-wrapper
                 .bi.bi-zoom-in.product-zoom-icon
                 img.product-image(src=options.image, alt=options.name)
-            .product-category(title= options.category)= options.category
-            a(href=options.link title= options.name).product-title= options.name
-            .product-rate
-                - for (let i = 0; i < 5; ++i) {
-                    - if (i < options.rate) {
-                        .bi.bi-star-fill.product-rate-star
-                    - } else {
-                        .bi.bi-star.product-rate-star
+            .product-details
+                .product-category(title= options.category)= options.category
+                a(href=options.link title= options.name).product-title= options.name
+                .product-rate
+                    - for (let i = 0; i < 5; ++i) {
+                        - if (i < options.rate) {
+                            .bi.bi-star-fill.product-rate-star
+                        - } else {
+                            .bi.bi-star.product-rate-star
+                        - }
                     - }
+                .product-price
+                    | #{options.price}
+                    - if (options.oldPrice) {
+                        .product-price-old-value=options.oldPrice
+                    - }
+                - if (!customOptions.hideButtons) {
+                    .product-buttons
+                        +quantity()
+                        .btn.btn-primary
+                            .bi.bi-bag 
+                            | Buy
                 - }
-            .product-price
-                | #{options.price}
-                - if (options.oldPrice) {
-                    .product-price-old-value=options.oldPrice
-                - }
-            - if (!customOptions.hideButtons) {
-                .product-buttons
-                    +quantity()
-                    .btn.btn-primary
-                        .bi.bi-bag 
-                        | Buy
-            - }

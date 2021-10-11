@@ -1,4 +1,4 @@
-mixin sortPanel()
+mixin sortPanel(viewType)
     .sort-panel
         .left
             a.sort-panel-link(href="#") 
@@ -8,7 +8,7 @@ mixin sortPanel()
                 | Sort By Popularity
                 span.bi.bi-triangle-fill.arrow.desc
         .right
-            a.sort-panel-link.active(href="#")
+            a.sort-panel-link(href="category.html" class=`${!viewType || viewType === "grid" ? "active" : "" }`)
                 span.bi.bi-grid
-            a.sort-panel-link(href="#")
+            a.sort-panel-link(href="category-inline.html" class=`${viewType === "inline" ? "active" : "" }`)
                 span.bi.bi-list-ul
