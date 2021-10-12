@@ -1,3 +1,5 @@
+include productTags.pug
+
 mixin product(customOptions = {})
     -
         let options = {};
@@ -41,10 +43,10 @@ mixin product(customOptions = {})
                     - if (options.oldPrice) {
                         .product-price-old-value=options.oldPrice
                     - }
+                +productTags()
                 - if (!customOptions.hideButtons) {
                     .product-buttons
-                        +quantity()
                         .btn.btn-primary
                             .bi.bi-bag 
-                            | Buy
+                            | Add to cart
                 - }

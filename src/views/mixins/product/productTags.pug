@@ -1,0 +1,15 @@
+mixin productTags()
+    .product-tags
+        - if (utils.randomInt(100, 999) % 2 === 0) {
+            .product-tag
+                .bi.bi-check2-circle
+                | In Stock
+        - } else {
+            .product-tag
+                .bi.bi-x-lg
+                | not available
+        - }
+        - if (utils.randomInt(100, 999) % 3 === 0) {
+            .product-tag 
+                | Free shipping
+        - }

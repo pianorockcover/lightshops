@@ -3,7 +3,7 @@
 @import "../anchor.less";
 
 @productClass: product;
-@height: 340px;
+@height: 390px;
 @imageHeight: 200px;
 
 .in-favourite-icon() {
@@ -139,6 +139,7 @@
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
+        margin-bottom: 15px;
 
         &-old-value {
             opacity: 0.3;
@@ -151,15 +152,38 @@
         }
     }
 
+    &-tags {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    &-tag {
+        display: inline-flex;
+        align-items: center;
+        font-size: 11px;
+        color: #686868;
+        width: fit-content;
+        border: 1px solid #dfdfdf;
+        padding: 5px 10px;
+        border-radius: 25px;
+        text-transform: uppercase;
+        background: #f9f9f9;
+        margin-right: 3px;
+        line-height: 1;
+
+        .bi {
+            margin-right: 5px;
+        }
+    }
+
     &-buttons {
         display: none;
         align-items: center;
         justify-content: space-between;
-        margin-top: 15px;
 
         .btn {
             width: 100%;
-            margin-left: 15px;
         }
     }
 
@@ -199,6 +223,15 @@
         .@{productClass}-image-wrapper {
             transform: scale(1.05);
         }
+
+        .@{productClass}-tags {
+            white-space: normal;
+            margin-bottom: 10px;
+        }
+
+        .@{productClass}-tag {
+            margin-bottom: 5px;
+        }
     }
 
     &.@{productClass}-inline {
@@ -211,11 +244,16 @@
 
         .@{productClass}-buttons {
             display: flex;
+
+            .btn {
+                width: fit-content;
+            }
         }
 
         .@{productClass}-details {
             margin-left: 20px;
             padding-top: 10px;
+            padding-bottom: 10px;
         }
 
         .@{productClass}-image-wrapper {
@@ -223,6 +261,15 @@
             height: 180px;
             width: 200px;
             min-width: 200px;
+        }
+
+        .@{productClass}-tags {
+            white-space: normal;
+            margin-bottom: 10px;
+        }
+
+        .@{productClass}-tag {
+            margin-bottom: 5px;
         }
     }
 }
