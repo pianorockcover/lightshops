@@ -1,0 +1,8 @@
+mixin pageTitle()
+    -
+        const titleMain = utils.faker.name.title();
+        const titleSecondary = utils.faker.name.title();
+        const image = utils.getUpload(`articles/full-${utils.randomInt(1, 3)}.jpeg`);
+    .page-title(style=`background-image: url(${image});`)
+        .page-title-main=titleMain
+        .page-title-secondary=titleSecondary

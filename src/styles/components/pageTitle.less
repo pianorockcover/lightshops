@@ -1,0 +1,45 @@
+@import "../variables.less";
+
+@pageTitleClass: page-title;
+
+.@{pageTitleClass} {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    color: #fff;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+
+    &:before {
+        content: " ";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(to bottom, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.45));
+        z-index: 1;
+    }
+
+    &-main {
+        font-size: 40px;
+        font-weight: 600;
+        margin-bottom: 15px;
+        position: relative;
+        z-index: 2;
+        background-color: @primary;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    &-secondary {
+        font-size: 20px;
+        font-weight: 300;
+        text-transform: uppercase;
+        position: relative;
+        z-index: 2;
+    }
+}
