@@ -1,0 +1,71 @@
+mixin customContent(options = {})
+    -
+        const utils = htmlWebpackPlugin.options.utils;
+        const restId = `${restProductDscription}${+ new Date()}`;
+        const getParagraph = () => `${utils.faker.lorem.paragraph()}. <b>${utils.faker.company.catchPhrase()}</b>. ${utils.faker.company.catchPhrase()}. ${utils.faker.company.catchPhrase()}.
+        <a href="#">Link to another page</a> ${utils.faker.lorem.paragraph()}`;
+        const image = utils.getUpload(`articles/full-${utils.randomInt(1, 4)}.jpeg`);
+
+    .custom-content(class=`${options.isArea ? "custom-content-area" : ""}`)
+        h2=utils.faker.name.title()
+
+        p
+            | !{getParagraph()}
+
+        ul
+            li=utils.faker.company.catchPhrase()
+            li=utils.faker.company.catchPhrase()
+            li=utils.faker.company.catchPhrase()
+            li=utils.faker.company.catchPhrase()
+            li=utils.faker.company.catchPhrase()
+
+        - if (options.includeImage) {
+            p
+                | #{utils.faker.lorem.paragraphs()}
+                a(href=image)
+                    img(src=image alt=utils.faker.company.catchPhrase() title=utils.faker.company.catchPhrase())
+                | #{utils.faker.lorem.paragraphs()}
+                | #{utils.faker.lorem.paragraphs()}
+        - }
+
+        p=utils.faker.lorem.paragraphs()
+
+        - if (options.inludeOL) {
+            ol
+                li=utils.faker.company.catchPhrase()
+                li=utils.faker.company.catchPhrase()
+                li=utils.faker.company.catchPhrase()
+                li=utils.faker.company.catchPhrase()
+                li=utils.faker.company.catchPhrase()
+        - }
+
+        - if (!options.isFull) {
+            .read-all(data-toggle=`#${restId}` data-trigger="click" data-effect="slide") 
+                | Read more...
+
+            .hidden(id=restId)
+                p=utils.faker.lorem.paragraphs()
+
+                p
+                    | !{getParagraph()}
+
+                p=utils.faker.lorem.paragraphs()
+        - } else {
+            h3=utils.faker.name.title()
+
+            p=utils.faker.lorem.paragraphs()
+
+            - if (options.inludeQuote) {
+                blockquote(title=`by ${utils.faker.name.findName()}`)=`${utils.faker.company.catchPhrase()}. ${utils.faker.company.catchPhrase()}.`
+            - }
+            p
+                | !{getParagraph()}
+            p=utils.faker.lorem.paragraphs()
+            +video()
+            p=utils.faker.lorem.paragraphs()
+            p=utils.faker.lorem.paragraphs()
+            p
+                | !{getParagraph()}
+            p
+                | !{getParagraph()}
+        - } 

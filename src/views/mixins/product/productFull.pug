@@ -87,7 +87,7 @@ mixin productFull(customOptions = {})
                     }
                 ])
                 .tab-content#productDescription
-                    include product-description.pug
+                    +customContent()
                 .tab-content#productSpecification
                     +specification()
                 .tab-content#productReviews Reviews (Coming soon)

@@ -4,8 +4,35 @@ include views/partials/header/header.pug
     .section
         .container-full
             +breadcrumbs([
-                "Main", "Checkout", "Article"
+                "Main", "Blog", "Article"
             ])
             +pageTitle()
+            .row
+                .col-xxl-9
+                    +customContent({
+                        isFull: true,
+                        isArea: true,
+                        inludeQuote: true,
+                        inludeOL: true,
+                        includeImage: true,
+                    })
+                .col-xxl-3
+    .section
+        .container-full
+            +tabs([
+                {
+                    name: "You May Iike (10)",
+                    contentId: "#youMayLike",
+                    active: true,
+                },
+                {
+                    name: "Personal Recommendations (7)",
+                    contentId: "#personalRecommendations",
+                }
+            ])
+            .tab-content#youMayLike
+                +productsSlider(undefined, "youMayLikeSlider")
+            .tab-content#personalRecommendations
+                +productsSlider(undefined, "personalRecommendationsSlider")
 
 include views/partials/footer/footer.pug

@@ -1,9 +1,18 @@
 @import "../../variables.less";
 @import "../anchor.less";
+@import "../buttons/shadowHover.less";
 
 @customContentClassName: custom-content;
 
+.@{customContentClassName}-area {
+    padding: 25px 15px;
+    background-color: #ffffff;
+}
+
 .@{customContentClassName} {
+    font-size: 16px;
+    line-height: 27px;
+    letter-spacing: 0.2px;
 
     a {
         .anchor(@primary, @primary);
@@ -11,7 +20,6 @@
 
     p {
         margin-top: 0;
-        line-height: 20px;
     }
 
     h2 {
@@ -34,11 +42,92 @@
         margin-top: 0;
     }
 
-    img,
+    .gallery-item {
+        max-width: 300px;
+        display: block;
+        float: left;
+        margin: 10px 15px 5px 0;
+
+        img {
+            max-width: 100%;
+            .shadow-hover();
+        }
+    }
+
     iframe {
-        float: right;
-        max-width: 500px;
-        box-shadow: rgb(0 0 0 / 20%) 0px 1px 30px -10px;
+        float: left;
+        max-width: 600px;
+        margin: 0 15px 5px 0;
+    }
+
+    ul {
+        list-style: none;
+        padding-left: 10px;
+        margin-top: 0px;
+        margin-bottom: 15px;
+
+        li {
+            padding-left: 25px;
+            position: relative;
+
+            &:not(:nth-last-child(1)) {
+                margin-bottom: 10px;
+            }
+
+            &:before {
+                content: "\f272";
+                font-family: bootstrap-icons;
+                position: absolute;
+                top: 0px;
+                left: 0px;
+                display: block;
+            }
+        }
+    }
+
+    ol {
+        padding-left: 30px;
+        margin-top: 0px;
+        margin-bottom: 15px;
+
+        li {
+            &:not(:nth-last-child(1)) {
+                margin-bottom: 10px;
+            }
+        }
+    }
+
+    blockquote {
+        margin: 0;
+        margin-bottom: 15px;
+        background: @greyColor;
+        padding: 35px 20px 35px 20px;
+        position: relative;
+        text-align: center;
+        font-weight: 600;
+        font-size: 30px;
+        line-height: 40px;
+
+        &:before {
+            content: "\f255";
+            font-family: bootstrap-icons;
+            display: block;
+            color: @primary;
+            font-size: 50px;
+            text-align: center;
+            font-weight: normal;
+            margin-bottom: 35px;
+        }
+
+        &:after {
+            content: attr(title);
+            display: block;
+            font-weight: 300;
+            text-transform: uppercase;
+            margin-top: 25px;
+            font-size: 15px;
+            line-height: 20px;
+        }
     }
 
     .read-all {

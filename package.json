@@ -44,6 +44,7 @@
     "jquery": "^3.6.0",
     "normalize.css": "^8.0.1",
     "puppeteer": "^10.2.0",
+    "simplelightbox": "^2.9.0",
     "swiper": "^6.8.2",
     "zip-a-folder": "^1.1.0",
     "zip-webpack-plugin": "^4.0.1"
