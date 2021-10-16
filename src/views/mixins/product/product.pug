@@ -17,7 +17,7 @@ mixin product(customOptions = {})
         options.link = utils.randomElem(["product-card.html", "product-card-1.html"]);
         options = Object.assign(options, customOptions);
 
-    .product(class=`${options.inline ? "product-inline" : ""}`)
+    .product(class=`${options.inline ? "product-inline" : ""} ${options.hideButtons ? "product-info-only" : "" }`)
         .product-content
             .product-labels
                 - for (let label of (options.labels || [])) {
