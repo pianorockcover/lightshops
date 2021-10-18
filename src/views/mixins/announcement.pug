@@ -4,7 +4,7 @@ mixin announcement(options)
         className += options.fullHeight ? " announcement-full-height" : "";
 
         let bgImageStyle = `background-image:url(${options.image})`;
-    a.announcement(href="#" class= className)
+    a.announcement(href="article.html" class= className)
         .announcement-image(style= bgImageStyle)
         .announcement-area
             if (options.subTitle)

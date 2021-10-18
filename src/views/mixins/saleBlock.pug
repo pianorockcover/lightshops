@@ -1,8 +1,8 @@
-mixin sale-block(title, linkHref, image, imageAlt, amount)
+mixin saleBlock(title, image, imageAlt, amount)
     -
         let bgImageStyle = `background-image:url(${image})`;
         let amountText = `Up to ${amount}% off`;
-    a.sale-block(href=linkHref style=bgImageStyle)
+    a.sale-block(href="article.html" style=bgImageStyle)
         .sale-block-content
             .sale-block-amount= amountText
             .sale-block-title= title

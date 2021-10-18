@@ -1,4 +1,9 @@
-mixin category(name, image, links, slogan)
+mixin category(name, image)
+    -
+        const getLinks = () => new Array(utils.randomInt(3, 8))
+            .fill(null).map(() => 
+            `${utils.faker.commerce.productAdjective()} ${utils.faker.commerce.product()}`);
+
     .category
         .category-content
             .category-left
@@ -6,6 +11,6 @@ mixin category(name, image, links, slogan)
                     img.category-image(src=image, alt=name)
             .category-right
                 .category-name= name
-                - for (let link of links) {
-                    a.category-link(href="category.html")= link
+                - for (let link of getLinks()) {
+                    a.category-link(href="category.html")=link
                 - }

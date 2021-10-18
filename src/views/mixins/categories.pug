@@ -1,11 +1,6 @@
 include ../mixins/category.pug
 
 mixin categories
-    -
-        const getLinks = () => new Array(utils.randomInt(3, 8))
-            .fill(null).map(() => 
-            `${utils.faker.commerce.productAdjective()} ${utils.faker.commerce.product()}`);
-
     .section
         .container-full
             .section-title Top Categories Of The Month
@@ -13,24 +8,20 @@ mixin categories
                 .col-xl-6.col-xxl-3.pb-3
                     +category(
                         utils.faker.commerce.department(),
-                        utils.getUpload("categories/1.svg"),
-                        getLinks()
+                        utils.getUpload("categories/1.svg")
                     )
                 .col-xl-6.col-xxl-3.pb-3
                     +category(
                         utils.faker.commerce.department(),
-                        utils.getUpload("categories/2.svg"),
-                        getLinks()
+                        utils.getUpload("categories/2.svg")
                     )
                 .col-xl-6.col-xxl-3.pb-3
                     +category(
                         utils.faker.commerce.department(),
-                        utils.getUpload("categories/3.svg"),
-                        getLinks()
+                        utils.getUpload("categories/3.svg")
                     )
                 .col-xl-6.col-xxl-3.pb-3
                     +category(
                         utils.faker.commerce.department(),
-                        utils.getUpload("categories/1.svg"),
-                        getLinks()
+                        utils.getUpload("categories/1.svg")
                     )

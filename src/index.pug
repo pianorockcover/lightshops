@@ -27,15 +27,13 @@ include views/partials/header/header.pug
                     })
                 .col-xxl-3.col-xl-6.pb-3
                     .sales-layout 
-                        +sale-block(
+                        +saleBlock(
                             utils.faker.company.catchPhrase(),
-                            "#",
                             utils.getUpload("announcement/2.jpeg"),
                             utils.faker.company.catchPhrase(),
                             40)
-                        +sale-block(
+                        +saleBlock(
                             utils.faker.company.catchPhrase(),
-                            "#",
                             utils.getUpload("announcement/3.jpeg"),
                             utils.faker.company.catchPhrase(),
                             75)

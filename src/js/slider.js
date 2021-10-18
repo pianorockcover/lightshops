@@ -36,7 +36,7 @@ $(".simple-slider").each((_, element) => {
 
   let breakpoints = {};
   try {
-    breakpoints = $(element).data("breakpoints");
+    breakpoints = $(element).data("breakpoints") || {};
     breakpoints = Object.keys(breakpoints)
       .reduce((prev, cur) => ({
         ...prev,

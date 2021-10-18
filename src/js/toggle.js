@@ -8,7 +8,7 @@ export const activeClass = "active";
 
 const toggleAnimation = (el, effect, options = {}, onComplete = () => { }, type = "Toggle") => {
   el[`${effect}${type}`]({
-    duration: 300,
+    duration: 50,
     ...options
   });
   onComplete();
