@@ -4,7 +4,7 @@ mixin customContent(options = {})
         const restId = `${restProductDscription}${+ new Date()}`;
         const getParagraph = () => `${utils.faker.lorem.paragraph()}. <b>${utils.faker.company.catchPhrase()}</b>. ${utils.faker.company.catchPhrase()}. ${utils.faker.company.catchPhrase()}.
         <a href="#">Link to another page</a> ${utils.faker.lorem.paragraph()}`;
-        const image = utils.getUpload(`articles/full-${utils.randomInt(1, 4)}.jpeg`);
+        const image = utils.getUpload(`articles/full-2.jpeg`);
 
     .custom-content(class=`${options.isArea ? "custom-content-area" : ""}`)
         h2=utils.faker.name.title()
