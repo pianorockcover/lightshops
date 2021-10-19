@@ -6,5 +6,6 @@ import "./tabs";
 import "./zoomView";
 import "./theme";
 import "./customContent";
+import "./modal";
 
 import "../styles/index.less";

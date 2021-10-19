@@ -1,0 +1,39 @@
+@import "../../variables.less";
+
+@modalClassName: modal;
+
+.@{modalClassName} {
+    position: fixed;
+    z-index: @modalZindex;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    display: none;
+
+    &-shade {
+        background: rgba(0, 0, 0, 0.34);
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+    }
+
+    &-area {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        z-index: 2;
+    }
+
+    &-content {
+        position: relative;
+        max-width: 1000px;
+        display: none;
+        box-shadow: rgb(100 100 111 / 20%) 0px 7px 29px 0px;
+        border-top: 4px solid @secondary;
+    }
+}

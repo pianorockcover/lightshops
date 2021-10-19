@@ -25,7 +25,7 @@ mixin product(customOptions = {})
                 - }
             .product-favourite-icon
             .product-image-wrapper
-                .bi.bi-zoom-in.product-zoom-icon
+                .bi.bi-zoom-in.product-zoom-icon(data-modal="#productViewModal")
                 img.product-image(src=options.image, alt=options.name)
             .product-details
                 .product-category(title= options.category)= options.category

@@ -1,0 +1,7 @@
+mixin modal(options)
+    .modal(id=options.id)
+        .modal-shade
+        .modal-area
+            .modal-content
+                .modal-close CLOSE
+                +#{options.content}()
