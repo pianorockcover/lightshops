@@ -1,15 +1,8 @@
 .filters-expander
-    .filters-expander-header(
+    .filters-expander-header.toggled(
         data-toggle="#colorsFilter"
         data-trigger="click"
         data-effect="slide")
         | Colors
-    #colorsFilter.filters-expander-body.hidden
-        .form-control
-            +checkbox("Blue (20)", "blueCheckbox")
-        .form-control
-            +checkbox("Greed (199)", "greenCheckbox")
-        .form-control
-            +checkbox("Yellow (30)", "yellowCheckbox")
-        .form-control
-            +checkbox("Orange (10)", "orangeCheckbox")
+    #colorsFilter.filters-expander-body
+        +productOption(undefined, undefined, true, "mb-0")

@@ -1,16 +1,32 @@
-mixin productOption(title, link, isColor = false)
-    .product-option
-        .product-option-title=title
-        - for (let i = 0; i < utils.randomInt(2, 10); i++) {
-            - const value = !isColor ? utils.faker.commerce.productMaterial() : "";
-            a.product-option-value(href=link class=`
-                ${isColor ? "product-option-value-color" : ""}
-                ${i === 0 ? "active" : ""}
-            `)
-                - if (isColor) {
-                    .product-option-color(style=`background-color:${utils.randomColor()};`)
-                - } else {
-                    | #{value}
-                - }
+mixin productOption(title, link, isColor = false, additionalClassName)
+    .product-option(class=additionalClassName)
+        - if (title) {
+            .product-option-title=title
         - }
+        - for (let i = 0; i < utils.randomInt(2, 10); i++) {
+            -
+                const value = !isColor ? utils.faker.commerce.productMaterial() : "";
+                const className = `
+                    ${isColor ? "product-option-value-color" : ""}
+                    ${i === 0 ? "active" : ""}`;
 
+                const colorStyle = `background-color:${utils.randomColor()};`;
+
+            - if (link) {
+                a.product-option-value(href=link class=className)
+
+                    - if (isColor) {
+                        .product-option-color(style=colorStyle)
+                    - } else {
+                        | #{value}
+                    - }
+            - } else {
+                .product-option-value(class=className)
+
+                    - if (isColor) {
+                        .product-option-color(style=colorStyle)
+                    - } else {
+                        | #{value}
+                    - }
+            - }
+        - }

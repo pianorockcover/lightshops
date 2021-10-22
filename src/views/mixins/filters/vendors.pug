@@ -1,10 +1,10 @@
 .filters-expander
-    .filters-expander-header(
+    .filters-expander-header.toggled(
         data-toggle="#vendorsFilter"
         data-trigger="click"
         data-effect="slide")
         | Vendors
-    #vendorsFilter.filters-expander-body.hidden
+    #vendorsFilter.filters-expander-body
         .form-control
             +checkbox("Russia (300)", "nikeCheckbox", true)
         .form-control
