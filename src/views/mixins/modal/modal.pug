@@ -3,5 +3,6 @@ mixin modal(options)
         .modal-shade
         .modal-area
             .modal-content
-                .modal-close CLOSE
-                +#{options.content}()
+                .modal-close
+                    .bi.bi-x-lg
+                +#{options.content}(options.contentOptions || {})

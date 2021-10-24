@@ -12,3 +12,8 @@ $("[data-zoom-view]").each((_, el) => {
         element.addClass("active");
     });
 });
+
+$("[data-zoom-image]").each((_, el) => {
+    //    ...
+
+});

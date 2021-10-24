@@ -25,7 +25,7 @@ mixin productFull(customOptions = {})
 
     .product.product-full
         .row
-            .col-xl-6.col-xxl-3.pb-4
+            div(class=options.forWindow ? "col-xl-5" : "col-xl-6 col-xxl-3 pb-4")
                 .product-full-gallery
                     .product-full-thumbnails
                         .product-full-thumbnail.active(data-image=options.image data-zoom-view=`#${zoomViewId}`)
@@ -36,13 +36,14 @@ mixin productFull(customOptions = {})
                                 img.product-full-thumbnail-image(src=thumbImage, alt="Product thumbnail")
                         - }
                     .product-full-zoom-view
-                        img.product-full-zoom-view-image(src=options.image, alt="Product full view" id=zoomViewId)
+                        .product-full-zoom-view-wrapper(data-zoom-image=options.image)
+                            img.product-full-zoom-view-image(src=options.image alt="Product full view" id=zoomViewId)
                         .product-labels
                             - for (let label of (options.labels || [])) {
                                 .product-label(class= label.class)= label.text
                             - }
                         .product-favourite-icon
-            .col-xl-6.col-xxl-4.pb-4
+            div(class=options.forWindow ? "col-xl-7" : "col-xl-6 col-xxl-4 pb-4")
                 a.product-category(href="category.html" title= options.category)= options.category
                 .product-title= options.name
                 .product-rate-wrapper
@@ -56,7 +57,10 @@ mixin productFull(customOptions = {})
                         - }
                     .product-rate-label
                         | (#{options.reviewsAmount} reviews)
-
+                - if (options.forWindow) {
+                    .product-short-description
+                        | #{utils.faker.lorem.paragraphs()}
+                - }
                 +productOption("Style", options.link)
                 +productOption("Color", options.link, true)
                 .product-full-buy-block
@@ -69,26 +73,26 @@ mixin productFull(customOptions = {})
                     .btn.btn-primary.btn-large
                         .bi.bi-bag 
                         | Add to cart
-            .col-xl-12.col-xxl-5.pb-2
-                +tabs([
-                    {
-                        name: "Description",
-                        contentId: "#productDescription",
-                        active: true,
-                    },
-                    {
-                        name: "Specification",
-                        contentId: "#productSpecification",
-                    },
-                    {
-                        name: "Customer Reviews (3)",
-                        contentId: "#productReviews",
-                    }
-                ])
-                .tab-content#productDescription
-                    +customContent()
-                .tab-content#productSpecification
-                    +specification()
-                .tab-content#productReviews Reviews (Coming soon)
-
-
+            - if (!options.forWindow) {
+                .col-xl-12.col-xxl-5.pb-2
+                    +tabs([
+                        {
+                            name: "Description",
+                            contentId: "#productDescription",
+                            active: true,
+                        },
+                        {
+                            name: "Specification",
+                            contentId: "#productSpecification",
+                        },
+                        {
+                            name: "Customer Reviews (3)",
+                            contentId: "#productReviews",
+                        }
+                    ])
+                    .tab-content#productDescription
+                        +customContent()
+                    .tab-content#productSpecification
+                        +specification()
+                    .tab-content#productReviews Reviews (Coming soon)
+            - }

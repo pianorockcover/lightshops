@@ -31,9 +31,24 @@
 
     &-content {
         position: relative;
-        max-width: 1000px;
+        max-width: 1300px;
         display: none;
         box-shadow: rgb(100 100 111 / 20%) 0px 7px 29px 0px;
         border-top: 4px solid @secondary;
+    }
+
+    &-close {
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        transition: color .2s ease-in-out;
+        cursor: pointer;
+        font-size: 20px;
+        z-index: 3;
+        opacity: .7;
+
+        &:hover {
+            color: @primary;
+        }
     }
 }
