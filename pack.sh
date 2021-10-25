@@ -15,6 +15,7 @@ for file in ./src/styles/themes/*; do
         npx webpack --mode production --env theme=${themeName}
         mv -f dist-${themeName}/css/*.css dist/css/
         rm -rf dist-${themeName}
+        rm -rf dist/images/uploads/${themeName}
     fi
 done
 
