@@ -1,0 +1,10 @@
+mixin icon()
+    - const id = sidebarUtils.randomInt(1, 4);
+    .sidebar-link-icon
+        case id
+            when 1
+                include 1.html
+            when 2
+                include 2.html
+            when 3
+                include 3.html

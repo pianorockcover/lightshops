@@ -6,7 +6,7 @@
 .@{headerClass} {
     border-left: 1px solid @greyColor;
     border-bottom: 1px solid @greyColor;
-    background: #ffffff;
+    background: #fff;
     margin-bottom: 25px;
 
     &-top {
@@ -14,11 +14,13 @@
         border-bottom: 1px solid @greyColor;
         display: flex;
         justify-content: space-between;
+        background: @headerTopBg;
+        color: @headerTopColor;
 
         &-left {
             display: flex;
             align-items: center;
-            color: #8a8a8a;
+            color: lighten(@headerTopColor, 10%);
         }
 
         &-right {
@@ -31,7 +33,7 @@
 
         &-dropdown {
             margin-left: 10px;
-            .anchor(@primary, lighten(@primary, 10%));
+            .anchor(@headerTopColor, @secondary);
             display: inline-flex;
             align-items: center;
             margin-right: 25px;
@@ -42,20 +44,20 @@
                 margin-left: 5px;
                 border-left: 5px solid transparent;
                 border-right: 5px solid transparent;
-                border-top: 5px solid @primary;
+                border-top: 5px solid @headerTopColor;
                 transition: border-top-color .2s ease-in-out;
                 margin-top: -4px;
             }
 
             &:hover {
                 &:after {
-                    border-top: 5px solid lighten(@primary, 10%);
+                    border-top: 5px solid @secondary;
                 }
             }
         }
 
         &-link {
-            .anchor(@textColor, @primary);
+            .anchor(@headerTopColor, @secondary);
             display: inline-flex;
 
             &-add {
