@@ -1,4 +1,8 @@
-.logo {
+@import "../variables.less";
+
+@logoClassName: logo;
+
+.@{logoClassName} {
   display: inline-flex;
   text-decoration: none !important;
   cursor: pointer;
@@ -9,8 +13,23 @@
     transform: scale(1.05);
   }
 
-  .logo-img {
+  &-svg {
     width: 100%;
     height: auto;
+
+    path,
+    polygon {
+      fill: @primary  !important;
+    }
+  }
+
+  &.@{logoClassName}-white {
+    .@{logoClassName}-svg {
+
+      path,
+      polygon {
+        fill: #ffffff !important;
+      }
+    }
   }
 }

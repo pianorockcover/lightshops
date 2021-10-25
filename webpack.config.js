@@ -110,7 +110,7 @@ module.exports = (_env, argv) => {
               filename: `./${cur.replace(/\.pug/, ".html")}`,
               minify: false,
               inject: false,
-              utils: getUtils(),
+              utils: getUtils(theme),
               templateName,
               themes,
               theme,

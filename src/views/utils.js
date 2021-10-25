@@ -5,7 +5,7 @@ const faker = require("faker");
 const randomInt = (min, max) => Math.trunc(Math.random() * (max - min) + min);
 const randomElem = (items) => items[Math.floor(Math.random() * items.length)];
 
-const getUpload = (path) => `images/uploads/${path}`;
+const getUpload = (theme) => (path) => `images/uploads/${theme}/${path}`;
 
 const randomColor = () => {
     const letters = '0123456789ABCDEF';
@@ -18,12 +18,12 @@ const randomColor = () => {
     return color;
 }
 
-module.exports = () => {
+module.exports = (theme) => {
     return {
         randomInt,
         randomElem,
         faker,
-        getUpload,
+        getUpload: getUpload(theme),
         randomColor,
     }
 }
