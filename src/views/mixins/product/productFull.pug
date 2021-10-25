@@ -36,8 +36,17 @@ mixin productFull(customOptions = {})
                                 img.product-full-thumbnail-image(src=thumbImage, alt="Product thumbnail")
                         - }
                     .product-full-zoom-view
-                        .product-full-zoom-view-wrapper(data-zoom-image=options.image)
-                            img.product-full-zoom-view-image(src=options.image alt="Product full view" id=zoomViewId)
+                        .product-full-zoom-view-wrapper(id=zoomViewId)
+
+                            a.product-full-zoom-view-link.active(href=options.image)
+                                img.product-full-zoom-view-image(src=options.image alt="Product full view")
+
+                            a.product-full-zoom-view-link(href=src=utils.getUpload(`products/${options.imageId}-v1.jpg`))
+                                img.product-full-thumbnail-image(src=utils.getUpload(`products/${options.imageId}-v1.jpg`), alt="Product full view")
+
+                            a.product-full-zoom-view-link(href=src=utils.getUpload(`products/${options.imageId}-v2.jpg`))
+                                img.product-full-thumbnail-image(src=utils.getUpload(`products/${options.imageId}-v2.jpg`), alt="Product full view")
+
                         .product-labels
                             - for (let label of (options.labels || [])) {
                                 .product-label(class= label.class)= label.text

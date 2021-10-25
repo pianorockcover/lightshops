@@ -14,9 +14,11 @@ const HtmlReplaceWebpackPlugin = require("html-replace-webpack-plugin");
 
 const templateName = "expreessi";
 
+const defaultThemeName = "dark";
+
 module.exports = (_env, argv) => {
-  const theme = argv.env.theme || "default";
-  const isDefaultTheme = theme === "default";
+  const theme = argv.env.theme || defaultThemeName;
+  const isDefaultTheme = theme === defaultThemeName;
 
   const packageJson = require("./package.json");
   const version = packageJson.version;
@@ -146,7 +148,7 @@ module.exports = (_env, argv) => {
         new CssMinimizerPlugin({
           minimizerOptions: {
             preset: [
-              "default",
+              defaultThemeName,
               {
                 discardComments: { removeAll: true },
               },
