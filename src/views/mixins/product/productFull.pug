@@ -66,10 +66,8 @@ mixin productFull(customOptions = {})
                         - }
                     .product-rate-label
                         | (#{options.reviewsAmount} reviews)
-                - if (options.forWindow) {
-                    .product-short-description
-                        | #{utils.faker.lorem.paragraphs()}
-                - }
+                .product-short-description
+                    | #{utils.faker.lorem.paragraphs()}
                 +productOption("Style", options.link)
                 +productOption("Color", options.link, true)
                 .product-full-buy-block
@@ -79,25 +77,25 @@ mixin productFull(customOptions = {})
                             .product-price-old-value=options.oldPrice
                         - }
                     +quantity()
-                    .btn.btn-primary.btn-large
+                    .btn.btn-secondary.btn-large
                         .bi.bi-bag 
                         | Add to cart
             - if (!options.forWindow) {
                 .col-xl-12.col-xxl-5.pb-2
                     +tabs([
                         {
-                            name: "Description",
-                            contentId: "#productDescription",
+                            name: "Customer Reviews (3)",
+                            contentId: "#productReviews",
                             active: true,
+                        },
+                        {
+                            name: "Full Description",
+                            contentId: "#productDescription",
                         },
                         {
                             name: "Specification",
                             contentId: "#productSpecification",
                         },
-                        {
-                            name: "Customer Reviews (3)",
-                            contentId: "#productReviews",
-                        }
                     ])
                     .tab-content#productDescription
                         +customContent()
