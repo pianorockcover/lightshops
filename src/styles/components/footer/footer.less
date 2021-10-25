@@ -3,19 +3,19 @@
 @import "../buttons/shadowHover.less";
 
 @footerClassName: footer;
-@footerLinkHoverColor: lighten(@primary, 20%);
-@footerLinkColor: rgba(255, 255, 255, .7);
+@footerLinkHoverColor: @secondary;
+@footerLinkColor: @footerColor;
 
 .@{footerClassName} {
-    background: darken(@primary, 20%);
-    color: hsl(0, 0%, 100%);
+    background: @footerBg;
+    color: @footerColor;
     margin-top: 50px;
     padding-top: 70px;
 
     &-divider {
         width: 100%;
         height: 1px;
-        background: rgba(255, 255, 255, 0.1);
+        background: darken(@footerBg, 10%);
         margin-bottom: 30px;
         margin-top: 30px;
     }
@@ -39,7 +39,7 @@
     }
 
     &-bottom {
-        background: darken(@primary, 23%);
+        background: @footerBg;
         display: flex;
         align-items: center;
         justify-content: space-between;
@@ -58,7 +58,7 @@
         }
 
         &-divider {
-            background: rgba(255, 255, 255, 0.6);
+            background: @footerLinkColor;
             width: 1px;
             height: 20px;
             margin-left: 10px;
@@ -72,7 +72,7 @@
         }
 
         &-bright-link {
-            .anchor(#ffffff, @footerLinkHoverColor);
+            .anchor(@footerColor, @footerLinkHoverColor);
         }
     }
 
@@ -87,7 +87,7 @@
         vertical-align: middle;
         width: 30px;
         height: 30px;
-        background: #fff;
+        background: #ffffff;
         border-radius: 100%;
         padding: 7px;
         align-items: center;
@@ -110,7 +110,7 @@
     }
 
     &-instagram-post {
-        .anchor(#ffffff, #ffffff);
+        .anchor(@footerColor, @secondary);
         align-items: center;
         justify-content: center;
         overflow: hidden;
@@ -132,8 +132,8 @@
     }
 
     &-more-link {
-        .anchor(#ffffff, #ffffff);
-        .anchor-underline(rgba(255, 255, 255, 0.7), 1px);
+        .anchor(@footerColor, @secondary);
+        .anchor-underline(@footerLinkColor, 1px);
     }
 
     &-subscribe-form {

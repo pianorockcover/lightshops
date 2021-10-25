@@ -3,9 +3,8 @@ mixin pageTitle()
         const titleMain = `${utils.faker.name.title()} ${utils.faker.name.title()} ${utils.faker.name.title()}`
         const titleSecondary = utils.faker.name.title();
         const image = utils.getUpload(`articles/full-1.jpeg`);
-        const textStyles = `background-color: #e5dbc0;`;
     .page-title
-        .page-title-left(style=textStyles)
+        .page-title-left.bg-faded
             .page-title-main=titleMain
             .page-title-secondary=titleSecondary
         .page-title-right(style=`background-image: url(${image});`)
