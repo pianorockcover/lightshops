@@ -1,0 +1,31 @@
+include reviewsBar.pug
+
+mixin reviews(customOptions = {})
+    -
+        let options = {};
+        const rate = customOptions.rate || utils.randomInt(0, 6);
+        const amount = customOptions.reviewsAmount || utils.randomInt(100, 200);
+
+        customOptions.showAmount = false;
+        options = Object.assign(options, customOptions);
+    .reviews
+        .row
+            .col-md-4
+                .reviews-label Overall Rating
+                .reviews-overall
+                    .reviews-amount=(new Number(options.rate)).toFixed(1)
+                    .reviews-based
+                        .reviews-based-stars
+                            +rate(options)
+                        .reviews-based-label
+                            | based on
+                            | #{options.reviewsAmount}
+                            | reviews  
+                .reviews-details
+                    +reviewsBar(5, "70%")
+                    +reviewsBar(4, "20%")
+                    +reviewsBar(3, "50%")
+                    +reviewsBar(2, "10%")
+                    +reviewsBar(1, "0%")
+            .col-md-8
+                | ... Reviews

@@ -1,7 +1,7 @@
 mixin sidebarCatalog()
     - if (utils.randomInt(100, 999) % 3 === 0) {
         .row
-            .col-xl-8
+            .col-xl-7
                 .row
                     .col-xl-6
                         +catalog()
@@ -11,7 +11,7 @@ mixin sidebarCatalog()
                         +catalog()
                     .col-xl-6
                         +catalog()
-            .col-xl-4
+            .col-xl-5
                 +announcement({
                     subTitle: utils.faker.commerce.department(), 
                     mainTitle: `<b>${utils.faker.company.catchPhrase()}</b>`,

@@ -14,7 +14,7 @@ const HtmlReplaceWebpackPlugin = require("html-replace-webpack-plugin");
 
 const templateName = "expreessi";
 
-const defaultThemeName = "default";
+const defaultThemeName = "dark";
 
 module.exports = (_env, argv) => {
   const theme = argv.env.theme || defaultThemeName;

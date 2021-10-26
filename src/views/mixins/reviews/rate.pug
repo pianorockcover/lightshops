@@ -1,0 +1,20 @@
+mixin rate(customOptions = {})
+    -
+        let options = {};
+        const rate = customOptions.rate || utils.randomInt(0, 6);
+        const amount = customOptions.reviewsAmount || utils.randomInt(100, 200);
+
+        options = Object.assign(options, customOptions);
+
+    .product-rate
+        .product-rate-stars
+            - for (let i = 0; i < 5; ++i) {
+                - if (i < rate) {
+                    .bi.bi-star-fill.product-rate-star
+                - } else {
+                    .bi.bi-star.product-rate-star
+                - }
+            - }
+        if (options.showAmount) 
+            .product-rate-amount
+                | (#{options.reviewsAmount} reviews)

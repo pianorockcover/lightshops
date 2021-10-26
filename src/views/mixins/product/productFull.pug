@@ -55,17 +55,7 @@ mixin productFull(customOptions = {})
             div(class=options.forWindow ? "col-xl-7" : "col-xl-6 col-xxl-4 pb-4")
                 a.product-category(href="category.html" title= options.category)= options.category
                 .product-title= options.name
-                .product-rate-wrapper
-                    .product-rate
-                        - for (let i = 0; i < 5; ++i) {
-                            - if (i < options.rate) {
-                                .bi.bi-star-fill.product-rate-star
-                            - } else {
-                                .bi.bi-star.product-rate-star
-                            - }
-                        - }
-                    .product-rate-label
-                        | (#{options.reviewsAmount} reviews)
+                +rate(Object.assign(options, { showAmount: true }))
                 .product-short-description
                     | #{utils.faker.lorem.paragraphs()}
                 +productOption("Style", options.link)
@@ -97,9 +87,10 @@ mixin productFull(customOptions = {})
                             contentId: "#productSpecification",
                         },
                     ])
-                    .tab-content#productDescription
-                        +customContent()
+                    .tab-content#productReviews
+                        +reviews(options)
                     .tab-content#productSpecification
                         +specification()
-                    .tab-content#productReviews Reviews (Coming soon)
+                    .tab-content#productDescription
+                        +customContent()
             - }

@@ -1,0 +1,7 @@
+mixin reviewsBar(rate, percent)
+    .reviews-bar
+        .reviews-bar-value
+            +rate({ rate })
+        .reviews-bar-line
+            .reviews-bar-line-indicator(style=`width:${percent}`)
+        .reviews-bar-percent=percent
