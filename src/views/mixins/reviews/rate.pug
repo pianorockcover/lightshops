@@ -6,15 +6,15 @@ mixin rate(customOptions = {})
 
         options = Object.assign(options, customOptions);
 
-    .product-rate
-        .product-rate-stars
+    .rate
+        .rate-stars
             - for (let i = 0; i < 5; ++i) {
                 - if (i < rate) {
-                    .bi.bi-star-fill.product-rate-star
+                    .bi.bi-star-fill.rate-star
                 - } else {
-                    .bi.bi-star.product-rate-star
+                    .bi.bi-star.rate-star
                 - }
             - }
         if (options.showAmount) 
-            .product-rate-amount
+            .rate-amount
                 | (#{options.reviewsAmount} reviews)

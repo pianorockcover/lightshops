@@ -21,11 +21,14 @@ mixin reviews(customOptions = {})
                             | based on
                             | #{options.reviewsAmount}
                             | reviews  
+            .col-md-4
                 .reviews-details
                     +reviewsBar(5, "70%")
                     +reviewsBar(4, "20%")
                     +reviewsBar(3, "50%")
                     +reviewsBar(2, "10%")
                     +reviewsBar(1, "0%")
-            .col-md-8
-                | ... Reviews
+
+        - for(let i = 0; i < 5; i++) {
+            +review()
+        - }
