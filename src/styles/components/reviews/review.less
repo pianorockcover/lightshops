@@ -3,21 +3,93 @@
 @reviewClassName: review;
 
 .@{reviewClassName} {
-    display: flex;
-    align-items: flex-start;
-    width: 100%;
+    max-width: 100%;
+    width: 800px;
+    margin-bottom: 30px;
+
+    &-area {
+        display: flex;
+        width: 100%;
+        align-items: flex-start;
+    }
 
     &-author {
-        width: 100px;
-        height: 100px;
+        width: 70px;
+        min-width: 70px;
+        height: 70px;
         border-radius: 200%;
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
         overflow: hidden;
+        margin-right: 15px;
 
         &-image {
+            max-height: 100%;
+            object-fit: contain;
+            border-radius: 100%;
+        }
+    }
+
+    &-content-header {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+    }
+
+    &-date {
+        color: #7a7a7a;
+        display: flex;
+        align-items: center;
+        font-size: 13px;
+
+        .bi {
+            margin-right: 10px;
+        }
+    }
+
+    &-content-body {
+        line-height: 20px;
+        margin-bottom: 15px;
+        padding: 10px 15px;
+        border-radius: 10px;
+        background-color: fade(@primary, 5%);
+    }
+
+    .@{reviewClassName}-content-header {
+        .rate {
+            margin-bottom: 10px;
+        }
+    }
+
+    &-author-name {
+        font-weight: 500;
+        font-size: 20px;
+        margin-bottom: 10px;
+    }
+
+    &-customer-photos {
+        display: flex;
+        overflow: hidden;
+        align-items: center;
+        text-overflow: ellipsis;
+    }
+
+    &-customer-photo {
+        &-link {
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #f5f5f5;
+            flex-direction: column;
+            margin-right: 10px;
+        }
+
+        &-image {
+            max-width: 100%;
             max-height: 100%;
             object-fit: contain;
         }

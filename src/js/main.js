@@ -7,5 +7,6 @@ import "./zoomView";
 import "./theme";
 import "./customContent";
 import "./modal";
+import "./reviews";
 
 import "../styles/index.less";

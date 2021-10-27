@@ -5,6 +5,15 @@
 @reviewsMutedColor: #7a7a7a;
 
 .@{reviewsClassName} {
+    max-width: 900px;
+
+    &-summary {
+        border-bottom: 2px solid @greyColor;
+        margin-bottom: 60px;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
     &-label {
         font-size: 16px;
         margin-bottom: 10px;
@@ -78,5 +87,12 @@
             width: 30px;
             text-align: center;
         }
+    }
+
+    &-load-more {
+        margin-left: auto;
+        margin-right: auto;
+        width: fit-content;
+        display: flex;
     }
 }
