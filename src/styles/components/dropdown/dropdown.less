@@ -1,0 +1,36 @@
+@import "../../variables.less";
+@import "../anchor.less";
+
+@dropdownClassName: dropdown;
+@topOffset: 5px;
+
+.@{dropdownClassName} {
+    position: absolute;
+    top: 100%;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    min-width: 200px;
+    z-index: @dropdownZIndex;
+    left: -15px;
+    margin-top: @topOffset;
+
+    &:before {
+        content: " ";
+        display: block;
+        width: 100%;
+        height: @topOffset;
+        top: -@topOffset;
+        position: absolute;
+    }
+
+    &-item {
+        background: #ffffff;
+        border-bottom: 1px solid @greyColor;
+        padding: 10px 15px;
+        .anchor(@textColor, @secondary);
+        display: flex;
+
+        &:nth-last-child(1) {
+            border-bottom: 0px;
+        }
+    }
+}

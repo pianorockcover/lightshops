@@ -4,9 +4,10 @@
         a.header-bottom-link(href="#") Shop
         a.header-bottom-link(href="#") Vendor
         a.header-bottom-link(href="#") Blog
-        a.header-bottom-link(href="#") 
+        .header-bottom-link(data-toggle="#pagesDropdown" data-trigger="hover")
             | Pages
             span.bi.bi-triangle-fill.arrow
+            +dropdown([], "pagesDropdown")
         a.header-bottom-link(href="#") Elements
         a.header-bottom-link(href="#") Features
     .header-bottom-right
