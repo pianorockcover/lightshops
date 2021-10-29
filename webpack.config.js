@@ -104,20 +104,20 @@ module.exports = (_env, argv) => {
     },
     plugins: [
       new CleanWebpackPlugin(),
-      ...(isDefaultTheme ? pages : []).reduce((allPages, cur) => {
+      ...pages.reduce((allPages, cur) => {
+        const themeSuffix = !isDefaultTheme ? `-${theme}` : "";
+
         allPages.push(
-          ...[
-            new HtmlWebpackPlugin({
-              template: `${pagesPath}/${cur}`,
-              filename: `./${cur.replace(/\.pug/, ".html")}`,
-              minify: false,
-              inject: false,
-              utils: getUtils(theme),
-              templateName,
-              themes,
-              theme,
-            }),
-          ]
+          new HtmlWebpackPlugin({
+            template: `${pagesPath}/${cur}`,
+            filename: `./${cur.replace(/\.pug/, `${themeSuffix}.html`)}`,
+            minify: false,
+            inject: false,
+            utils: getUtils(theme),
+            templateName,
+            themes,
+            theme,
+          })
         );
 
         return allPages;

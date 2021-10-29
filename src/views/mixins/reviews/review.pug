@@ -3,9 +3,9 @@ mixin review()
         const ava = utils.getUpload(`articles/author-${utils.randomInt(1, 4)}.jpeg`);
         const author = utils.faker.name.findName();
         const text = utils.faker.commerce.productDescription();
-        const images = (new Array(utils.randomInt(0, 5))).fill(null).map(() => utils.getUpload(`products/${utils.randomInt(1, 5)}.jpg`));
+        const images = utils.uniqueArray((new Array(utils.randomInt(0, 5))).fill(null).map(() => utils.getUpload(`products/${utils.randomInt(1, 5)}.jpg`)));
         const date = `Jul 1st 2021`;
-        const id = `review${+ new Date() + utils.randomInt(1, 4)}`;
+        const id = `review${+ new Date() + utils.randomInt(1, 9999999)}`;
 
     .review(id=id)
         .review-area

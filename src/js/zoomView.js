@@ -8,8 +8,6 @@ $("[data-zoom-view]").each((_, el) => {
         const zoomViewId = element.data("zoom-view");
         const zoomView = $(zoomViewId);
 
-        const image = element.data("image");
-
         $(`[data-zoom-view="${zoomViewId}"]`).removeClass("active");
         $(zoomView).find(".product-full-zoom-view-link").removeClass("active");
 

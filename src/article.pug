@@ -75,11 +75,11 @@ include views/partials/header/header.pug
                     .mb-3
                         +category(
                             utils.faker.commerce.department(),
-                            utils.getUpload("categories/1.svg")
+                            utils.getUpload("categories/1.svg", "default")
                         )
                     +category(
                         utils.faker.commerce.department(),
-                        utils.getUpload("categories/3.svg")
+                        utils.getUpload("categories/3.svg", "default")
                     )
     .section
         .container-full

@@ -1,0 +1,215 @@
+include views/partials/header/header.pug
+
+.area
+    .section
+        .container-full
+            .row
+                .col-xxl-3.col-xl-6.pb-3
+                    +announcement({
+                        image: utils.getUpload("announcement/8.jpeg"),
+                        fullHeight: true,
+                        isBright: true,
+                        mainTitle: `
+                            <div class="announcement-main-title-smaller">
+                                ${utils.faker.commerce.department()}
+                            </div>
+                            <b>${utils.faker.commerce.productName()}</b>
+                        `,
+                        description: `
+                            <div class="text-thin text-uppercase">
+                                ${utils.faker.commerce.productMaterial()}
+                            </div>
+                        `,
+                        btnText : "Shop Now",
+                        btnClass: "btn-contrast"
+                    })
+                .col-xxl-6.col-xl-12.pb-3
+                    +mainSlider()
+                .col-xxl-3.col-xl-6.pb-3
+                    .sales-layout 
+                        +saleBlock(
+                            utils.faker.company.catchPhrase(),
+                            utils.getUpload("announcement/2.jpeg"),
+                            utils.faker.company.catchPhrase(),
+                            40)
+                        +saleBlock(
+                            utils.faker.company.catchPhrase(),
+                            utils.getUpload("announcement/3.jpeg"),
+                            utils.faker.company.catchPhrase(),
+                            75)
+
+    +productsSlider("Top Sales", "topSales")
+
+    .section
+        .container-full
+            +titleLink("Best Sellers", "More Products")
+            .row
+                .col-xl-3.pb-3
+                    .row.full-height
+                        .col-xl-12.col-xxl-6.pb-3
+                            +announcement({
+                                subTitle: utils.faker.commerce.department(), 
+                                mainTitle: `<b>${utils.faker.company.catchPhrase()}</b>`,
+                                btnText : "Shop Now",
+                                image: utils.getUpload("announcement/1.jpeg"),
+                                isBright: true,
+                                fullHeight: true,
+                                btnClass: "btn-contrast",
+                                tags: [
+                                    "home",
+                                    "technical",
+                                    "kitchen",
+                                    "natural"
+                                ]
+                            })
+                        .col-xl-12.col-xxl-6.pb-3
+                            +announcement({
+                                subTitle: utils.faker.commerce.department(), 
+                                mainTitle: `<b>${utils.faker.company.catchPhrase()}</b>`,
+                                btnText : "Shop Now",
+                                image: utils.getUpload("announcement/7.jpeg"),
+                                isBright: false,
+                                fullHeight: true,
+                                btnClass: "btn-primary",
+                                tags: [
+                                    "study",
+                                    "computers",
+                                    "summer"
+                                ]
+                            })
+                .col-xl-9.pb-3
+                    .row
+                        - for (let i = 0; i < 12; i++) {
+                            .col-xl-3.col-xxl-2.pb-3
+                                +product()
+                        - }
+
+    .section
+        .container-full
+            .section-title Buy right now
+            +productFull()
+
+    .section
+        .container-full
+            .row
+                .col-xxl-3.col-xl-6.pb-3
+                    +announcement({
+                        image: utils.getUpload("announcement/7.jpeg"),
+                        fullHeight: true,
+                        mainTitle: `
+                            <div class="announcement-main-title-smaller">Be ready to <b class="text-contrast">20% OFF</b></div>
+                            for all <b class="text-uppercase">Technical brands</b>
+                        `,
+                        description: `
+                            Just From <b>$90.00</b>
+                        `,
+                        tags: [
+                            "study",
+                            "technical",
+                            "work",
+                        ]
+                    })
+                .col-xxl-3.col-xl-6.pb-3
+                    +announcement({
+                        image: utils.getUpload("announcement/6.jpeg"),
+                        fullHeight: true,
+                        isBright: true,
+                        mainTitle: `
+                            <div class="announcement-main-title-smaller">It's time to</div>
+                            <b>SAVE THE PLANET</b>
+                        `,
+                        description: `
+                            <div class="text-thin">CHOOSE ORGANIC COSMETIC</div>
+                        `,
+                        btnText : "Shop Now",
+                        btnClass: "btn-secondary"
+                    })
+                .col-xxl-3.col-xl-6.pb-3
+                    +announcement({
+                        image: utils.getUpload("announcement/4.jpeg"),
+                        fullHeight: true,
+                        mainTitle: `
+                            <div class="announcement-main-title-smaller">It's time to</div>
+                            <b>SAVE THE PLANET</b>
+                        `,
+                        description: `
+                            <div class="text-thin">CHOOSE ORGANIC COSMETIC</div>
+                        `,
+                        btnText : "Shop Now",
+                        btnClass: "btn-dark"
+                    })
+                .col-xxl-3.col-xl-6.pb-3
+                    +announcement({
+                        image: utils.getUpload("announcement/8.jpeg"),
+                        fullHeight: true,
+                        isBright: true,
+                        mainTitle: `
+                            <div class="announcement-main-title-smaller">Be ready to <b class="text-contrast">20% OFF</b></div>
+                            for all <b>TECHNICAL BRENDS</b>
+                        `,
+                        description: `
+                            Just From <b>$90.00</b>
+                        `,
+                        tags: [
+                            "study",
+                            "technical",
+                            "work",
+                        ]
+                    })
+
+    +categories()
+
+    .section
+        .container-full
+            +titleLink("Technological innovations", "More Products")
+            .row
+                .col-xl-9.pb-3
+                    .row
+                        - for (let i = 0; i < 12; i++) {
+                            .col-xl-3.col-xxl-2.pb-3
+                                +product()
+                        - }
+                .col-xl-3.pb-3
+                    .row.full-height
+                        .col-xl-12.col-xxl-6.pb-3
+                            +announcement({
+                                subTitle: utils.faker.commerce.department(), 
+                                mainTitle: `<b>${utils.faker.company.catchPhrase()}</b>`,
+                                btnText : "Shop Now",
+                                image: utils.getUpload("announcement/5.jpeg"),
+                                isBright: false,
+                                fullHeight: true,
+                                btnClass: "btn-primary",
+                                tags: [
+                                    "study",
+                                    "computers",
+                                    "summer"
+                                ]
+                            })
+                        .col-xl-12.col-xxl-6.pb-3
+                            +announcement({
+                                subTitle: utils.faker.commerce.department(), 
+                                mainTitle: `<b>${utils.faker.company.catchPhrase()}</b>`,
+                                btnText : "Shop Now",
+                                image: utils.getUpload("announcement/8.jpeg"),
+                                isBright: true,
+                                fullHeight: true,
+                                btnClass: "btn-contrast",
+                                tags: [
+                                    "home",
+                                    "technical",
+                                    "kitchen",
+                                    "natural"
+                                ]
+                            })
+
+    +productsSlider("Your Recent Views", "recentViews")
+
+    +articlesSlider("Our blog", "More articles", "ourBlog")
+
+    .section
+        .container-full
+            +brands(12)
+
+
+include views/partials/footer/footer.pug

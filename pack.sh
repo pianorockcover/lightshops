@@ -14,21 +14,21 @@ for file in ./src/styles/themes/*; do
     if [ "$themeName" != "default" ]; then
         npx webpack --mode production --env theme=${themeName}
         mv -f dist-${themeName}/css/*.css dist/css/
+        mv -f dist-${themeName}/*.html dist/
         rm -rf dist-${themeName}
-        rm -rf dist/images/uploads/${themeName}
     fi
 done
 
 node zip.js
 
-cd landing
-node screenshot.js
-cd ../
+# cd landing
+# node screenshot.js
+# cd ../
 
-npm run landing:build
+# npm run landing:build
 
-mkdir -p landing/dist/demos
+# mkdir -p landing/dist/demos
 
-mv dist/* landing/dist/demos
+# mv dist/* landing/dist/demos
 
 rm -rf dist
