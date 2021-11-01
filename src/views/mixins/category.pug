@@ -12,5 +12,5 @@ mixin category(name, image)
             .category-right
                 .category-name= name
                 - for (let link of getLinks()) {
-                    a.category-link(href="category.html")=link
+                    a.category-link(href=utils.anchor("category"))=link
                 - }

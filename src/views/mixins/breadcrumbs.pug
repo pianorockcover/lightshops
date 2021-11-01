@@ -4,6 +4,6 @@ mixin breadcrumbs(items)
             if (i == items.length - 1)
                 .breadcrumbs-current= items[i]
             else
-                a.breadcrumbs-link(href="category-1.html")= items[i]
+                a.breadcrumbs-link(href=utils.anchor("category-1"))= items[i]
                 span.breadcrumbs-divider /
         - }

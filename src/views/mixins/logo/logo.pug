@@ -3,5 +3,5 @@ mixin logo(type)
         const logoName = type ? `logo-${type}.svg` : "logo.svg";
         const src = utils.getUpload(logoName);
 
-    a.logo(href="index.html", class=`logo-${type}`)
+    a.logo(href=utils.anchor("index"), class=`logo-${type}`)
         include logo-svg.html

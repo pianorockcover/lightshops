@@ -1,14 +1,14 @@
 mixin sortPanel(viewType)
     .sort-panel
         .left
-            a.sort-panel-link(href="category-3.html") 
+            a.sort-panel-link(href=utils.anchor("category-3")) 
                 | Sort By Price
                 span.bi.bi-triangle-fill.arrow
-            a.sort-panel-link(href="category-3.html") 
+            a.sort-panel-link(href=utils.anchor("category-3")) 
                 | Sort By Popularity
                 span.bi.bi-triangle-fill.arrow.desc
         .right
-            a.sort-panel-link(href="category.html" class=`${!viewType || viewType === "grid" ? "active" : "" }`)
+            a.sort-panel-link(href=utils.anchor("category") class=`${!viewType || viewType === "grid" ? "active" : "" }`)
                 span.bi.bi-grid
-            a.sort-panel-link(href="category-inline.html" class=`${viewType === "inline" ? "active" : "" }`)
+            a.sort-panel-link(href=utils.anchor("category-inline") class=`${viewType === "inline" ? "active" : "" }`)
                 span.bi.bi-list-ul

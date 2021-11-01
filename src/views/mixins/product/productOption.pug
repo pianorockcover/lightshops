@@ -13,7 +13,7 @@ mixin productOption(title, link, isColor = false, additionalClassName)
                 const colorStyle = `background-color:${utils.randomColor()};`;
 
             - if (link) {
-                a.product-option-value(href=link class=className)
+                a.product-option-value(href=utils.anchor(link) class=className)
 
                     - if (isColor) {
                         .product-option-color(style=colorStyle)

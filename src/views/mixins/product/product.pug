@@ -14,7 +14,7 @@ mixin product(customOptions = {})
             text: utils.faker.commerce.productAdjective(),
         }));
         options.oldPrice = utils.randomInt(100, 999) % 3 === 0 ? `$${utils.randomInt(80, 120)}.00` : undefined;
-        options.link = utils.randomElem(["product-card.html", "product-card-1.html"]);
+        options.link = utils.randomElem(["product-card", "product-card-1"]);
         options = Object.assign(options, customOptions);
 
     .product(class=`${options.inline ? "product-inline" : ""} ${options.hideButtons ? "product-info-only" : "" }`)
@@ -29,7 +29,7 @@ mixin product(customOptions = {})
                 img.product-image(src=options.image, alt=options.name)
             .product-details
                 .product-category(title= options.category)= options.category
-                a(href=options.link title= options.name).product-title= options.name
+                a(href=utils.anchor(options.link) title= options.name).product-title= options.name
                 +rate(options)
                 .product-price
                     | #{options.price}

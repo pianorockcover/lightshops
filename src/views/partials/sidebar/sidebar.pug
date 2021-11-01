@@ -10,7 +10,7 @@ include icons/icon.pug
     .sidebar-links
         - for(let i = 0; i < 10; i++) {
             - if (i > 4) {
-                a.sidebar-link(href="category.html")
+                a.sidebar-link(href=utils.anchor("category"))
                     +icon()
                     .sidebar-link-text=sidebarUtils.faker.commerce.department()
                 - continue;

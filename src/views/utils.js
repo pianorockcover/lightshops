@@ -20,13 +20,16 @@ const randomColor = () => {
 
 const uniqueArray = (arr) => arr.filter((value, index, self) => self.indexOf(value) === index);
 
+const anchor = (theme) => (path) => `${path}${theme !== "default" ? `-${theme}` : ""}.html`;
+
 module.exports = (theme) => {
     return {
-        randomInt,
-        randomElem,
+        anchor: anchor(theme),
         faker,
         getUpload: getUpload(theme),
         randomColor,
+        randomElem,
+        randomInt,
         uniqueArray,
     }
 }

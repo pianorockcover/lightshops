@@ -2,13 +2,13 @@ mixin dropdown(customItems = [], id)
     -
         const items = customItems.length ? customItems : (new Array(5)).fill(null).map((_, i) => ({
             title: `Page #${++i}`,
-            href: "article.html",
+            href: "article",
         }));
 
     .dropdown.hidden(id=id)
         - for(let item of items) {
             - if (item.href) {
-                a.dropdown-item(href=item.href)=item.title
+                a.dropdown-item(href=utils.anchor(item.href))=item.title
             - } else {
                 .dropdown-item=item.title
             - }

@@ -18,7 +18,7 @@ mixin productFull(customOptions = {})
         }));
         options.reviewsAmount = utils.randomInt(100, 999);
         options.oldPrice = utils.randomInt(100, 999) % 1 === 0 ? `$${utils.randomInt(80, 120)}.00` : undefined;
-        options.link = utils.randomElem(["product-card.html", "product-card-1.html"]);
+        options.link = utils.randomElem(["product-card", "product-card-1"]);
         options = Object.assign(options, customOptions);
 
         const zoomViewId = `productZoomView${options.id}`;
@@ -53,7 +53,7 @@ mixin productFull(customOptions = {})
                             - }
                         .product-favourite-icon
             div(class=options.forWindow ? "col-xl-7" : "col-xl-6 col-xxl-4 pb-4")
-                a.product-category(href="category.html" title= options.category)= options.category
+                a.product-category(href=utils.anchor("category") title= options.category)= options.category
                 .product-title= options.name
                 +rate(Object.assign(options, { showAmount: true }))
                 .product-short-description
