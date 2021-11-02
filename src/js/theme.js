@@ -1,6 +1,7 @@
 import $ from "jquery";
 
-const styleLink = $("link").attr("href");
+const currentTheme = $("[data-current-theme]").data("current-theme");
+const styleLink = $("link").attr("href").replace(`-${currentTheme}`, "");
 
 const styleLinkData = [
     styleLink.substr(0, styleLink.indexOf("-")),

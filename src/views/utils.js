@@ -31,5 +31,6 @@ module.exports = (theme) => {
         randomElem,
         randomInt,
         uniqueArray,
+        currentTheme: theme,
     }
 }
