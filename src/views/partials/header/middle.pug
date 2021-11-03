@@ -1,14 +1,17 @@
 include ../../mixins/logo/logo.pug
 
+- const categories = new Array(5).fill(null).map((_, i) => ({ title: utils.faker.commerce.department() }));
+
 .header-middle
     .header-middle-logo-and-slogan
         +logo() 
         .header-middle-slogan
             | Professional e-commerce html template
     .header-middle-search-field
-        .btn-dropdown
+        .btn-dropdown(data-toggle="#categoriesDropdown" data-trigger="hover")
             | All categories
             span.bi.bi-triangle-fill
+            +dropdown(categories, "categoriesDropdown")
         input.search-field-input(placeholder="Search in...")
         button.btn-search.btn-only-icon
             span.bi.bi-search
