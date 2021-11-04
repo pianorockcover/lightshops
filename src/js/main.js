@@ -1,3 +1,4 @@
+import "./crossBrowserHint";
 import "ion-rangeslider";
 import "./toggle";
 import "./slider";

@@ -3,17 +3,25 @@
         | Location:
         .header-top-dropdown(data-toggle="#citiesDropdown" data-trigger="hover")
             | London
-            +dropdown([{
-                title: "New York",
-                href: "#",
-            }], "citiesDropdown")
+            +dropdown([
+                {
+                    title: "New York",
+                    href: "#",
+                }
+            ], "citiesDropdown")
         | Lang:
         .header-top-dropdown(data-toggle="#langsDropdown" data-trigger="hover")
             | En
-            +dropdown([{
-                title: "Fr",
-                href: "#",
-            }], "langsDropdown")
+            +dropdown([
+                {
+                    title: "French",
+                    href: "#",
+                },
+                {
+                    title: "Russian",
+                    href: "#",
+                }
+            ], "langsDropdown")
     .header-top-right
         .header-top-link.header-top-link-add
             span.bi.bi-heart-fill
