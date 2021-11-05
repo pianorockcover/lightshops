@@ -11,8 +11,9 @@ const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 const UglifyJsPlugin = require("uglifyjs-webpack-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const HtmlReplaceWebpackPlugin = require("html-replace-webpack-plugin");
+const ImageMinimizerPlugin = require("image-minimizer-webpack-plugin");
 
-const templateName = "expreessi";
+const templateName = "liteShops";
 
 const defaultThemeName = "default";
 
@@ -141,6 +142,15 @@ module.exports = (_env, argv) => {
           { from: "static" },
           { from: "node_modules/bootstrap-icons/font/fonts", to: "css/fonts" },
         ],
+      }),
+      new ImageMinimizerPlugin({
+        minimizerOptions: {
+          plugins: [
+            ["gifsicle", { interlaced: true }],
+            ["jpegtran", { progressive: true }],
+            ["optipng", { optimizationLevel: 5 }],
+          ]
+        }
       }),
     ],
     optimization: {

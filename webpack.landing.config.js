@@ -14,7 +14,6 @@ var HtmlReplaceWebpackPlugin = require("html-replace-webpack-plugin");
 
 const packageJson = require("./package.json");
 const version = packageJson.version;
-const themeName = "expreessi";
 
 const scriptName = "main.js";
 const versionedScriptName = `main-${version}.js`;
