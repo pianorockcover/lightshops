@@ -74,7 +74,7 @@
 
 
     .@{headerClass}-top-link.@{headerClass}-open-right-sidebar {
-        background: @primary;
+        background: @textColor;
         .anchor(#ffffff, #ffffff);
         display: none;
 
@@ -90,11 +90,8 @@
 
         &-top {
             display: block;
-            padding: 10px;
-
-            &-label {
-                display: none;
-            }
+            padding: 8px 10px;
+            font-size: 12px;
 
             &-dropdown {
                 margin: 0;
@@ -127,8 +124,12 @@
             &-left {
                 display: flex;
                 width: 100%;
-                justify-content: space-between;
                 align-items: center;
+
+                .@{headerClass}-top-dropdown {
+                    margin-right: 15px;
+                    margin-left: 5px;
+                }
             }
 
             &-right {
@@ -141,6 +142,10 @@
                 z-index: @sidebarZindex + 1;
                 border-top: 1px solid @greyColor;
                 box-shadow: rgba(17, 17, 26, 0.05) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 0px 8px;
+
+                .@{headerClass}-top-label {
+                    display: none;
+                }
             }
         }
     }
