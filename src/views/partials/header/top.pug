@@ -1,6 +1,6 @@
 .header-top
     .header-top-left
-        | Location:
+        .header-top-label Location:
         .header-top-dropdown(data-toggle="#citiesDropdown" data-trigger="hover")
             | London
             +dropdown([
@@ -9,7 +9,7 @@
                     href: "#",
                 }
             ], "citiesDropdown")
-        | Lang:
+        .header-top-label Lang:
         .header-top-dropdown(data-toggle="#langsDropdown" data-trigger="hover")
             | En
             +dropdown([
@@ -23,16 +23,18 @@
                 }
             ], "langsDropdown")
     .header-top-right
-        .header-top-link.header-top-link-add
+        .header-top-link.header-top-link-add(href="#")
             span.bi.bi-heart-fill
-            | Favourite (0)
-        .header-top-link.header-top-link-add
+            .header-top-label Favourite (0)
+        .header-top-link.header-top-link-add(href="#")
             span.bi.bi-reception-3
-            | Compare (0)
-        .header-top-link
+            .header-top-label Compare (0)
+        .header-top-link(href="#")
             span.bi.bi-person
-            | Sign in
+            .header-top-label Sign in
         .header-top-divider /
-        .header-top-link
+        .header-top-link(href="#")
             span.bi.bi-person-plus
-            | Sign up
+            .header-top-label Sign up
+        .header-top-link.header-open-right-sidebar(data-toggle="#headerBottom")
+            span.bi.bi-list

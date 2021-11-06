@@ -16,9 +16,10 @@ include ../../mixins/logo/logo.pug
         button.btn-search.btn-only-icon
             span.bi.bi-search
     .header-middle-call
-        .header-middle-call-phone
+        a.header-middle-call-phone(href="tel:10000000000")
             span.bi.bi-telephone-fill
-            | +1 (000) 000-00-00
+            span.header-middle-call-phone-number
+                | +1 (000) 000-00-00
         .header-middle-call-link
             | Call me
     a.header-middle-cart(href=utils.anchor("cart"))

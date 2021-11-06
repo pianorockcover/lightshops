@@ -85,7 +85,7 @@
             }
         }
 
-        &-link {
+        &-me {
             .anchor(@primary, @primary);
             .anchor-underline-hover(@primary, 1px);
         }
@@ -124,7 +124,8 @@
             border-radius: 100%;
             border: 1px solid #ffffff;
             font-size: 14px;
-            width: 20px;
+            min-width: 20px;
+            padding: 2px;
             height: 20px;
             display: flex;
             align-items: center;
@@ -143,6 +144,141 @@
             margin-top: 5px;
             font-size: 15px;
             font-weight: 600;
+        }
+    }
+}
+
+@media @extraLarge {
+    .@{headerMiddleClass} {
+        &-slogan {
+            display: none;
+        }
+
+        &-call {
+            margin-left: 15px;
+            margin-right: 15px;
+        }
+    }
+}
+
+@media @large {
+    .@{headerMiddleClass} {
+        padding: 10px;
+
+        .logo {
+            width: 120px;
+            height: 25px;
+        }
+
+        &-search-field {
+            padding: 5px 10px;
+            border-radius: 20px;
+
+            .btn-dropdown {
+                display: none;
+            }
+
+            .search-field-input {
+                padding: 0px;
+            }
+        }
+
+        &-call {
+            margin-left: 15px;
+            margin-right: 0px;
+
+            &-phone-number {
+                display: none;
+            }
+
+            &-link {
+                display: none;
+            }
+
+            &-phone {
+                margin-bottom: 0px;
+
+                .bi {
+                    margin-right: 0px;
+                    font-size: 20px;
+                }
+            }
+        }
+
+
+        &-cart {
+            margin-left: 15px;
+            margin-right: 0px;
+
+            &-icon {
+                margin: 0;
+                background: transparent;
+                color: @primary;
+                height: 30px;
+                width: 30px;
+                font-size: 28px;
+            }
+
+            &-data {
+                display: none;
+            }
+
+            &-amount {
+                font-size: 10px;
+                min-width: 15px;
+                height: 15px;
+            }
+        }
+    }
+}
+
+@media @small {
+    .@{headerMiddleClass} {
+        position: relative;
+        padding-bottom: 60px;
+
+        &-search-field {
+            position: absolute;
+            bottom: 10px;
+            left: 0px;
+            width: calc(100% - 20px);
+            margin-left: 10px;
+        }
+
+        &-logo-and-slogan {
+            flex: 1;
+        }
+
+        &-search-field {
+            padding: 0 0 0 10px;
+            border-radius: 5px;
+            overflow: hidden;
+
+            .search-field-input {
+                height: 25px;
+                font-size: 13px;
+            }
+
+            .btn-search {
+                padding: 7px 9px;
+                border-radius: 0px;
+                margin-left: 10px;
+            }
+        }
+
+        &-call {
+            &-phone {
+                .bi {
+                    font-size: 12px;
+                    margin-right: 7px;
+                }
+            }
+
+            &-phone-number {
+                display: block;
+                font-size: 14px;
+                font-weight: 400;
+            }
         }
     }
 }
