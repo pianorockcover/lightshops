@@ -30,8 +30,18 @@
     padding-right: 12px;
 }
 
-
 @media @medium {
+    .@{sectionClass} {
+        margin-bottom: @sectionMarginBottom - 15;
+
+        .@{sectionClass}-title {
+            font-size: 25px;
+            margin: 0 0 25px 0;
+        }
+    }
+}
+
+@media @small {
     .area {
         padding: 0;
     }

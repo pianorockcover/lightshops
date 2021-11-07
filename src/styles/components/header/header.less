@@ -3,6 +3,8 @@
 
 @headerClass: header;
 
+@toggleRightSidebar: ~".@{headerClass}-top-link.@{headerClass}-open-right-sidebar";
+
 .@{headerClass} {
     border-left: 1px solid @greyColor;
     border-bottom: 1px solid @greyColor;
@@ -17,13 +19,13 @@
         background: @headerTopBg;
         color: @headerTopColor;
 
-        &-left {
+        &-geo {
             display: flex;
             align-items: center;
             color: lighten(@headerTopColor, 10%);
         }
 
-        &-right {
+        &-account {
             display: flex;
 
             .bi {
@@ -73,7 +75,7 @@
     }
 
 
-    .@{headerClass}-top-link.@{headerClass}-open-right-sidebar {
+    @{toggleRightSidebar} {
         background: @textColor;
         .anchor(#ffffff, #ffffff);
         display: none;
@@ -87,6 +89,7 @@
 
 @media @medium {
     .@{headerClass} {
+        margin-bottom: 15px;
 
         &-top {
             display: block;
@@ -97,31 +100,11 @@
                 margin: 0;
             }
 
-            &-link {
-                margin: 0;
-                font-size: 25px;
-                padding: 5px;
-                flex: 1;
-                border-right: 1px solid @greyColor;
-                text-align: center;
-                align-items: center;
-                justify-content: center;
-
-                &:nth-last-child(0) {
-                    border-right: 0;
-                }
-
-                .bi,
-                .image {
-                    margin: 0;
-                }
-            }
-
             &-divider {
                 display: none;
             }
 
-            &-left {
+            &-geo {
                 display: flex;
                 width: 100%;
                 align-items: center;
@@ -132,7 +115,7 @@
                 }
             }
 
-            &-right {
+            &-account {
                 position: fixed;
                 left: 0px;
                 bottom: 0px;
@@ -142,9 +125,30 @@
                 z-index: @sidebarZindex + 1;
                 border-top: 1px solid @greyColor;
                 box-shadow: rgba(17, 17, 26, 0.05) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 0px 8px;
+                min-width: @bodyMinWidth;
 
                 .@{headerClass}-top-label {
                     display: none;
+                }
+
+                .@{headerClass}-top-link {
+                    margin: 0;
+                    font-size: 25px;
+                    padding: 5px;
+                    flex: 1;
+                    border-right: 1px solid @greyColor;
+                    text-align: center;
+                    align-items: center;
+                    justify-content: center;
+
+                    &:nth-last-child(0) {
+                        border-right: 0;
+                    }
+
+                    .bi,
+                    .image {
+                        margin: 0;
+                    }
                 }
             }
         }
@@ -153,8 +157,22 @@
 
 @media @small {
     .@{headerClass} {
-        .@{headerClass}-top-link.@{headerClass}-open-right-sidebar {
+        &-top {
+            &-account {
+                bottom: @sidebarToggleMobileHeight;
+            }
+        }
+
+        @{toggleRightSidebar} {
             display: flex;
+
+            &.toggled {
+                .bi {
+                    &:before {
+                        content: "\f62a";
+                    }
+                }
+            }
         }
     }
 }

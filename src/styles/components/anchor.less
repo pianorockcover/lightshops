@@ -1,3 +1,5 @@
+@import "../variables.less";
+
 .anchor(@color, @hoverColor) {
   cursor: pointer;
   transition: color 0.2s ease-in-out;
@@ -13,7 +15,12 @@
     color: @color;
   }
 
-  &:hover,
+  @media (min-width: @md) {
+    &:hover {
+      color: @hoverColor;
+    }
+  }
+
   &.active {
     color: @hoverColor;
   }
@@ -28,7 +35,12 @@
   border-bottom: @height solid fade(@color, 85%);
   transition: border-bottom-color .2s ease-in-out;
 
-  &:hover,
+  @media (min-width: @md) {
+    &:hover {
+      border-bottom-color: transparent;
+    }
+  }
+
   &.active {
     border-bottom-color: transparent;
   }
@@ -38,7 +50,12 @@
   border-bottom: @height solid transparent;
   transition: border-bottom-color .2s ease-in-out;
 
-  &:hover,
+  @media (min-width: @md) {
+    &:hover {
+      border-bottom-color: fade(@color, 85%);
+    }
+  }
+
   &.active {
     border-bottom-color: fade(@color, 85%);
   }

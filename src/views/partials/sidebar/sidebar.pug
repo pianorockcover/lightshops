@@ -3,7 +3,7 @@ include icons/icon.pug
 
 - const sidebarUtils = htmlWebpackPlugin.options.utils;
 
-.sidebar
+.sidebar#catalogSidebar
     .sidebar-toggle
         .bi.bi-list
         .sidebar-toggle-text Catalog
@@ -25,3 +25,6 @@ include icons/icon.pug
                 .sidebar-catalog(id=detailsId)
                     +sidebarCatalog()
         - }
+.sidebar-mobile-toggle(data-toggle="#catalogSidebar")
+    span.bi.bi-grid-fill
+    | Catalog

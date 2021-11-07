@@ -46,6 +46,12 @@
   }
 }
 
+@media (min-width: @md) {
+  .@{headerBottomClass} {
+    display: flex !important;
+  }
+}
+
 @media @small {
   .@{headerBottomClass} {
     position: fixed;
@@ -72,6 +78,18 @@
       justify-content: flex-start;
       border-bottom: 0 !important;
       padding: 9px 15px;
+      display: block;
+
+      .dropdown {
+        position: static;
+        box-shadow: none;
+        margin-top: 10px;
+
+
+        &-item {
+          background: transparent;
+        }
+      }
     }
 
     &-right {

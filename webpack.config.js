@@ -177,6 +177,7 @@ module.exports = (_env, argv) => {
     devServer: {
       contentBase: path.join(__dirname, distPath),
       port: 3034,
+      host: "192.168.0.12",
     },
   });
 }

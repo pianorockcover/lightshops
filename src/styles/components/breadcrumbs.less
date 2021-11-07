@@ -1,4 +1,5 @@
 @import "../components/anchor.less";
+@import "../variables.less";
 
 @breadcrumbsClassName: breadcrumbs;
 
@@ -26,5 +27,12 @@
         vertical-align: middle;
         margin-right: 10px;
         margin-bottom: 5px;
+    }
+}
+
+@media @medium {
+    .@{breadcrumbsClassName} {
+        font-size: 13px;
+        margin-bottom: 10px;
     }
 }
