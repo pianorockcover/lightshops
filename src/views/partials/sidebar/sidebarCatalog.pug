@@ -3,13 +3,14 @@ mixin sidebarCatalog()
         .row
             .col-xl-7
                 .row
-                    .col-xl-6
+                    .col
                         +catalog()
-                    .col-xl-6
+                    .col
                         +catalog()
-                    .col-xl-6
+                .row
+                    .col
                         +catalog()
-                    .col-xl-6
+                    .col
                         +catalog()
             .col-xl-5
                 +announcement({
@@ -29,14 +30,14 @@ mixin sidebarCatalog()
                 })
     - } else {
         .row
-            .col-xl-6
+            .col
                 +catalog()
-            .col-xl-6
+            .col
                 +catalog()
         .row
-            .col-xl-6
+            .col
                 +catalog()
-            .col-xl-6
+            .col
                 +catalog()
         +announcement({
             image: utils.getUpload("announcement/4.jpeg"),

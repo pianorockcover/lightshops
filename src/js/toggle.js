@@ -1,7 +1,6 @@
 import $ from "jquery";
 
-// TMP !!!
-const isMobile = false;
+const isMobile = window.screen.width <= 768;
 
 export const toggledClass = "toggled";
 export const activeClass = "active";

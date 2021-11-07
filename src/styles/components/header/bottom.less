@@ -12,16 +12,15 @@
   justify-content: space-between;
 
   &-link {
-    .anchor(@headerTextColor, @headerTextColor);
-    .anchor-underline-hover(@headerTextColor, 2px);
+    .anchor(@headerTextColor, @primary);
     position: relative;
 
-    .arrow {
-      transform: rotate(180deg);
+    &-arrow {
       margin-right: 0px;
       margin-left: 5px;
       font-size: 11px;
       margin-top: -3px;
+      display: inline-block;
     }
   }
 
@@ -36,7 +35,6 @@
       margin-left: @itemsMargin;
 
       .anchor(@headerTextColor, @contrast);
-      .anchor-underline-hover(transparent, 0px);
 
       .image {
         width: 20px;

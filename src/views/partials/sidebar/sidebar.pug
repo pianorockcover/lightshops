@@ -11,16 +11,18 @@ include icons/icon.pug
         - for(let i = 0; i < 10; i++) {
             - if (i > 4) {
                 a.sidebar-link(href=utils.anchor("category"))
-                    +icon()
-                    .sidebar-link-text=sidebarUtils.faker.commerce.department()
+                    .sidebar-link-area
+                        +icon()
+                        .sidebar-link-text=sidebarUtils.faker.commerce.department()
                 - continue;
             - }
 
             - const detailsId = `catalogDetails${i}`;
             .sidebar-link(data-toggle=`#${detailsId}` data-trigger="hover")
-                +icon()
-                .sidebar-link-text=sidebarUtils.faker.commerce.department()
-                    .bi.bi-chevron-right
+                .sidebar-link-area
+                    +icon()
+                    .sidebar-link-text=sidebarUtils.faker.commerce.department()
+                        .bi.bi-chevron-right
 
                 .sidebar-catalog(id=detailsId)
                     +sidebarCatalog()

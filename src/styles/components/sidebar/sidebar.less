@@ -76,21 +76,29 @@
     }
 
     &-link {
-        display: flex;
-        align-items: center;
         cursor: pointer;
         padding: 10px 15px 10px 15px;
         width: 100%;
         position: relative;
         transition: background-color .3s ease-in-out;
         .anchor(@sidebarColor, @sidebarColor);
+        display: flex;
+        flex-direction: column;
 
-        &:hover {
-            background-color: fade(@sidebarColor, 20%);
+        @media (min-width: @md) {
+            &:hover {
+                background-color: fade(@sidebarColor, 20%);
+            }
         }
 
         &:nth-last-child(1) {
             margin-bottom: 0px;
+        }
+
+        &-area {
+            display: flex;
+            align-items: center;
+            width: 100%;
         }
 
         &-icon {
@@ -203,8 +211,9 @@
         left: 0px;
         top: 0px;
         height: 100%;
-        overflow-y: auto;
-        overflow-x: hidden;
+        overflow-y: scroll !important;
+        overflow-x: hidden !important;
+        max-height: 100%;
 
         &-toggle {
             display: none;

@@ -33,7 +33,7 @@ include prouctWindow.pug
         .col-xl-3
           .footer-title Some Links 
           .row
-            .col-xl-6
+            .col
               a.footer-link(href=utils.anchor("index-1"))
                 .bi.bi-link-45deg
                 | Home
@@ -49,7 +49,7 @@ include prouctWindow.pug
               a.footer-link(href=utils.anchor("index-1"))
                 .bi.bi-link-45deg
                 | ContactUs
-            .col-xl-6
+            .col
               a.footer-link(href=utils.anchor("index"))
                 .bi.bi-link-45deg
                 | ContactUs
@@ -72,16 +72,17 @@ include prouctWindow.pug
             input.footer-subscribe-form-input(type="text" placeholder=exampleEmail)
             .btn.btn-secondary SEND
           .footer-divider
-          a.footer-socical-link(href="#" target="blank")
-            img.footer-socical-link-image(src="images/socials/facebook.svg" alt="Social Icon")
-          a.footer-socical-link(href="#" target="blank")
-            img.footer-socical-link-image(src="images/socials/twitter.svg" alt="Social Icon")
-          a.footer-socical-link(href="#" target="blank")
-            img.footer-socical-link-image(src="images/socials/pinterest.svg" alt="Social Icon")
-          a.footer-socical-link(href="#" target="blank")
-            img.footer-socical-link-image(src="images/socials/instagram.svg" alt="Social Icon")
-          a.footer-socical-link(href="#" target="blank")
-            img.footer-socical-link-image(src="images/socials/tik-tok.svg" alt="Social Icon")
+          .footer-socicals
+            a.footer-socical-link(href="#" target="blank")
+              img.footer-socical-link-image(src="images/socials/facebook.svg" alt="Social Icon")
+            a.footer-socical-link(href="#" target="blank")
+              img.footer-socical-link-image(src="images/socials/twitter.svg" alt="Social Icon")
+            a.footer-socical-link(href="#" target="blank")
+              img.footer-socical-link-image(src="images/socials/pinterest.svg" alt="Social Icon")
+            a.footer-socical-link(href="#" target="blank")
+              img.footer-socical-link-image(src="images/socials/instagram.svg" alt="Social Icon")
+            a.footer-socical-link(href="#" target="blank")
+              img.footer-socical-link-image(src="images/socials/tik-tok.svg" alt="Social Icon")
         .col-xl-3
           .footer-title Instagram Post
           .footer-instagram-widget
@@ -108,7 +109,7 @@ include prouctWindow.pug
     .container-full.footer-bottom 
       .footer-bottom-left
         | Copyrights © All Rights Resered By 
-        a.footer-bottom-link(href="#") Expressi 
+        a.footer-bottom-link(href="#") lightShops 
       .footer-bottom-right
         a.footer-bottom-bright-link(href="#") Terms And Rights
         .footer-bottom-divider
