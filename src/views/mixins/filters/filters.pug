@@ -1,5 +1,5 @@
 mixin filters()
-    .filters
+    .filters#filtersSidebar
         form
             .filters-header
                 .filters-title Filter:
@@ -9,3 +9,6 @@ mixin filters()
             include vendors.pug
             include materials.pug
             include price.pug
+    .filters-mobile-toggle(data-toggle="#filtersSidebar")
+        span.bi.bi-funnel-fill
+        | Filters
