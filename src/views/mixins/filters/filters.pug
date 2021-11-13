@@ -9,6 +9,6 @@ mixin filters()
             include vendors.pug
             include materials.pug
             include price.pug
-    .filters-mobile-toggle(data-toggle="#filtersSidebar")
-        span.bi.bi-funnel-fill
-        | Filters
+        .filters-mobile-close(data-toggle="#filtersSidebar")
+            span.bi.bi-arrow-left-circle
+            | Back

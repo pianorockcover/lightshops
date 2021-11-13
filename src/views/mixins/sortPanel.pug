@@ -7,6 +7,10 @@ mixin sortPanel(viewType)
             a.sort-panel-link(href=utils.anchor("category-3")) 
                 | Sort By Popularity
                 span.bi.bi-triangle-fill.arrow.desc
+        .filters-mobile-toggle(data-toggle="#filtersSidebar")
+            span.bi.bi-funnel-fill
+            | Filters
+            .filters-mobile-toggle-amount 3
         .sort-panel-right
             a.sort-panel-link(href=utils.anchor("category") class=`${!viewType || viewType === "grid" ? "active" : "" }`)
                 span.bi.bi-grid

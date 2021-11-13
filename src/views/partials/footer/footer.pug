@@ -12,7 +12,7 @@ include prouctWindow.pug
   footer.footer
     .container-full
       .row
-        .col-xl-3
+        .col-xl-3.col-md-6
           .footer-logo
             +logo()
           .footer-slogan
@@ -30,7 +30,7 @@ include prouctWindow.pug
             .bi.bi-pin-map-fill
             | #{locationName}
           .footer-divider
-        .col-xl-3
+        .col-xl-3.col-md-6
           .footer-title Some Links 
           .row
             .col
@@ -65,7 +65,7 @@ include prouctWindow.pug
               a.footer-link(href=utils.anchor("index"))
                 .bi.bi-link-45deg
                 | Anout US
-        .col-xl-3
+        .col-xl-3.col-md-6
           .footer-title Subscibe US
           | Don't forget to subscribe to our newsletter
           form.footer-subscribe-form
@@ -83,7 +83,7 @@ include prouctWindow.pug
               img.footer-socical-link-image(src="images/socials/instagram.svg" alt="Social Icon")
             a.footer-socical-link(href="#" target="blank")
               img.footer-socical-link-image(src="images/socials/tik-tok.svg" alt="Social Icon")
-        .col-xl-3
+        .col-xl-3.col-md-6
           .footer-title Instagram Post
           .footer-instagram-widget
             a.footer-instagram-post(href="#")
