@@ -25,7 +25,7 @@ mixin productFull(customOptions = {})
 
     .product.product-full
         .row
-            div(class=options.forWindow ? "col-xl-5" : "col-xl-6 col-xxl-3 pb-4")
+            div(class=options.forWindow ? "col-xl-5" : "col-xl-6 col-xxl-3 mb-5")
                 .product-full-gallery
                     .product-full-thumbnails
                         .product-full-thumbnail.active(data-image=options.image data-zoom-view=`#${zoomViewId}`)
@@ -52,7 +52,7 @@ mixin productFull(customOptions = {})
                                 .product-label(class= label.class)= label.text
                             - }
                         .product-favourite-icon
-            div(class=options.forWindow ? "col-xl-7" : "col-xl-6 col-xxl-4 pb-4")
+            div(class=options.forWindow ? "col-xl-7" : "col-xl-6 col-xxl-4 mb-5")
                 a.product-category(href=utils.anchor("category") title= options.category)= options.category
                 .product-title= options.name
                 +rate(Object.assign(options, { showAmount: true }))

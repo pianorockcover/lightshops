@@ -30,6 +30,7 @@
         font-weight: 600;
         margin-bottom: 65px;
         position: relative;
+        line-height: 1.2;
 
         &:after {
             content: " ";
@@ -47,5 +48,43 @@
         font-size: 20px;
         font-weight: 300;
         text-transform: uppercase;
+    }
+}
+
+@media @large {
+    .@{pageTitleClass} {
+        min-height: 200px;
+
+        &-main {
+            font-size: 25px;
+            margin-bottom: 25px;
+
+            &:after {
+                display: none;
+            }
+        }
+    }
+}
+
+@media @small {
+    .@{pageTitleClass} {
+        min-height: 200px;
+
+        &-main {
+            font-size: 25px;
+            margin-bottom: 25px;
+
+            &:after {
+                display: none;
+            }
+        }
+
+        &-left {
+            padding: 15px;
+        }
+
+        &-right {
+            display: none;
+        }
     }
 }
