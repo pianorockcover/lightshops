@@ -21,14 +21,14 @@ done
 
 node zip.js
 
-# cd landing
-# node screenshot.js
-# cd ../
+cd landing
+node screenshot.js
+cd ../
 
-# npm run landing:build
+npm run landing:build
 
-# mkdir -p landing/dist/demos
+mkdir -p landing/dist/demos
 
-# mv dist/* landing/dist/demos
+mv dist/* landing/dist/demos
 
 rm -rf dist
