@@ -30,7 +30,6 @@
     }
 
     &-title {
-        font-weight: 500;
         font-size: 25px;
         margin-bottom: 10px;
         font-weight: 700;
@@ -64,4 +63,33 @@
     display: flex;
     flex-direction: column;
     height: 100%;
+}
+
+@media @medium {
+    .@{saleBlockClass} {
+        &-title {
+            font-weight: 500;
+            font-size: 17px;
+        }
+
+        &-amount {
+            font-size: 11px;
+            line-height: 1;
+        }
+    }
+}
+
+@media @small {
+    .@{saleBlockClass} {
+        margin-bottom: 0;
+        margin-right: 10px;
+
+        &:nth-last-child(1) {
+            margin-right: 0;
+        }
+    }
+
+    .sales-layout {
+        flex-direction: row;
+    }
 }

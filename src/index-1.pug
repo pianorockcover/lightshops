@@ -4,7 +4,7 @@ include views/partials/header/header.pug
     .section
         .container-full
             .row
-                .col-xxl-3.col-xl-6.pb-3
+                .col-md-6.col-xxl-3.pb-3
                     +announcement({
                         image: utils.getUpload("announcement/8.jpeg"),
                         fullHeight: true,
@@ -23,9 +23,7 @@ include views/partials/header/header.pug
                         btnText : "Shop Now",
                         btnClass: "btn-contrast"
                     })
-                .col-xxl-6.col-xl-12.pb-3
-                    +mainSlider()
-                .col-xxl-3.col-xl-6.pb-3
+                .col-md-6.order-xxl-last.col-xxl-3.pb-3
                     .sales-layout 
                         +saleBlock(
                             utils.faker.company.catchPhrase(),
@@ -37,6 +35,8 @@ include views/partials/header/header.pug
                             utils.getUpload("announcement/3.jpeg"),
                             utils.faker.company.catchPhrase(),
                             75)
+                .col-xl-12.col-xxl-6.pb-3
+                    +mainSlider()
 
     +productsSlider("Top Sales", "topSales")
 

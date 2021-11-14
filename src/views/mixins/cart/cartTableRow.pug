@@ -8,7 +8,7 @@ mixin cartTableRow()
         const id = `productDetails${+ new Date() * utils.randomInt(100, 999)}`;
 
     .row.cart-table-row
-        .col-md-5.cart-table-col
+        .col-sm-7.col-md-5.cart-table-col.pb-2
             .cart-table-col-product-wrapper(data-toggle=`#${id}` data-trigger="hover")
                 a.cart-table-col-product(href=utils.anchor("product-card"))
                     .cart-table-remove
@@ -24,9 +24,9 @@ mixin cartTableRow()
                         name: name,
                         price: `$${price}.00`,
                     })
-        .col-md-3.cart-table-col
+        .col-sm-3.cart-table-col.pb-2
             +quantity(amount)
-        .col-md-2.cart-table-col 
+        .hide-on-md.col-sm-2.cart-table-col.pb-2
             b $#{price}.00
-        .col-md-2.cart-table-col 
+        .col-sm-2.cart-table-col.pb-2.cart-table-col-total
             b $#{totalPrice}.00

@@ -196,9 +196,24 @@
             font-size: 16px;
         }
 
-
         &-header {
             display: none;
+        }
+    }
+}
+
+@media @small {
+    .@{cartTableClassName} {
+        &-row {
+            border-bottom: 5px solid @greyColor;
+            padding: 10px 0;
+        }
+
+        &-col {
+            &-total {
+                font-size: 20px;
+                margin-top: 10px;
+            }
         }
     }
 }

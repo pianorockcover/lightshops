@@ -1,7 +1,7 @@
 mixin brands(amount)
     .row
         - for(let i = 1; i <= amount; i++) {
-            .col-xl-3.col-xxl-2.pb-3
+            .col-4.col-xl-3.col-xxl-2.pb-3
                 a.brand(href="#")
                     - let src = utils.getUpload(`brands/${utils.randomInt(1, 7)}.jpg`, "default");
                     img(src=src, alt="Brand logo").brand-image
