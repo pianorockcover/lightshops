@@ -10,18 +10,19 @@ html
 
     body
         .header
-            - for (let i = 0; i < 5; i++) {
-                img.header-blob(src=`img/blob-${i}.svg`, alt="Art")
-            - }
+            img.header-blob(src=`img/3.jpg`, alt="Art")
+            img.header-blob(src=`img/2.jpg`, alt="Art")
+            img.header-blob(src=`img/1.jpg`, alt="Art")
             .header-area
                 .header-content
                     .header-logo
                         include ../../src/views/mixins/logo/logo-svg.html
+                    .header-divider
                     h1.header-title Professional e-commerce HTML-template
                     button.buy-btn
                         .bi.bi-cart
                         | Buy now
-                    img.main-mockup(src="img/main-mockup.png" alt="Theme mockup")
+                    //- img.main-mockup(src="img/main-mockup.png" alt="Theme mockup")
 
 
         include demos.pug

@@ -16,45 +16,31 @@
 .header {
     position: relative;
     overflow: hidden;
-    background: linear-gradient(to bottom, #0a1e31, #096fc0);
+    background: linear-gradient(136deg, #0a1e31, #074c81);
+    margin-bottom: 50px;
 
     &-blob {
         position: absolute;
-        opacity: .1;
 
         &:nth-child(1) {
             width: 700px;
-            top: -200px;
-            left: -100px;
-            color: #f3a683;
+            right: 500px;
+            top: 30%;
+            filter: brightness(0.5);
+            top: calc(30% + 400px);
         }
 
         &:nth-child(2) {
-            width: 800px;
-            top: -200px;
-            right: -100px;
-            color: #778beb;
+            width: 700px;
+            right: 200px;
+            top: calc(30% + 200px);
+            filter: brightness(0.7);
         }
 
         &:nth-child(3) {
-            width: 900px;
-            top: 130px;
-            left: 0px;
-            color: #63cdda;
-        }
-
-        &:nth-child(4) {
-            width: 1700px;
-            bottom: -900px;
-            left: calc(50% - 800px);
-            color: #786fa6;
-        }
-
-        &:nth-child(5) {
-            width: 900px;
-            bottom: -200px;
-            right: -100px;
-            color: #596275;
+            width: 700px;
+            right: -10px;
+            top: 30%;
         }
     }
 
