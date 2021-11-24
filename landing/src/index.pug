@@ -4,12 +4,24 @@ html
         meta(charset="utf-8")
         meta(name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0")
 
-        title Expreessi - Marketplace eCommerce HTML Template
+        title lightShops - Professional e-commerce HTML-template
 
         link(rel="stylesheet" href="css/style.css")
 
     body
         .header
-            h1 Lightweight, Bootstrap-based HTML e-commerce theme
+            - for (let i = 0; i < 5; i++) {
+                img.header-blob(src=`img/blob-${i}.svg`, alt="Art")
+            - }
+            .header-area
+                .header-content
+                    .header-logo
+                        include ../../src/views/mixins/logo/logo-svg.html
+                    h1.header-title Professional e-commerce HTML-template
+                    button.buy-btn
+                        .bi.bi-cart
+                        | Buy now
+                    img.main-mockup(src="img/main-mockup.png" alt="Theme mockup")
+
 
         include demos.pug
