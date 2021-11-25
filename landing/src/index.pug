@@ -10,19 +10,34 @@ html
 
     body
         .header
-            img.header-blob(src=`img/3.jpg`, alt="Art")
-            img.header-blob(src=`img/2.jpg`, alt="Art")
-            img.header-blob(src=`img/1.jpg`, alt="Art")
+            .header-blobs
+                img.header-blob.animate__animated.animate__backInRight(src=`img/3.jpg`, alt="Art")
+                img.header-blob.animate__animated.animate__backInRight(src=`img/2.jpg`, alt="Art")
+                img.header-blob.animate__animated.animate__backInRight(src=`img/1.jpg`, alt="Art")
+            img.header-collage(src=`img/collage.png`, alt="Art")
             .header-area
-                .header-content
+                .header-content.animate__animated.animate__fadeIn
                     .header-logo
                         include ../../src/views/mixins/logo/logo-svg.html
                     .header-divider
                     h1.header-title Professional e-commerce HTML-template
+                    .counters.animate__animated.animate__bounce
+                        .counter
+                            .counter-amount 
+                                .counter-amount-value 30+
+                            .counter-hint Demo Pages
+                        .counter
+                            .counter-amount 
+                                .counter-amount-value 3
+                            .counter-hint Color Schemes
+                        .counter
+                            .counter-amount 
+                                .counter-amount-value 100%
+                            .counter-hint Responsive
                     button.buy-btn
                         .bi.bi-cart
                         | Buy now
                     //- img.main-mockup(src="img/main-mockup.png" alt="Theme mockup")
 
-
+        h2.section-title Demo Pages
         include demos.pug
