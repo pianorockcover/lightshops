@@ -21,9 +21,9 @@ done
 
 node zip.js
 
-cd landing
-node screenshot.js
-cd ../
+# cd landing
+# node screenshot.js
+# cd ../
 
 npm run landing:build
 

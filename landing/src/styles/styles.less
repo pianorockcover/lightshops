@@ -17,7 +17,7 @@
 .header {
     position: relative;
     overflow: hidden;
-    background: linear-gradient(136deg, #0a1e31, #1d2932);
+    background: url(img/header-abstract.svg);
     margin-bottom: 50px;
 
     &-collage {
@@ -29,6 +29,7 @@
 
     &-blob {
         position: absolute;
+        filter: blur(0.4);
 
         &:nth-child(1) {
             width: 700px;
@@ -80,7 +81,7 @@
         flex-direction: column;
         align-items: center;
         color: #ffffff;
-        background: url(/img/header-bg.svg);
+        background: url(img/header-bg.svg);
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
@@ -151,7 +152,7 @@
 }
 
 .buy-btn {
-    box-shadow: rgb(255 255 255 / 15%) 0px 1px 1px 0px inset, rgb(50 50 93 / 48%) 0px 50px 100px -20px, rgb(0 0 0 / 53%) 0px 30px 60px -30px;
+    box-shadow: 5px 5px 10px rgba(220, 42, 103, 0.45);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -184,7 +185,7 @@
     fill: #ffffff;
 }
 
-F .main-nockup {
+.main-nockup {
     position: relative;
     bottom: -50px;
     display: block;
@@ -211,12 +212,19 @@ F .main-nockup {
         color: @textColor  !important;
         font-weight: 900;
         font-size: 20px;
+        transition: color .2s ease-in-out;
+        transition: transform .2s ease-in-out;
 
         .demo-image {
             max-width: 100%;
             margin-bottom: 20px;
             border-radius: 10px;
             box-shadow: 0px 10px 50px rgb(0 0 0 / 8%);
+        }
+
+        &:hover {
+            color: @primary  !important;
+            transform: scale(1.13);
         }
     }
 }
