@@ -1,6 +1,7 @@
 const fs = require("fs");
 const path = require("path");
 const puppeteer = require("puppeteer");
+const sharp = require("sharp");
 
 const capitalizeFirstLetter = (str) => str.charAt(0).toUpperCase() + str.slice(1);
 
@@ -8,15 +9,7 @@ const viewsPath = "../src";
 
 const screenshotsPath = path.resolve(__dirname, "static/screenshots");
 
-if (!fs.existsSync("static")) {
-    fs.mkdirSync("static");
-}
-
-if (fs.existsSync(screenshotsPath)) {
-    fs.rmdirSync(screenshotsPath, { recursive: true });
-}
-
-fs.mkdirSync(screenshotsPath);
+fs.rmdirSync(screenshotsPath, { recursive: true });
 
 const views = fs
     .readdirSync(viewsPath)
@@ -51,11 +44,20 @@ const sleep = (time) => new Promise((resolve) => {
         const demoUrl = `demos/${view}`;
         const linkText = capitalizeFirstLetter(view.replace(".html", "").replace(new RegExp("-", "g"), " "));
 
-        demos += `\n\ta.demo-link(href="${demoUrl}")\n\t\timg.demo-image(src="screenshots/${fileName}" alt="Demo ${view}")\n\t\t| ${linkText}`;
+        demos += `\n\ta.demo-link(href="${demoUrl}")\n\t\t.demo-image(style="background-image: url(screenshots/${fileName})" alt="Demo ${view}")\n\t\t| ${linkText}`;
 
         await sleep(3000);
 
-        await page.screenshot({ path: filePath });
+        await page.screenshot({ path: filePath, fullPage: true });
+
+        const resizedFilePath = `${filePath}-resized`;
+
+        await sharp(filePath)
+            .resize({ width: 400 })
+            .toFile(resizedFilePath);
+
+        fs.rmSync(filePath);
+        fs.renameSync(resizedFilePath, filePath);
     }
 
     fs.writeFileSync("./src/demos.pug", demos);
