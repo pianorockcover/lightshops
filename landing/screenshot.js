@@ -23,12 +23,18 @@ const views = fs
     .filter((fileName) => fileName.endsWith(".pug"))
     .map((fileName) => fileName.replace("pug", "html"));
 
+const sleep = (time) => new Promise((resolve) => {
+    setTimeout(() => {
+        resolve(time);
+    }, time);
+});
+
 
 (async () => {
     const browser = await puppeteer.launch({
         args: ["--no-sandbox", "--disable-setuid-sandbox"], defaultViewport: {
             width: 1900,
-            height: 1188
+            height: 1175
         }
     });
 
@@ -46,6 +52,8 @@ const views = fs
         const linkText = capitalizeFirstLetter(view.replace(".html", "").replace(new RegExp("-", "g"), " "));
 
         demos += `\n\ta.demo-link(href="${demoUrl}")\n\t\timg.demo-image(src="screenshots/${fileName}" alt="Demo ${view}")\n\t\t| ${linkText}`;
+
+        await sleep(3000);
 
         await page.screenshot({ path: filePath });
     }
