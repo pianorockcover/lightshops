@@ -19,6 +19,8 @@ for file in ./src/styles/themes/*; do
     fi
 done
 
+cp docs.pdf dist/docs.pdf
+
 node zip.js
 
 # cd landing
