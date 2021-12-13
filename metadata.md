@@ -9,7 +9,7 @@ LiteShops - Universal eCommerce HTML Template
 - Bootstrap 5 and jQuery based
 
 ### HTML Description
-???
+Lightweight & multi-purpose eCommerce HTML Template based on Bootstrap 5 Framework. Highly optimized and pretty designed theme is suitable for creating any online stores like fashion store, furniture, electronics, games, grocery, cosmetics etc. Includes easy to customize home page, catalog, product and shopping cart layouts.
 
 ### Category
 Retail
@@ -44,6 +44,10 @@ bootstrap 5, catalog, css, ecommerce, ecommerce HTML, html, multipurpose, online
 9
 
 ### Message to the Reviewer
-All images from https://www.pexels.com/ru-ru/ and free to use
-Only free npm packages
-docs.pdf - documentation
+Hello!
+
+There are some notes about this theme you may be interested in
+
+- All images of  products, banners, avatars and thumbnails are have got from https://www.pexels.com/ and absolutelly free to use
+- This theme uses only free npm packages (for more details, see the documentation)
+- Documentation file is docs.pdf (located in the root folder of zip archive)
