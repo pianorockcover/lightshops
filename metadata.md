@@ -48,6 +48,6 @@ Hello!
 
 There are some notes about this theme you may be interested in
 
-- All images of  products, banners, avatars and thumbnails are have got from https://www.pexels.com/ and absolutelly free to use
+- All images of products, banners, avatars and thumbnails are from https://www.pexels.com/ and absolutelly free to use
 - This theme uses only free npm packages (for more details, see the documentation)
 - Documentation file is docs.pdf (located in the root folder of zip archive)
