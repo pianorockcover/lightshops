@@ -172,13 +172,14 @@
 
         .@{productClass}-zoom-icon {
             position: absolute;
-            background-color: #ffffff;
+            background-color: rgba(0, 0, 0, 0.1);
             z-index: 2;
-            font-size: 16px;
-            padding: 10px;
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 14px;
+            padding: 7px;
             border-radius: 100%;
-            width: 40px;
-            height: 40px;
+            width: 35px;
+            height: 35px;
             top: calc(50% - 14px);
             left: calc(50% - 14px);
             display: flex;
@@ -190,7 +191,8 @@
                 transform .2s ease-in-out;
 
             &:hover {
-                background-color: fade(@greyColor, 90%);
+                background-color: rgba(0, 0, 0, 0.2);
+                color: rgba(255, 255, 255, 0.9);
             }
         }
     }
@@ -286,12 +288,10 @@
     &-buttons {
         display: none;
         align-items: center;
-        justify-content: space-between;
+        margin-top: 20px;
 
         .btn {
             margin-right: 10px;
-            padding-left: 25px;
-            padding-right: 25px;
         }
     }
 
