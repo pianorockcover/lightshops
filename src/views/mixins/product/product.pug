@@ -10,9 +10,11 @@ mixin product(customOptions = {})
         options.price = `$${utils.randomInt(9, 80)}.00`;
         options.image = utils.getUpload(`products/${utils.randomInt(1, 11)}.jpg`);
         options.labels = new Array(utils.randomInt(0, 3)).fill(null).map(() => ({
-            class: utils.randomElem(["bg-warning", "bg-success", "bg-contrast", "bg-primary"]),
+            class: utils.randomElem(["bg-warning", "bg-success", "bg-contrast"]),
             text: utils.faker.commerce.productAdjective(),
         }));
+        options.showRateDigit = true;
+        options.by = utils.faker.company.companyName();
         options.oldPrice = utils.randomInt(100, 999) % 3 === 0 ? `$${utils.randomInt(80, 120)}.00` : undefined;
         options.link = utils.randomElem(["product-card", "product-card-1"]);
         options = Object.assign(options, customOptions);
@@ -23,12 +25,20 @@ mixin product(customOptions = {})
                 - for (let label of (options.labels || [])) {
                     .product-label(class= label.class)= label.text
                 - }
-            .product-favourite-icon
+            .product-side-actions
+                .product-side-action.hover-contrast
+                    .bi.bi-heart
+                .product-side-action.hover-primary
+                    .bi.bi-reception-3
             .product-image-wrapper
                 .bi.bi-zoom-in.product-zoom-icon(data-modal="#productViewModal")
                 img.product-image(src=options.image, alt=options.name)
             .product-details
-                .product-category(title= options.category)= options.category
+                .product-top
+                    .product-category(title= options.category)= options.category
+                    .product-by
+                        | by
+                        a(href="#" title=options.by).product-by-link=options.by
                 a(href=utils.anchor(options.link) title= options.name).product-title= options.name
                 +rate(options)
                 .product-price
@@ -39,7 +49,8 @@ mixin product(customOptions = {})
                 +productTags()
                 - if (!customOptions.hideButtons) {
                     .product-buttons
-                        .btn.btn-secondary
+                        .btn.btn-faded
                             .bi.bi-bag 
-                            | Add to cart
+                            | Add
+                        +quantity()
                 - }

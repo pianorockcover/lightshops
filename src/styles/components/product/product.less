@@ -6,16 +6,11 @@
 @height: 390px;
 @imageSize: 200px;
 
-.in-favourite-icon() {
-    color: @contrast;
-    cursor: pointer;
-
-    &:before {
-        content: "\f415";
-    }
-}
-
 .product-hovered() {
+    .@{productClass}-content {
+        border-color: fade(@primary, 25%);
+    }
+
     .@{productClass}-buttons {
         display: flex;
     }
@@ -25,7 +20,11 @@
     }
 
     .@{productClass}-zoom-icon {
-        opacity: 1;
+        transform: scale(1);
+    }
+
+    .@{productClass}-side-action {
+        transform: scale(1);
     }
 
     .@{productClass}-image-wrapper {
@@ -61,8 +60,16 @@
             position: relative;
         }
 
+        &:hover {
+            .@{productClass}-by {
+                margin-right: 35px;
+                transition: margin-right .2s ease-in-out;
+            }
+        }
+
         .@{productClass}-buttons {
             display: flex;
+            justify-content: initial;
 
             .btn {
                 width: fit-content;
@@ -100,29 +107,30 @@
     position: relative;
     z-index: 1;
 
-    &-favourite-icon {
-        color: @contrast;
-        color: @textColor;
+    &-side-actions {
         position: absolute;
+        z-index: 3;
         top: 10px;
         right: 10px;
-        z-index: 3;
-        font-size: 18px;
-
-        &:before {
-            content: "\f417";
-            font-family: "bootstrap-icons";
-        }
-
-        &:hover {
-            .in-favourite-icon();
-        }
     }
 
-    &.@{productClass}-in-favourite {
-        .@{productClass}-favourite-icon {
-            .in-favourite-icon()
-        }
+    &-side-action {
+        color: @textColor;
+        background: #ffffff;
+        border: 1px solid #eeeeee;
+        border-radius: 100%;
+        padding: 8px 7px 7px 7px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 15px;
+        line-height: 1;
+        margin-bottom: 10px;
+        cursor: pointer;
+        transform: scale(0);
+        transition: color .2s ease-in-out,
+            border-color .2s ease-in-out,
+            transform .2s ease-in-out;
     }
 
     &-content {
@@ -134,7 +142,9 @@
         top: 0px;
         left: 0px;
         width: 100%;
+        border-radius: @borderRadius;
         transition: border-color .2s ease-in-out;
+        border: 1px solid #eee;
 
         @media (min-width: @md) {
             .shadow-hover();
@@ -147,6 +157,7 @@
         overflow: hidden;
         margin-bottom: 10px;
         height: @imageSize;
+        padding: 15px;
         position: relative;
         transition: transform .5s ease-in-out;
         flex-direction: column;
@@ -161,21 +172,22 @@
 
         .@{productClass}-zoom-icon {
             position: absolute;
-            background-color: fade(@greyColor, 70%);
+            background-color: #ffffff;
             z-index: 2;
-            font-size: 23px;
+            font-size: 16px;
             padding: 10px;
             border-radius: 100%;
-            width: 45px;
-            height: 45px;
+            width: 40px;
+            height: 40px;
             top: calc(50% - 14px);
             left: calc(50% - 14px);
             display: flex;
             align-items: center;
             justify-content: center;
-            opacity: 0;
+            transform: scale(0);
             cursor: pointer;
-            transition: background-color .2s ease-in-out, opacity .2s ease-in-out;
+            transition: background-color .2s ease-in-out,
+                transform .2s ease-in-out;
 
             &:hover {
                 background-color: fade(@greyColor, 90%);
@@ -183,24 +195,49 @@
         }
     }
 
-    &-category {
-        text-transform: uppercase;
-        margin-bottom: 5px;
+    &-top {
+        margin-bottom: 10px;
         color: #7e7e7e;
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
+        font-size: 11px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        .@{productClass}-category {
+            text-transform: uppercase;
+            flex: 1;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .@{productClass}-by {
+            margin-left: 5px;
+            display: flex;
+            width: 45%;
+            justify-content: flex-end;
+        }
+
+        .@{productClass}-by-link {
+            .anchor(@secondary, fade(@secondary, 80%));
+            margin-left: 5px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: block;
+        }
     }
 
     &-title {
         .anchor(@textColor, @primary);
         font-size: 16px;
         font-weight: 500;
-        margin-bottom: 10px;
+        margin-bottom: 15px;
         max-height: 37px;
         overflow: hidden;
         text-overflow: ellipsis;
         white-space: nowrap;
+        display: block;
     }
 
     &-price {
@@ -234,7 +271,6 @@
         font-size: 10px;
         color: #686868;
         width: fit-content;
-        border: 1px solid #dfdfdf;
         padding: 3px 7px;
         border-radius: 25px;
         text-transform: uppercase;
@@ -254,6 +290,7 @@
 
         .btn {
             width: 100%;
+            margin-right: 10px;
         }
     }
 
@@ -264,13 +301,13 @@
         z-index: 3;
 
         .@{productClass}-label {
-            padding: 5px 7px;
+            padding: 7px 9px;
             border-radius: 10px;
             border-bottom-left-radius: 0px;
             border-top-right-radius: 0px;
             display: flex;
             align-items: center;
-            font-size: 12px;
+            font-size: 11px;
             margin-bottom: 7px;
             width: fit-content;
             font-weight: 500;

@@ -44,6 +44,20 @@
   color: @contrast;
 }
 
+.hover-contrast {
+  &:hover {
+    color: @contrast;
+    border-color: fade(@contrast, 20%);
+  }
+}
+
+.hover-primary {
+  &:hover {
+    color: @primary;
+    border-color: fade(@primary, 20%);
+  }
+}
+
 .bg-warning {
   color: #ffffff;
   background: @warning;

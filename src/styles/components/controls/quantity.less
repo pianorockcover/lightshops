@@ -38,7 +38,7 @@
         font-size: 15px;
         outline: none;
         text-align: center;
-        width: 45px;
+        width: 35px;
         padding: 5px 5px 5px 5px;
         cursor: text;
         white-space: nowrap;
@@ -48,22 +48,24 @@
     }
 
     &-button {
-        height: 35px;
-        width: 35px;
+        height: 30px;
+        width: 30px;
         display: flex;
         align-items: center;
         justify-content: center;
-        background: #f5f6f8;
+        background: #ffffff;
+        border: 1px solid #e7e7e7;
         border-radius: 100%;
-        font-size: 30px;
+        font-size: 26px;
+        line-height: 0;
         text-align: center;
-        transition: background-color .2s ease-in-out,
+        transition: border-color .2s ease-in-out,
             color .2s ease-in-out;
         cursor: pointer;
 
         &:hover {
-            background: @primary;
-            color: #ffffff;
+            border-color: fade(@primary, 20%);
+            color: @primary;
         }
     }
 }
