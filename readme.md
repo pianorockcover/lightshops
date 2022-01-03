@@ -1,7 +1,7 @@
 ## Exprot
 
 1. npm run start
-2. ./pack
+2. ./pack.sh
 3. zip theme in builds/*.zip
 4. landing in landing/dist
 
