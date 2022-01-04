@@ -9,10 +9,12 @@
 .product-hovered() {
     .@{productClass}-content {
         border-color: fade(@primary, 25%);
+        padding-bottom: 5px;
     }
 
     .@{productClass}-buttons {
-        display: flex;
+        display: block;
+        white-space: normal;
     }
 
     .@{productClass}-title {
@@ -58,6 +60,7 @@
         .@{productClass}-content {
             flex-direction: inherit;
             position: relative;
+            padding-bottom: 5px;
         }
 
         &:hover {
@@ -68,25 +71,23 @@
         }
 
         .@{productClass}-buttons {
-            display: flex;
-            justify-content: initial;
-
-            .btn {
-                width: fit-content;
-            }
+            display: block;
         }
 
         .@{productClass}-image-wrapper {
             margin-bottom: 0px;
-            height: 180px;
-            width: @imageSize;
-            min-width: @imageSize;
+            padding-top: 10px;
+            height: fit-content;
+            min-width: 35%;
+            max-width: @imageSize;
         }
 
         .@{productClass}-details {
             padding-top: 10px;
             padding-bottom: 10px;
             flex: 1;
+            display: block;
+            overflow: hidden;
         }
 
         .@{productClass}-tags {
@@ -287,11 +288,19 @@
 
     &-buttons {
         display: none;
-        align-items: center;
         margin-top: 20px;
 
         .btn {
-            margin-right: 10px;
+            margin-right: 5px;
+            margin-bottom: 10px;
+            vertical-align: middle;
+            display: inline-flex;
+        }
+
+        .quantity {
+            vertical-align: middle;
+            display: inline-flex;
+            margin-bottom: 10px;
         }
     }
 
