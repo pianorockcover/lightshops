@@ -9,5 +9,6 @@ import "./theme";
 import "./customContent";
 import "./modal";
 import "./reviews";
+import "./tooltip";
 
 import "../styles/index.less";

@@ -10,7 +10,7 @@ mixin product(customOptions = {})
         options.price = `$${utils.randomInt(9, 80)}.00`;
         options.image = utils.getUpload(`products/${utils.randomInt(1, 11)}.jpg`);
         options.labels = new Array(utils.randomInt(0, 3)).fill(null).map(() => ({
-            class: utils.randomElem(["bg-warning", "bg-success", "bg-contrast"]),
+            class: utils.randomElem(["bg-warning-faded", "bg-success-faded", "bg-contrast-faded"]),
             text: utils.faker.commerce.productAdjective(),
         }));
         options.showRateDigit = true;
@@ -26,20 +26,21 @@ mixin product(customOptions = {})
                     .product-label(class= label.class)= label.text
                 - }
             .product-side-actions
-                .product-side-action.hover-contrast
+                .product-side-action.hover-contrast(title="Add to favourite")
                     .bi.bi-heart
-                .product-side-action.hover-primary
+                .product-side-action.hover-primary(title="Add to compare")
                     .bi.bi-reception-3
             .product-image-wrapper
-                .bi.bi-zoom-in.product-zoom-icon(data-modal="#productViewModal")
+                .product-open-zoom(data-modal="#productViewModal" title="Quick view")
+                    .bi.bi-zoom-in
                 img.product-image(src=options.image, alt=options.name)
             .product-details
                 .product-top
-                    .product-category(title= options.category)= options.category
+                    a.product-category(href="#" title=options.category)= options.category
                     .product-by
                         | by
                         a(href="#" title=options.by).product-by-link=options.by
-                a(href=utils.anchor(options.link) title= options.name).product-title= options.name
+                a(href=utils.anchor(options.link) title=options.name).product-title= options.name
                 +rate(options)
                 .product-price
                     | #{options.price}
@@ -49,7 +50,7 @@ mixin product(customOptions = {})
                 +productTags()
                 - if (!customOptions.hideButtons) {
                     .product-buttons
-                        .btn.btn-faded
+                        .btn.btn-faded-primary
                             .bi.bi-bag 
                             | Add
                         +quantity()

@@ -24,6 +24,8 @@ $("[data-toggle]").each((_, el) => {
     return;
   }
 
+  let hovered = false;
+
   const effect = element.data("effect") || "fade";
   const animationDuration = element.data("animation-duration");
 
@@ -53,7 +55,8 @@ $("[data-toggle]").each((_, el) => {
   }
 
   if (trigger === 'hover') {
-    element.on("mouseover", () => {
+    element.on("mouseover", (e) => {
+      e.preventDefault();
       setTimeout(() => {
         if (element.is(":hover")) {
           toggleAnimation(target, effect, {

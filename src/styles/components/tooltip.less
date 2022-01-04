@@ -1,0 +1,27 @@
+@import "../variables.less";
+
+@tooltipClassName: tooltip;
+
+.@{tooltipClassName} {
+    position: fixed;
+    z-index: @tooltipZindex;
+    background: @primary;
+    color: #ffffff;
+    display: none;
+    font-size: 13px;
+    padding: 5px 10px;
+    border-radius: 3px;
+
+    &:before {
+        position: absolute;
+        top: -5px;
+        left: 5px;
+        content: " ";
+        display: block;
+        width: 0;
+        height: 0;
+        border-left: 5px solid transparent;
+        border-right: 5px solid transparent;
+        border-bottom: 5px solid @primary;
+    }
+}
