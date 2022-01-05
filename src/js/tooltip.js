@@ -5,6 +5,10 @@ const tooltipDiv = $(`
     <div class="tooltip"></div>
 `);
 
+$("body").append(tooltipDiv);
+
+const tooltip = $(".tooltip");
+
 $("[title]").each((_, el) => {
     const element = $(el);
 
@@ -24,13 +28,9 @@ $("[title]").each((_, el) => {
         }
 
         hovered = true;
-        const parent = element.parent();
 
         setTimeout(() => {
             if (hovered) {
-                parent.append(tooltipDiv);
-
-                const tooltip = $(".tooltip");
 
                 tooltip.html(element.data("tooltip"));
                 const { top, left, height } = element[0].getBoundingClientRect();
@@ -48,7 +48,6 @@ $("[title]").each((_, el) => {
             return;
         }
 
-        const tooltip = $(".tooltip");
         tooltip.fadeOut(100);
         hovered = false;
     });
