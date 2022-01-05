@@ -17,18 +17,25 @@ mixin product(customOptions = {})
         options.by = utils.faker.company.companyName();
         options.oldPrice = utils.randomInt(100, 999) % 3 === 0 ? `$${utils.randomInt(80, 120)}.00` : undefined;
         options.link = utils.randomElem(["product-card", "product-card-1"]);
+        options.inFavourite = utils.randomInt(100, 999) % 7 === 0;
+        options.inCompare = utils.randomInt(100, 999) % 10 === 0;
+        options.isAdded = utils.randomInt(100, 999) % 6 === 0;
         options = Object.assign(options, customOptions);
 
-    .product(class=`${options.inline ? "product-inline" : ""} ${options.hideButtons ? "product-info-only" : "" }`)
+    .product(class=`
+        ${options.inline ? "product-inline" : ""}
+        ${options.hideButtons ? "product-info-only" : "" }
+        ${options.inFavourite ? "in-favourite" : ""}
+    `)
         .product-content
             .product-labels
                 - for (let label of (options.labels || [])) {
                     .product-label(class= label.class)= label.text
                 - }
             .product-side-actions
-                .product-side-action.hover-contrast(title="Add to favourite")
+                .product-side-action.hover-contrast(title="Add to favourite" class=`${options.inFavourite ? 'active' : ''}`)
                     .bi.bi-heart
-                .product-side-action.hover-primary(title="Add to compare")
+                .product-side-action.hover-primary(title="Add to compare" class=`${options.inCompare ? 'active' : ''}`)
                     .bi.bi-reception-3
             .product-image-wrapper
                 .product-open-zoom(data-modal="#productViewModal" title="Quick view")
@@ -50,8 +57,11 @@ mixin product(customOptions = {})
                 +productTags()
                 - if (!customOptions.hideButtons) {
                     .product-buttons
-                        .btn.btn-faded-primary
-                            .bi.bi-bag 
-                            | Add
-                        +quantity()
+                        .btn(
+                            class=`${options.isAdded ? "btn-faded-success" : `btn-faded-primary`}`
+                            title=`${options.isAdded ? "Remove from cart" : `Add to cart`}`
+                        )
+                            .bi(class=`${options.isAdded ? "bi-check2" : `bi-bag`}`) 
+                            span=options.isAdded ? "In cart" : "Add"
+                        +quantity(options.isAdded ? 1 : 0)
                 - }

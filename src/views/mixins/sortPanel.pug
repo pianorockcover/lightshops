@@ -12,7 +12,7 @@ mixin sortPanel(viewType)
             | Filters
             .filters-mobile-toggle-amount 3
         .sort-panel-right
-            a.sort-panel-link(href=utils.anchor("category") class=`${!viewType || viewType === "grid" ? "active" : "" }`)
+            a.sort-panel-link(href=utils.anchor("category") title="Grid view" class=`${!viewType || viewType === "grid" ? "active" : "" }`)
                 span.bi.bi-grid
-            a.sort-panel-link(href=utils.anchor("category-inline") class=`${viewType === "inline" ? "active" : "" }`)
+            a.sort-panel-link(href=utils.anchor("category-inline") title="List view" class=`${viewType === "inline" ? "active" : "" }`)
                 span.bi.bi-list-ul

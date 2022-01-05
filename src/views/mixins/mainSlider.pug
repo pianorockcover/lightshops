@@ -2,14 +2,12 @@ mixin mainSlider
     #mainSlider.main-slider-wrapper.swiper-container
         .swiper-wrapper
             .swiper-slide
-                img.main-slider-bg-image(src=utils.getUpload("main-slider/bg-1.jpeg") alt="Product 1")
                 a.main-slider-content(href="#")
                     .summary
                         .title=utils.faker.commerce.productName()
                         .subtitle=utils.faker.commerce.productName()
                     img.image(src=utils.getUpload("main-slider/good-1.png") alt="Product 1")
             .swiper-slide 
-                img.main-slider-bg-image(src=utils.getUpload("main-slider/bg-2.jpeg") alt="Product 3")
                 a.main-slider-content.inverse-text(href="#")
                     .summary 
                         .title=utils.faker.commerce.productName()

@@ -80,7 +80,7 @@ include views/partials/header/header.pug
                 .col-xl-9.pb-3
                     .row
                         - for (let i = 0; i < 12; i++) {
-                            .col-xl-3.col-xxl-2.pb-3
+                            div(class=utils.classNames.productsGrid).pb-3
                                 +product()
                         - }
 
@@ -166,7 +166,7 @@ include views/partials/header/header.pug
                 .col-xl-9.pb-3
                     .row
                         - for (let i = 0; i < 12; i++) {
-                            .col-xl-3.col-xxl-2.pb-3
+                            div(class=utils.classNames.productsGrid).pb-3
                                 +product()
                         - }
                 .col-xl-3.pb-3

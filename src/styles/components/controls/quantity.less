@@ -63,9 +63,24 @@
             color .2s ease-in-out;
         cursor: pointer;
 
-        &:hover {
-            border-color: fade(@primary, 20%);
-            color: @primary;
+        &.disabled {
+            opacity: .8;
+            background: #f8f8f8;
+            cursor: not-allowed;
+        }
+    }
+
+    &-add {
+        &:hover:not(.disabled) {
+            border-color: fade(@success, 20%);
+            color: @success;
+        }
+    }
+
+    &-remove {
+        &:hover:not(.disabled) {
+            border-color: fade(@contrast, 20%);
+            color: @contrast;
         }
     }
 }

@@ -1,6 +1,6 @@
-mixin quantity(defaultValue = 1, min = 1, max = 99)
+mixin quantity(defaultValue = 1, min = 0, max = 99)
     .quantity(data-min=min data-max=max)
-        .quantity-button.quantity-remove
+        .quantity-button.quantity-remove(class=`${defaultValue === 0 ? "disabled" : ""}`)
             .bi.bi-dash
         input.quantity-amount(value=defaultValue)
         .quantity-button.quantity-add

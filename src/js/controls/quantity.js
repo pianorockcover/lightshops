@@ -13,8 +13,21 @@ $(`.${quantityClass}`).each((_, el) => {
 
     setInputFilter(amount[0], (value) => /^\d*$/.test(value));
 
+    const setUpDisabled = (currentValue) => {
+        add.removeClass("disabled");
+        remove.removeClass("disabled")
+
+        if (currentValue === min) {
+            remove.addClass("disabled");
+        } else if (currentValue === max) {
+            add.addClass("disabled");
+        }
+    }
+
     amount.on("change", (e) => {
-        amount.val(validateMinMax(e.target.value, min, max));
+        const validValue = validateMinMax(e.target.value, min, max);
+        amount.val(validValue);
+        setUpDisabled(validValue, min, max);
     })
 
     add.on("click", () => {
@@ -27,6 +40,8 @@ $(`.${quantityClass}`).each((_, el) => {
             element.addClass(`${quantityClass}-adding`)
 
             setTimeout(() => element.removeClass(`${quantityClass}-adding`), 500);
+
+            setUpDisabled(validValue, min, max);
         }
     });
 
@@ -40,6 +55,8 @@ $(`.${quantityClass}`).each((_, el) => {
             element.addClass(`${quantityClass}-removing`)
 
             setTimeout(() => element.removeClass(`${quantityClass}-removing`), 500);
+
+            setUpDisabled(validValue, min, max);
         }
     });
 });

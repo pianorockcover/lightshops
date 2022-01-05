@@ -70,6 +70,12 @@
             }
         }
 
+        &.in-favourite {
+            .@{productClass}-by {
+                margin-right: 35px;
+            }
+        }
+
         .@{productClass}-buttons {
             display: block;
         }
@@ -128,10 +134,13 @@
         line-height: 1;
         margin-bottom: 10px;
         cursor: pointer;
-        transform: scale(0);
         transition: color .2s ease-in-out,
             border-color .2s ease-in-out,
             transform .2s ease-in-out;
+
+        &:not(.active) {
+            transform: scale(0);
+        }
     }
 
     &-content {

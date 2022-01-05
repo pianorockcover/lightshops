@@ -61,14 +61,18 @@
 }
 
 .hover-contrast {
-  &:hover {
+
+  &:hover,
+  &.active {
     color: @contrast;
     border-color: fade(@contrast, 20%);
   }
 }
 
 .hover-primary {
-  &:hover {
+
+  &:hover,
+  &.active {
     color: @primary;
     border-color: fade(@primary, 20%);
   }
