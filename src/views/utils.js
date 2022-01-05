@@ -35,5 +35,10 @@ module.exports = (theme) => {
         randomInt,
         uniqueArray,
         currentTheme: theme,
+        classNames: {
+            filtersCol: "col-lg-3 col-xl-3 col-xxl-2",
+            productsCol: "col-lg-9 col-xl-9 col-xxl-10",
+            productsGrid: "col-6 col-sm-6 col-md-4 col-lg-4 col-xl-4 col-xxl-2",
+        },
     }
 }

@@ -1,6 +1,5 @@
 import $ from "jquery";
-
-const isMobile = window.screen.width <= 768;
+import { isMobile } from "./common";
 
 export const toggledClass = "toggled";
 export const activeClass = "active";
@@ -36,7 +35,7 @@ $("[data-toggle]").each((_, el) => {
     element.toggleClass(toggledClass);
   }
 
-  if (!trigger || trigger === "click" || isMobile) {
+  if (!trigger || trigger === "click" || isMobile()) {
     element.on("click", () =>
       toggleAnimation(target, effect, {
         duration: animationDuration,

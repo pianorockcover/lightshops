@@ -4,29 +4,34 @@
 @breadcrumbsClassName: breadcrumbs;
 
 .@{breadcrumbsClassName} {
-    margin-bottom: 15px;
+    margin-bottom: 10px;
 
     &-link {
         display: inline-flex;
         .anchor(@primary, @primary);
-        .anchor-underline-hover(@primary, 1px);
         margin-right: 10px;
-        margin-bottom: 5px;
+        margin-bottom: 10px;
         vertical-align: middle;
+        background-color: lighten(@primary, 45%);
+        padding: 3px 10px;
+        border-radius: 50px;
     }
 
     &-current {
         display: inline-flex;
         margin-right: 10px;
-        margin-bottom: 5px;
+        margin-bottom: 10px;
         vertical-align: middle;
+        background-color: @greyColor;
+        padding: 3px 10px;
+        border-radius: 50px;
     }
 
     &-divider {
         display: inline-flex;
         vertical-align: middle;
         margin-right: 10px;
-        margin-bottom: 5px;
+        margin-bottom: 10px;
     }
 }
 
@@ -34,5 +39,12 @@
     .@{breadcrumbsClassName} {
         font-size: 13px;
         margin-bottom: 10px;
+
+        &-link,
+        &-current,
+        &-divider {
+            background: transparent;
+            padding: 0;
+        }
     }
 }

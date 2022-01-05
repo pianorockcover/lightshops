@@ -10,5 +10,6 @@ import "./customContent";
 import "./modal";
 import "./reviews";
 import "./tooltip";
+import "./loader";
 
 import "../styles/index.less";

@@ -3,9 +3,9 @@ include product.pug
 mixin productsSlider(title, id)
     -
         let breakpoints = {};
-        let j = 0;
+        let j = 2;
 
-        for (let i = 300; i < 2400; i += 200) {
+        for (let i = 300; i < 2400; i += 300) {
             breakpoints[i] = {
                 slides: j,
                 space: 5,

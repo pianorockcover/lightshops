@@ -40,7 +40,7 @@ mixin product(customOptions = {})
                     .product-by
                         | by
                         a(href="#" title=options.by).product-by-link=options.by
-                a(href=utils.anchor(options.link) title=options.name).product-title= options.name
+                a(href=utils.anchor(options.link)).product-title= options.name
                 +rate(options)
                 .product-price
                     | #{options.price}

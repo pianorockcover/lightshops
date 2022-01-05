@@ -9,12 +9,12 @@ include views/partials/header/header.pug
             h1.section-title Product Category Name
             +sortPanel("inline")
             .row
-                .col-lg-3.col-xl-2.col-xxl-2
+                div(class=utils.classNames.filtersCol).pb-3
                     +filters()
-                .col-lg-9.col-xl-10.col-xxl-10
+                div(class=utils.classNames.productsCol)
                     .row
                         - for (let i = 0; i < 22; i++) {
-                            .col-sm-6.col-md-6.col-lg-6.col-xl-6.col-xxl-4.pb-3
+                            .col-6.col-sm-6.col-md-6.col-lg-6.col-xl-6.col-xxl-4.pb-3
                                 +product({
                                     inline: true
                                 })

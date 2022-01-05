@@ -176,11 +176,11 @@
             background-color: rgba(0, 0, 0, 0.1);
             z-index: 2;
             color: rgba(255, 255, 255, 0.7);
-            font-size: 14px;
+            font-size: 16px;
             padding-top: 2px;
             border-radius: 100%;
-            width: 35px;
-            height: 35px;
+            width: 38px;
+            height: 38px;
             top: calc(50% - 14px);
             left: calc(50% - 14px);
             display: flex;
@@ -345,7 +345,18 @@
         height: auto;
 
         &-content {
+            border: none;
+            padding: 0px;
             position: static;
+        }
+
+        &-image-wrapper {
+            padding: 0;
+        }
+
+        &-labels {
+            top: 0;
+            left: -5px;
         }
     }
 }

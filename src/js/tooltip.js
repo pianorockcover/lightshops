@@ -1,4 +1,5 @@
 import $ from "jquery";
+import { isMobile } from "./common";
 
 const tooltipDiv = $(`
     <div class="tooltip"></div>
@@ -6,12 +7,22 @@ const tooltipDiv = $(`
 
 $("[title]").each((_, el) => {
     const element = $(el);
+
+    if (element.data("raw-tooltip")) {
+        return;
+    }
+
     let hovered = false;
+
     const title = element.attr("title");
     element.removeAttr("title");
     element.data("tooltip", title);
 
     element.on("mouseenter", () => {
+        if (isMobile()) {
+            return;
+        }
+
         hovered = true;
         const parent = element.parent();
 
@@ -33,6 +44,10 @@ $("[title]").each((_, el) => {
     });
 
     element.on("mouseleave", () => {
+        if (isMobile()) {
+            return;
+        }
+
         const tooltip = $(".tooltip");
         tooltip.fadeOut(100);
         hovered = false;

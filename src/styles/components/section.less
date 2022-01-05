@@ -21,13 +21,20 @@
 
 .area {
     width: 100%;
-    padding: 0 0 0 80px;
+    padding: 0 0 0 @sidebarToggledSize;
 }
 
 .container-full {
     width: 100%;
     padding-left: 12px;
     padding-right: 12px;
+}
+
+@media @large {
+    .area {
+        width: 100%;
+        padding: 0 0 0 @sidebarToggledSize - 20px;
+    }
 }
 
 @media @medium {
