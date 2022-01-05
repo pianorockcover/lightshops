@@ -1,119 +1,119 @@
 -
-  const slogan = `${utils.faker.company.catchPhrase()}. ${utils.faker.company.catchPhrase()}`;
-  const email = utils.faker.internet.email();
-  const exampleEmail = utils.faker.internet.exampleEmail();
-  const phone = utils.faker.phone.phoneNumberFormat();
-  const locationName = `${utils.faker.address.zipCode()} ${utils.faker.address.streetName()}, ${utils.faker.address.cityName()}`;
-  const locationLink = "https://www.google.com/maps/d/embed?mid=1WmGxRQhah7KcYlLqKECg_mg3tE8&msa=0&ie=UTF8&t=h&ll=35.1496%2C-106.684628&spn=0.012281%2C0.008583&z=15&output=embed";
+    const slogan = `${utils.faker.company.catchPhrase()}. ${utils.faker.company.catchPhrase()}`;
+    const email = utils.faker.internet.email();
+    const exampleEmail = utils.faker.internet.exampleEmail();
+    const phone = utils.faker.phone.phoneNumberFormat();
+    const locationName = `${utils.faker.address.zipCode()} ${utils.faker.address.streetName()}, ${utils.faker.address.cityName()}`;
+    const locationLink = "https://www.google.com/maps/d/embed?mid=1WmGxRQhah7KcYlLqKECg_mg3tE8&msa=0&ie=UTF8&t=h&ll=35.1496%2C-106.684628&spn=0.012281%2C0.008583&z=15&output=embed";
 
 include prouctWindow.pug
 
 .area
-  footer.footer
-    .container-full
-      .row
-        .col-xl-3.col-md-6
-          .footer-logo
-            +logo()
-          .footer-slogan
-            | #{slogan}
-          .footer-divider
-          a.footer-contact-link(href=`mailto:${email}`)
-            .bi.bi-envelope
-            | #{email}
-          .footer-divider
-          a.footer-contact-link(href=`tel:${phone}`)
-            .bi.bi-telephone-outbound-fill
-            | #{phone}
-          .footer-divider
-          a.footer-contact-link(href=locationLink target="_blank")
-            .bi.bi-pin-map-fill
-            | #{locationName}
-          .footer-divider
-        .col-xl-3.col-md-6
-          .footer-title Some Links 
-          .row
-            .col
-              a.footer-link(href=utils.anchor("index-1"))
-                .bi.bi-link-45deg
-                | Home
-              a.footer-link(href=utils.anchor("index"))
-                .bi.bi-link-45deg
-                | Services
-              a.footer-link(href=utils.anchor("index-1"))
-                .bi.bi-link-45deg
-                | Shipping
-              a.footer-link(href=utils.anchor("index"))
-                .bi.bi-link-45deg
-                | FAQs 
-              a.footer-link(href=utils.anchor("index-1"))
-                .bi.bi-link-45deg
-                | ContactUs
-            .col
-              a.footer-link(href=utils.anchor("index"))
-                .bi.bi-link-45deg
-                | ContactUs
-              a.footer-link(href=utils.anchor("index-1"))
-                .bi.bi-link-45deg
-                | Vacancies
-              a.footer-link(href=utils.anchor("index"))
-                .bi.bi-link-45deg
-                | Features 
-              a.footer-link(href=utils.anchor("index-1"))
-                .bi.bi-link-45deg
-                | Company 
-              a.footer-link(href=utils.anchor("index"))
-                .bi.bi-link-45deg
-                | Anout US
-        .col-xl-3.col-md-6
-          .footer-title Subscibe US
-          | Don't forget to subscribe to our newsletter
-          form.footer-subscribe-form
-            input.footer-subscribe-form-input(type="text" placeholder=exampleEmail)
-            .btn.btn-secondary SEND
-          .footer-divider
-          .footer-socicals
-            a.footer-socical-link(href="#" target="blank")
-              img.footer-socical-link-image(src="images/socials/facebook.svg" alt="Social Icon")
-            a.footer-socical-link(href="#" target="blank")
-              img.footer-socical-link-image(src="images/socials/twitter.svg" alt="Social Icon")
-            a.footer-socical-link(href="#" target="blank")
-              img.footer-socical-link-image(src="images/socials/pinterest.svg" alt="Social Icon")
-            a.footer-socical-link(href="#" target="blank")
-              img.footer-socical-link-image(src="images/socials/instagram.svg" alt="Social Icon")
-            a.footer-socical-link(href="#" target="blank")
-              img.footer-socical-link-image(src="images/socials/tik-tok.svg" alt="Social Icon")
-        .col-xl-3.col-md-6
-          .footer-title Instagram Post
-          .footer-instagram-widget
-            a.footer-instagram-post(href="#")
-              img.footer-instagram-image(src=utils.getUpload(`articles/thumbnail-${utils.randomInt(1, 7)}.jpeg`) alt="Insta Post")
-            a.footer-instagram-post(href="#")
-              img.footer-instagram-image(src=utils.getUpload(`articles/thumbnail-${utils.randomInt(1, 7)}.jpeg`) alt="Insta Post")
-            a.footer-instagram-post(href="#")
-              img.footer-instagram-image(src=utils.getUpload(`articles/thumbnail-${utils.randomInt(1, 7)}.jpeg`) alt="Insta Post")
-            a.footer-instagram-post(href="#")
-              img.footer-instagram-image(src=utils.getUpload(`articles/thumbnail-${utils.randomInt(1, 7)}.jpeg`) alt="Insta Post")
-            a.footer-instagram-post(href="#")
-              img.footer-instagram-image(src=utils.getUpload(`articles/thumbnail-${utils.randomInt(1, 7)}.jpeg`) alt="Insta Post")
-            a.footer-instagram-post(href="#")
-              img.footer-instagram-image(src=utils.getUpload(`articles/thumbnail-${utils.randomInt(1, 7)}.jpeg`) alt="Insta Post")
-            a.footer-instagram-post(href="#")
-              img.footer-instagram-image(src=utils.getUpload(`articles/thumbnail-${utils.randomInt(1, 7)}.jpeg`) alt="Insta Post")
-            a.footer-instagram-post(href="#")
-              img.footer-instagram-image(src=utils.getUpload(`articles/thumbnail-${utils.randomInt(1, 7)}.jpeg`) alt="Insta Post")
-            a.footer-instagram-post(href="#")
-              img.footer-instagram-image(src=utils.getUpload(`articles/thumbnail-${utils.randomInt(1, 7)}.jpeg`) alt="Insta Post")
-          a.footer-more-link(href="#")
-            | View more
-    .container-full.footer-bottom 
-      .footer-bottom-left
-        | Copyrights © All Rights Resered By 
-        a.footer-bottom-link(href="#") lightShops 
-      .footer-bottom-right
-        a.footer-bottom-bright-link(href="#") Terms And Rights
-        .footer-bottom-divider
-        a.footer-bottom-bright-link(href="#") Cookie Policy
+    footer.footer
+        .container-full
+            .row
+                .col-xl-3.col-md-6
+                    .footer-logo
+                        +logo()
+                    .footer-slogan
+                        | #{slogan}
+                    .footer-divider
+                    a.footer-contact-link(href=`mailto:${email}`)
+                        .bi.bi-envelope
+                        | #{email}
+                    .footer-divider
+                    a.footer-contact-link(href=`tel:${phone}`)
+                        .bi.bi-telephone-outbound-fill
+                        | #{phone}
+                    .footer-divider
+                    a.footer-contact-link(href=locationLink target="_blank")
+                        .bi.bi-pin-map-fill
+                        | #{locationName}
+                    .footer-divider
+                .col-xl-3.col-md-6
+                    .footer-title Some Links 
+                    .row
+                        .col
+                            a.footer-link(href=utils.anchor("index-1"))
+                                .bi.bi-link-45deg
+                                | Home
+                            a.footer-link(href=utils.anchor("index"))
+                                .bi.bi-link-45deg
+                                | Services
+                            a.footer-link(href=utils.anchor("index-1"))
+                                .bi.bi-link-45deg
+                                | Shipping
+                            a.footer-link(href=utils.anchor("index"))
+                                .bi.bi-link-45deg
+                                | FAQs 
+                            a.footer-link(href=utils.anchor("index-1"))
+                                .bi.bi-link-45deg
+                                | ContactUs
+                        .col
+                            a.footer-link(href=utils.anchor("index"))
+                                .bi.bi-link-45deg
+                                | ContactUs
+                            a.footer-link(href=utils.anchor("index-1"))
+                                .bi.bi-link-45deg
+                                | Vacancies
+                            a.footer-link(href=utils.anchor("index"))
+                                .bi.bi-link-45deg
+                                | Features 
+                            a.footer-link(href=utils.anchor("index-1"))
+                                .bi.bi-link-45deg
+                                | Company 
+                            a.footer-link(href=utils.anchor("index"))
+                                .bi.bi-link-45deg
+                                | Anout US
+                .col-xl-3.col-md-6
+                    .footer-title Subscibe US
+                    | Don't forget to subscribe to our newsletter
+                    form.footer-subscribe-form
+                        input.footer-subscribe-form-input(type="text" placeholder=exampleEmail)
+                        .btn.btn-primary SEND
+                    .footer-divider
+                    .footer-socicals
+                        a.footer-socical-link(href="#" target="blank")
+                            img.footer-socical-link-image(src="images/socials/facebook.svg" alt="Social Icon")
+                        a.footer-socical-link(href="#" target="blank")
+                            img.footer-socical-link-image(src="images/socials/twitter.svg" alt="Social Icon")
+                        a.footer-socical-link(href="#" target="blank")
+                            img.footer-socical-link-image(src="images/socials/pinterest.svg" alt="Social Icon")
+                        a.footer-socical-link(href="#" target="blank")
+                            img.footer-socical-link-image(src="images/socials/instagram.svg" alt="Social Icon")
+                        a.footer-socical-link(href="#" target="blank")
+                            img.footer-socical-link-image(src="images/socials/tik-tok.svg" alt="Social Icon")
+                .col-xl-3.col-md-6
+                    .footer-title Instagram Post
+                    .footer-instagram-widget
+                        a.footer-instagram-post(href="#")
+                            img.footer-instagram-image(src=utils.getUpload(`articles/thumbnail-${utils.randomInt(1, 7)}.jpeg`) alt="Insta Post")
+                        a.footer-instagram-post(href="#")
+                            img.footer-instagram-image(src=utils.getUpload(`articles/thumbnail-${utils.randomInt(1, 7)}.jpeg`) alt="Insta Post")
+                        a.footer-instagram-post(href="#")
+                            img.footer-instagram-image(src=utils.getUpload(`articles/thumbnail-${utils.randomInt(1, 7)}.jpeg`) alt="Insta Post")
+                        a.footer-instagram-post(href="#")
+                            img.footer-instagram-image(src=utils.getUpload(`articles/thumbnail-${utils.randomInt(1, 7)}.jpeg`) alt="Insta Post")
+                        a.footer-instagram-post(href="#")
+                            img.footer-instagram-image(src=utils.getUpload(`articles/thumbnail-${utils.randomInt(1, 7)}.jpeg`) alt="Insta Post")
+                        a.footer-instagram-post(href="#")
+                            img.footer-instagram-image(src=utils.getUpload(`articles/thumbnail-${utils.randomInt(1, 7)}.jpeg`) alt="Insta Post")
+                        a.footer-instagram-post(href="#")
+                            img.footer-instagram-image(src=utils.getUpload(`articles/thumbnail-${utils.randomInt(1, 7)}.jpeg`) alt="Insta Post")
+                        a.footer-instagram-post(href="#")
+                            img.footer-instagram-image(src=utils.getUpload(`articles/thumbnail-${utils.randomInt(1, 7)}.jpeg`) alt="Insta Post")
+                        a.footer-instagram-post(href="#")
+                            img.footer-instagram-image(src=utils.getUpload(`articles/thumbnail-${utils.randomInt(1, 7)}.jpeg`) alt="Insta Post")
+                    a.footer-more-link(href="#")
+                        | View more
+        .container-full.footer-bottom 
+            .footer-bottom-left
+                | Copyrights © All Rights Resered By 
+                a.footer-bottom-link(href="#") lightShops 
+            .footer-bottom-right
+                a.footer-bottom-bright-link(href="#") Terms And Rights
+                .footer-bottom-divider
+                a.footer-bottom-bright-link(href="#") Cookie Policy
 script(src="js/main.js")
 
 include ../html/end.html
