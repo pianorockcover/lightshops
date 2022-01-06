@@ -1,6 +1,7 @@
 @import "../variables.less";
 @import "../components/buttons/button.less";
 @import "../components/buttons/shadowHover.less";
+@import "../components/anchor.less";
 
 @saleBlockClass: sale-block;
 
@@ -15,15 +16,26 @@
     display: flex;
     border-radius: @borderRadius;
     .shadow-hover();
+    background: #eeeeee;
+    .anchor(@textColor, @textColor);
 
-    &-content {
+    &-left {
         display: flex;
         flex-direction: column;
         justify-content: center;
         height: 100%;
-        padding: 16px 15px 16px 15px;
-        background: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.3));
-        width: 100%;
+        width: 50%;
+        padding: 15px;
+    }
+
+    &-right {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        width: 50%;
+        background-size: cover;
+        background-repeat: no-repeat;
     }
 
     &:nth-last-child(1) {
@@ -31,22 +43,48 @@
     }
 
     &-title {
-        font-size: 25px;
+        font-size: 20px;
         margin-bottom: 10px;
         font-weight: 700;
     }
 
     &-amount {
         width: fit-content;
-        padding: 5px 10px;
-        border-radius: 50px;
         text-transform: uppercase;
         font-weight: 400;
+        padding: 7px 9px;
+        border-radius: 10px;
+        border-bottom-left-radius: 0px;
+        border-top-right-radius: 0px;
         display: flex;
         align-items: center;
-        justify-content: center;
+        font-size: 11px;
         margin-bottom: 10px;
-        background-color: @primary;
+        color: @contrast;
+        background-color: lighten(@contrast, 35%);
+    }
+
+    &-time {
+        background: #ffffff;
+        width: fit-content;
+        display: inline-flex;
+        flex-direction: column;
+        color: @textColor;
+        margin: 5px;
+        min-width: 50px;
+        padding: 10px 5px;
+        text-align: center;
+        font-weight: 500;
+
+        &-left {
+            font-weight: 400;
+            border-top: 1px solid #eeeeee;
+            margin-left: -5px;
+            width: calc(100% + 5px);
+            color: @success;
+            padding: 5px 0 0 5px;
+            margin-top: 5px;
+        }
     }
 
     &:hover {
