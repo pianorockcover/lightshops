@@ -12,13 +12,16 @@
     background-size: cover;
     margin-bottom: 10px;
     border-radius: @borderRadius;
+    background-color: @greyColor;
     .shadow-hover();
 
     &-image {
         position: absolute;
         z-index: 1;
+        bottom: 0;
+        right: 0;
         width: 100%;
-        height: 100%;
+        height: 40%;
         background-position: center 0;
         background-size: cover;
         transition: transform .2s ease-in-out;
@@ -35,7 +38,6 @@
         position: relative;
         z-index: 2;
         height: 100%;
-        background: linear-gradient(to bottom, rgba(255, 255, 255, 0.4), transparent);
     }
 
     &-sub-title {
@@ -109,38 +111,6 @@
         &:before {
             opacity: 0.4;
         }
-    }
-}
-
-.@{announcementClassName}-bright {
-    .announcement(#ffffff);
-
-    & .@{announcementClassName}-sub-title {
-        &:after {
-            background-color: #ffffff;
-        }
-    }
-
-    & .@{announcementClassName}-image-wrapper {
-        &:before {
-            opacity: 0.3;
-            background: radial-gradient(circle at center, rgba(255, 255, 255, 0.05) 0, rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.7) 100%);
-        }
-    }
-
-    &:hover .@{announcementClassName}-image-wrapper {
-        &:before {
-            opacity: 0.55;
-        }
-    }
-
-    & .@{announcementClassName}-tag {
-        border: none;
-        background: rgba(255, 255, 255, 0.3);
-    }
-
-    & .@{announcementClassName}-area {
-        background: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), transparent);
     }
 }
 

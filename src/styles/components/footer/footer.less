@@ -5,17 +5,18 @@
 @footerClassName: footer;
 @footerLinkHoverColor: @primary;
 @footerLinkColor: @footerColor;
+@footerHorizontalPadding: 10px;
 
 .@{footerClassName} {
     background: @footerBg;
     color: @footerColor;
     margin-top: 50px;
-    padding-top: 70px;
+    padding: 70px @footerHorizontalPadding 0 @footerHorizontalPadding;
 
     &-divider {
         width: 100%;
         height: 1px;
-        background: darken(@footerBg, 10%);
+        background: #ebebeb;
         margin-bottom: 30px;
         margin-top: 30px;
     }
@@ -39,13 +40,17 @@
     }
 
     &-bottom {
-        background: @footerBg;
+        background: darken(@footerBg, 2%);
         display: flex;
+        width: calc(100% + (@footerHorizontalPadding * 2));
         align-items: center;
         justify-content: space-between;
         padding-top: 20px;
         padding-bottom: 20px;
         margin-top: 30px;
+        margin-left: -@footerHorizontalPadding;
+        padding-left: 12px + @footerHorizontalPadding;
+        padding-right: 12px + @footerHorizontalPadding;
 
         &-left,
         &-right {
@@ -139,37 +144,15 @@
         .anchor(@footerColor, @primary);
         .anchor-underline(@footerLinkColor, 1px);
     }
-
-    &-subscribe-form {
-        margin-top: 20px;
-        display: flex;
-        border-radius: 50px;
-        background: rgb(255 255 255);
-        max-width: 415px;
-
-        &-input {
-            border-radius: 50px;
-            border: 0px;
-            flex: 1;
-            padding-left: 10px;
-            padding-right: 10px;
-            outline: none;
-            height: 45px;
-            background: transparent;
-        }
-
-        .btn {
-            border-radius: 50px;
-            padding-left: 20px;
-            margin-right: -1px;
-            padding-right: 20px;
-        }
-    }
 }
 
 @media @medium {
     .@{footerClassName} {
-        padding-top: 35px;
+        padding: 35px 0 0 0;
+
+        &-bottom {
+            width: 100%;
+        }
 
         .logo {
             width: 140px;

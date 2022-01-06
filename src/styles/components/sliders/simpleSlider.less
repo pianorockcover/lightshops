@@ -14,16 +14,12 @@
     .swiper-button-next,
     .swiper-button-prev {
         .sliderNavButons();
-        background: lighten(@primary, 20%);
-        color: #ffffff;
+        background: lighten(@primary, 40%);
+        color: @primary;
         position: absolute;
         top: calc(50% - 35px);
         z-index: 100;
         visibility: hidden;
-
-        &:hover {
-            background: lighten(@primary, 10%);
-        }
     }
 
     .swiper-button-prev {

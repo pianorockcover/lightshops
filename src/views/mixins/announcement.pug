@@ -1,7 +1,6 @@
 mixin announcement(options)
     -
-        let className = options.isBright ? "announcement-bright" : "";
-        className += options.fullHeight ? " announcement-full-height" : "";
+        let className = options.fullHeight ? " announcement-full-height" : "";
 
         let bgImageStyle = `background-image:url(${options.image})`;
     a.announcement(href=utils.anchor("article") class= className)

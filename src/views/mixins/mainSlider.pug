@@ -2,17 +2,15 @@ mixin mainSlider
     #mainSlider.main-slider-wrapper.swiper-container
         .swiper-wrapper
             .swiper-slide
-                a.main-slider-content(href="#")
-                    .summary
-                        .title=utils.faker.commerce.productName()
-                        .subtitle=utils.faker.commerce.productName()
-                    img.image(src=utils.getUpload("main-slider/good-1.png") alt="Product 1")
-            .swiper-slide 
-                a.main-slider-content.inverse-text(href="#")
-                    .summary 
-                        .title=utils.faker.commerce.productName()
-                        .subtitle=utils.faker.commerce.productName()
-                    img.image(src=utils.getUpload("main-slider/good-2.png") alt="Product 2")
+                .main-slider-item
+                    .main-slider-item-image-wrapper
+                        img.main-slider-item-image(src=utils.getUpload("main-slider/good-1.png") alt="Slider Art 1")
+                    .main-slider-item-summary
+                        .main-slider-item-summary-title=utils.faker.commerce.productName()
+                        .main-slider-item-summary-subtitle=utils.faker.commerce.productName()
+                        +subscribe()
+                    .main-slider-item-image-wrapper
+                        img.main-slider-item-image(src=utils.getUpload("main-slider/good-1.png") alt="Slider Art 2")
         .swiper-pagination
         .swiper-button-prev
         .swiper-button-next

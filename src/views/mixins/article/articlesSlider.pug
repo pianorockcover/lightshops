@@ -4,9 +4,9 @@ include ../titleLink.pug
 mixin articlesSlider(title, linkTitle, id)
     -
         let breakpoints = {};
-        let j = 1;
+        let j = 2;
 
-        for (let i = 300; i < 2400; i += 250) {
+        for (let i = 300; i < 2400; i += 300) {
             breakpoints[i] = {
                 slides: j,
                 space: 10,

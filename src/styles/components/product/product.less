@@ -9,7 +9,12 @@
 .product-hovered() {
     .@{productClass}-content {
         border-color: fade(@primary, 25%);
-        padding-bottom: 5px;
+    }
+
+    &:not(.@{productClass}-info-only) {
+        .@{productClass}-content {
+            padding-bottom: 5px;
+        }
     }
 
     .@{productClass}-buttons {

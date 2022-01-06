@@ -1,12 +1,12 @@
 @import "../../variables.less";
 @import "./sliderNavButons.less";
 
-@mainSliderClassName: main-slider-wrapper;
+@mainSliderClassName: main-slider;
 
 @sliderHeight: 305px;
 @sliderPadding: 100px;
 
-.@{mainSliderClassName} {
+.@{mainSliderClassName}-wrapper {
   background-color: @greyColor;
   position: relative;
   height: @sliderHeight;
@@ -14,70 +14,12 @@
   overflow: hidden;
   border-radius: @borderRadius;
 
-  .container {
-    position: relative;
-    z-index: 2;
-  }
-
   .swiper-slide {
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    height: @sliderHeight;
     position: relative;
-
-    .main-slider-content {
-      display: flex;
-      padding-left: @sliderPadding;
-      padding-right: @sliderPadding;
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      width: 100%;
-      height: 100%;
-      align-items: center;
-      text-decoration: none !important;
-      position: relative;
-      z-index: 2;
-      justify-content: space-between;
-
-      .anchor(@textColor, @textColor);
-
-      &.inverse-text {
-        .anchor(#ffffff, #ffffff);
-      }
-
-      .image {
-        width: auto;
-        transition: transform .2s ease-in-out;
-        max-width: 400px;
-        height: auto;
-        max-height: 95%;
-      }
-
-      &:hover {
-        .image {
-          transform: scale(1.1);
-        }
-      }
-
-      .summary {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-
-        .title {
-          font-weight: 800;
-          font-size: 45px;
-          margin-bottom: 10px;
-        }
-
-        .subtitle {
-          font-weight: 400;
-          font-size: 30px;
-        }
-      }
-    }
+    background: #f3f3f3;
   }
 
   .swiper-button-prev,
@@ -98,65 +40,102 @@
   }
 }
 
-@media @medium {
-  .@{mainSliderClassName} {
-    height: @sliderHeight - 135px;
+.@{mainSliderClassName}-item {
+  display: flex;
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100%;
+  align-items: center;
+  text-decoration: none !important;
+  position: relative;
+  z-index: 2;
+  justify-content: space-between;
 
-    .swiper-slide {
-      height: @sliderHeight - 135px;
+  &-image-wrapper {
+    width: 20%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+  }
+
+  &-image {
+    max-width: 100%;
+    max-height: 100%;
+    display: block;
+  }
+
+  &-summary {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex: 1;
+
+    &-title {
+      font-weight: 800;
+      font-size: 45px;
+      margin-bottom: 10px;
     }
 
-    .swiper-slide {
-      .main-slider-content {
-        .summary {
-          .title {
-            font-size: 25px;
-            text-transform: uppercase;
-            font-weight: 600;
-          }
+    &-subtitle {
+      font-weight: 400;
+      font-size: 30px;
+      margin-bottom: 20px;
+    }
+  }
+}
 
-          .subtitle {
-            font-size: 18px;
-          }
-        }
+@media @medium {
+  .@{mainSliderClassName}-wrapper {
+    height: fit-content;
+  }
+
+  .@{mainSliderClassName}-item {
+    padding: 30px 35px;
+
+    &-summary {
+      align-items: flex-start;
+      text-align: left;
+
+      &-title {
+        font-size: 35px;
       }
+
+      &-subtitle {
+        font-size: 20px;
+      }
+    }
+
+    &-image-wrapper:nth-child(1) {
+      display: none;
     }
   }
 }
 
 @media @small {
-  .@{mainSliderClassName} {
-    height: @sliderHeight - 135px - 30px;
+  .@{mainSliderClassName}-item {
+    &-summary {
+      position: relative;
+      z-index: 2;
 
-    .swiper-slide {
-      height: @sliderHeight - 135px - 30px;
-    }
+      &-title {
+        font-size: 30px;
+      }
 
-    .swiper-slide {
-      .main-slider-content {
-        padding-left: @sliderPadding - 40px;
-        padding-right: @sliderPadding - 40px;
-
-        .summary {
-          .title {
-            font-size: 23px;
-          }
-
-          .subtitle {
-            font-size: 16px;
-          }
-        }
-
-        .image {
-          display: none;
-        }
+      &-subtitle {
+        font-size: 15px;
       }
     }
 
-
-    .swiper-button-prev,
-    .swiper-button-next {
-      width: 25px;
+    &-image-wrapper {
+      position: absolute;
+      z-index: 1;
+      right: 0;
+      width: 50%;
     }
   }
 }
