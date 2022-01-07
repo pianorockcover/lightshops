@@ -1,6 +1,6 @@
-mixin subscribe()
+mixin subscribe(btnClass = "btn-faded-primary")
     form.subscribe-form
         input.subscribe-form-input(type="text" placeholder="youremail@gmail.com" required)
-        button.btn.btn-faded-primary(type="submit")
+        button.btn(type="submit" class=btnClass)
             .bi.bi-envelope
             | Subscribe
