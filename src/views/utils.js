@@ -6,8 +6,8 @@ const randomInt = (min, max) => Math.trunc(Math.random() * (max - min) + min);
 const randomElem = (items) => items[Math.floor(Math.random() * items.length)];
 
 const getUpload = (theme) => (path, forceTheme) => {
-    // return `images/uploads/${forceTheme ? forceTheme : theme}/${path}`
-    return `images/placeholder.svg`;
+    return `images/uploads/${forceTheme ? forceTheme : theme}/${path}`
+    // return `images/placeholder.svg`;
 };
 
 const randomColor = () => {

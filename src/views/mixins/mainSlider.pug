@@ -2,15 +2,17 @@ mixin mainSlider
     #mainSlider.main-slider-wrapper.swiper-container
         .swiper-wrapper
             .swiper-slide
-                .main-slider-item
-                    .main-slider-item-image-wrapper
-                        img.main-slider-item-image(src=utils.getUpload("main-slider/good-1.png") alt="Slider Art 1")
+                .main-slider-item(style=`background-image: url(${utils.getUpload("main-slider/slide-1.jpg")});`)
                     .main-slider-item-summary
                         .main-slider-item-summary-title=utils.faker.commerce.productName()
                         .main-slider-item-summary-subtitle=utils.faker.commerce.productName()
                         +subscribe()
-                    .main-slider-item-image-wrapper
-                        img.main-slider-item-image(src=utils.getUpload("main-slider/good-1.png") alt="Slider Art 2")
+            .swiper-slide
+                .main-slider-item(style=`background-image: url(${utils.getUpload("main-slider/slide-2.jpg")});`)
+                    .main-slider-item-summary
+                        .main-slider-item-summary-title=utils.faker.commerce.productName()
+                        .main-slider-item-summary-subtitle=utils.faker.commerce.productName()
+                        +subscribe()
         .swiper-pagination
         .swiper-button-prev
         .swiper-button-next
