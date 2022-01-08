@@ -8,9 +8,9 @@ include views/partials/header/header.pug
                     +mainSlider()
                 .col-md-6.col-xxl-3.pb-3
                     +announcement({
-                        image: utils.getUpload("announcement/4.jpeg"),
+                        image: utils.getUpload("announcement/4.png"),
                         fullHeight: true,
-
+                        contentBg: "warning",
                         mainTitle: `
                             <div class="announcement-main-title-smaller">
                                 ${utils.faker.commerce.department()}
@@ -22,8 +22,8 @@ include views/partials/header/header.pug
                                 ${utils.faker.commerce.productMaterial()}
                             </div>
                         `,
-                        btnText : "Shop Now",
-                        btnClass: "btn-faded-contrast"
+                        btnText : `<span class="bi bi-cart"></span> Shop Now`,
+                        btnClass: "btn-white-contrast"
                     })
                 .col-md-6.col-xxl-3.pb-3
                     .sales-layout 
@@ -45,8 +45,9 @@ include views/partials/header/header.pug
             .row
                 .col-sm-6.col-xxl-3.pb-3
                     +announcement({
-                        image: utils.getUpload("announcement/7.jpeg"),
+                        image: utils.getUpload("announcement/7.jpg"),
                         fullHeight: true,
+                        contentBg: "warning",
                         mainTitle: `
                             <div class="announcement-main-title-smaller">Be ready to <b class="text-contrast">20% OFF</b></div>
                             for all <b class="text-uppercase">Technical brands</b>
@@ -62,8 +63,9 @@ include views/partials/header/header.pug
                     })
                 .col-sm-6.col-xxl-3.pb-3
                     +announcement({
-                        image: utils.getUpload("announcement/6.jpeg"),
+                        image: utils.getUpload("announcement/6.jpg"),
                         fullHeight: true,
+                        contentBg: "contrast",
                         isBright: true,
                         mainTitle: `
                             <div class="announcement-main-title-smaller">It's time to</div>
@@ -72,13 +74,14 @@ include views/partials/header/header.pug
                         description: `
                             <div class="text-thin">CHOOSE ORGANIC COSMETIC</div>
                         `,
-                        btnText : "Shop Now",
-                        btnClass: "btn-faded-primary"
+                        btnText : `<span class="bi bi-cart"></span> Shop Now`,
+                        btnClass: "btn-white-warning"
                     })
                 .col-sm-6.col-xxl-3.pb-3
                     +announcement({
-                        image: utils.getUpload("announcement/4.jpeg"),
+                        image: utils.getUpload("announcement/4.png"),
                         fullHeight: true,
+                        contentBg: "success",
                         mainTitle: `
                             <div class="announcement-main-title-smaller">It's time to</div>
                             <b>SAVE THE PLANET</b>
@@ -86,14 +89,15 @@ include views/partials/header/header.pug
                         description: `
                             <div class="text-thin">CHOOSE ORGANIC COSMETIC</div>
                         `,
-                        btnText : "Shop Now",
-                        btnClass: "btn-faded-dark"
+                        btnText : `<span class="bi bi-cart"></span> Shop Now`,
+                        btnClass: "btn-white-success"
                     })
                 .col-sm-6.col-xxl-3.pb-3
                     +announcement({
-                        image: utils.getUpload("announcement/8.jpeg"),
+                        image: utils.getUpload("announcement/8.jpg"),
                         fullHeight: true,
                         isBright: true,
+                        contentBg: "warning",
                         mainTitle: `
                             <div class="announcement-main-title-smaller">Be ready to <b class="text-contrast">20% OFF</b></div>
                             for all <b>TECHNICAL BRENDS</b>
@@ -121,7 +125,7 @@ include views/partials/header/header.pug
                             +announcement({
                                 subTitle: utils.faker.commerce.department(), 
                                 mainTitle: `<b>${utils.faker.company.catchPhrase()}</b>`,
-                                btnText : "Shop Now",
+                                btnText: `<span class="bi bi-cart"></span> Shop Now`,
                                 image: utils.getUpload("announcement/1.jpeg"),
                                 isBright: true,
                                 fullHeight: true,
