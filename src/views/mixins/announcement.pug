@@ -13,12 +13,13 @@ mixin announcement(customOptions)
             image: utils.getUpload("announcement/4.png"),
             imageStyle: `right: -20px; bottom: -32px;`,
             isVertical: false,
+            isBright: false,
         }
 
         const options = Object.assign(defaultOptions, customOptions);
 
     <!-- begin ANNOUNCEMENT -->
-    a.announcement(href=utils.anchor("article") style=options.bg class=`${options.isVertical ? "announcement-vertical" : ""}`)
+    a.announcement(href=utils.anchor("article") style=options.bg class=`${options.isVertical ? "announcement-vertical" : ""} ${options.isBright ? "announcement-bright" : ""}`)
         img.announcement-image(src=options.image alt="Sale Art" style=options.imageStyle)
         .announcement-area
             .announcement-sub-title=options.subTitle

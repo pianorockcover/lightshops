@@ -7,7 +7,10 @@ include views/partials/header/header.pug
                 .col-xl-12.col-xxl-6.pb-3
                     +mainSlider()
                 .col-md-6.col-xxl-3.pb-3
-                    +announcement()
+                    +announcement({
+                        isBright: true,
+                        bg: "background: linear-gradient(140deg, #f9f9f9, #e8e9eb);" 
+                    })
                 .col-md-6.col-xxl-3.pb-3
                     .sales-layout 
                         +saleBlock(
@@ -62,6 +65,9 @@ include views/partials/header/header.pug
                         .col-xl-12.col-xxl-6.pb-3
                             +announcement({
                                 isVertical: true,
+                                isBright: true,
+                                btnClass: "btn-warning",
+                                bg: "background: linear-gradient(140deg, #ffffff, #eeeff0);" 
                             })
                 .col-xl-9.pb-3
                     .row
