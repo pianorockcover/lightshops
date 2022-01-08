@@ -3,174 +3,135 @@
 
 @announcementClassName: announcement;
 
-.announcement(@color) {
+.@{announcementClassName} {
     position: relative;
-    color: @color  !important;
-    overflow: hidden;
-    display: block;
-    text-decoration: none !important;
-    background-size: cover;
-    margin-bottom: 10px;
+    height: 100%;
+    width: 100%;
+    padding: 30px;
     border-radius: @borderRadius;
-    background-color: #ffffff;
+    .anchor(#ffffff, #ffffff);
+    overflow: hidden;
 
-    &-content {
-        height: 100%;
-        background-color: #eff0f2;
-    }
-
-    &.announcement-primary {
-        .announcement-content {
-            background-color: fade(@primary, 7%);
+    &:hover {
+        .@{announcementClassName} {
+            &-image {
+                transform: scale(1.1);
+            }
         }
     }
 
-    &.announcement-success {
-        .announcement-content {
-            background-color: fade(@success, 7%);
-        }
-    }
-
-    &.announcement-contrast {
-        .announcement-content {
-            background-color: fade(@contrast, 7%);
-        }
-    }
-
-    &.announcement-warning {
-        .announcement-content {
-            background-color: fade(@warning, 7%);
+    &.@{announcementClassName}-vertical {
+        .@{announcementClassName}-area {
+            justify-content: flex-start;
+            padding-top: 50px;
         }
     }
 
     &-image {
         position: absolute;
         z-index: 1;
-        bottom: 0;
-        right: 0;
-        width: 40%;
-        height: 100%;
-        background-position: center 0;
-        background-size: cover;
+        display: block;
+        width: 300px;
+        height: 300px;
         transition: transform .2s ease-in-out;
-    }
-
-    &:hover {
-        .@{announcementClassName}-image {
-            transform: scale(1.1);
-        }
+        right: 0;
+        bottom: 0;
     }
 
     &-area {
-        padding: 55px 25px 55px 25px;
         position: relative;
         z-index: 2;
+        color: #ffffff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
         height: 100%;
+        flex-direction: column;
+        text-align: center;
     }
 
     &-sub-title {
-        font-size: 20px;
-        text-transform: uppercase;
         font-weight: 300;
-        margin-bottom: 35px;
-        position: relative;
-
-        &:after {
-            content: " ";
-            display: block;
-            width: 90px;
-            height: 4px;
-            background-color: @color;
-            margin-top: 10px;
-        }
+        font-size: 1.1em;
+        margin-bottom: 5px;
     }
 
-    &-main-title {
-        font-size: 35px;
-        margin-bottom: 25px;
-    }
-
-    &-main-title-smaller {
-        font-size: 30px;
-    }
-
-    &-description {
-        font-size: 23px;
-        margin-bottom: 25px;
-    }
-
-    &-tags {
-        margin-bottom: 25px;
-    }
-
-    &-tag {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        padding: 5px 10px 5px 10px;
-        font-size: 12px;
-        border-radius: 20px;
+    &-title {
+        font-weight: 900;
+        font-size: 3em;
+        margin-bottom: 15px;
         text-transform: uppercase;
-        margin: 0 5px 10px 0;
-        border: 1px solid;
     }
 
-    &-tag-icon {
-        margin-right: 5px;
-    }
+    &-countdown {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 25px;
 
-    &.@{announcementClassName}-full-height {
-        height: 100%;
-        margin-bottom: 10px;
-    }
-}
+        &-item {
+            position: relative;
 
-.@{announcementClassName} {
-    .announcement(@textColor);
+            &:not(:nth-last-child(1)) {
+                margin-right: 25px;
 
-    & .@{announcementClassName}-image-wrapper {
-        &:before {
-            opacity: 0.2;
-            background: radial-gradient(circle at center, rgba(255, 255, 255, 0.15) 0, rgba(255, 255, 255, 0.55), rgba(255, 255, 255, 0.7) 100%);
-        }
-    }
-
-    &:hover .@{announcementClassName}-image-wrapper {
-        &:before {
-            opacity: 0.4;
-        }
-    }
-}
-
-@media @medium {
-    .@{announcementClassName} {
-        &-area {
-            padding: 25px 15px;
-        }
-
-        &-main-title {
-            font-size: 23px;
-            margin-bottom: 20px;
-
-            &-smaller {
-                font-size: 16px;
-                margin-bottom: 5px;
+                &:after {
+                    content: ":";
+                    font-weight: 900;
+                    font-size: 2em;
+                    display: block;
+                    position: absolute;
+                    right: -17px;
+                    top: 0px;
+                    line-height: 1;
+                    opacity: .9;
+                }
             }
         }
 
-        &-description {
-            font-size: 15px;
-            margin-bottom: 15px;
+        &-digits-wrapper {
+            display: flex;
+            margin-bottom: 10px;
+            justify-content: space-between;
         }
 
-        &-sub-title {
-            font-size: 16px;
-            margin-bottom: 15px;
+        &-digit {
+            background: rgba(255, 255, 255, 0.4);
+            box-shadow: 1px 2px 5px 1px rgba(0, 0, 0, 0.1);
+            padding: 5px 7px;
+            font-size: 1.4em;
+            font-weight: 600;
+            border-radius: 3px;
+            position: relative;
+            overflow: hidden;
 
-            &:after {
-                width: 70px;
+            &:not(:nth-last-child(1)) {
+                margin-right: 10px;
+            }
+
+            &-value {
+                z-index: 2;
+            }
+
+            &:before {
+                content: " ";
+                width: 100%;
                 height: 2px;
+                background: rgba(255, 255, 255, 0.2);
+                position: absolute;
+                top: calc(50% - 1px);
+                z-index: 1;
+                left: 0;
+                height: 100%;
             }
         }
+
+        &-label {
+            font-weight: 600;
+            font-size: 0.9em;
+        }
+    }
+
+    .btn {
+        width: fit-content;
     }
 }

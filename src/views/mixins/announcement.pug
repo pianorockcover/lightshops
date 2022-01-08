@@ -1,25 +1,52 @@
-mixin announcement(options)
+mixin announcement(customOptions)
     -
-        let className = `${options.fullHeight ? " announcement-full-height" : ""} ${options.contentBg ? `announcement-${options.contentBg}` : ""}`;
-        let bgImageStyle = `background-image:url(${options.image})`;
+        const defaultOptions = {
+            bg: `background: linear-gradient(140deg, #e7b528, #ff6b9e);`,
+            title: "20% OFF",
+            subTitle: "be ready to",
+            btn: "Shop now",
+            btnIcon: "bi-cart",
+            btnClass: "btn-contrast",
+            days: [0, 3],
+            minutes: [1, 0],
+            hours: [0, 7],
+            image: utils.getUpload("announcement/4.png"),
+            imageStyle: `right: -20px; bottom: -32px;`,
+            isVertical: false,
+        }
 
-    a.announcement(href=utils.anchor("article") class= className)
-        .announcement-content
-            .announcement-image(style= bgImageStyle)
-            .announcement-area
-                if (options.subTitle)
-                    .announcement-sub-title !{options.subTitle}
-                if (options.mainTitle)
-                    .announcement-main-title !{options.mainTitle}
-                if (options.description)
-                    .announcement-description !{options.description}
-                if (options.tags)
-                    .announcement-tags
-                        - for (tag of options.tags) {
-                            .announcement-tag
-                                span.bi.bi-tag-fill.announcement-tag-icon
-                                | #{tag}
-                        - }
-                if (options.btnText)
-                    .btn(class= options.btnClass)
-                        | !{options.btnText}
+        const options = Object.assign(defaultOptions, customOptions);
+
+    <!-- begin ANNOUNCEMENT -->
+    a.announcement(href=utils.anchor("article") style=options.bg class=`${options.isVertical ? "announcement-vertical" : ""}`)
+        img.announcement-image(src=options.image alt="Sale Art" style=options.imageStyle)
+        .announcement-area
+            .announcement-sub-title=options.subTitle
+            .announcement-title=options.title
+            .announcement-countdown
+                .announcement-countdown-item
+                    .announcement-countdown-digits-wrapper
+                        .announcement-countdown-digit
+                            .announcement-countdown-digit-value=options.days[0]
+                        .announcement-countdown-digit
+                            .announcement-countdown-digit-value=options.days[1]
+                    .announcement-countdown-label days
+                .announcement-countdown-item
+                    .announcement-countdown-digits-wrapper
+                        .announcement-countdown-digit
+                            .announcement-countdown-digit-value=options.hours[0]
+                        .announcement-countdown-digit
+                            .announcement-countdown-digit-value=options.hours[1]
+                    .announcement-countdown-label hours
+                .announcement-countdown-item
+                    .announcement-countdown-digits-wrapper
+                        .announcement-countdown-digit
+                            .announcement-countdown-digit-value=options.minutes[0]
+                        .announcement-countdown-digit
+                            .announcement-countdown-digit-value=options.minutes[1]
+                    .announcement-countdown-label minutes
+            .btn.btn-large(class=options.btnClass)
+                .bi(class=options.btnIcon)
+                | #{options.btn}
+
+    <!-- end ANNOUNCEMENT -->
