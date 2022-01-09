@@ -5,9 +5,17 @@
 
 @saleBlockClass: sale-block;
 
-.@{saleBlockClass} {
+.bubleArt(@index, @diameter, @right, @top) {
+    &:nth-child(@{index}) {
+        width: @diameter;
+        height: @diameter;
+        right: @right;
+        top: @top;
+    }
+}
+
+.saleBlock(@colorType) {
     margin-bottom: 20px;
-    color: #ffffff;
     text-decoration: none !important;
     flex: 1;
     background-size: cover;
@@ -15,11 +23,17 @@
     overflow: hidden;
     display: flex;
     border-radius: @borderRadius;
-    .shadow-hover();
-    background: #eeeeee;
     .anchor(@textColor, @textColor);
+    border: 1px solid #eeeeee;
+    position: relative;
+    background: #ffffff;
+    width: 100%;
 
-    &-left {
+    &:nth-last-child(1) {
+        margin-bottom: 0px;
+    }
+
+    .@{saleBlockClass}-left {
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -28,74 +42,76 @@
         padding: 15px;
     }
 
-    &-right {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100%;
-        width: 50%;
-        background-size: cover;
-        background-repeat: no-repeat;
-    }
-
-    &:nth-last-child(1) {
-        margin-bottom: 0px;
-    }
-
-    &-title {
-        font-size: 20px;
+    .@{saleBlockClass}-title {
+        font-size: 1.3em;
         margin-bottom: 10px;
         font-weight: 700;
     }
 
-    &-amount {
+    .@{saleBlockClass}-label {
         width: fit-content;
-        text-transform: uppercase;
         font-weight: 400;
+        line-height: 1;
         padding: 7px 9px;
         border-radius: 10px;
         border-bottom-left-radius: 0px;
         border-top-right-radius: 0px;
         display: flex;
         align-items: center;
-        font-size: 11px;
+        font-size: 0.8em;
         margin-bottom: 10px;
-        color: @contrast;
-        background-color: lighten(@contrast, 35%);
+        color: @colorType;
+        background-color: lighten(@colorType, 40%);
     }
 
-    &-time {
-        background: #ffffff;
-        width: fit-content;
-        display: inline-flex;
-        flex-direction: column;
-        color: @textColor;
-        margin: 5px;
-        min-width: 50px;
-        padding: 10px 5px;
-        text-align: center;
-        font-weight: 500;
+    .@{saleBlockClass}-right {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        width: 50%;
+        position: relative;
+        overflow: hidden;
+        padding: 15px;
+    }
 
-        &-left {
-            font-weight: 400;
-            border-top: 1px solid #eeeeee;
-            margin-left: -5px;
-            width: calc(100% + 5px);
-            color: @success;
-            padding: 5px 0 0 5px;
-            margin-top: 5px;
-        }
+    .@{saleBlockClass}-buble {
+        z-index: 1;
+        position: absolute;
+        background-color: lighten(@colorType, 35%);
+        border-radius: 100%;
+
+        .bubleArt(1, 400px, -110px, -20px);
+    }
+
+    .@{saleBlockClass}-image {
+        position: relative;
+        z-index: 2;
+        height: 100px;
+        transition: transform .2s ease-in-out;
     }
 
     &:hover {
-        z-index: 2;
-
-        .@{saleBlockClass}-amount {
-            animation-duration: .5s;
-            animation-name: swingAnimation;
-            animation-timing-function: ease-in-out;
+        .@{saleBlockClass}-image {
+            transform: scale(1.2);
         }
     }
+}
+
+&.@{saleBlockClass}-contrast {
+    .saleBlock(@contrast);
+}
+
+&.@{saleBlockClass}-warning {
+    .saleBlock(@warning);
+}
+
+&.@{saleBlockClass}-success {
+    .saleBlock(@success);
+}
+
+&.@{saleBlockClass}-primary {
+    .saleBlock(@primary);
 }
 
 .sales-layout {
@@ -108,11 +124,9 @@
     .@{saleBlockClass} {
         &-title {
             font-weight: 500;
-            font-size: 17px;
         }
 
         &-amount {
-            font-size: 11px;
             line-height: 1;
         }
     }

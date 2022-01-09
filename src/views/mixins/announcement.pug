@@ -18,7 +18,7 @@ mixin announcement(customOptions)
 
         const options = Object.assign(defaultOptions, customOptions);
 
-    <!-- begin ANNOUNCEMENT -->
+    <!-- BEGIN ANNOUNCEMENT -->
     a.announcement(href=utils.anchor("article") style=options.bg class=`${options.isVertical ? "announcement-vertical" : ""} ${options.isBright ? "announcement-bright" : ""}`)
         img.announcement-image(src=options.image alt="Sale Art" style=options.imageStyle)
         .announcement-area
@@ -50,4 +50,4 @@ mixin announcement(customOptions)
                 .bi(class=options.btnIcon)
                 | #{options.btn}
 
-    <!-- end ANNOUNCEMENT -->
+    <!-- END ANNOUNCEMENT -->

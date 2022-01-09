@@ -1,18 +1,17 @@
-mixin saleBlock(title, image, imageAlt, amount)
+mixin saleBlock(customOptions)
     -
-        let bgImageStyle = `background-image:url(${image})`;
-        let amountText = `Up to ${amount}% off`;
-    a.sale-block(href=utils.anchor("article-1"))
+        const defaultOptions = {
+            label: "Up to 50%",
+            title: utils.faker.company.catchPhrase(),
+            image: utils.getUpload("announcement/4.png"),
+            type: "sale-block-primary",
+        };
+
+        const options = Object.assign(defaultOptions, customOptions);
+    a.sale-block(href=utils.anchor("article-1") class=options.type)
         .sale-block-left
-            .sale-block-amount= amountText
-            .sale-block-title= title
-        .sale-block-right(style=bgImageStyle)
-            .sale-block-time
-                | 12
-                .sale-block-time-left days
-            .sale-block-time
-                | 5
-                .sale-block-time-left hours
-            .sale-block-time
-                | 10
-                .sale-block-time-left mins
+            .sale-block-label=options.label
+            .sale-block-title=options.title
+        .sale-block-right
+            .sale-block-buble
+            img.sale-block-image(src=options.image alt="Sale block art")

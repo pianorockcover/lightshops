@@ -18,11 +18,7 @@ include views/partials/header/header.pug
                     })
                 .col-xxl-3
                     .mb-5
-                        +saleBlock(
-                            utils.faker.company.catchPhrase(),
-                            utils.getUpload("announcement/2.jpeg"),
-                            utils.faker.company.catchPhrase(),
-                            40)
+                        +saleBlock()
                     .simple-slider.simple-slider-aside.mb-5(id="asidePrductsSlider")
                         .simple-slider-aside-title Products from post
                         .swiper-container.pb-0

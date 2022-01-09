@@ -25,16 +25,8 @@ include views/partials/header/header.pug
                     })
                 .col-md-6.order-xxl-last.col-xxl-3.pb-3
                     .sales-layout 
-                        +saleBlock(
-                            utils.faker.company.catchPhrase(),
-                            utils.getUpload("announcement/2.jpeg"),
-                            utils.faker.company.catchPhrase(),
-                            40)
-                        +saleBlock(
-                            utils.faker.company.catchPhrase(),
-                            utils.getUpload("announcement/3.jpeg"),
-                            utils.faker.company.catchPhrase(),
-                            75)
+                        +saleBlock()
+                        +saleBlock()
                 .col-xl-12.col-xxl-6.pb-3
                     +mainSlider()
 

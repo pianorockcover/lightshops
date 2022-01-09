@@ -10,16 +10,10 @@ include views/partials/header/header.pug
                     +announcement()
                 .col-md-6.col-xxl-3.pb-3
                     .sales-layout 
-                        +saleBlock(
-                            utils.faker.company.catchPhrase(),
-                            utils.getUpload("announcement/2.jpeg"),
-                            utils.faker.company.catchPhrase(),
-                            40)
-                        +saleBlock(
-                            utils.faker.company.catchPhrase(),
-                            utils.getUpload("announcement/3.jpeg"),
-                            utils.faker.company.catchPhrase(),
-                            75)
+                        +saleBlock()
+                        +saleBlock({
+                            type: "sale-block-warning"
+                        })
 
     +productsSlider("Top Sales", "topSales")
 
@@ -63,7 +57,7 @@ include views/partials/header/header.pug
                             +announcement({
                                 isVertical: true,
                                 isBright: true,
-                                btnClass: "btn-warning",
+                                btnClass: "btn-dark",
                                 bg: "background: linear-gradient(140deg, #ffffff, #eeeff0);" 
                             })
                 .col-xl-9.pb-3
