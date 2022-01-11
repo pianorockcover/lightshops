@@ -14,19 +14,11 @@ mixin sidebarCatalog()
                         +catalog()
             .col-xl-5
                 +announcement({
-                    subTitle: utils.faker.commerce.department(), 
-                    mainTitle: `<b>${utils.faker.company.catchPhrase()}</b>`,
-                    btnText : "Shop Now",
-                    image: utils.getUpload("announcement/6.jpeg"),
-                    isBright: true,
-                    fullHeight: true,
-                    btnClass: "btn-contrast",
-                    tags: [
-                        "home",
-                        "technical",
-                        "kitchen",
-                        "natural"
-                    ]
+                    isVertical: true,
+                    title: "20% OFF", 
+                    subTitle: "fantastic sale",
+                    image: utils.getUpload("announcement/1.png"),
+                    bg: `background: linear-gradient(140deg, #7da100, #abcd36);`,
                 })
     - } else {
         .row
@@ -40,16 +32,9 @@ mixin sidebarCatalog()
             .col
                 +catalog()
         +announcement({
-            image: utils.getUpload("announcement/4.jpeg"),
-            fullHeight: true,
-            mainTitle: `
-                <div class="announcement-main-title-smaller">It's time to</div>
-                <b>SAVE THE PLANET</b>
-            `,
-            description: `
-                <div class="text-thin">CHOOSE ORGANIC COSMETIC</div>
-            `,
-            btnText : "Shop Now",
-            btnClass: "btn-dark"
+            image: utils.getUpload("announcement/5.png"),
+            btnClass: "btn-dark",
+            title: "35% OFF", 
+            bg: "background: linear-gradient(140deg, #9662a4, #e0a7be);" 
         })
     - }

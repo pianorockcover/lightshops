@@ -18,7 +18,7 @@ mixin articleThumbnail()
             .article-thumbnail-author-name
                 b.text-contrast by 
                 | #{author}
-        .article-thumbnail-title
+        a.article-thumbnail-title(href=utils.anchor("article") title=title)
             | #{title}
         .article-thumbnail-text
             | #{text}

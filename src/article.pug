@@ -18,7 +18,10 @@ include views/partials/header/header.pug
                     })
                 .col-xxl-3
                     .mb-5
-                        +saleBlock()
+                        +saleBlock({
+                            type: "sale-block-warning",
+                            image: utils.getUpload("announcement/1.png"),
+                        })
                     .simple-slider.simple-slider-aside.mb-5(id="asidePrductsSlider")
                         .simple-slider-aside-title Products from post
                         .swiper-container.pb-0
@@ -41,32 +44,17 @@ include views/partials/header/header.pug
                         .swiper-button-next
                     .mb-5
                         +announcement({
-                            image: utils.getUpload("announcement/4.jpeg"),
-                            mainTitle: `
-                                <div class="announcement-main-title-smaller">It's time to</div>
-                                <b>SAVE THE PLANET</b>
-                            `,
-                            description: `
-                                <div class="text-thin">CHOOSE ORGANIC COSMETIC</div>
-                            `,
-                            btnText : "Shop Now",
-                            btnClass: "btn-dark"
+                            title: "1 + 1 = GIFT", 
+                            subTitle: "fantastic sale",
+                            image: utils.getUpload("announcement/1.png"),
+                            bg: `background: linear-gradient(140deg, #7da100, #abcd36);`,
                         })
                     .mb-5
                         +announcement({
-                            image: utils.getUpload("announcement/7.jpeg"),
-                            mainTitle: `
-                                <div class="announcement-main-title-smaller">Be ready to <b class="text-contrast">20% OFF</b></div>
-                                for all <b class="text-uppercase">Technical brands</b>
-                            `,
-                            description: `
-                                Just From <b>$90.00</b>
-                            `,
-                            tags: [
-                                "study",
-                                "technical",
-                                "work",
-                            ]
+                            title: "70% OFF", 
+                            subTitle: "fantastic sale",
+                            image: utils.getUpload("announcement/3.png"),
+                            bg: `background: linear-gradient(140deg, #1797df, #89c4ca);`,
                         })
                     .mb-3
                         +category(

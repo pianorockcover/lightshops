@@ -3,7 +3,9 @@ mixin filters()
         form
             .filters-header
                 .filters-title Filter:
-                a.filters-clean-all(href="#") Clean All
+                a.filters-clean-all(href="#")
+                    .bi.bi-x
+                    | Clean All
             include brands.pug
             include colors.pug
             include vendors.pug
