@@ -10,9 +10,12 @@ include views/partials/header/header.pug
                     +announcement()
                 .col-md-6.col-xxl-3.pb-3
                     .sales-layout 
-                        +saleBlock()
                         +saleBlock({
-                            type: "sale-block-warning"
+                            image: utils.getUpload("announcement/1.png"),
+                        })
+                        +saleBlock({
+                            type: "sale-block-warning",
+                            image: utils.getUpload("announcement/2.png"),
                         })
 
     +productsSlider("Top Sales", "topSales")
@@ -24,21 +27,25 @@ include views/partials/header/header.pug
                     +announcement({
                         title: "70% OFF", 
                         subTitle: "fantastic sale",
+                        image: utils.getUpload("announcement/3.png"),
                         bg: `background: linear-gradient(140deg, #1797df, #89c4ca);`,
                     })
                 .col-sm-6.col-xxl-3.pb-3
                     +announcement({
                         title: "10% OFF", 
                         subTitle: "fantastic sale",
+                        image: utils.getUpload("announcement/1.png"),
                         bg: `background: linear-gradient(140deg, #7da100, #abcd36);`,
                     })
                 .col-sm-6.col-xxl-3.pb-3
                     +announcement({
+                        image: utils.getUpload("announcement/5.png"),
                         bg: `background: linear-gradient(140deg, #ea5f9d, #e05264);`,
                     })
                 .col-sm-6.col-xxl-3.pb-3
                     +announcement({
                         title: "15% OFF", 
+                        image: utils.getUpload("announcement/10.png"),
                     })
 
     +categories()
@@ -52,13 +59,16 @@ include views/partials/header/header.pug
                         .col-xl-12.col-xxl-6.pb-3
                             +announcement({
                                 isVertical: true,
+                                image: utils.getUpload("announcement/7.png"),
+                                bg: "background: linear-gradient(140deg, #ef793a, #e6d4aa);" 
                             })
                         .col-xl-12.col-xxl-6.pb-3
                             +announcement({
                                 isVertical: true,
                                 isBright: true,
+                                image: utils.getUpload("announcement/10.png"),
                                 btnClass: "btn-dark",
-                                bg: "background: linear-gradient(140deg, #ffffff, #eeeff0);" 
+                                bg: "background: linear-gradient(140deg, #f2f2f2, #ffffff);" 
                             })
                 .col-xl-9.pb-3
                     .row
@@ -81,11 +91,15 @@ include views/partials/header/header.pug
                     .row.full-height
                         .col-xl-12.col-xxl-6.pb-3
                             +announcement({
+                                image: utils.getUpload("announcement/9.png"),
                                 isVertical: true,
+                                bg: "background: linear-gradient(140deg, #b52066, #ff6b9e);" 
                             })
                         .col-xl-12.col-xxl-6.pb-3
                             +announcement({
+                                image: utils.getUpload("announcement/6.png"),
                                 isVertical: true,
+                                bg: "background: linear-gradient(140deg, #d99883, #4f220e);" 
                             })
 
     +productsSlider("Your Recent Views", "recentViews")
