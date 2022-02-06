@@ -84,9 +84,9 @@ include views/partials/header/header.pug
             .row
                 .col-xl-9.pb-3
                     .row
-                        - for (let i = 0; i < 12; i++) {
-                            div(class=utils.classNames.productsGrid).pb-3
-                                +product()
+                        - for (let i = 0; i < 6; i++) {
+                            div(class=utils.classNames.productsInlineGrid).pb-3
+                                +product({ inline: true })
                         - }
                 .col-xl-3.pb-3
                     .row.full-height
