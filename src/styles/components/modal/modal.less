@@ -1,4 +1,5 @@
 @import "../../variables.less";
+@import "../scroll.less";
 
 @modalClassName: modal;
 
@@ -29,12 +30,20 @@
         z-index: 2;
     }
 
-    &-content {
+    &-wrapper {
         position: relative;
         max-width: 1300px;
         display: none;
         box-shadow: rgb(100 100 111 / 20%) 0px 7px 29px 0px;
         border-top: 4px solid @primary;
+        border-radius: @borderRadius;
+        overflow: hidden;
+    }
+
+    &-content {
+        max-height: 100vh;
+        overflow-y: auto;
+        .scroll(#ffffff, fade(@primary, 90%), 12px);
     }
 
     &-close {
@@ -55,7 +64,7 @@
 
 @media @extraLarge {
     .@{modalClassName} {
-        &-content {
+        &-wrapper {
             max-width: 1200px;
         }
     }
@@ -67,11 +76,17 @@
             padding: 10px;
             align-items: flex-start;
         }
+    }
+}
 
-        &-content {
-            max-width: 100%;
-            max-height: 100%;
-            overflow-x: auto;
+@media @small {
+    .@{modalClassName} {
+        &-area {
+            padding: 0;
+        }
+
+        &-wrapper {
+            border-radius: 0;
         }
     }
 }

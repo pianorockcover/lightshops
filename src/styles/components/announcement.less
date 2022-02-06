@@ -11,13 +11,12 @@
     border-radius: @borderRadius;
     .anchor(#ffffff, #ffffff);
     overflow: hidden;
+    background-repeat: no-repeat;
+    background-size: cover;
+    transition: opacity .3s ease-in-out;
 
     &:hover {
-        .@{announcementClassName} {
-            &-image {
-                transform: scale(1.1);
-            }
-        }
+        opacity: .9;
     }
 
     &.@{announcementClassName}-vertical {
@@ -33,18 +32,6 @@
         .@{announcementClassName}-area {
             color: @textColor;
         }
-    }
-
-    &-image {
-        position: absolute;
-        z-index: 1;
-        display: block;
-        transition: transform .2s ease-in-out;
-        right: 10px;
-        bottom: 10px;
-        max-height: calc(100% - 50px);
-        width: auto;
-        max-width: 300px;
     }
 
     &-area {

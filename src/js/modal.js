@@ -4,17 +4,17 @@ $("[data-modal]").each((_, el) => {
     const element = $(el);
 
     const modal = $(element.data("modal"));
-    const modalContent = $(modal.find(".modal-content"));
+    const modalWrapper = $(modal.find(".modal-wrapper"));
     const modalArea = $(modal.find(".modal-area"));
     const modalClose = $(modal.find(".modal-close"));
 
     element.on("click", () => {
         modal.show();
-        modalContent.fadeIn();
+        modalWrapper.fadeIn();
     });
 
     const closeModal = () => {
-        modalContent.fadeOut({
+        modalWrapper.fadeOut({
             duration: 150,
             complete: () => {
                 modal.hide();

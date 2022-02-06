@@ -1,6 +1,7 @@
 mixin announcement(customOptions)
     -
         const defaultOptions = {
+            //- Deprecated
             bg: `background: linear-gradient(140deg, #e7b528, #ff6b9e);`,
             title: "20% OFF",
             subTitle: "be ready to",
@@ -11,16 +12,17 @@ mixin announcement(customOptions)
             minutes: [1, 0],
             hours: [0, 7],
             image: utils.getUpload("announcement/4.png"),
-            imageStyle: "",
             isVertical: false,
             isBright: false,
         }
 
         const options = Object.assign(defaultOptions, customOptions);
 
-    <!-- BEGIN ANNOUNCEMENT -->
-    a.announcement(href=utils.anchor("article") style=options.bg class=`${options.isVertical ? "announcement-vertical" : ""} ${options.isBright ? "announcement-bright" : ""}`)
-        img.announcement-image(src=options.image alt="Sale Art" style=options.imageStyle)
+    a.announcement(
+        href=utils.anchor("article")
+        style=`background-image: url(${options.image});`
+        class=`${options.isVertical ? "announcement-vertical" : ""} ${options.isBright ? "announcement-bright" : ""}`
+    )
         .announcement-area
             .announcement-sub-title=options.subTitle
             .announcement-title=options.title
@@ -49,5 +51,3 @@ mixin announcement(customOptions)
             .btn.btn-large(class=options.btnClass)
                 .bi(class=options.btnIcon)
                 | #{options.btn}
-
-    <!-- END ANNOUNCEMENT -->

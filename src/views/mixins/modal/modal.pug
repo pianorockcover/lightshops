@@ -2,7 +2,8 @@ mixin modal(options)
     .modal(id=options.id)
         .modal-shade
         .modal-area
-            .modal-content
+            .modal-wrapper
                 .modal-close
                     .bi.bi-x-lg
-                +#{options.content}(options.contentOptions || {})
+                .modal-content
+                    +#{options.content}(options.contentOptions || {})

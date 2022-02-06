@@ -60,6 +60,7 @@
 
   &-summary {
     display: flex;
+    padding: 10px 15px;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -71,34 +72,14 @@
 
     &-title {
       font-weight: 800;
-      font-size: 45px;
+      font-size: 3em;
       margin-bottom: 10px;
     }
 
     &-subtitle {
       font-weight: 400;
-      font-size: 30px;
+      font-size: 2em;
       margin-bottom: 20px;
-    }
-  }
-}
-
-@media @medium {
-  .@{mainSliderClassName}-wrapper {
-    height: fit-content;
-  }
-
-  .@{mainSliderClassName}-item {
-    padding: 30px 35px;
-
-    &-summary {
-      &-title {
-        font-size: 35px;
-      }
-
-      &-subtitle {
-        font-size: 20px;
-      }
     }
   }
 }
@@ -106,16 +87,18 @@
 @media @small {
   .@{mainSliderClassName}-item {
     &-summary {
-      position: relative;
-      z-index: 2;
-
       &-title {
-        font-size: 30px;
+        font-size: 2.5em;
       }
 
       &-subtitle {
-        font-size: 15px;
+        font-size: 1em;
+        margin-bottom: 0px;
       }
+    }
+
+    .subscibe-form {
+      max-width: 245px;
     }
   }
 }

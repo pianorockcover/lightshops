@@ -17,54 +17,57 @@ include views/partials/header/header.pug
                         includeImage: true,
                     })
                 .col-xxl-3
-                    .mb-5
-                        +saleBlock({
-                            type: "sale-block-warning",
-                            image: utils.getUpload("announcement/1.png"),
-                        })
-                    .simple-slider.simple-slider-aside.mb-5(id="asidePrductsSlider")
-                        .simple-slider-aside-title Products from post
-                        .swiper-container.pb-0
-                            .swiper-wrapper
-                                - for (let i = 0; i < 20; i++) {
-                                    .swiper-slide
-                                        .mb-3
-                                            +product({
-                                                inline: true
-                                            })
-                                        .mb-3
-                                            +product({
-                                                inline: true
-                                            })
-                                        +product({
-                                            inline: true
-                                        })
-                                - }
-                        .swiper-button-prev
-                        .swiper-button-next
-                    .mb-5
-                        +announcement({
-                            title: "1 + 1 = GIFT", 
-                            subTitle: "fantastic sale",
-                            image: utils.getUpload("announcement/1.png"),
-                            bg: `background: linear-gradient(140deg, #7da100, #abcd36);`,
-                        })
-                    .mb-5
-                        +announcement({
-                            title: "70% OFF", 
-                            subTitle: "fantastic sale",
-                            image: utils.getUpload("announcement/3.png"),
-                            bg: `background: linear-gradient(140deg, #1797df, #89c4ca);`,
-                        })
-                    .mb-3
-                        +category(
-                            utils.faker.commerce.department(),
-                            utils.getUpload("categories/1.svg", "default")
-                        )
-                    +category(
-                        utils.faker.commerce.department(),
-                        utils.getUpload("categories/3.svg", "default")
-                    )
+                    .row
+                        .col-lg-6.col-xxl-12
+                            .mb-5
+                                +saleBlock({
+                                    type: "sale-block-warning",
+                                    image: utils.getUpload("announcement/1.png"),
+                                })
+                            .simple-slider.simple-slider-aside.mb-5(id="asidePrductsSlider")
+                                .simple-slider-aside-title Products from post
+                                .swiper-container.pb-0
+                                    .swiper-wrapper
+                                        - for (let i = 0; i < 20; i++) {
+                                            .swiper-slide
+                                                .mb-3
+                                                    +product({
+                                                        inline: true
+                                                    })
+                                                .mb-3
+                                                    +product({
+                                                        inline: true
+                                                    })
+                                                +product({
+                                                    inline: true
+                                                })
+                                        - }
+                                .swiper-button-prev
+                                .swiper-button-next
+                        .col-lg-6.col-xxl-12
+                            .mb-5
+                                +announcement({
+                                    title: "1 + 1 = GIFT", 
+                                    subTitle: "fantastic sale",
+                                    image: utils.getUpload("announcement/1.png"),
+                                    bg: `background: linear-gradient(140deg, #7da100, #abcd36);`,
+                                })
+                            .mb-5
+                                +announcement({
+                                    title: "70% OFF", 
+                                    subTitle: "fantastic sale",
+                                    image: utils.getUpload("announcement/3.png"),
+                                    bg: `background: linear-gradient(140deg, #1797df, #89c4ca);`,
+                                })
+                            .mb-3
+                                +category(
+                                    utils.faker.commerce.department(),
+                                    utils.getUpload("categories/1.svg", "default")
+                                )
+                            +category(
+                                utils.faker.commerce.department(),
+                                utils.getUpload("categories/3.svg", "default")
+                            )
     .section
         .container-full
             +tabs([

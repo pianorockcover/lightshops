@@ -17,31 +17,35 @@ include views/partials/header/header.pug
                         includeImage: true,
                     })
                 .col-xxl-2
-                    .simple-slider.simple-slider-aside.mb-5(id="asideNewsSlider")
-                        .simple-slider-aside-title Recent news
-                        .swiper-container.pb-0
-                            .swiper-wrapper
-                                - for (let i = 0; i < 20; i++) {
-                                    .swiper-slide
-                                        .mb-3
-                                            +articleThumbnail()
-                                - }
-                        .swiper-button-prev
-                        .swiper-button-next
-                    .simple-slider.simple-slider-aside.mb-5(id="asidePrductsSlider")
-                        .simple-slider-aside-title Products from post
-                        .swiper-container.pb-0
-                            .swiper-wrapper
-                                - for (let i = 0; i < 20; i++) {
-                                    .swiper-slide
-                                        .mb-3
-                                            +product()
-                                        .mb-3
-                                            +product()
-                                        +product()
-                                - }
-                        .swiper-button-prev
-                        .swiper-button-next
+                    .row
+                        .col-lg-6.col-xxl-12
+                            .simple-slider.simple-slider-aside.mb-5(id="asidePrductsSlider")
+                                .simple-slider-aside-title Products from post
+                                .swiper-container.pb-0
+                                    .swiper-wrapper
+                                        - for (let i = 0; i < 20; i++) {
+                                            .swiper-slide
+                                                .mb-3
+                                                    +product()
+                                                .mb-3
+                                                    +product()
+                                                +product()
+                                        - }
+                                .swiper-button-prev
+                                .swiper-button-next
+
+                        .col-lg-6.col-xxl-12
+                            .simple-slider.simple-slider-aside.mb-5(id="asideNewsSlider")
+                                .simple-slider-aside-title Recent news
+                                .swiper-container.pb-0
+                                    .swiper-wrapper
+                                        - for (let i = 0; i < 20; i++) {
+                                            .swiper-slide
+                                                .mb-3
+                                                    +articleThumbnail()
+                                        - }
+                                .swiper-button-prev
+                                .swiper-button-next
 
     .section
         .container-full
