@@ -6,13 +6,13 @@ mixin mainSlider
                     .main-slider-item-summary
                         .main-slider-item-summary-title=utils.faker.commerce.productName()
                         .main-slider-item-summary-subtitle=utils.faker.commerce.productName()
-                        +subscribe("btn-faded-warning")
+                        +subscribe("btn-faded-contrast")
             .swiper-slide
                 .main-slider-item(style=`background-image: url(${utils.getUpload("main-slider/slide-2.jpg")});`)
                     .main-slider-item-summary
                         .main-slider-item-summary-title=utils.faker.commerce.productName()
                         .main-slider-item-summary-subtitle=utils.faker.commerce.productName()
-                        +subscribe("btn-faded-success")
+                        +subscribe("btn-faded-warning")
         .swiper-pagination
         .swiper-button-prev
         .swiper-button-next

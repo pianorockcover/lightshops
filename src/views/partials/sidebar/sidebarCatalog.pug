@@ -14,11 +14,9 @@ mixin sidebarCatalog()
                         +catalog()
             .col-xl-5
                 +announcement({
+                    image: utils.getUpload("announcement/8.jpg"),
                     isVertical: true,
-                    title: "20% OFF", 
-                    subTitle: "fantastic sale",
-                    image: utils.getUpload("announcement/1.png"),
-                    bg: `background: linear-gradient(140deg, #7da100, #abcd36);`,
+                    title: "15% OFF", 
                 })
     - } else {
         .row
@@ -32,9 +30,9 @@ mixin sidebarCatalog()
             .col
                 +catalog()
         +announcement({
-            image: utils.getUpload("announcement/5.png"),
-            btnClass: "btn-dark",
-            title: "35% OFF", 
-            bg: "background: linear-gradient(140deg, #9662a4, #e0a7be);" 
+            title: "70% OFF", 
+            subTitle: "fantastic sale",
+            image: utils.getUpload("announcement/2.jpg"),
+            bg: `background: linear-gradient(140deg, #1797df, #89c4ca);`,
         })
     - }

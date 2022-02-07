@@ -10,17 +10,17 @@ include views/partials/header/header.pug
                     +announcement({
                         title: "70% OFF", 
                         subTitle: "fantastic sale",
-                        image: utils.getUpload("announcement/3.png"),
+                        image: utils.getUpload("announcement/2.jpg"),
                         bg: `background: linear-gradient(140deg, #1797df, #89c4ca);`,
                     })
                 .col-md-6.col-xxl-3.pb-3
                     .sales-layout 
                         +saleBlock({
-                            image: utils.getUpload("announcement/1.png"),
+                            image: utils.getUpload("sale/2.png"),
                         })
                         +saleBlock({
                             type: "sale-block-warning",
-                            image: utils.getUpload("announcement/2.png"),
+                            image: utils.getUpload("sale/1.png"),
                         })
 
     +productsSlider("Top Sales", "topSales")
@@ -29,23 +29,27 @@ include views/partials/header/header.pug
         .container-full
             .row
                 .col-sm-6.col-xxl-3.pb-3
-                    +announcement()
-                .col-sm-6.col-xxl-3.pb-3
                     +announcement({
-                        title: "1 + 1 = GIFT", 
-                        subTitle: "fantastic sale",
-                        image: utils.getUpload("announcement/1.png"),
-                        bg: `background: linear-gradient(140deg, #7da100, #abcd36);`,
+                        isBright: true,
+                        image: utils.getUpload("announcement/6.jpg"),
                     })
                 .col-sm-6.col-xxl-3.pb-3
                     +announcement({
-                        image: utils.getUpload("announcement/5.png"),
+                        image: utils.getUpload("announcement/5.jpg"),
                         bg: `background: linear-gradient(140deg, #00a649, #56a6c9);`,
                     })
                 .col-sm-6.col-xxl-3.pb-3
                     +announcement({
+                        isBright: true,
+                        title: "1 + 1 = GIFT", 
+                        subTitle: "fantastic sale",
+                        image: utils.getUpload("announcement/3.jpg"),
+                        btnClass: "btn-dark",
+                    })
+                .col-sm-6.col-xxl-3.pb-3
+                    +announcement({
                         title: "1 + 1 = 3", 
-                        image: utils.getUpload("announcement/10.png"),
+                        image: utils.getUpload("announcement/2.jpg"),
                     })
 
     +categories()
@@ -59,17 +63,16 @@ include views/partials/header/header.pug
                         .col-xl-12.col-xxl-6.pb-3
                             +announcement({
                                 isVertical: true,
-                                image: utils.getUpload("announcement/7.png"), 
+                                isBright: true,
+                                image: utils.getUpload("announcement/7.jpg"), 
                                 title: "15% OFF", 
-                                bg: "background: linear-gradient(140deg, #ef793a, #e6d4aa);" 
+                                btnClass: "btn-success",
                             })
                         .col-xl-12.col-xxl-6.pb-3
                             +announcement({
+                                image: utils.getUpload("announcement/9.jpg"),
                                 isVertical: true,
-                                image: utils.getUpload("announcement/10.png"),
-                                btnClass: "btn-dark",
-                                title: "35% OFF", 
-                                bg: "background: linear-gradient(140deg, #9662a4, #e0a7be);" 
+                                title: "1 + 1 = 3", 
                             })
                 .col-xl-9.pb-3
                     .row
@@ -92,17 +95,17 @@ include views/partials/header/header.pug
                     .row.full-height
                         .col-xl-12.col-xxl-6.pb-3
                             +announcement({
-                                image: utils.getUpload("announcement/9.png"),
+                                image: utils.getUpload("announcement/8.jpg"),
                                 isVertical: true,
                                 title: "15% OFF", 
-                                bg: "background: linear-gradient(140deg, #b52066, #ff6b9e);" 
                             })
                         .col-xl-12.col-xxl-6.pb-3
                             +announcement({
-                                image: utils.getUpload("announcement/6.png"),
                                 isVertical: true,
-                                title: "1 + 1 = 3", 
-                                bg: "background: linear-gradient(140deg, #d99883, #4f220e);" 
+                                isBright: true,
+                                image: utils.getUpload("announcement/10.jpg"),
+                                btnClass: "btn-dark",
+                                title: "35% OFF", 
                             })
 
     +productsSlider("Your Recent Views", "recentViews")

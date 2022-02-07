@@ -14,6 +14,9 @@
     background-repeat: no-repeat;
     background-size: cover;
     transition: opacity .3s ease-in-out;
+    border: 1px solid #eeeeee;
+    background-position: 0 0;
+    padding: 30px;
 
     &:hover {
         opacity: .9;
@@ -27,10 +30,8 @@
     }
 
     &.@{announcementClassName}-bright {
-        border: 1px solid #eeeeee;
-
         .@{announcementClassName}-area {
-            color: @textColor;
+            color: fade(@textColor, 80%);
         }
     }
 
@@ -129,5 +130,25 @@
 
     .btn {
         width: fit-content;
+    }
+}
+
+@media @small {
+    .@{announcementClassName} {
+        &-title {
+            font-size: 2em;
+        }
+
+        &-countdown {
+            &-digit {
+                font-size: 1em;
+            }
+        }
+
+        &.@{announcementClassName}-vertical {
+            .@{announcementClassName}-area {
+                padding-top: 0px;
+            }
+        }
     }
 }
