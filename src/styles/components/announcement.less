@@ -1,5 +1,6 @@
 @import "../variables.less";
 @import "../components/buttons/shadowHover.less";
+@import "../components/buttons/shadowHover.less";
 
 @announcementClassName: announcement;
 
@@ -18,9 +19,7 @@
     background-position: 0 0;
     padding: 30px;
 
-    &:hover {
-        opacity: .9;
-    }
+    .shadow-hover();
 
     &.@{announcementClassName}-vertical {
         .@{announcementClassName}-area {

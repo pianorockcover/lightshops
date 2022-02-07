@@ -1,7 +1,9 @@
 .shadow-hover() {
-    transition: box-shadow .2s ease-in-out;
+    @media screen and (min-width: @sm) {
+        transition: box-shadow .2s ease-in-out;
 
-    &:hover {
-        box-shadow: rgb(50 50 93 / 3%) 0px 13px 27px -5px, rgb(0 0 0 / 12%) 0px 8px 16px -8px;
+        &:hover {
+            box-shadow: rgb(50 50 93 / 3%) 0px 13px 27px -5px, rgb(0 0 0 / 12%) 0px 8px 16px -8px;
+        }
     }
 }
