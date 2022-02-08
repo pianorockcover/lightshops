@@ -3,7 +3,7 @@ include cartTableRow.pug
 mixin cartTable()
     .cart-table
         .row
-            .col-xl-9
+            .col-md-8.col-xxl-9
                 .cart-table-products
                     .cart-table-summary
                         h1.cart-table-title Shopping Cart
@@ -23,7 +23,7 @@ mixin cartTable()
                         a(href=utils.anchor("category")).cart-table-back 
                             span.bi.bi-arrow-90deg-left
                             | Continue Shopping
-            .col-xl-3
+            .col-md-4.col-xxl-3
                 .cart-table-order
                     .cart-table-summary
                         .cart-table-title Order Summary
@@ -50,6 +50,6 @@ mixin cartTable()
                         .cart-table-label Total Cost
                         .cart-table-label
                             b $557.00
-                .btn.btn-primary.btn-large.btn-checkout
-                    .bi.bi-cart2
-                    | CHECKOUT
+                    .btn.btn-primary.btn-large.cart-table-order-btn-checkout
+                        .bi.bi-cart2
+                        | CHECKOUT

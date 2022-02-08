@@ -17,12 +17,19 @@
     transition: width .3s ease-in-out;
     overflow: hidden;
     border-right: 1px solid #eee;
-    .scroll(transparent, rgba(0, 0, 0, 0.4), 10px);
+    .scroll(@greyColor, @primary, 12px);
+
+    &:not(:hover):not(.active) {
+        .sidebar-catalog {
+            display: none !important;
+        }
+    }
 
     &:hover,
     &.active {
         width: @sidebarWidth;
-        overflow: initial;
+        overflow-y: auto;
+        overflow-x: hidden;
 
         .@{sidebarClass}-toggle {
             .bi {
@@ -238,8 +245,6 @@
         left: 0px;
         top: 0px;
         height: 100%;
-        overflow-y: scroll !important;
-        overflow-x: hidden !important;
         max-height: 100%;
 
         &-toggle {

@@ -1,6 +1,8 @@
 import $ from "jquery";
 import { isMobile } from "./common";
 
+const rightClass = "tooltip-right";
+
 const tooltipDiv = $(`
     <div class="tooltip"></div>
 `);
@@ -32,13 +34,28 @@ $("[title]").each((_, el) => {
         setTimeout(() => {
             if (hovered) {
 
+                tooltip.removeClass(rightClass);
+
                 tooltip.html(element.data("tooltip"));
-                const { top, left, height } = element[0].getBoundingClientRect();
+                const { top, left, height, width: elementWidth } = element[0].getBoundingClientRect();
 
                 tooltip.css("top", `${Math.round(top + height + 5)}px`);
                 tooltip.css("left", `${Math.round(left)}px`);
 
-                tooltip.fadeIn(300);
+                tooltip.fadeIn({
+                    duration: 300,
+                    complete: () => {
+                        const { width } = tooltip[0].getBoundingClientRect();
+
+                        const diff = left + width - window.innerWidth;
+
+                        if (diff > 0) {
+                            tooltip.css("left", "auto");
+                            tooltip.css("right", `${window.innerWidth - left - elementWidth - 15}px`);
+                            tooltip.addClass(rightClass);
+                        }
+                    }
+                });
             }
         }, 200);
     });

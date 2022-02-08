@@ -23,8 +23,6 @@ $("[data-toggle]").each((_, el) => {
     return;
   }
 
-  let hovered = false;
-
   const effect = element.data("effect") || "fade";
   const animationDuration = element.data("animation-duration");
 
@@ -54,23 +52,33 @@ $("[data-toggle]").each((_, el) => {
   }
 
   if (trigger === 'hover') {
+    let hovered = false;
+
     element.on("mouseover", (e) => {
       e.preventDefault();
+
+      hovered = true;
+
       setTimeout(() => {
-        if (element.is(":hover")) {
+        if (hovered && element.is(":hover")) {
           toggleAnimation(target, effect, {
             duration: animationDuration,
           }, onComplete, "In");
         }
-      }, [400])
+      }, [200])
     });
 
     element.on("mouseout", () => {
-      if (!element.is(":hover")) {
-        toggleAnimation(target, effect, {
-          duration: animationDuration,
-        }, onComplete, "Out");
-      }
+      setTimeout(() => {
+        if (!element.is(":hover")) {
+          toggleAnimation(target, effect, {
+            duration: animationDuration,
+          }, onComplete, "Out");
+
+          hovered = false;
+        }
+      }, [300])
     });
   }
 });
+

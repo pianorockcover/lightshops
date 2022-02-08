@@ -132,6 +132,7 @@
 
         .bi {
             margin-right: 0px;
+            line-height: 0;
         }
     }
 
@@ -165,13 +166,19 @@
     }
 
     &-order {
-        margin-bottom: 10px;
+        padding: 0 15px 25px 15px;
+        border-radius: @borderRadius;
+        box-shadow: rgb(0 0 0 / 20%) 0px 1px 30px -10px;
+    }
+
+    .@{cartTableClassName}-btn-checkout {
+        margin-top: 10px;
     }
 
 }
 
 @media @large {
-    .btn-checkout {
+    .@{cartTableClassName}-btn-checkout {
         max-width: 400px;
     }
 }
@@ -179,7 +186,7 @@
 @media @medium {
     .@{cartTableClassName} {
         &-summary {
-            padding: 0 0 10px 0;
+            padding: 25px 0 10px 0;
         }
 
         &-title {

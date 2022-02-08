@@ -12,6 +12,5 @@ How to: https://www.youtube.com/watch?v=eR_0NNN4Xkc&ab_channel=tipswithpunch
 Where: https://punchsalad.com/ssl-certificate-generator/
 
 ## TODO
-- cart design
 - bug fixes
-- new brand and logo
+- update docs
