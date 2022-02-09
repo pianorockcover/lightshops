@@ -18,10 +18,6 @@ mixin sidebarCatalog()
                     isVertical: true,
                     title: "15% OFF", 
                 })
-        +announcement({
-            title: "1 + 1 = 3", 
-            image: utils.getUpload("announcement/2.jpg"),
-        })
     - } else {
         .row
             .col
@@ -33,12 +29,8 @@ mixin sidebarCatalog()
                 +catalog()
             .col
                 +catalog()
-        .mb-3
-            +announcement({
-                isBright: true,
-                image: utils.getUpload("announcement/6.jpg"),
-            })
         +announcement({
-            image: utils.getUpload("announcement/5.jpg"),
+            isBright: true,
+            image: utils.getUpload("announcement/6.jpg"),
         })
     - }

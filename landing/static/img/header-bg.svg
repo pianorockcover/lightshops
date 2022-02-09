@@ -16,12 +16,12 @@
             <rect width="1440" height="250" fill="#ffffff"></rect>
         </mask>
         <linearGradient x1="0%" y1="100%" x2="100%" y2="0%" id="SvgjsLinearGradient1022">
-            <stop stop-color="rgba(9, 111, 192, 0.25)" offset="0"></stop>
-            <stop stop-opacity="0" stop-color="rgba(9, 111, 192, 0.25)" offset="0.66"></stop>
+            <stop stop-color="#ec208b" offset="0"></stop>
+            <stop stop-opacity="0" stop-color="#ec208b" offset="0.66"></stop>
         </linearGradient>
         <linearGradient x1="100%" y1="100%" x2="0%" y2="0%" id="SvgjsLinearGradient1023">
-            <stop stop-color="rgba(9, 111, 192, 0.25)" offset="0"></stop>
-            <stop stop-opacity="0" stop-color="rgba(9, 111, 192, 0.25)" offset="0.66"></stop>
+            <stop stop-color="#ec208b" offset="0"></stop>
+            <stop stop-opacity="0" stop-color="#ec208b" offset="0.66"></stop>
         </linearGradient>
     </defs>
 </svg>

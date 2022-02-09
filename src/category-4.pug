@@ -1,0 +1,39 @@
+include views/partials/header/header.pug
+
+.area
+    .section
+        .container-full
+            +breadcrumbs([
+                "Main", "Catalog", "Wear", "Women's clothing"
+            ])
+            h1.section-title Product Category Name
+            +sortPanel()
+            .row
+                div(class=utils.classNames.productsCol)
+                    .row
+                        .col-xl-6.col-xxl-4.pb-4
+                            +announcement({
+                                title: "1 + 1 = 3", 
+                                image: utils.getUpload("announcement/2.jpg"),
+                            })
+                        .col-xl-6.col-xxl-4.pb-4
+                            +announcement({
+                                image: utils.getUpload("announcement/5.jpg"),
+                            })
+                        .col-xl-6.col-xxl-4.pb-4
+                            +announcement({
+                                isBright: true,
+                                image: utils.getUpload("announcement/6.jpg"),
+                            })
+                    .row
+                        - for (let i = 0; i < 22; i++) {
+                            div(class=utils.classNames.productsGrid).pb-3
+                                +product()
+                        - }
+                div(class=utils.classNames.filtersCol).pb-3
+                    +filters()
+        +pagination()
+
+    +productsSlider("You Recent Views", "recentViews")
+
+include views/partials/footer/footer.pug
