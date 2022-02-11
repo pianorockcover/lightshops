@@ -4,21 +4,21 @@ include ../../mixins/mixins.pug
 - const utils = htmlWebpackPlugin.options.utils;
 
 head
-  meta(charset="utf-8")
-  meta(name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0")
+    meta(charset="utf-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0")
 
-  title liteShops - Professional eCommerce HTML Template
+    title liteShops - Universal eCommerce HTML Template
 
-  link(rel="stylesheet" href="css/style.css")
-  link(rel="icon" href="images/favicon.svg")
+    link(rel="stylesheet" href="css/style.css")
+    link(rel="icon" href="images/favicon.svg")
 
 <body>
-  .loader.loader-full-page
-    img.loader-animation(src="images/loader.svg" alt="Loading...")
-  include ../sidebar/sidebar.pug
-  .area
-    .header
-      include crossBrowserHint.pug
-      include top.pug
-      include middle.pug
-      include bottom.pug
+    .loader.loader-full-page
+        img.loader-animation(src="images/loader.svg" alt="Loading...")
+    include ../sidebar/sidebar.pug
+    .area
+        .header
+            include crossBrowserHint.pug
+            include top.pug
+            include middle.pug
+            include bottom.pug

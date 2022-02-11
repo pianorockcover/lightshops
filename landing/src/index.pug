@@ -11,41 +11,33 @@ html
     - const year =  new Date().getFullYear();
     body
         .landing
-            .header
-                .header-blobs
-                    img.header-blob.animate__animated.animate__fadeInUp(src=`img/3.jpg`, alt="Art")
-                    img.header-blob.animate__animated.animate__fadeInUp(src=`img/2.jpg`, alt="Art")
-                    img.header-blob.animate__animated.animate__fadeInUp(src=`img/1.jpg`, alt="Art")
-                .header-area
-                    .header-content.animate__animated.animate__fadeIn
-                        .header-logo
+            .container.landing-container
+                .landing-art
+                    .bi.bi-box
+                    .bi.bi-box
+                    .bi.bi-box
+                .row
+                    .col-lg-6
+                        .landing-logo
                             include ../../src/views/mixins/logo/logo-svg.html
-                        .header-divider
-                        h1.header-title Professional e-commerce HTML-template
-                        .counters
-                            .counter
-                                .counter-amount 
-                                    .counter-amount-value 
-                                        span(data-counter) 30
-                                        | +
-                                .counter-hint Demo Pages
-                            .counter
-                                .counter-amount 
-                                    .counter-amount-value 3
-                                .counter-hint Color Schemes
-                            .counter
-                                .counter-amount 
-                                    .counter-amount-value  100%
-                                .counter-hint Responsive
-                        button.buy-btn
-                            .bi.bi-cart
-                            | Buy now
+                        h1.landing-title Universal eCommerce HTML Template
 
-            h2.section-title Demo Pages
-            include demos.pug
+                        .landing-pluses
+                            .landing-pluse
+                                .bi.bi-plus
+                                | Modern fully responsive design
+                            .landing-pluse
+                                .bi.bi-plus
+                                | Fast loading speed and low size   
+                            .landing-pluse
+                                .bi.bi-plus
+                                | Bootstrap 5 and jQuery based
 
-            .footer 
-                | © 
-                b lightShops 
-                | #{year}. All rights reserved.
+                        a.btn.btn-primary.btn-large.landing-btn-demo(href="demos/inde.html")
+                            .bi.bi-play
+                            | Watch demo
+
+                    .col-lg-6
+                        .landing-mockup
+                            img.landing-mockup-image(src="img/mockup.jpg" alt="Landing mockup")
     script(src="js/main.js")

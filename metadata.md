@@ -1,7 +1,7 @@
 ## Name & Description
 
 ### Name
-LiteShops - Universal eCommerce HTML Template
+liteShops - Universal eCommerce HTML Template
 
 ### Key Features
 - Modern fully responsive design

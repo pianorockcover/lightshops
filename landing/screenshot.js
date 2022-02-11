@@ -56,7 +56,10 @@ const sleep = (time) => new Promise((resolve) => {
             .resize({ width: 400 })
             .toFile(resizedFilePath);
 
-        fs.rmSync(filePath);
+        if (fs.existsSync(filePath)) {
+            fs.rmSync(filePath);
+        }
+
         fs.renameSync(resizedFilePath, filePath);
     }
 
