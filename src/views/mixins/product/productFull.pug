@@ -13,7 +13,7 @@ mixin productFull(customOptions = {})
         options.image = utils.getUpload(`products/${options.imageId}.jpg`);
 
         options.labels = new Array(utils.randomInt(0, 3)).fill(null).map(() => ({
-            class: utils.randomElem(["bg-warning", "bg-success", "bg-contrast"]),
+            class: utils.randomElem(["bg-warning-faded", "bg-success-faded", "bg-contrast-faded"]),
             text: utils.faker.commerce.productAdjective(),
         }));
         options.reviewsAmount = utils.randomInt(100, 999);

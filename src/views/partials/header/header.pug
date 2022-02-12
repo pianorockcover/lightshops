@@ -15,10 +15,15 @@ head
 <body>
     .loader.loader-full-page
         img.loader-animation(src="images/loader.svg" alt="Loading...")
+
     include ../sidebar/sidebar.pug
-    .area
-        .header
+
+    <div class="page">
+
+        header.header
             include crossBrowserHint.pug
             include top.pug
             include middle.pug
             include bottom.pug
+
+    <div class="main">

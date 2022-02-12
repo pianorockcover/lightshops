@@ -1,83 +1,82 @@
 include views/partials/header/header.pug
 
-.area
-    .section
-        .container-full
-            +breadcrumbs([
-                "Main", "Blog", "Article"
-            ])
-            .row
-                .col-xxl-10
-                    +pageTitle()
-                    +customContent({
-                        isFull: true,
-                        isArea: true,
-                        inludeQuote: true,
-                        inludeOL: true,
-                        includeImage: true,
-                    })
-                .col-xxl-2
-                    .row
-                        .col-lg-4.col-xxl-12
-                            .simple-slider.simple-slider-aside.mb-5(id="asidePrductsSlider")
-                                .simple-slider-aside-title Products from post
-                                .swiper-container.pb-0
-                                    .swiper-wrapper
-                                        - for (let i = 0; i < 20; i++) {
-                                            .swiper-slide
-                                                .mb-3
-                                                    +product()
-                                                .mb-3
-                                                    +product()
+.section
+    .container-full
+        +breadcrumbs([
+            "Main", "Blog", "Article"
+        ])
+        .row
+            .col-xxl-10
+                +pageTitle()
+                +customContent({
+                    isFull: true,
+                    isArea: true,
+                    inludeQuote: true,
+                    inludeOL: true,
+                    includeImage: true,
+                })
+            .col-xxl-2
+                .row
+                    .col-lg-4.col-xxl-12
+                        .simple-slider.simple-slider-aside.mb-5(id="asidePrductsSlider")
+                            .simple-slider-aside-title Products from post
+                            .swiper-container.pb-0
+                                .swiper-wrapper
+                                    - for (let i = 0; i < 20; i++) {
+                                        .swiper-slide
+                                            .mb-3
                                                 +product()
-                                        - }
-                                .swiper-button-prev
-                                .swiper-button-next
+                                            .mb-3
+                                                +product()
+                                            +product()
+                                    - }
+                            .swiper-button-prev
+                            .swiper-button-next
 
-                        .col-lg-4.col-xxl-12
-                            .mb-3
-                                +announcement({
-                                    isBright: true,
-                                    title: "1 + 1 = GIFT", 
-                                    subTitle: "fantastic sale",
-                                    image: utils.getUpload("announcement/6.jpg"),
-                                    btnClass: "btn-dark",
-                                })
-                            .mb-5
-                                +announcement({
-                                    title: "1 + 1 = 3", 
-                                    image: utils.getUpload("announcement/2.jpg"),
-                                })
+                    .col-lg-4.col-xxl-12
+                        .mb-3
+                            +announcement({
+                                isBright: true,
+                                title: "1 + 1 = GIFT", 
+                                subTitle: "fantastic sale",
+                                image: utils.getUpload("announcement/6.jpg"),
+                                btnClass: "btn-dark",
+                            })
+                        .mb-5
+                            +announcement({
+                                title: "1 + 1 = 3", 
+                                image: utils.getUpload("announcement/2.jpg"),
+                            })
 
-                        .col-lg-4.col-xxl-12
-                            .simple-slider.simple-slider-aside.mb-5(id="asideNewsSlider")
-                                .simple-slider-aside-title Recent news
-                                .swiper-container.pb-0
-                                    .swiper-wrapper
-                                        - for (let i = 0; i < 20; i++) {
-                                            .swiper-slide
-                                                .mb-3
-                                                    +articleThumbnail()
-                                        - }
-                                .swiper-button-prev
-                                .swiper-button-next
+                    .col-lg-4.col-xxl-12
+                        .simple-slider.simple-slider-aside.mb-5(id="asideNewsSlider")
+                            .simple-slider-aside-title Recent news
+                            .swiper-container.pb-0
+                                .swiper-wrapper
+                                    - for (let i = 0; i < 20; i++) {
+                                        .swiper-slide
+                                            .mb-3
+                                                +articleThumbnail()
+                                    - }
+                            .swiper-button-prev
+                            .swiper-button-next
 
-    .section
-        .container-full
-            +tabs([
-                {
-                    name: "You May Iike (10)",
-                    contentId: "#youMayLike",
-                    active: true,
-                },
-                {
-                    name: "Personal Recommendations (7)",
-                    contentId: "#personalRecommendations",
-                }
-            ])
-            .tab-content#youMayLike
-                +productsSlider(undefined, "youMayLikeSlider")
-            .tab-content#personalRecommendations
-                +productsSlider(undefined, "personalRecommendationsSlider")
+.section
+    .container-full
+        +tabs([
+            {
+                name: "You May Iike (10)",
+                contentId: "#youMayLike",
+                active: true,
+            },
+            {
+                name: "Personal Recommendations (7)",
+                contentId: "#personalRecommendations",
+            }
+        ])
+        .tab-content#youMayLike
+            +productsSlider(undefined, "youMayLikeSlider")
+        .tab-content#personalRecommendations
+            +productsSlider(undefined, "personalRecommendationsSlider")
 
 include views/partials/footer/footer.pug

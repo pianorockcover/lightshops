@@ -12,5 +12,6 @@ How to: https://www.youtube.com/watch?v=eR_0NNN4Xkc&ab_channel=tipswithpunch
 Where: https://punchsalad.com/ssl-certificate-generator/
 
 ## TODO
+- update docs (remove AREA and change code structure)
 - bug fixes
-- update docs
+- profile page

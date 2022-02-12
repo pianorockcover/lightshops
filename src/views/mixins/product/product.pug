@@ -22,11 +22,7 @@ mixin product(customOptions = {})
         options.isAdded = utils.randomInt(100, 999) % 6 === 0;
         options = Object.assign(options, customOptions);
 
-    .product(class=`
-        ${options.inline ? "product-inline" : ""}
-        ${options.hideButtons ? "product-info-only" : "" }
-        ${options.inFavourite ? "in-favourite" : ""}
-    `)
+    .product(class=`${options.inline ? "product-inline" : ""} ${options.hideButtons ? "product-info-only" : "" } ${options.inFavourite ? "in-favourite" : ""}`)
         .product-content
             .product-labels
                 - for (let label of (options.labels || [])) {

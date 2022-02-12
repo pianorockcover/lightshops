@@ -4,17 +4,16 @@ include views/partials/header/header.pug
     const department = utils.faker.commerce.department();
     const title = utils.faker.commerce.department();
 
-.area
-    .section
-        .container-full
-            +breadcrumbs([
-                "Main", "Catalog", department, title
-            ])
+.section
+    .container-full
+        +breadcrumbs([
+            "Main", "Catalog", department, title
+        ])
 
-            +productFull()   
+        +productFull()   
 
-    +categories()
++categories()
 
-    +productsSlider("You may also like", "topSales")
++productsSlider("You may also like", "topSales")
 
 include views/partials/footer/footer.pug

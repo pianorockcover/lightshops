@@ -19,22 +19,10 @@
     margin-bottom: 0px;
 }
 
-.area {
-    width: 100%;
-    padding: 0 0 0 @sidebarToggledSize;
-}
-
 .container-full {
     width: 100%;
     padding-left: 12px;
     padding-right: 12px;
-}
-
-@media @large {
-    .area {
-        width: 100%;
-        padding: 0 0 0 @sidebarToggledSize - 20px;
-    }
 }
 
 @media @medium {
@@ -51,9 +39,5 @@
 @media @small {
     .@{sectionClass} {
         margin-bottom: @sectionMarginBottom - 45;
-    }
-
-    .area {
-        padding: 0;
     }
 }

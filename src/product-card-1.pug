@@ -4,34 +4,33 @@ include views/partials/header/header.pug
     const department = utils.faker.commerce.department();
     const title = utils.faker.commerce.department();
 
-.area
-    .section
-        .container-full
-            +breadcrumbs([
-                "Main", "Catalog", department, title
-            ])
+.section
+    .container-full
+        +breadcrumbs([
+            "Main", "Catalog", department, title
+        ])
 
-            +productFull({
-                imageId: 2,
-                image: utils.getUpload("products/2.jpg"),
-            })   
+        +productFull({
+            imageId: 2,
+            image: utils.getUpload("products/2.jpg"),
+        })   
 
-    .section
-        .container-full
-            +tabs([
-                {
-                    name: "You May Iike",
-                    contentId: "#youMayLike",
-                    active: true,
-                },
-                {
-                    name: "Personal Recommendations",
-                    contentId: "#personalRecommendations",
-                }
-            ])
-            .tab-content#youMayLike
-                +productsSlider(undefined, "youMayLikeSlider")
-            .tab-content#personalRecommendations
-                +productsSlider(undefined, "personalRecommendationsSlider")
+.section
+    .container-full
+        +tabs([
+            {
+                name: "You May Iike",
+                contentId: "#youMayLike",
+                active: true,
+            },
+            {
+                name: "Personal Recommendations",
+                contentId: "#personalRecommendations",
+            }
+        ])
+        .tab-content#youMayLike
+            +productsSlider(undefined, "youMayLikeSlider")
+        .tab-content#personalRecommendations
+            +productsSlider(undefined, "personalRecommendationsSlider")
 
 include views/partials/footer/footer.pug
