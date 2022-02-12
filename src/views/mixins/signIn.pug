@@ -1,0 +1,33 @@
+mixin signIn(options = {})
+    - const { description } = options
+
+    form.form.form-single(action=utils.anchor("cart"))
+        h1.form-title Sign in
+        .form-top-hint
+            | or via 
+            +socials({ inline: true })
+        - if (description) {
+            .form-description
+                | !{description}
+        - }
+        .form-control
+            +input({
+                placeholder: "Phone or email",
+                isWhite: true,
+                required: true,
+            })
+        .form-control
+            +input({
+                placeholder: "Password",
+                isWhite: true,
+                required: true,
+                type: "password",
+            })
+        .form-submit-wrapper
+            button.btn.btn-primary.btn-large(type="submit")
+                .bi.bi-person
+                | Sign in
+        .form-bottom-hint 
+            | Forgot password? 
+            a.anchor-primary(href=utils.anchor("password-reset"))
+                | Reset it!

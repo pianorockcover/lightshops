@@ -70,17 +70,7 @@ include prouctWindow.pug
                     | Don't forget to subscribe to our newsletter
                     +subscribe()
                     .footer-divider
-                    .footer-socicals
-                        a.footer-socical-link(href="#" target="blank")
-                            img.footer-socical-link-image(src="images/socials/facebook.svg" alt="Social Icon")
-                        a.footer-socical-link(href="#" target="blank")
-                            img.footer-socical-link-image(src="images/socials/twitter.svg" alt="Social Icon")
-                        a.footer-socical-link(href="#" target="blank")
-                            img.footer-socical-link-image(src="images/socials/pinterest.svg" alt="Social Icon")
-                        a.footer-socical-link(href="#" target="blank")
-                            img.footer-socical-link-image(src="images/socials/instagram.svg" alt="Social Icon")
-                        a.footer-socical-link(href="#" target="blank")
-                            img.footer-socical-link-image(src="images/socials/tik-tok.svg" alt="Social Icon")
+                    +socials({ all: true })
                 .col-lg-2.col-xl-3.col-md-6
                     .footer-title Instagram Post
                     .footer-instagram-widget

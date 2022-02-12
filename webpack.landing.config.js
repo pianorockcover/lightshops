@@ -99,6 +99,8 @@ module.exports = {
                 { from: "static/css/fonts", to: "css/fonts" },
                 { from: "landing/static" },
                 { from: "node_modules/bootstrap-icons/font/fonts", to: "css/fonts" },
+                { from: "static/images/favicon.svg", to: "img" },
+
             ],
         }),
     ],

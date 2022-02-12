@@ -23,17 +23,17 @@
                 }
             ], "langsDropdown")
     .header-top-account
-        .header-top-link.header-top-link-add(href="#")
+        a.header-top-link.header-top-link-add(href="#")
             span.bi.bi-heart-fill
             .header-top-label Favourite (0)
-        .header-top-link.header-top-link-add(href="#")
+        a.header-top-link.header-top-link-add(href="#")
             span.bi.bi-reception-3
             .header-top-label Compare (1)
-        .header-top-link(href="#")
+        a.header-top-link(href=utils.anchor("sign-in"))
             span.bi.bi-person
             .header-top-label Sign in
         .header-top-divider /
-        .header-top-link(href="#")
+        a.header-top-link(href=utils.anchor("sign-up"))
             span.bi.bi-person-plus
             .header-top-label Sign up
         .header-top-link.header-open-right-sidebar(data-toggle="#headerBottom")

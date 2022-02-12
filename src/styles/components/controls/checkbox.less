@@ -15,6 +15,11 @@
 
     &-label {
         cursor: pointer;
+
+        [class*="anchor"] {
+            position: relative;
+            z-index: 3;
+        }
     }
 
     &-input {
@@ -32,6 +37,9 @@
         padding: 2px;
         font-size: 21px;
         color: transparent;
+        border: 1px solid @controlColor;
+        border-radius: 3px;
+        transition: border-color .2s ease-in-out;
     }
 
     &.@{checkboxClassName}-checked {
@@ -42,7 +50,9 @@
     }
 
     &:hover {
-        color: @primary;
+        .@{checkboxClassName}-fake {
+            border-color: @primary;
+        }
     }
 
     &-area {

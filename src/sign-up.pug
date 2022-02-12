@@ -1,0 +1,54 @@
+include views/partials/header/header.pug
+
+.area
+    .section
+        .container-full
+            form.form.form-single(action=utils.anchor("cart"))
+                h1.form-title Sign up
+                .form-top-hint
+                    | or via 
+                    +socials({ inline: true })
+                .form-control
+                    +input({
+                        placeholder: "First Name",
+                        isWhite: true,
+                        required: true,
+                    })
+                .form-control(data-error="Just an example of error")
+                    +input({
+                        placeholder: "Last Name",
+                        isWhite: true,
+                        required: true,
+                    })
+                .form-control
+                    +input({
+                        placeholder: "Email",
+                        isWhite: true,
+                        required: true,
+                    })
+                .form-control
+                    +input({
+                        placeholder: "Password",
+                        isWhite: true,
+                        required: true,
+                        type: "password",
+                    })
+                .form-control 
+                    .form-control
+                        +checkbox(
+                            `Yes, I've read and totally agree with all <a href="${utils.anchor("article")}" class="anchor-primary">All Policies</a>`,
+                            "agreeCheckbox",
+                            false,
+                            true
+                        )
+                .form-submit-wrapper
+                    button.btn.btn-primary.btn-large(type="submit")
+                        .bi.bi-person-plus
+                        | Sign up
+                .form-bottom-hint 
+                    | Already a member? 
+                    a.anchor-primary(href=utils.anchor("sign-in"))
+                        | Sign in
+
+
+include views/partials/footer/footer.pug
