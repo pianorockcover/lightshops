@@ -5,8 +5,8 @@ const faker = require("faker");
 const randomInt = (min, max) => Math.trunc(Math.random() * (max - min) + min);
 const randomElem = (items) => items[Math.floor(Math.random() * items.length)];
 
-const getUpload = (theme) => (path, forceTheme) => {
-    return `images/uploads/${forceTheme ? forceTheme : theme}/${path}`
+const getUpload = (theme, version) => (path, forceTheme) => {
+    return `images/uploads/${forceTheme ? forceTheme : theme}/${path}?v=${version}`
     // return `images/placeholder.svg`;
 };
 
@@ -25,11 +25,11 @@ const uniqueArray = (arr) => arr.filter((value, index, self) => self.indexOf(val
 
 const anchor = (theme) => (path) => `${path}${theme !== "default" ? `-${theme}` : ""}.html`;
 
-module.exports = (theme) => {
+module.exports = (theme, version) => {
     return {
         anchor: anchor(theme),
         faker,
-        getUpload: getUpload(theme),
+        getUpload: getUpload(theme, version),
         randomColor,
         randomElem,
         randomInt,
