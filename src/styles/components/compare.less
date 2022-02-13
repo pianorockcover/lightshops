@@ -18,14 +18,34 @@
         display: flex;
         align-items: flex-start;
         width: fit-content;
+        border: 2px solid #ffffff;
+        transition: border-color .2s ease-in-out;
+        border-radius: @borderRadius;
+        overflow: hidden;
+
+        &:nth-child(1),
+        &:nth-last-child(1) {
+            .@{compareClassName}-col {
+                background: transparent;
+            }
+        }
 
         &:nth-child(even) {
             background-color: @greyColor;
         }
+
+        &:not(:nth-child(1)):not(:nth-last-child(1)) {
+            .@{compareClassName}-col {
+                &:not(:nth-last-child(1)) {
+                    border-right: 2px solid #fff;
+                }
+            }
+        }
+
     }
 
     &-col {
-        padding: 15px 10px;
+        padding: 20px 10px;
         width: @colWidth;
         max-width: @colWidth;
         min-width: @colWidth;
@@ -36,10 +56,11 @@
             width: @firstColWidth;
             min-width: @firstColWidth;
             max-width: @firstColWidth;
+            background-color: fade(@primary, 2%);
         }
 
         &:nth-child(even) {
-            background-color: fade(#eee, 20%);
+            background-color: fade(#e3e3e3, 20%);
         }
     }
 
