@@ -1,5 +1,13 @@
 # LightShops - E-commerce HTML theme
 
+[DEMO]()
+
+Multipurpose e-commerce html template.
+
+## Licence
+
+Free for any use
+
 ## Build for production
 
 ```bash
@@ -30,7 +38,3 @@ yarn dev
 <img src="./screenshots/14.jpg" width="200" alt="Screenshot" /><br />
 <img src="./screenshots/15.jpg" width="200" alt="Screenshot" /><br />
 <img src="./screenshots/16.jpg" width="200" alt="Screenshot" /><br />
-
-## Licence
-
-Free for any use
