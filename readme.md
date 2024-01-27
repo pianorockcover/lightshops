@@ -1,6 +1,7 @@
 # LightShops - E-commerce HTML theme
 
 [DEMO](https://pianorockcover.github.io/lightshops/)
+[Download](https://pianorockcover.github.io/lightshops/html.zip)
 
 Multipurpose e-commerce html template. Written in pug and LESS. Free for any use.
 
