@@ -1,7 +1,0 @@
-mixin catalog()
-    - const categoryLink = utils.randomElem(["category", "category-1"]);
-    .catalog
-        .catalog-department=utils.faker.commerce.department()
-        - for (let i = 0; i < utils.randomInt(5, 10); i++) {
-            a.catalog-link(href=utils.anchor(categoryLink))=utils.faker.commerce.department()
-        - }

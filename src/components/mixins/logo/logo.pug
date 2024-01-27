@@ -1,7 +1,0 @@
-mixin logo(type)
-    -
-        const logoName = type ? `logo-${type}.svg` : "logo.svg";
-        const src = utils.getUpload(logoName);
-
-    a.logo(href=utils.anchor("index"))
-        include logo-svg.html
