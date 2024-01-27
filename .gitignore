@@ -3,3 +3,4 @@ node_modules/
 builds/
 dist-*
 .vers
+.DS_Store

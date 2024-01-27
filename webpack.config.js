@@ -28,7 +28,9 @@ module.exports = (_env, argv) => {
   const versionedScriptName = `main-${version}.js`;
 
   const styleName = "style.css";
-  const versionedStyleName = isDefaultTheme ? `style-${version}.css` : `style-${theme}-${version}.css`;
+  const versionedStyleName = isDefaultTheme
+    ? `style-${version}.css`
+    : `style-${theme}-${version}.css`;
 
   const distPath = isDefaultTheme ? "dist" : `dist-${theme}`;
 
@@ -42,20 +44,24 @@ module.exports = (_env, argv) => {
     .readdirSync(themesPath)
     .filter((fileName) => fileName.endsWith(".less"))
     .map((themeName) => {
-      const themeData = fs.readFileSync(path.resolve(themesPath, themeName), "utf-8");
-      const primaryColor = /@primary: (.*?);/g.exec(themeData)[0]
+      const themeData = fs.readFileSync(
+        path.resolve(themesPath, themeName),
+        "utf-8"
+      );
+      const primaryColor = /@primary: (.*?);/g
+        .exec(themeData)[0]
         .replace("@primary: ", "")
         .replace(";", "");
 
-      return ({
+      return {
         name: themeName.replace(".less", ""),
         primaryColor,
-      });
+      };
     });
 
-  const getUtils = require("./src/views/utils");
+  const getUtils = require("./src/components/utils");
 
-  return ({
+  return {
     entry: `./src/js/${scriptName}`,
     output: {
       filename: `./js/${versionedScriptName}`,
@@ -81,7 +87,7 @@ module.exports = (_env, argv) => {
                   relativeUrls: false,
                   modifyVars: {
                     theme,
-                  }
+                  },
                 },
               },
             },
@@ -149,8 +155,8 @@ module.exports = (_env, argv) => {
             ["gifsicle", { interlaced: true }],
             ["jpegtran", { progressive: true }],
             ["optipng", { optimizationLevel: 5 }],
-          ]
-        }
+          ],
+        },
       }),
     ],
     optimization: {
@@ -178,5 +184,5 @@ module.exports = (_env, argv) => {
       contentBase: path.join(__dirname, distPath),
       port: 3034,
     },
-  });
-}
+  };
+};
