@@ -2,11 +2,7 @@
 
 [DEMO]()
 
-Multipurpose e-commerce html template.
-
-## Licence
-
-Free for any use
+Multipurpose e-commerce html template. Free for any use.
 
 ## Build for production
 
