@@ -1,5 +1,7 @@
 # LightShops - E-commerce HTML theme
 
+[DEMO](link)
+
 ## Build for production
 
 ```bash
