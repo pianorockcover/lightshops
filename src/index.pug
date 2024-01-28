@@ -55,21 +55,11 @@ include components/partials/header/header.pug
         +titleLink("Best Sellers", "More Products")
         .row
             .col-xl-3.pb-3
-                .row.full-height
-                    .col-xl-12.col-xxl-6.pb-3
-                        +announcement({
-                            image: utils.getUpload("announcement/8.jpg"),
-                            isVertical: true,
-                            title: "15% OFF", 
-                        })
-                    .col-xl-12.col-xxl-6.pb-3
-                        +announcement({
-                            isVertical: true,
-                            isBright: true,
-                            image: utils.getUpload("announcement/10.jpg"),
-                            btnClass: "btn-dark",
-                            title: "35% OFF", 
-                        })
+                +announcement({
+                    image: utils.getUpload("announcement/8.jpg"),
+                    isVertical: true,
+                    title: "15% OFF", 
+                })
 
             .col-xl-9.pb-3
                 .row
@@ -89,21 +79,11 @@ include components/partials/header/header.pug
                             +product({ inline: true })
                     - }
             .col-xl-3.pb-3
-                .row.full-height
-                    .col-xl-12.col-xxl-6.pb-3
-                        +announcement({
-                            isVertical: true,
-                            isBright: true,
-                            image: utils.getUpload("announcement/7.jpg"), 
-                            title: "15% OFF", 
-                            btnClass: "btn-success",
-                        })
-                    .col-xl-12.col-xxl-6.pb-3
-                        +announcement({
-                            image: utils.getUpload("announcement/9.jpg"),
-                            isVertical: true,
-                            title: "1 + 1 = 3", 
-                        })
+                +announcement({
+                    image: utils.getUpload("announcement/9.jpg"),
+                    isVertical: true,
+                    title: "1 + 1 = 3", 
+                })
 
 +productsSlider("Your Recent Views", "recentViews")
 
